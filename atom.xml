@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EmbeddedDevelop</title>
+  
+  <subtitle>作者：strongerHuang</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.strongerhuang.com/"/>
+  <updated>2018-06-29T09:59:21.064Z</updated>
+  <id>http://www.strongerhuang.com/</id>
+  
+  <author>
+    <name>strongerHuang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://www.strongerhuang.com/%E5%85%AC%E5%91%8A%E7%B1%BB/hello-world.html"/>
+    <id>http://www.strongerhuang.com/公告类/hello-world.html</id>
+    <published>2018-05-24T16:00:00.000Z</published>
+    <updated>2018-06-29T09:59:21.064Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、原CSDN博客"><a href="#一、原CSDN博客" class="headerlink" title="一、原CSDN博客"></a>一、原CSDN博客</h2><p>　　由于我原来的<a href="https://blog.csdn.net/ybhuangfugui" target="_blank" rel="noopener">CSDN博客</a>文章比较杂乱，也没有整理归类，不方便查找，主要是提供的代码工程下载地址都失效了。所以，决定自己搭建博客，整理真正属于自己的博客文章。</p><p>　　我的CSDN博客目前没有更新文章了，最后一次更新文章应该是停留在去年八九月份的样子，所以那个时候都有计划搭建属于自己的博客了。后续可能不会这个CSDN上面更新文章了（兴许哪一天高兴了，会整理一下CSDN博客）。</p><h2 id="二、我的新博客"><a href="#二、我的新博客" class="headerlink" title="二、我的新博客"></a>二、我的新博客</h2><p>　　其实，我去年就打算自己搭建博客，但是由于工作原因，没有足够的时间（自己搭建博客也是挺折腾的），一直耽搁了。直到今年，终于狠下心，搭建成功了属于自己的个人博客网站。</p><p>网站主页：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a></p><h2 id="三、后续计划"><a href="#三、后续计划" class="headerlink" title="三、后续计划"></a>三、后续计划</h2><p>　　我的博客文章正在筹备中。。。关注我微信公众号，随时查看最新通知。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、原CSDN博客&quot;&gt;&lt;a href=&quot;#一、原CSDN博客&quot; class=&quot;headerlink&quot; title=&quot;一、原CSDN博客&quot;&gt;&lt;/a&gt;一、原CSDN博客&lt;/h2&gt;&lt;p&gt;　　由于我原来的&lt;a href=&quot;https://blog.csdn.net/ybh
+      
+    
+    </summary>
+    
+      <category term="公告类" scheme="http://www.strongerhuang.com/categories/%E5%85%AC%E5%91%8A%E7%B1%BB/"/>
+    
+    
+      <category term="说明文章" scheme="http://www.strongerhuang.com/tags/%E8%AF%B4%E6%98%8E%E6%96%87%E7%AB%A0/"/>
+    
+      <category term="置顶文章" scheme="http://www.strongerhuang.com/tags/%E7%BD%AE%E9%A1%B6%E6%96%87%E7%AB%A0/"/>
+    
+  </entry>
+  
+</feed>

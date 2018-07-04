@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.strongerhuang.com/"/>
-  <updated>2018-07-01T03:05:48.386Z</updated>
+  <updated>2018-07-04T04:35:50.885Z</updated>
   <id>http://www.strongerhuang.com/</id>
   
   <author>
@@ -17,21 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>公告</title>
-    <link href="http://www.strongerhuang.com/%E8%AF%B4%E6%98%8E%E6%96%87%E7%AB%A0/%E5%85%AC%E5%91%8A.html"/>
-    <id>http://www.strongerhuang.com/说明文章/公告.html</id>
-    <published>2018-05-24T16:00:00.000Z</published>
-    <updated>2018-07-01T03:05:48.386Z</updated>
+    <title>EWSTM8系列教程01_EWSTM8介绍、下载、安装和注册</title>
+    <link href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C.html"/>
+    <id>http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程01_IAR介绍、下载、安装和注册.html</id>
+    <published>2018-07-03T12:00:00.000Z</published>
+    <updated>2018-07-04T04:35:50.885Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一、博客搬家了"><a href="#一、博客搬家了" class="headerlink" title="一、博客搬家了"></a>一、博客搬家了</h1><p>　　欢迎您来到我的新博客网站···</p><h2 id="1-1原CSDN博客"><a href="#1-1原CSDN博客" class="headerlink" title="1.1原CSDN博客"></a>1.1原CSDN博客</h2><p>　　由于我原来的<a href="https://blog.csdn.net/ybhuangfugui" target="_blank" rel="noopener">【CSDN博客】</a>文章比较杂乱，也没有整理归类，不方便查找，文章中提供的代码工程下载地址都失效了。还有个主要原因，在别人地盘写文章总觉得不爽。所以，决定自己搭建博客，在自己的地盘写出属于自己的博客文章。</p><p>　　我的CSDN博客目前没有更新文章了，最后一次更新文章应该是停留在去年八九月份的样子，所以那个时候都有计划搭建属于自己的博客了。后续可能很少在CSDN上面更新文章了（兴许哪一天高兴了，会整理一下CSDN博客）。</p><p>原CSDN博客主页：<a href="https://blog.csdn.net/ybhuangfugui" target="_blank" rel="noopener">https://blog.csdn.net/ybhuangfugui</a></p><h2 id="1-2我的新博客"><a href="#1-2我的新博客" class="headerlink" title="1.2我的新博客"></a>1.2我的新博客</h2><p>　　其实，我去年就打算自己搭建博客，但是由于工作原因，没有足够的时间（自己搭建博客也是挺折腾的），一直耽搁了。直到今年，终于狠下心，搭建成功了属于自己的个人博客网站。</p><p>个人新博客主页：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a></p><h1 id="二、后续计划"><a href="#二、后续计划" class="headerlink" title="二、后续计划"></a>二、后续计划</h1><p>　　我的博客文章正在筹备更新中。。。关注我微信公众号：strongerhuang，随时查看最新通知。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。</p><p>　　本文章收录于<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【EWSTM8系列教程】</a>，在我的博客分类“EWSTM8系列教程”也能查找到。</p><p>　　为了方便大家手机也能随时随地查看该系列教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。</p><a id="more"></a><h1 id="二、IAR介绍"><a href="#二、IAR介绍" class="headerlink" title="二、IAR介绍"></a>二、IAR介绍</h1><h2 id="2-1-关于IAR"><a href="#2-1-关于IAR" class="headerlink" title="2.1 关于IAR"></a>2.1 关于IAR</h2><p>　　IAR是一家公司的名称，也是一种集成开发环境（IDE）的名称，我们平时所说的IAR主要是指的集成开发环境。</p><p>　　IAR这家公司的发展也是经历了一系列历史变化，从开始针对8051做C编译器，逐渐发展至今，已经是一家庞大的、技术力量雄厚的公司。而IAR集成开发环境也是从单一到现在针对不同处理器，拥有多种IAR版本的集成开发环境。</p><p>　　IAR针对不同内核处理器，有不同的集成开发环境，本文讲述的只是其中的一款集成开发环境EWSTM8，而IAR拥有多个版本，支持的芯片有上万种，详情请参看官网：<a href="https://www.iar.com/device-search/#!?tab=devices" target="_blank" rel="noopener">https://www.iar.com/device-search/#!?tab=devices</a>.</p><div align="left"><br><img src="https://raw.githubusercontent.com/strongerHuang/strongerHuang.github.io/master/uploads/EmdeddDeveloper.jpg" width="200"><br></div><h2 id="2-2-关于EWSTM8"><a href="#2-2-关于EWSTM8" class="headerlink" title="2.2 关于EWSTM8"></a>2.2 关于EWSTM8</h2><p>　　EWSTM8全称是IAR Embedded Workbench for STM8，其实也是我们常说的IAR for STM8，即（用于开发STM8的）嵌入式工作平台。</p><p>　　Embedded Workbench for STM8是IAR Systems公司为 STM8 微处理器开发的一个集成开发环境(简称IAR EWSTM8，也简称为IAR for STM8)。比较其他的 STM8 开发环境，IAR EWSTM8 具有入门容易、使用方便和代码紧凑等特点。</p><h2 id="2-3-EWSTM8支持芯片"><a href="#2-3-EWSTM8支持芯片" class="headerlink" title="2.3 EWSTM8支持芯片"></a>2.3 EWSTM8支持芯片</h2><p>　　现在（2018年07月）EWSTM8最新版本V3.10，支持市面上所有的STM8系列芯片，目前有一百多种（184种），具体可以到IAR官方网站查看。</p><p>　　［<a href="https://www.iar.com/device-search/#!?tab=devices］(https://www.iar.com/device-search/#!?tab=devices)" target="_blank" rel="noopener">https://www.iar.com/device-search/#!?tab=devices］(https://www.iar.com/device-search/#!?tab=devices)</a></p><h1 id="三、下载"><a href="#三、下载" class="headerlink" title="三、下载"></a>三、下载</h1><p>　　EWSTM8这个软件安装包推荐大家到官网下载最新版本。当然，如果你嫌麻烦，也可以到我百度网盘下载（含老版本，定期更新）。</p><h2 id="3-1-官方下载"><a href="#3-1-官方下载" class="headerlink" title="3.1 官方下载"></a>3.1 官方下载</h2><p>目前（2018年07月）EWSTM8官方最新版本是V3.10。<br>下载地址：<a href="https://www.iar.com/iar-embedded-workbench/#!?currentTab=free-trials" target="_blank" rel="noopener">https://www.iar.com/iar-embedded-workbench/#!?currentTab=free-trials</a></p><h2 id="3-2-网盘下载"><a href="#3-2-网盘下载" class="headerlink" title="3.2 网盘下载"></a>3.2 网盘下载</h2><p>　　为了方便大家下载，我将其安装包上传到百度云盘。当然，我会定期更新，里面也包含之前老版本，建议大家下载最新那一个版本。</p><p>　　百度网盘地址：<a href="http://pan.baidu.com/s/1slF5kYx" target="_blank" rel="noopener">http://pan.baidu.com/s/1slF5kYx</a></p><p>　　提示：如果网盘链接失效，可以关注微信公众号，获取更新链接。</p><h1 id="四、安装"><a href="#四、安装" class="headerlink" title="四、安装"></a>四、安装</h1><p>　　EWSTM8集成开发环境的安装比较简单（基本上就是一路Next下去）。本章节主要针对初学者，按照常规安装教程（图文）讲述一下吧，以下载最新的“EWSTM8-3104-Autorun.exe”软件安装包为例来讲述。</p><h2 id="4-1-准备过程"><a href="#4-1-准备过程" class="headerlink" title="4.1 准备过程"></a>4.1 准备过程</h2><p>A.双击EWSTM8安装包，准备安装</p><p>B.选择EWSTM8安装</p><h2 id="4-2-安装向导、配置"><a href="#4-2-安装向导、配置" class="headerlink" title="4.2 安装向导、配置"></a>4.2 安装向导、配置</h2><p>C.进入安装向导</p><p>D.选择接受许可</p><p>E.选择安装路径</p><p>安装路径一般默认，你也可以修改到你指定路径下。</p><p>F.选择需要安装的驱动</p><p>一般也默认都勾选。<br>提示：<br>勾选了的驱动，在后面会在安装。默认有多个，所以后面会安装多个。</p><p>G.选择安装文件夹</p><p>默认新建一个文件夹。</p><h2 id="4-3-安装EWSTM8"><a href="#4-3-安装EWSTM8" class="headerlink" title="4.3 安装EWSTM8"></a>4.3 安装EWSTM8</h2><p>H.安装准备就绪</p><p>如果准备好之后，电机Install进入安装过程。<br>如果前面配置不对，可以点击Back返回修改。</p><p>I.等待安装完成</p><h2 id="4-4-安装驱动"><a href="#4-4-安装驱动" class="headerlink" title="4.4 安装驱动"></a>4.4 安装驱动</h2><p>EWSTM8安装完成之后，接下来就是按照驱动，如果上面勾选多个，那么这里就会弹出多个驱动等待安装（与上面配置有关）。</p><p>J.安装驱动提示</p><p>K.准备安装过程</p><p>L.安装ST-Link</p><p>·<br>·<br>·<br>这里会多个驱动安装，大致都差不多，根据提示安装就行。<br>·<br>·<br>·</p><p>M.安装完成</p><p>安装完成之后，可能会弹出注册许可向导（License Wizard），此时，选择取消 -&gt; 确定就行。</p><h1 id="五、注册"><a href="#五、注册" class="headerlink" title="五、注册"></a>五、注册</h1><p>EWSTM8是一款收费的商业软件，若你用于商业请购买正版。如果是个人学习，可以使用官方30天的免费试用。</p><p>本文主要针对个人学习的朋友而言，进行非商业用途的使用。以下所有注册信息来自网络，如有侵权，请联系作者删除。</p><p>上面百度网盘提供下载的地址里面有一个“IAR注册机.zip”压缩文件，本章将利用该注册机进行注册。</p><p>IAR的注册过程有点绕，先讲一下主要步骤：打开IAR软件 -&gt; 注册界面 -&gt; 到输入许可号 -&gt; 转到注册机（获取许可号） -&gt; 回来粘贴许可号 -&gt; 保存激活信息 -&gt; 到等待激活 - &gt; 转到注册机（利用激活信息）生成激活文件 -&gt; 回来打开激活文件注册 -&gt; 成功。</p><h2 id="5-1-打开软件-gt-进入注册许可管理界面"><a href="#5-1-打开软件-gt-进入注册许可管理界面" class="headerlink" title="5.1 打开软件 -&gt; 进入注册许可管理界面"></a>5.1 打开软件 -&gt; 进入注册许可管理界面</h2><p>A.打开安装好的EWSTM8软件：Help -&gt; License Manager进入许可管理</p><p>B.弹出许可向导：1取消 -&gt; 2确定即可</p><p>C.进入许可管理</p><p>此时，看到有个红色的“×”，说明未注册。</p><h2 id="5-2-打开离线激活-gt-得到并粘贴许可号"><a href="#5-2-打开离线激活-gt-得到并粘贴许可号" class="headerlink" title="5.2 打开离线激活 -&gt; 得到并粘贴许可号"></a>5.2 打开离线激活 -&gt; 得到并粘贴许可号</h2><p>D.离线激活方式： License -&gt; Offline Activation 进入离线激活界面</p><p>E.打开注册机获取注册号</p><p>(1)选择IAR类型（STM8）； (2)获取许可号； (3)复制许可号</p><p>F.粘贴许可号</p><h2 id="5-3-保存激活信息-gt-到等待激活"><a href="#5-3-保存激活信息-gt-到等待激活" class="headerlink" title="5.3 保存激活信息 -&gt; 到等待激活"></a>5.3 保存激活信息 -&gt; 到等待激活</h2><p>G.生成并保存激活信息ActivationInfo.txt</p><p>H.进入等待激活界面</p><h2 id="5-4-生成激活文件-gt-激活"><a href="#5-4-生成激活文件-gt-激活" class="headerlink" title="5.4 生成激活文件 -&gt; 激活"></a>5.4 生成激活文件 -&gt; 激活</h2><p>I.生成激活文件</p><p>转到注册机：<br>(1)打开前面（路径下）生成的激活信息文件<br>(2)点击激活 -&gt; 保存激活文件（ActivationResponse.txt）到相同路径下。</p><p>J.激活 -&gt; 完成</p><p>K.弹出提示</p><p>L.查看状态</p><p>至此，注册已经完成了。</p><h1 id="六、说明"><a href="#六、说明" class="headerlink" title="六、说明"></a>六、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。<br>2.本文主要针对个人学习使用的朋友，若你是商业用途，建议购买正版软件。<br>3.以上有不清楚的朋友可以微信公众号联系我。</p><h1 id="七、最后"><a href="#七、最后" class="headerlink" title="七、最后"></a>七、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p><p>更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号：EmbeddedDevelop</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;一、博客搬家了&quot;&gt;&lt;a href=&quot;#一、博客搬家了&quot; class=&quot;headerlink&quot; title=&quot;一、博客搬家了&quot;&gt;&lt;/a&gt;一、博客搬家了&lt;/h1&gt;&lt;p&gt;　　欢迎您来到我的新博客网站···&lt;/p&gt;
-&lt;h2 id=&quot;1-1原CSDN博客&quot;&gt;&lt;a href=
-      
+      &lt;h1 id=&quot;一、写在前面&quot;&gt;&lt;a href=&quot;#一、写在前面&quot; class=&quot;headerlink&quot; title=&quot;一、写在前面&quot;&gt;&lt;/a&gt;一、写在前面&lt;/h1&gt;&lt;p&gt;　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。&lt;/p&gt;
+&lt;p&gt;　　本文章收录于&lt;a href=&quot;http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html&quot;&gt;【EWSTM8系列教程】&lt;/a&gt;，在我的博客分类“EWSTM8系列教程”也能查找到。&lt;/p&gt;
+&lt;p&gt;　　为了方便大家手机也能随时随地查看该系列教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="EWSTM8系列教程" scheme="http://www.strongerhuang.com/categories/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="IAR" scheme="http://www.strongerhuang.com/tags/IAR/"/>
+    
+      <category term="STM8" scheme="http://www.strongerhuang.com/tags/STM8/"/>
+    
+      <category term="EWSTM8" scheme="http://www.strongerhuang.com/tags/EWSTM8/"/>
+    
+      <category term="IAR for STM8" scheme="http://www.strongerhuang.com/tags/IAR-for-STM8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>公告</title>
+    <link href="http://www.strongerhuang.com/%E8%AF%B4%E6%98%8E%E6%96%87%E7%AB%A0/%E5%85%AC%E5%91%8A.html"/>
+    <id>http://www.strongerhuang.com/说明文章/公告.html</id>
+    <published>2018-07-02T16:00:00.000Z</published>
+    <updated>2018-07-03T08:30:17.026Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、博客搬家了"><a href="#一、博客搬家了" class="headerlink" title="一、博客搬家了"></a>一、博客搬家了</h1><p>　　欢迎您来到我个人的<a href="http://www.strongerhuang.com">新博客网站</a>···</p><a id="more"></a><h2 id="1-1-原CSDN博客"><a href="#1-1-原CSDN博客" class="headerlink" title="1.1 原CSDN博客"></a>1.1 原CSDN博客</h2><p>　　由于我原来的<a href="https://blog.csdn.net/ybhuangfugui" target="_blank" rel="noopener">【CSDN博客】</a>文章比较杂乱，也没有整理归类，不方便查找，文章中提供的代码工程下载地址都失效了。还有个主要原因，在别人地盘写文章总觉得不爽。所以，决定自己搭建博客，在自己的地盘写出属于自己的博客文章。</p><p>　　我的CSDN博客目前没有更新文章了，最后一次更新文章应该是停留在去年八九月份的样子，所以那个时候都有计划搭建属于自己的博客了。后续可能很少在CSDN上面更新文章了（兴许哪一天高兴了，会整理一下CSDN博客）。</p><p>原CSDN博客主页：<a href="https://blog.csdn.net/ybhuangfugui" target="_blank" rel="noopener">https://blog.csdn.net/ybhuangfugui</a></p><h2 id="1-2-我的新博客"><a href="#1-2-我的新博客" class="headerlink" title="1.2 我的新博客"></a>1.2 我的新博客</h2><p>　　其实，我去年就打算自己搭建博客，但是由于工作原因，没有足够的时间（自己搭建博客也是挺折腾的），一直耽搁了。直到今年，终于狠下心，搭建成功了属于自己的个人博客网站。</p><p>个人新博客主页：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a></p><h1 id="二、后续计划"><a href="#二、后续计划" class="headerlink" title="二、后续计划"></a>二、后续计划</h1><p>　　我的博客文章正在筹备更新中。。。关注我微信公众号：strongerhuang，随时查看最新通知。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、博客搬家了&quot;&gt;&lt;a href=&quot;#一、博客搬家了&quot; class=&quot;headerlink&quot; title=&quot;一、博客搬家了&quot;&gt;&lt;/a&gt;一、博客搬家了&lt;/h1&gt;&lt;p&gt;　　欢迎您来到我个人的&lt;a href=&quot;http://www.strongerhuang.com&quot;&gt;新博客网站&lt;/a&gt;···&lt;/p&gt;
     
     </summary>
     
@@ -41,6 +67,35 @@
       <category term="说明" scheme="http://www.strongerhuang.com/tags/%E8%AF%B4%E6%98%8E/"/>
     
       <category term="公告" scheme="http://www.strongerhuang.com/tags/%E5%85%AC%E5%91%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EWSTM8系列教程</title>
+    <link href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html"/>
+    <id>http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程.html</id>
+    <published>2018-07-01T04:00:00.000Z</published>
+    <updated>2018-07-04T03:34:52.447Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。</p><p>　　为了方便大家手机也能随时随地查看该系列教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。</p><a id="more"></a><h1 id="二、教程列表"><a href="#二、教程列表" class="headerlink" title="二、教程列表"></a>二、教程列表</h1><p><a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_EWSTM8%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C.html">1.EWSTM8系列教程01_IAR介绍、下载、安装和注册</a></p><p><a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E4%B8%8E%E6%B3%A8%E5%86%8C.html">2.EWSTM8系列教程02_新建单个STM8软件工程</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、写在前面&quot;&gt;&lt;a href=&quot;#一、写在前面&quot; class=&quot;headerlink&quot; title=&quot;一、写在前面&quot;&gt;&lt;/a&gt;一、写在前面&lt;/h1&gt;&lt;p&gt;　　本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。&lt;/p&gt;
+&lt;p&gt;　　为了方便大家手机也能随时随地查看该系列教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="EWSTM8系列教程" scheme="http://www.strongerhuang.com/categories/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="IAR" scheme="http://www.strongerhuang.com/tags/IAR/"/>
+    
+      <category term="STM8" scheme="http://www.strongerhuang.com/tags/STM8/"/>
+    
+      <category term="EWSTM8" scheme="http://www.strongerhuang.com/tags/EWSTM8/"/>
+    
+      <category term="IAR for STM8" scheme="http://www.strongerhuang.com/tags/IAR-for-STM8/"/>
     
   </entry>
   

@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文章收录于【EWSTM8系列教程】，在我的博客分类“EWSTM8系列教程”也能查找到。 　　为了方便大家手机也能随时随地查看该系列教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列">
+<meta name="description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文章收录于【EWSTM8系列教程】，在我的博客分类“EWSTM8系列教程”也能查找到。 　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号">
 <meta name="keywords" content="IAR,STM8,EWSTM8,IAR for STM8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EWSTM8系列教程01_EWSTM8介绍、下载、安装和注册">
 <meta property="og:url" content="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程01_IAR介绍、下载、安装和注册.html">
 <meta property="og:site_name" content="EmbeddedDevelop">
-<meta property="og:description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文章收录于【EWSTM8系列教程】，在我的博客分类“EWSTM8系列教程”也能查找到。 　　为了方便大家手机也能随时随地查看该系列教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列">
+<meta property="og:description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文章收录于【EWSTM8系列教程】，在我的博客分类“EWSTM8系列教程”也能查找到。 　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C/2.IAR%E4%BB%8B%E7%BB%8D/1.IAR%E4%BA%A7%E5%93%81%E5%88%97%E8%A1%A8.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C/2.IAR%E4%BB%8B%E7%BB%8D/2.%E6%94%AF%E6%8C%81STM8%E8%8A%AF%E7%89%87%E5%88%97%E8%A1%A8.png?raw=true">
@@ -124,10 +124,10 @@
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C/5.%E6%B3%A8%E5%86%8C/14.%E5%AE%8C%E6%88%90.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C/5.%E6%B3%A8%E5%86%8C/15.%E5%8B%BE%E9%80%89%E4%B8%8D%E5%9C%A8%E6%8F%90%E7%A4%BA.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C/5.%E6%B3%A8%E5%86%8C/16.%E6%8F%90%E7%A4%BAOK.png?raw=true">
-<meta property="og:updated_time" content="2018-07-07T14:50:54.518Z">
+<meta property="og:updated_time" content="2018-07-07T15:37:02.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EWSTM8系列教程01_EWSTM8介绍、下载、安装和注册">
-<meta name="twitter:description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文章收录于【EWSTM8系列教程】，在我的博客分类“EWSTM8系列教程”也能查找到。 　　为了方便大家手机也能随时随地查看该系列教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列">
+<meta name="twitter:description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文章收录于【EWSTM8系列教程】，在我的博客分类“EWSTM8系列教程”也能查找到。 　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号">
 <meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C/2.IAR%E4%BB%8B%E7%BB%8D/1.IAR%E4%BA%A7%E5%93%81%E5%88%97%E8%A1%A8.png?raw=true">
 
 
@@ -454,7 +454,7 @@
       
         <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。</p>
 <p>　　本文章收录于<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【EWSTM8系列教程】</a>，在我的博客分类“EWSTM8系列教程”也能查找到。</p>
-<p>　　为了方便大家手机也能随时随地查看该系列教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
 <a id="more"></a>
 <h1 id="二、IAR介绍"><a href="#二、IAR介绍" class="headerlink" title="二、IAR介绍"></a>二、IAR介绍</h1><h2 id="2-1-关于IAR"><a href="#2-1-关于IAR" class="headerlink" title="2.1 关于IAR"></a>2.1 关于IAR</h2><p>　　IAR是一家公司的名称，也是一种集成开发环境（IDE）的名称，我们平时所说的IAR主要是指的集成开发环境，当然，我们也称它为一种工具：IAR开发工具。</p>
 <p>　　IAR这家公司的发展也是经历了一系列历史变化，从开始针对8051做C编译器，逐渐发展至今，已经是一家庞大的、技术力量雄厚的公司。而IAR集成开发环境也是从单一到现在针对不同处理器，拥有多种IAR版本的集成开发环境。</p>

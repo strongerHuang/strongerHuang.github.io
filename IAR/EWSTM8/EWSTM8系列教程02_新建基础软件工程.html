@@ -68,12 +68,10 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="IAR,STM8,EWSTM8,IAR for STM8," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="EmbeddedDevelop" type="application/atom+xml" />
@@ -83,18 +81,18 @@
 
 
 
-<meta name="description" content="更多内容，尽在微信公众号！">
-<meta name="keywords" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://www.strongerhuang.com/tags/index.html">
+<meta name="description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文针对初学者，利用EWSTM8集成开发环境，基于STM8S标准外设库新建基础软件工程。（后面会讲述如何新建多工程、多目标） 　　本文分如下内容来讲述：　　1.准备工作　　　下载安装EWSTM8　　　下载STM8标准外设库　　　整理工程文件夹">
+<meta name="keywords" content="IAR,STM8,EWSTM8,IAR for STM8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EWSTM8系列教程02_新建基础软件工程">
+<meta property="og:url" content="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程02_新建基础软件工程.html">
 <meta property="og:site_name" content="EmbeddedDevelop">
-<meta property="og:description" content="更多内容，尽在微信公众号！">
+<meta property="og:description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文针对初学者，利用EWSTM8集成开发环境，基于STM8S标准外设库新建基础软件工程。（后面会讲述如何新建多工程、多目标） 　　本文分如下内容来讲述：　　1.准备工作　　　下载安装EWSTM8　　　下载STM8标准外设库　　　整理工程文件夹">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-06T04:50:22.784Z">
+<meta property="og:updated_time" content="2018-07-07T15:14:01.621Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="更多内容，尽在微信公众号！">
+<meta name="twitter:title" content="EWSTM8系列教程02_新建基础软件工程">
+<meta name="twitter:description" content="一、写在前面　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。 　　本文针对初学者，利用EWSTM8集成开发环境，基于STM8S标准外设库新建基础软件工程。（后面会讲述如何新建多工程、多目标） 　　本文分如下内容来讲述：　　1.准备工作　　　下载安装EWSTM8　　　下载STM8标准外设库　　　整理工程文件夹">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.strongerhuang.com/tags/"/>
+  <link rel="canonical" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程02_新建基础软件工程.html"/>
 
 
 
 
 
-  <title>标签 | EmbeddedDevelop</title>
+  <title>EWSTM8系列教程02_新建基础软件工程 | EmbeddedDevelop</title>
   
 
 
@@ -289,40 +287,273 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程02_新建基础软件工程.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 6 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/EWSTM8/" style="font-size: 30px; color: #111">EWSTM8</a> <a href="/tags/IAR/" style="font-size: 30px; color: #111">IAR</a> <a href="/tags/IAR-for-STM8/" style="font-size: 30px; color: #111">IAR for STM8</a> <a href="/tags/STM8/" style="font-size: 30px; color: #111">STM8</a> <a href="/tags/公告/" style="font-size: 12px; color: #ccc">公告</a> <a href="/tags/说明/" style="font-size: 12px; color: #ccc">说明</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">EWSTM8系列教程02_新建基础软件工程</h1>
         
-      </div>
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T22:00:00+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/EWSTM8系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">EWSTM8系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程02_新建基础软件工程.html" title="EWSTM8系列教程02_新建基础软件工程">http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程02_新建基础软件工程.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　我们常说的IAR for STM8，其实指的就是EWSTM8，它的全称是IAR Embedded Workbench for STM8。</p>
+<p>　　本文针对初学者，利用EWSTM8集成开发环境，基于STM8S标准外设库新建基础软件工程。（后面会讲述如何新建多工程、多目标）</p>
+<p>　　本文分如下内容来讲述：<br>　　<strong>1.准备工作</strong><br>　　　下载安装EWSTM8<br>　　　下载STM8标准外设库<br>　　　整理工程文件夹</p>
+<p>　　<strong>2.新建软件工程</strong><br>　　　创建工程<br>　　　添加文件<br>　　　配置工程</p>
+<a id="more"></a>
+<p>　　本文章收录于<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【EWSTM8系列教程】</a>，在我的博客分类“EWSTM8系列教程”也能查找到。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
+<h1 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h1><p>　　俗话说“磨刀不误砍柴工”，做好了准备工作，后面新建基础软件工程的工作就很容易实现了。</p>
+<h2 id="2-1-下载安装EWSTM8"><a href="#2-1-下载安装EWSTM8" class="headerlink" title="2.1 下载安装EWSTM8"></a>2.1 下载安装EWSTM8</h2><p>　　详情请参看该系列教程上一篇文章<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C.html">【EWSTM8系列教程01_IAR介绍、下载、安装和注册】</a>。</p>
+<h2 id="2-2-下载STM8标准外设库"><a href="#2-2-下载STM8标准外设库" class="headerlink" title="2.2 下载STM8标准外设库"></a>2.2 下载STM8标准外设库</h2><p>　　本文基于<strong>STM8标准外设库（STM8S_StdPeriph_Lib）</strong>来新建基础软件工程，所以需要下载标准库。如果你不使用标准外设库（如：使用寄存器）开发，本节内容可以略过。</p>
+<h3 id="A-官网下载"><a href="#A-官网下载" class="headerlink" title="A.官网下载"></a>A.官网下载</h3><p><a href="https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm8-embedded-software/stsw-stm8069.html" target="_blank" rel="noopener">https://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm8-embedded-software/stsw-stm8069.html</a></p>
+<p>提示：在官网下载需要登录账户，如果嫌麻烦可以在ST中文网，或下面百度网盘下载（和官网一样）。</p>
+<h3 id="B-百度网盘"><a href="#B-百度网盘" class="headerlink" title="B.百度网盘"></a>B.百度网盘</h3><p><a href="http://pan.baidu.com/s/1qYbBKMK" target="_blank" rel="noopener">http://pan.baidu.com/s/1qYbBKMK</a></p>
+<p><strong>提示</strong>：如果以上链接失效， 可以关注微信公众号， 获取更新链接。</p>
+<h2 id="2-3-整理工程文件夹"><a href="#2-3-整理工程文件夹" class="headerlink" title="2.3 整理工程文件夹"></a>2.3 整理工程文件夹</h2><p>　　这一小节的内容可根据自己习惯来整理，我整理的文件及文件夹结构是按照常规的整理方式。你如果觉得合理，可以直接引用；如果觉得不习惯这个结构方式，可以自己整理。</p>
+<p>　　本节所讲述的<strong>文件夹及里面的内容</strong>不是本文新建软件工程的重点，若需要详细了解库文件、文件夹及里面源代码内容，可以参看我的另一教程【STM8S标准外设库教程】。</p>
+<h3 id="A-新建工程文件夹"><a href="#A-新建工程文件夹" class="headerlink" title="A.新建工程文件夹"></a>A.新建工程文件夹</h3><p>首先建立一个存放工程文件的文件夹：<strong>STM8S_Demo</strong></p>
+<h3 id="B-提取ST标准外设库文件"><a href="#B-提取ST标准外设库文件" class="headerlink" title="B.提取ST标准外设库文件"></a>B.提取ST标准外设库文件</h3><p>解压下载的标准外设库（STM8S_StdPeriph_Lib）可以看见下面四个文件夹和参考资料：<br>(图片)<br>_htmresc：图片文件夹（不提取）<br>Libraries：标准驱动库（<strong>提取大部分</strong>）<br>Project： 示例工程（<strong>提取少部分</strong>）<br>Utilities：公共代码、评估板代码（不提取）<br>MCD-ST Liberty：软件许可协议（不提取）<br>Release_Notes：发行说明<br>stm8s-a_stdperiph_lib_um：库说明文档</p>
+<p>　　ST官网下载的标准外设库里面有很多例程源代码和其他文件，但我们主要使用Libraries目录下STM8S_StdPeriph_Driver源代码，其他参考文件用于开发学习时参考使用。<br>1.拷贝<strong>Libraries文件夹</strong>到我们的STM8S_Demo工程文件夹下面。<br>2.拷贝STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template下面<strong>stm8s_conf.h、stm8s_it.c和stm8s_it.h</strong>三个文件到我们STM8S_Demo \ App下面。</p>
+<h3 id="C-新建文件夹和文件"><a href="#C-新建文件夹和文件" class="headerlink" title="C.新建文件夹和文件"></a>C.新建文件夹和文件</h3><p>除了标准外设库文件之外，我们需要新建存放自己代码的文件和文件夹。我这里主要需要新建4个文件夹：<br><strong>App</strong>: 应用程序代码<br><strong>Bsp</strong>: 底层驱动代码<br><strong>Doc</strong>: 说明文档<br><strong>Project</strong>：工程文件</p>
+<p>　　在自己新建的文件夹下面还需要新建自己的文件，文件里面添加必要的源代码文件。我提供的Demo工程，实现的功能比较简单，就是一个LED闪烁。本文重点讲述建立工程的过程，这里不描述源代码，具体可以自己下载查看。</p>
+<p>　　上面几个步骤完成之后，我们就可以看到在工程文件夹“STM8S_Demo”下面整理的文件夹（如下图）：</p>
+<p>　　至此，准备工作算完成了，上面提取的文件、新建的文件里面具体的内容请下载Demo工程查看（文末下载）。</p>
+<h1 id="三、新建软件工程"><a href="#三、新建软件工程" class="headerlink" title="三、新建软件工程"></a>三、新建软件工程</h1><p>　　新建一个简单、基础的软件工程大概需要有三个步骤：创建工程、添加文件和配置工程。</p>
+<p>　　上面的准备工作做好之后，就可以在Project文件夹下新建自己的软件工程了，下面将一步一步讲述从零开始新建一个软件工程的详细过程。</p>
+<h2 id="3-1-创建工程"><a href="#3-1-创建工程" class="headerlink" title="3.1 创建工程"></a>3.1 创建工程</h2><p>创建工程：就是新建工作空间及工程，步骤比较简单。</p>
+<p>A.打开软件，新建工作空间（File -&gt; New Workspace）</p>
+<p>未完待续······</p>
+<h1 id="六、说明"><a href="#六、说明" class="headerlink" title="六、说明"></a>六、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。<br>2.本文主要针对个人学习使用的朋友，若你是商业用途，建议购买正版软件。<br>3.上述内容仅供参考，如有不正确，或不清楚的朋友可以微信公众号联系我。</p>
+<h1 id="七、最后"><a href="#七、最后" class="headerlink" title="七、最后"></a>七、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。</p>
+
       
     </div>
     
     
     
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/EmdeddDeveloper.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IAR/" rel="tag"># IAR</a>
+          
+            <a href="/tags/STM8/" rel="tag"># STM8</a>
+          
+            <a href="/tags/EWSTM8/" rel="tag"># EWSTM8</a>
+          
+            <a href="/tags/IAR-for-STM8/" rel="tag"># IAR for STM8</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/IAR/EWSTM8/EWSTM8系列教程01_IAR介绍、下载、安装和注册.html" rel="next" title="EWSTM8系列教程01_EWSTM8介绍、下载、安装和注册">
+                <i class="fa fa-chevron-left"></i> EWSTM8系列教程01_EWSTM8介绍、下载、安装和注册
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -331,6 +562,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -351,8 +586,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -473,6 +717,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、准备工作"><span class="nav-text">二、准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-下载安装EWSTM8"><span class="nav-text">2.1 下载安装EWSTM8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-下载STM8标准外设库"><span class="nav-text">2.2 下载STM8标准外设库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-官网下载"><span class="nav-text">A.官网下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-百度网盘"><span class="nav-text">B.百度网盘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-整理工程文件夹"><span class="nav-text">2.3 整理工程文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-新建工程文件夹"><span class="nav-text">A.新建工程文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-提取ST标准外设库文件"><span class="nav-text">B.提取ST标准外设库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-新建文件夹和文件"><span class="nav-text">C.新建文件夹和文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、新建软件工程"><span class="nav-text">三、新建软件工程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-创建工程"><span class="nav-text">3.1 创建工程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、说明"><span class="nav-text">六、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、最后"><span class="nav-text">七、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

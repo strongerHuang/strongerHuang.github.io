@@ -89,10 +89,25 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　为了让初学者更容易掌握IAR这个工具的相关知识，我先从整体概述，再到具体的细节内容。 　　本文先概述一下默认主窗口界面， 对 IAR 集成开发环境有一个大概的了解，再次概述其中一个常用的 Toolbar 工具栏。 　　本文主要概述如下两部分内容：　　1.主窗口（Main Window） 　　2.工具栏（Toolbar）　　主工具栏概述　　调试工具栏概述　　工具栏选项配置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-11T03:32:04.578Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/1.EWSTM8%E4%B8%BB%E7%AA%97%E5%8F%A3.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/2.%E5%B7%A5%E5%85%B7%E6%A0%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/3.%E4%B8%BB%E5%B7%A5%E5%85%B7%E6%A0%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/6.%E5%A2%9E%E5%8A%A0%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E6%A0%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/7.%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E6%A0%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/8.%E5%B7%A5%E5%85%B7%E6%A0%8F%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/9.%E5%88%A0%E9%99%A4%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/9.%E5%88%A0%E9%99%A4%E5%9B%BE%E6%A0%87.gif?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/10.%E6%B7%BB%E5%8A%A0%E5%B7%A5%E5%85%B7%E6%8C%89%E9%92%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/10%E6%B7%BB%E5%8A%A0%E5%9B%BE%E6%A0%87.gif?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/11.%E6%98%BE%E7%A4%BA%E6%9C%AC%E6%96%87%E6%A0%87%E7%AD%BE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/12.%E6%98%BE%E7%A4%BA%E6%9C%AC%E6%96%87%E6%A0%87%E7%AD%BE%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/13.%E6%94%BE%E5%A4%A7%E5%9B%BE%E6%A0%87.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/14.%E6%94%BE%E5%A4%A7%E5%8A%A8%E7%94%BB.gif?raw=true">
+<meta property="og:updated_time" content="2018-07-11T04:00:18.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EWSTM8系列教程03_主窗口、工具栏的概述">
 <meta name="twitter:description" content="一、写在前面　　为了让初学者更容易掌握IAR这个工具的相关知识，我先从整体概述，再到具体的细节内容。 　　本文先概述一下默认主窗口界面， 对 IAR 集成开发环境有一个大概的了解，再次概述其中一个常用的 Toolbar 工具栏。 　　本文主要概述如下两部分内容：　　1.主窗口（Main Window） 　　2.工具栏（Toolbar）　　主工具栏概述　　调试工具栏概述　　工具栏选项配置">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/1.EWSTM8%E4%B8%BB%E7%AA%97%E5%8F%A3.png?raw=true">
 
 
 
@@ -425,8 +440,8 @@
 <p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
 <h1 id="二、主窗口"><a href="#二、主窗口" class="headerlink" title="二、主窗口"></a>二、主窗口</h1><p>　　为了让大家对 IAR 集成开发环境有一个大概的了解，这里先概述一下（IAR 默认编辑状态） 主界面下各个窗口的含义。</p>
 <p>　　<strong>说明</strong>：IAR的窗口在<strong>编辑模式</strong>与<strong>调试模式</strong>下存在一定差异，本章节主要基于【编辑模式】进行简单的概述，里面详细的内容、以及调试模式下的窗口在该系列教材后续会逐步讲述。</p>
-<p>　　打开IAR工程，一般会出现类似下图的主窗口界面，主要包含6个窗口。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<p>　　打开IAR工程，一般会出现类似下图的主窗口界面，主要包含6个窗口（如下图）。</p>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/1.EWSTM8%E4%B8%BB%E7%AA%97%E5%8F%A3.png?raw=true"><br></table>
 
 
 <p><strong>Menu Bar：菜单栏</strong><br>相信大家对该窗口都不陌生，但凡一个常规一点的软件，都有诸如<strong>File文件、  Edit编辑 、 View视图、Help帮助</strong>等这样的一栏窗口，这就是菜单栏窗口。<br>该窗口是 IAR 比较重要的一个窗口，包含IAR 几乎所有操作的内容，在编辑模式和调试模式下存在一些不同，后续会讲述。</p>
@@ -436,38 +451,55 @@
 <p><strong>Message Window：信息窗口</strong><br>该窗口包括编译信息、调试信息、查找信息等一些信息的窗口。</p>
 <p><strong>Status Bar：状态栏</strong><br>该窗口包含就绪状态、错误警告数量、光标行列、字符编码、键盘Num锁定等一些状态信息。</p>
 <h1 id="三、工具栏"><a href="#三、工具栏" class="headerlink" title="三、工具栏"></a>三、工具栏</h1><p>　　IAR的<strong>工具栏Tool Bar</strong>共有两种：<strong>Main主工具栏</strong>和<strong>Debug调试工具栏</strong>。在编辑（默认）状态下只显示Main主工具栏，在进入调试模式后会增加显示Debug工具栏，如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="1000" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/2.%E5%B7%A5%E5%85%B7%E6%A0%8F.png?raw=true"><br></table>
 
 
 <h2 id="3-1-主工具栏"><a href="#3-1-主工具栏" class="headerlink" title="3.1 主工具栏"></a>3.1 主工具栏</h2><p>　　在编辑（默认）状态下，只有主工具栏，这个工具栏里面内容也是在编辑状态下常用的快捷按钮。当然，这些按钮的功能基本上都可以通过快捷键来实现。</p>
-<table><br><img align="left" width="600" src=""><br></table>
-
+<table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/3.%E4%B8%BB%E5%B7%A5%E5%85%B7%E6%A0%8F.png?raw=true"><br></table>
 
 <p>New Document新建文件 Ctrl + N<br>Open打开文件 Ctrl + O<br>Save保存文件 Ctrl + S<br>Save All保存所有文件<br>Print打印文件 Ctrl + P<br>Cut剪切 Ctrl + X<br>Copy复制 Ctrl + C<br>Paste粘贴 Ctrl + V<br>Undo撤销编辑 Ctrl + Z<br>Redo恢复编辑 Ctrl + Y<br>Quick Search Text Box快速搜索文本框<br>Find Previous向前查找 Shift + F3<br>Find Next向后查找 F3<br>Find查找（增强） Ctrl + F<br>Replace替换 Ctrl + H<br>Go to前往行列 Ctrl + G<br>Toggle Bookmark标记/取消书签 Ctrl + F2<br>Previous Bookmark跳转到上一个书签 Shift + F2<br>Next Bookmark跳转到下一个书签 F2<br>Navigate Backward跳转到上一步 Alt + 左箭头<br>Navigate Forward跳转到下一步 Alt + 右箭头<br>Compile编译当前（文件、组） Ctrl + F7<br>Make编译工程（构建） F7<br>Stop Build停止编译 Ctrl + Break<br>Toggle Breakpoint编辑/取消断点 Ctrl + F9<br>Download and Debug下载并调试 Ctrl + D<br>Debug without Downloading调试（不下载）<br><strong>Toolbar Options工具栏选项</strong>（下面3.3节重点讲述）</p>
 <p>上面只是简述了各个快捷按钮的基本意思，下面再详细说一下部分常用按钮的具体意思。</p>
 <p><strong>A.书签</strong><br>书签在编译的时候比较实用，可以快速找到标记书签所在行。可以使用快捷按钮，当然，平时推荐使用快捷键（F2、 Ctrl + F2、 Shift + F2）。</p>
-<table><br><img align="left" width="600" src=""><br></table>
-
-<p>书签动画效果</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br>书签动画效果：<br><img align="left" width="500" src=""><br></table>
 
 <p><strong>B.跳转到上/下一步</strong><br>跳转是在编译代码通过跟踪代码留下的“脚步”，我们可以通过该方式找到这些“脚步”，同样也可以通过快捷键操作。</p>
-<table><br><img align="left" width="600" src=""><br></table>
-
-<p>跳转到上/下一步动画效果</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br>跳转到上/下一步动画效果：<br><img align="left" width="600" src=""><br></table>
 
 <p><strong>C.下载和调试</strong><br>很多人问“Download and Debug”和“Debug without Downloading”这两个按钮的区别是什么？<br>答：Download and Debug：是下载代码之后再进行调试。<br>Debug without Downloading：只调试不下载。也就是说你之前下载过了代码，只需要再点击该按钮即可，否则会出现错误。</p>
 <p>这两个按钮图标在编辑和调试模式下略有点差异，在调试模式下可以再次下载/调试。</p>
 <h2 id="3-2-调试工具栏"><a href="#3-2-调试工具栏" class="headerlink" title="3.2 调试工具栏"></a>3.2 调试工具栏</h2><p>调试工具栏<strong>只有在调试状态</strong>下才会出现的一行快捷按钮，在编辑状态下，没有这些按钮。</p>
 <p>当点击调试按钮，进入调试状态之后，菜单栏会<strong>增加一个Debug菜单</strong>（里面内容和调试工具栏类似）。同样，工具栏也会<strong>增加一个调试工具栏</strong>，如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/6.%E5%A2%9E%E5%8A%A0%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E6%A0%8F.png?raw=true"><br></table>
 
-<table><br><img align="left" width="600" src=""><br></table><br>从左往右依次是：<br>Step Over逐行运行 F10<br>Step Into跳入运行 F11<br>Step Out跳出运行 Shift + F11<br>Next Statement运行到下一条语句<br>Run to Cursor运行到光标行<br>Go全速运行 F5<br>Break停止运行<br>Reset复位<br><br>逐行运行也叫逐步运行，跳入运行也叫单步运行，运行到下一语句和逐行运行类似。<br><br><br>## 3.3 工具栏选项配置<br>这一小节主要教大家如何自定义工具栏（图标）按钮。假如我们不想要工具栏中有些按钮（如：复制、粘贴），或我们又想添加一个工具按钮，怎么实现呢？<br><br><strong>A.进入自定义工具栏</strong><br><br><br><strong>B.删除工具栏</strong><br>如删除复制按钮：按住复制按钮 -&gt; 拖出工具栏即可。<br><br><br>请参看动画效果（点击跳转）<br><br><br><strong>C.添加工具按钮</strong><br>如：添加一个工具配置按钮，在命令中找到【工具配置】按钮，按住 -&gt; 拖到工具栏（你想要到位置）即可。<br><br><br>请参看动画效果（点击跳转）<br><br><br><strong>D.添加显示文本标签</strong><br>显示文本标签，也就是图标下面显示该图标按钮的意思，这样方便一眼明白含义，同时可以增大显示距离，点击操作也比较方便。当然，也会占用一定显示区域。如下图：<br><br><br><strong>请参看动画效果（点击跳转）
+<table><br><img align="left" width="200" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/7.%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E6%A0%8F.png?raw=true"><br></table>
 
-</strong>F.放大图标**<br>这个很好理解，图标太小，将其放大，如下图：<br><br><br><table><br>动画效果：<br><img align="left" width="500" src=""><br></table>
+<p><strong>从左往右依次是：</strong><br>Step Over逐行运行 F10<br>Step Into跳入运行 F11<br>Step Out跳出运行 Shift + F11<br>Next Statement运行到下一条语句<br>Run to Cursor运行到光标行<br>Go全速运行 F5<br>Break停止运行<br>Reset复位</p>
+<p>逐行运行也叫逐步运行，跳入运行也叫单步运行，运行到下一语句和逐行运行类似。</p>
+<h2 id="3-3-工具栏选项配置"><a href="#3-3-工具栏选项配置" class="headerlink" title="3.3 工具栏选项配置"></a>3.3 工具栏选项配置</h2><p>这一小节主要教大家如何自定义工具栏（图标）按钮。假如我们不想要工具栏中有些按钮（如：复制、粘贴），或我们又想添加一个工具按钮，怎么实现呢？</p>
+<p><strong>A.进入自定义工具栏</strong></p>
+<table><br><img align="left" width="400" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/8.%E5%B7%A5%E5%85%B7%E6%A0%8F%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE.png?raw=true"><br></table>
+
+<p><strong>B.删除工具栏</strong><br>如删除复制按钮：按住复制按钮 -&gt; 拖出工具栏即可。</p>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/9.%E5%88%A0%E9%99%A4%E5%A4%8D%E5%88%B6%E6%8C%89%E9%92%AE.png?raw=true"><br></table>
+
+<table><br>删除按钮动画效果：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/9.%E5%88%A0%E9%99%A4%E5%9B%BE%E6%A0%87.gif?raw=true"><br></table>
 
 
+<p><strong>C.添加工具按钮</strong><br>如：添加一个工具配置按钮，在命令中找到【工具配置】按钮，按住 -&gt; 拖到工具栏（你想要到位置）即可。</p>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/10.%E6%B7%BB%E5%8A%A0%E5%B7%A5%E5%85%B7%E6%8C%89%E9%92%AE.png?raw=true"><br></table>
+
+<table><br>添加按钮动画效果：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/10%E6%B7%BB%E5%8A%A0%E5%9B%BE%E6%A0%87.gif?raw=true"><br></table>
+
+
+<p><strong>D.添加显示文本标签</strong><br>显示文本标签，也就是图标下面显示该图标按钮的意思，这样方便一眼明白含义，同时可以增大显示距离，点击操作也比较方便。当然，也会占用一定显示区域。如下图：</p>
+<table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/11.%E6%98%BE%E7%A4%BA%E6%9C%AC%E6%96%87%E6%A0%87%E7%AD%BE.png?raw=true"><br></table>
+
+<table><br>显示文本标签动画效果：<br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/12.%E6%98%BE%E7%A4%BA%E6%9C%AC%E6%96%87%E6%A0%87%E7%AD%BE%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true"><br></table>
+
+<p><strong>F.放大图标</strong><br>这个很好理解，图标太小，将其放大，如下图：</p>
+<table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/13.%E6%94%BE%E5%A4%A7%E5%9B%BE%E6%A0%87.png?raw=true"><br></table>
+
+<table><br>放大图标动画效果：<br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0/14.%E6%94%BE%E5%A4%A7%E5%8A%A8%E7%94%BB.gif?raw=true"><br></table>
 
 
 <h1 id="四、说明"><a href="#四、说明" class="headerlink" title="四、说明"></a>四、说明</h1><p>1.上面内容只是概述，相对都比较粗略，更详细的内容，请参看该系列教程后续文章。<br>2.该文档仅供个人学习使用，版权所有，禁止商用。<br>3.上述内容仅供参考，如有不正确，或不清楚的朋友可以微信公众号联系我。 </p>
@@ -753,7 +785,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、主窗口"><span class="nav-text">二、主窗口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、工具栏"><span class="nav-text">三、工具栏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-主工具栏"><span class="nav-text">3.1 主工具栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-调试工具栏"><span class="nav-text">3.2 调试工具栏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、说明"><span class="nav-text">四、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、最后"><span class="nav-text">五、最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、主窗口"><span class="nav-text">二、主窗口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、工具栏"><span class="nav-text">三、工具栏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-主工具栏"><span class="nav-text">3.1 主工具栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-调试工具栏"><span class="nav-text">3.2 调试工具栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-工具栏选项配置"><span class="nav-text">3.3 工具栏选项配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、说明"><span class="nav-text">四、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、最后"><span class="nav-text">五、最后</span></a></li></ol></div>
             
 
           </div>

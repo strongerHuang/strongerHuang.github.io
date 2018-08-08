@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="一、写在前面　　本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。 　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。">
+<meta name="description" content="一、写在前面　　上一篇文章《EWSTM8系列教程06_工程节点选项配置（一）》讲述了节点选项中前五项（Target目标、Static Analysis静态分析、C/C++ Compiler编译器、Assembler汇编器、Output Converter输出转换器）的内容。 　　本文讲述剩余的几项内容：Custom build自定义、Build Actions执行动作、Linker链接器、Debu">
 <meta name="keywords" content="IAR,STM8,EWSTM8,IAR for STM8">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EWSTM8系列教程">
-<meta property="og:url" content="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程.html">
+<meta property="og:title" content="EWSTM8系列教程07_工程节点选项配置（二）">
+<meta property="og:url" content="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html">
 <meta property="og:site_name" content="EmbeddedDevelop">
-<meta property="og:description" content="一、写在前面　　本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。 　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。">
+<meta property="og:description" content="一、写在前面　　上一篇文章《EWSTM8系列教程06_工程节点选项配置（一）》讲述了节点选项中前五项（Target目标、Static Analysis静态分析、C/C++ Compiler编译器、Assembler汇编器、Output Converter输出转换器）的内容。 　　本文讲述剩余的几项内容：Custom build自定义、Build Actions执行动作、Linker链接器、Debu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T08:50:18.072Z">
+<meta property="og:updated_time" content="2018-08-08T09:01:11.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EWSTM8系列教程">
-<meta name="twitter:description" content="一、写在前面　　本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。 　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。">
+<meta name="twitter:title" content="EWSTM8系列教程07_工程节点选项配置（二）">
+<meta name="twitter:description" content="一、写在前面　　上一篇文章《EWSTM8系列教程06_工程节点选项配置（一）》讲述了节点选项中前五项（Target目标、Static Analysis静态分析、C/C++ Compiler编译器、Assembler汇编器、Output Converter输出转换器）的内容。 　　本文讲述剩余的几项内容：Custom build自定义、Build Actions执行动作、Linker链接器、Debu">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程.html"/>
+  <link rel="canonical" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html"/>
 
 
 
 
 
-  <title>EWSTM8系列教程 | EmbeddedDevelop</title>
+  <title>EWSTM8系列教程07_工程节点选项配置（二） | EmbeddedDevelop</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程.html">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="strongerHuang">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">EWSTM8系列教程</h1>
+          <h1 class="post-title" itemprop="name headline">EWSTM8系列教程07_工程节点选项配置（二）</h1>
         
 
         <div class="post-meta">
@@ -329,7 +329,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T18:30:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T18:00:00+08:00">
                 2018-08-08
               </time>
             
@@ -396,7 +396,7 @@
 
         <li class="post-copyright-link">
           <strong>本文链接：</strong>
-          <a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程.html" title="EWSTM8系列教程">http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程.html</a>
+          <a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html" title="EWSTM8系列教程07_工程节点选项配置（二）">http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html</a>
         </li>
 
         <li class="post-copyright-license">
@@ -416,20 +416,82 @@
       
 
       
-        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。</p>
-<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　上一篇文章<a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E8%8A%82%E7%82%B9%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89.html">《EWSTM8系列教程06_工程节点选项配置（一）》</a>讲述了节点选项中前五项（<strong>Target目标、Static Analysis静态分析、C/C++ Compiler编译器、Assembler汇编器、Output Converter输出转换器</strong>）的内容。</p>
+<p>　　本文讲述剩余的几项内容：<strong>Custom build自定义、Build Actions执行动作、Linker链接器、Debugger调试器、ST-LINK工具</strong>。</p>
 <a id="more"></a>
-<h1 id="二、教程列表"><a href="#二、教程列表" class="headerlink" title="二、教程列表"></a>二、教程列表</h1><p><a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_IAR%E4%BB%8B%E7%BB%8D%E3%80%81%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E5%92%8C%E6%B3%A8%E5%86%8C.html">1.EWSTM8系列教程01_IAR介绍、下载、安装和注册</a></p>
-<p><a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E6%96%B0%E5%BB%BA%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B.html">2.EWSTM8系列教程02_新建基础软件工程</a></p>
-<p><a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E4%B8%BB%E7%AA%97%E5%8F%A3%E3%80%81%E5%B7%A5%E5%85%B7%E6%A0%8F%E7%9A%84%E6%A6%82%E8%BF%B0.html">3.EWSTM8系列教程03_主窗口、工具栏的概述</a></p>
-<p><a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_%E8%8F%9C%E5%8D%95%E6%A6%82%E8%BF%B0%EF%BC%88%E4%B8%80%EF%BC%89.html">4.EWSTM8系列教程04_菜单概述（一）</a></p>
-<p><a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_%E8%8F%9C%E5%8D%95%E6%A6%82%E8%BF%B0%EF%BC%88%E4%BA%8C%EF%BC%89.html">5.EWSTM8系列教程05_菜单概述（二）</a></p>
-<p><a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E8%8A%82%E7%82%B9%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89.html">6.EWSTM8系列教程06_工程节点选项配置（一）</a></p>
-<p><a href="https://www.strongerhuang.com">7.EWSTM8系列教程07_工程节点选项配置（二）</a></p>
-<p>正在努力更新中，敬请等待……</p>
-<h1 id="三、说明"><a href="#三、说明" class="headerlink" title="三、说明"></a>三、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。<br>2.本文主要针对个人学习使用的朋友，若你是商业用途，建议购买正版软件。<br>3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。</p>
-<h1 id="四、最后"><a href="#四、最后" class="headerlink" title="四、最后"></a>四、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
-<p>更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。</p>
+<p>　　本文章收录于<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【EWSTM8系列教程】</a>，在我的博客分类“EWSTM8系列教程”也能查找到。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
+<h1 id="二、Custom-build自定义"><a href="#二、Custom-build自定义" class="headerlink" title="二、Custom build自定义"></a>二、Custom build自定义</h1><h2 id="2-1-Custom-Tool-Configuration自定义工具配置"><a href="#2-1-Custom-Tool-Configuration自定义工具配置" class="headerlink" title="2.1 Custom Tool Configuration自定义工具配置"></a>2.1 Custom Tool Configuration自定义工具配置</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Filename extensions：文件扩展名</strong><br>如：extension.lex</p>
+<p><strong>2.Command line：命令行</strong><br>命令格式为：flex $FILE_PATH$ -o$FILE_BNAME$.c</p>
+<p><strong>3.Output file：输出文件</strong><br>格式：<br>$FILE_BPATH$.c<br>$FILE_BPATH$.h</p>
+<p><strong>4.Additional input files：额外的输入文件</strong><br>比如：$TOOLKIT_DIR$\inc\stdio.h</p>
+<p><strong>5.Run this tool before all other tools：在运行其他工具之前运行这个工具</strong></p>
+<p>以上5个选项内容其实是协同完成一个功能，比如：使用工具（命令）将一个输入文件，转化并输出。</p>
+<h1 id="三、Build-Actions执行动作"><a href="#三、Build-Actions执行动作" class="headerlink" title="三、Build Actions执行动作"></a>三、Build Actions执行动作</h1><h2 id="3-1-Build-Actions-Configuration执行动作配置"><a href="#3-1-Build-Actions-Configuration执行动作配置" class="headerlink" title="3.1 Build Actions Configuration执行动作配置"></a>3.1 Build Actions Configuration执行动作配置</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Pre-build command line：在“Build”之前执行命令行</strong><br>如：在编译之前拷贝一个文件，或者修改一个文件内容等。</p>
+<p><strong>2.Post-build command line ：在“Build”之后执行命令行</strong><br>如：在编译完成之后，拷贝hex，或者bin文件，或在bin文件末尾添加校验等。</p>
+<h1 id="四、Linker链接器"><a href="#四、Linker链接器" class="headerlink" title="四、Linker链接器"></a>四、Linker链接器</h1><h2 id="4-1-Config配置"><a href="#4-1-Config配置" class="headerlink" title="4.1 Config配置"></a>4.1 Config配置</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Linker configuration file：链接器配置文件</strong><br>根据项目设置自动选择默认链接器配置文件。如果要覆盖默认文件，勾选“Override default”即可。</p>
+<p><strong>2.Configuration file symbol definitions：配置文件的符号定义</strong><br>定义要在配置文件中使用的常量配置符号。这种符号的效果与使用链接器配置文件中的define symbol指令定义的符号相同。</p>
+<h2 id="4-2-Library库"><a href="#4-2-Library库" class="headerlink" title="4.2 Library库"></a>4.2 Library库</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Automatic runtime library selection：自动运行时库选择</strong><br>使链接器根据您的项目设置自动选择适当的库。</p>
+<p><strong>2.Include C-SPY debugging support：包括C-SPY调试支持</strong><br>包含用于调试应用程序和调试器本身之间通信的调试库。</p>
+<p><strong>3.Buffered write：写缓冲</strong><br>在程序执行期间缓冲终端输出，而不是立即将每个新字符打印到C-SPY终端I/O窗口。当您使用通信缓慢的调试器系统时，此选项非常有用。</p>
+<p><strong>4.Additional libraries：附加库</strong><br>指定您希望链接器在链接过程中包含的其他库。每行只能指定一个库，并且必须指定到库的完整路径。<br>可以通过“Browse按钮”来添加（类似新建工程添加路径）。</p>
+<p><strong>5.Override default program entry：覆盖默认的程序入口</strong><br>默认情况下，程序条目是__iar_program_start。链接器确保包含了包含程序条目标签的模块，并且不丢弃包含该标签的部分。<br><strong>Entry symbol</strong>：输入符号<br><strong>Defined by application</strong>：由应用程序定义</p>
+<h2 id="4-3-nput输入"><a href="#4-3-nput输入" class="headerlink" title="4.3 nput输入"></a>4.3 nput输入</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Keep symbols：保留符号</strong></p>
+<p><strong>2.Raw binary image：原始二进制图像</strong><br>链接图像纯二进制文件，指定参数:<br>File：文件<br>Symbol：符号<br>Section：部分区域<br>Align：对齐</p>
+<h2 id="4-4-Optimizations优化"><a href="#4-4-Optimizations优化" class="headerlink" title="4.4 Optimizations优化"></a>4.4 Optimizations优化</h2><p>这里就不贴图了，链接器优化只有一个勾选项：</p>
+<p><strong>1.Merge duplicate sections：合并重复的部分</strong><br>使链接器仅保留等效只读部分的一个副本。注意，这可能会导致不同的函数或常量具有相同的地址，因此依赖于不同地址的应用程序不能正确地使用所选的选项。</p>
+<h2 id="4-5-Output输出"><a href="#4-5-Output输出" class="headerlink" title="4.5 Output输出"></a>4.5 Output输出</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Output filename：输出文件名</strong><br>设置链接器输出文件的名称。默认情况下，链接器将使用带有文件名扩展名的项目名称。</p>
+<p><strong>2.Include debug information in output：输出中包含调试信息</strong><br>使链接器生成一个ELF输出文件，包括用于调试信息的DWARF。</p>
+<h2 id="4-6-List列表"><a href="#4-6-List列表" class="headerlink" title="4.6 List列表"></a>4.6 List列表</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Generate linker map file：生成链接器映射文件</strong></p>
+<p><strong>2.Generate log file：生成日志文件</strong><br>Automatic library selection：自动库选择<br>Initialization decisions：初始化决策<br>Module selections：模块选择<br>Redirected symbols：重定向符号<br>Section selections：段选择<br>Unused section fragments：未使用的部分片段</p>
+<h2 id="4-7-define预定义"><a href="#4-7-define预定义" class="headerlink" title="4.7 #define预定义"></a>4.7 #define预定义</h2><p>这里不贴图了，预定义一些符号。</p>
+<p>例如：TESTVER=1<br>注意：一行一条，“=”两边不能有空格。</p>
+<h2 id="4-8-Diagnostics诊断"><a href="#4-8-Diagnostics诊断" class="headerlink" title="4.8 Diagnostics诊断"></a>4.8 Diagnostics诊断</h2><p>具体内容请参考《EWSTM8系列教程06》中“5.7 Diagnostics 诊断”的内容。</p>
+<h2 id="4-9-Checksum校验和"><a href="#4-9-Checksum校验和" class="headerlink" title="4.9 Checksum校验和"></a>4.9 Checksum校验和</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Fill unused code memory：填充未使用代码的内存</strong><br>Fill pattern：填充形式<br>Start address：起始地址<br>End address：结束地址</p>
+<p><strong>2.Generate checksum：生成校验和</strong><br>Checksum size：校验和尺寸（数据类型），可以是1、2、4字节。<br>Alignment：校验和对齐方式。<br>Algorithm：选择算法类型。<br>Result in full size：结果为全尺寸<br>Complement：补充<br>Bit order：位顺序<br>Reverse byte order within word：字节顺序颠倒<br>Checksum unit size：校验和单元尺寸（8、16、32Bit）</p>
+<h2 id="4-10-Extra-Options额外选项配置"><a href="#4-10-Extra-Options额外选项配置" class="headerlink" title="4.10 Extra Options额外选项配置"></a>4.10 Extra Options额外选项配置</h2><p>这里就不贴图了，主要就是使用命令行对链接器相关选项进行配置。具体命令后续抽空单独整理成相关文章。</p>
+<h1 id="五、Debugger调试器"><a href="#五、Debugger调试器" class="headerlink" title="五、Debugger调试器"></a>五、Debugger调试器</h1><p>本章节主要讲述与调试下载相关的一些选项配置。</p>
+<h2 id="5-1-Setup设置"><a href="#5-1-Setup设置" class="headerlink" title="5.1 Setup设置"></a>5.1 Setup设置</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Driver：驱动器</strong><br>选择调试仿真驱动器（工具）</p>
+<p><strong>2.Run to：运行到</strong><br>复位之后运行到指定位置</p>
+<p><strong>3.Setup macros：设置宏</strong><br>Use macro file：使用宏文件</p>
+<p><strong>4.Device description file：设备描述文件</strong><br>根据项目设置自动选择默认设备描述文件。要覆盖默认文件，勾选“Override default”并指定一个替代文件。</p>
+<h2 id="5-2-Images镜像"><a href="#5-2-Images镜像" class="headerlink" title="5.2 Images镜像"></a>5.2 Images镜像</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p>可以使用三组<br><strong>Download extra Images：下载外部镜像文件</strong><br>Path：路径<br>Offset：偏移地址<br>Debug info only：是否只调试</p>
+<h2 id="5-3-Extra-Options额外选项配置"><a href="#5-3-Extra-Options额外选项配置" class="headerlink" title="5.3 Extra Options额外选项配置"></a>5.3 Extra Options额外选项配置</h2><p>这里不讲述，后续专门整理一篇命令行相关文章。</p>
+<h2 id="5-4-Plugins插件"><a href="#5-4-Plugins插件" class="headerlink" title="5.4 Plugins插件"></a>5.4 Plugins插件</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p>1.Select plugins to load：选择要加载的插件<br>2.Description：插件描述<br>3.Location：插件位置<br>4.Originator：插件来源<br>5.Version：插件版本</p>
+<h1 id="六、ST-LINK工具"><a href="#六、ST-LINK工具" class="headerlink" title="六、ST-LINK工具"></a>六、ST-LINK工具</h1><p>其它两个工具simulator和STice就不讲述了，讲一下常用的ST-LINK。</p>
+<h2 id="6-1-setup设置"><a href="#6-1-setup设置" class="headerlink" title="6.1 setup设置"></a>6.1 setup设置</h2><table><br><img align="left" width="500" src=""><br></table>
+
+<p><strong>1.Download：下载</strong><br>默认情况下，当进入调试时，下载应用程序到RAM或flash中。下载选项允许您修改下载的行为。</p>
+<p>Suppress：抑制<br>禁止下载代码，同时保留flash的当前内容。如果您想调试已经下载在目标内存中的应用程序，这个命令非常有用。</p>
+<p>Erase：擦除<br>在下载代码之前删除内存(FLASH、EEPROM和选项字节)。</p>
+<p>EraseVerify：擦除验证<br>验证下载代码的地址是否被擦除。</p>
+<p>Use option bytes configuration file：使用选项字节配置文件<br>在下载前将在选项字节配置文件(obc)中定义的选项字节设置写入设备。</p>
+<p><strong>2.Communication options：通信选项配置</strong><br>Use SWIM interface：使用SWIM接口<br>Communication log：通信日志</p>
+<h1 id="七、说明"><a href="#七、说明" class="headerlink" title="七、说明"></a>七、说明</h1><p>1.因IAR各种IDE针对的处理器差异较大，所以关于节点选项的配置差异也较大。本文讲述关于EWSTM8的许多节点选项可能在其他IDE中没有。<br>2.该文档仅供个人学习使用，版权所有，禁止商用。<br>3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。 </p>
+<h1 id="八、最后"><a href="#八、最后" class="headerlink" title="八、最后"></a>八、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>更多精彩内容我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。</p>
 
       
     </div>
@@ -503,8 +565,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html" rel="next" title="EWSTM8系列教程07_工程节点选项配置（二）">
-                <i class="fa fa-chevron-left"></i> EWSTM8系列教程07_工程节点选项配置（二）
+              <a href="/IAR/EWSTM8/EWSTM8系列教程06_工程节点选项配置（一）.html" rel="next" title="EWSTM8系列教程06_工程节点选项配置（一）">
+                <i class="fa fa-chevron-left"></i> EWSTM8系列教程06_工程节点选项配置（一）
               </a>
             
           </div>
@@ -512,6 +574,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/IAR/EWSTM8/EWSTM8系列教程.html" rel="prev" title="EWSTM8系列教程">
+                EWSTM8系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -710,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、教程列表"><span class="nav-text">二、教程列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、说明"><span class="nav-text">三、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、最后"><span class="nav-text">四、最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Custom-build自定义"><span class="nav-text">二、Custom build自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Custom-Tool-Configuration自定义工具配置"><span class="nav-text">2.1 Custom Tool Configuration自定义工具配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Build-Actions执行动作"><span class="nav-text">三、Build Actions执行动作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Build-Actions-Configuration执行动作配置"><span class="nav-text">3.1 Build Actions Configuration执行动作配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Linker链接器"><span class="nav-text">四、Linker链接器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Config配置"><span class="nav-text">4.1 Config配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Library库"><span class="nav-text">4.2 Library库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-nput输入"><span class="nav-text">4.3 nput输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-Optimizations优化"><span class="nav-text">4.4 Optimizations优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-Output输出"><span class="nav-text">4.5 Output输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-List列表"><span class="nav-text">4.6 List列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-define预定义"><span class="nav-text">4.7 #define预定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-Diagnostics诊断"><span class="nav-text">4.8 Diagnostics诊断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-9-Checksum校验和"><span class="nav-text">4.9 Checksum校验和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-10-Extra-Options额外选项配置"><span class="nav-text">4.10 Extra Options额外选项配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、Debugger调试器"><span class="nav-text">五、Debugger调试器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-Setup设置"><span class="nav-text">5.1 Setup设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Images镜像"><span class="nav-text">5.2 Images镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-Extra-Options额外选项配置"><span class="nav-text">5.3 Extra Options额外选项配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-Plugins插件"><span class="nav-text">5.4 Plugins插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、ST-LINK工具"><span class="nav-text">六、ST-LINK工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-setup设置"><span class="nav-text">6.1 setup设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、说明"><span class="nav-text">七、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、最后"><span class="nav-text">八、最后</span></a></li></ol></div>
             
 
           </div>

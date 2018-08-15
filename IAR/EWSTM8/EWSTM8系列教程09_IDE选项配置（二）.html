@@ -89,10 +89,17 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　上一篇文章《EWSTM8系列教程08_IDE选项配置（一）》讲述了IDE选项中前五项（Common Fonts普通字体、Key Bindings快捷键配置、Language语言、Editor编辑器、Messages消息）的内容。 　　本文讲述剩余的几项内容：Project工程、Source Code Control源代码控制、Debugger调试器、Stack堆栈、Terminal">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-15T08:58:11.241Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/1.IDE%E5%90%8E%E4%BA%94%E9%A1%B9%E9%85%8D%E7%BD%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/2.Project%E5%B7%A5%E7%A8%8B.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/3.Source%20Code%20Control%E6%BA%90%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/4.Debugger%E8%B0%83%E8%AF%95%E5%99%A8.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/5.Stack%E5%A0%86%E6%A0%88.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/6.Terminal%20IO%E7%BB%88%E7%AB%AF.png?raw=true">
+<meta property="og:updated_time" content="2018-08-15T09:03:05.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EWSTM8系列教程09_IDE选项配置（二）">
 <meta name="twitter:description" content="一、写在前面　　上一篇文章《EWSTM8系列教程08_IDE选项配置（一）》讲述了IDE选项中前五项（Common Fonts普通字体、Key Bindings快捷键配置、Language语言、Editor编辑器、Messages消息）的内容。 　　本文讲述剩余的几项内容：Project工程、Source Code Control源代码控制、Debugger调试器、Stack堆栈、Terminal">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/1.IDE%E5%90%8E%E4%BA%94%E9%A1%B9%E9%85%8D%E7%BD%AE.png?raw=true">
 
 
 
@@ -417,11 +424,12 @@
 
       
         <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　上一篇文章<a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89.html">《EWSTM8系列教程08_IDE选项配置（一）》</a>讲述了IDE选项中前五项（<strong>Common Fonts普通字体、Key Bindings快捷键配置、Language语言、Editor编辑器、Messages消息</strong>）的内容。</p>
-<p>　　本文讲述剩余的几项内容：<strong>Project工程、Source Code Control源代码控制、Debugger调试器、Stack堆栈、Terminal I/O终端</strong>（Terminal I/O项只有在调试模式下才有）。<br><img width="500" src=""></p>
+<p>　　本文讲述剩余的几项内容：<strong>Project工程、Source Code Control源代码控制、Debugger调试器、Stack堆栈、Terminal I/O终端</strong>（Terminal I/O项只有在调试模式下才有）。<br><img width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/1.IDE%E5%90%8E%E4%BA%94%E9%A1%B9%E9%85%8D%E7%BD%AE.png?raw=true"></p>
+<a id="more"></a>
 <p>　　本文章收录于<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【EWSTM8系列教程】</a>，在我的博客分类“EWSTM8系列教程”也能查找到。</p>
 <p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
 <h1 id="二、Project工程"><a href="#二、Project工程" class="headerlink" title="二、Project工程"></a>二、Project工程</h1><p>该IDE选项配置与工程相关，比如下面讲述的在编译工程的时遇到错误是否停止编译、在编译之前保存Workspace工作空间、Project工程等。</p>
-<table><br><img align="left" width="500" src=""><br></table>
+<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/2.Project%E5%B7%A5%E7%A8%8B.png?raw=true"><br></table>
 
 <p>此页面用于<strong>Make和Build命令</strong>设置选项。</p>
 <p><strong>1.Stop build operation on：在如下情况停止编译操作</strong><br>A.Never：从不停止编译<br>B.Warnings：遇到警告停止编译<br>C.Errors：遇到错误停止编译</p>
@@ -434,12 +442,12 @@
 <p><strong>8.No source browser and build status updates when the IDE is not the foreground process：当IDE不是前台进程时，不浏览源码和编译状态等更新操作</strong></p>
 <p><strong>9.Enable project connections：使能工程链接</strong><br>使能该选项，需结合Project -&gt; Add Project Connection一起操作；</p>
 <p><strong>10.Enable parallel build：使能并行编译</strong><br>编译器在几个并行进程中运行，以便更好地使用CPU中的可用内核。后面参数为并行处理数。</p>
-<h1 id="三、Source-Code-Control源代码控制"><a href="#三、Source-Code-Control源代码控制" class="headerlink" title="三、Source Code Control源代码控制"></a>三、Source Code Control源代码控制</h1><table><br><img align="left" width="500" src=""><br></table>
+<h1 id="三、Source-Code-Control源代码控制"><a href="#三、Source-Code-Control源代码控制" class="headerlink" title="三、Source Code Control源代码控制"></a>三、Source Code Control源代码控制</h1><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/3.Source%20Code%20Control%E6%BA%90%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6.png?raw=true"><br></table>
 
 <p><strong>1.Keep items checked out when checking in：当检查时保持项目输出</strong></p>
 <p><strong>2.Save editor windows before performing source code control commands：在执行源代码控制命令之前保存编辑器窗口</strong><br>A.Never：从不保存<br>B.Ask：询问是否保存<br>C.Always：总是保存</p>
 <p><strong>提示</strong>：<br>该IDE配置选项属于老版本配置选项，不适合新版本。</p>
-<h1 id="四、Debugger调试器"><a href="#四、Debugger调试器" class="headerlink" title="四、Debugger调试器"></a>四、Debugger调试器</h1><table><br><img align="left" width="500" src=""><br></table>
+<h1 id="四、Debugger调试器"><a href="#四、Debugger调试器" class="headerlink" title="四、Debugger调试器"></a>四、Debugger调试器</h1><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/4.Debugger%E8%B0%83%E8%AF%95%E5%99%A8.png?raw=true"><br></table>
 
 <p>此页面特定用于<strong>调试器环境</strong>的配置。</p>
 <p><strong>1.When source resolves to multiple function instances：当源解析为多个函数实例时</strong><br>Automatically choose all instances：自动选择所有实例</p>
@@ -449,7 +457,7 @@
 <p><strong>5.Update intervals：更新时间间隔</strong><br>指定Live Watch窗口和Memory窗口的内容更新的频率（单位：毫秒）。</p>
 <p><strong>6.Default integer format：默认整型格式</strong><br>Binary：二进制<br>Octal：八进制<br>Decimal：十进制<br>Hexadecimal：十六进制</p>
 <p><strong>7.Window classification by background color：窗口分类的背景颜色</strong><br>比如：汇编窗口是一种背景色，内存窗口又是另外一种背景色。</p>
-<h1 id="五、Stack堆栈"><a href="#五、Stack堆栈" class="headerlink" title="五、Stack堆栈"></a>五、Stack堆栈</h1><table><br><img align="left" width="500" src=""><br></table>
+<h1 id="五、Stack堆栈"><a href="#五、Stack堆栈" class="headerlink" title="五、Stack堆栈"></a>五、Stack堆栈</h1><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/5.Stack%E5%A0%86%E6%A0%88.png?raw=true"><br></table>
 
 <p>此页面用于<strong>堆栈窗口</strong>的选项配置。</p>
 <p><strong>1.Enable graphical stack display and stack usage tracking：使能图形堆栈显示和堆栈使用跟踪</strong><br>stack usage threshold：堆栈使用阈值<br>Warn when exceeding stack threshold：超过堆栈阈值时发出警告</p>
@@ -459,7 +467,7 @@
 <p><strong>5.Limit stack display to：限制堆栈显示大小</strong><br>比如：如果你有一个大的堆栈，或者你只需要查看堆栈的最上面的部分，该选项就有用。</p>
 <p>提示:<br>堆栈窗口不会影响应用程序的执行性能，但它可能会读取大量数据，以便在执行停止时更新显示的信息。</p>
 <p>六、Terminal I/O终端</p>
-<table><br><img align="left" width="500" src=""><br></table>
+<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/6.Terminal%20IO%E7%BB%88%E7%AB%AF.png?raw=true"><br></table>
 
 <p>此页面只有在调试模式才由，用于<strong>I/O终端</strong>的选项配置。</p>
 <p><strong>1.Input mode：输入模式</strong><br>终端I/O输入选择：<br><strong>Keyboard</strong>：键盘输入<br>　Buffered：Buf模式<br>　Direct：直接输入模式<br><strong>File</strong>：文件（内容）作为输入<br>　Text：文本<br>　Binary：二进制</p>

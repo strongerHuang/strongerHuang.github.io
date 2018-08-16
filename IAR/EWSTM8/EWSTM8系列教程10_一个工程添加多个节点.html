@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="IAR,STM8,EWSTM8,IAR for STM8," />
 
 
 
@@ -81,17 +81,20 @@
 
 
 
-<meta name="description" content="更多内容，尽在微信公众号！">
-<meta name="keywords" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="EmbeddedDevelop">
-<meta property="og:url" content="http://www.strongerhuang.com/tags/IAR-for-STM8/index.html">
+<meta name="description" content="一、写在前面　　使用IAR新建一个工程，默认会创建Debug（调试）和Release（释放）两个Node（节点）。 　　什么是节点？ 为什么要创建这两个节点？ 创建多个节点目的和意义？ 如何创建多个节点？ 带着这些疑问来学习本文才会有更多收获。">
+<meta name="keywords" content="IAR,STM8,EWSTM8,IAR for STM8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EWSTM8系列教程10_一个工程添加多个节点">
+<meta property="og:url" content="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程10_一个工程添加多个节点.html">
 <meta property="og:site_name" content="EmbeddedDevelop">
-<meta property="og:description" content="更多内容，尽在微信公众号！">
+<meta property="og:description" content="一、写在前面　　使用IAR新建一个工程，默认会创建Debug（调试）和Release（释放）两个Node（节点）。 　　什么是节点？ 为什么要创建这两个节点？ 创建多个节点目的和意义？ 如何创建多个节点？ 带着这些疑问来学习本文才会有更多收获。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E8%8A%82%E7%82%B9%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/2.%E4%B8%89%E8%80%85%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg?raw=true">
+<meta property="og:updated_time" content="2018-08-16T10:55:34.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EmbeddedDevelop">
-<meta name="twitter:description" content="更多内容，尽在微信公众号！">
+<meta name="twitter:title" content="EWSTM8系列教程10_一个工程添加多个节点">
+<meta name="twitter:description" content="一、写在前面　　使用IAR新建一个工程，默认会创建Debug（调试）和Release（释放）两个Node（节点）。 　　什么是节点？ 为什么要创建这两个节点？ 创建多个节点目的和意义？ 如何创建多个节点？ 带着这些疑问来学习本文才会有更多收获。">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E8%8A%82%E7%82%B9%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/2.%E4%B8%89%E8%80%85%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg?raw=true">
 
 
 
@@ -121,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://www.strongerhuang.com/tags/IAR-for-STM8/"/>
+  <link rel="canonical" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程10_一个工程添加多个节点.html"/>
 
 
 
 
 
-  <title>标签: IAR for STM8 | EmbeddedDevelop</title>
+  <title>EWSTM8系列教程10_一个工程添加多个节点 | EmbeddedDevelop</title>
   
 
 
@@ -146,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -284,310 +287,288 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>IAR for STM8<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程10_一个工程添加多个节点.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">EWSTM8系列教程10_一个工程添加多个节点</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-16T18:30:00+08:00"
-              content="2018-08-16" >
-          08-16
-        </time>
-      </div>
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T18:00:00+08:00">
+                2018-08-16
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/EWSTM8系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">EWSTM8系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程10_一个工程添加多个节点.html" title="EWSTM8系列教程10_一个工程添加多个节点">http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程10_一个工程添加多个节点.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程10_一个工程添加多个节点.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程10_一个工程添加多个节点</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-16T18:00:00+08:00"
-              content="2018-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　使用IAR新建一个工程，默认会创建<strong>Debug（调试）</strong>和<strong>Release（释放）</strong>两个Node（节点）。</p>
+<p>　　什么是节点？ 为什么要创建这两个节点？ 创建多个节点目的和意义？ 如何创建多个节点？ 带着这些疑问来学习本文才会有更多收获。<br><a id="more"></a></p>
+<p>　　本文章收录于<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【EWSTM8系列教程】</a>，在我的博客分类“EWSTM8系列教程”也能查找到。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
+<h1 id="二、什么是节点"><a href="#二、什么是节点" class="headerlink" title="二、什么是节点"></a>二、什么是节点</h1><p>本文讲述添加多个节点，就需要了解什么是节点。之前文章<a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E8%8A%82%E7%82%B9%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89.html">《EWSTM8系列教程06_工程节点选项配置（一）》</a>初略讲述了一下<strong>工作空间、 工程、 节点</strong>三者的关系：</p>
+<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E8%8A%82%E7%82%B9%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/2.%E4%B8%89%E8%80%85%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg?raw=true"><br></table>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p><strong>提示：</strong><br>在IAR中叫<strong>Node（节点）</strong>，而在Keil中叫<strong>Target（目标）</strong>。其实这两者意思一样，都是隶属于工程的下一级。</p>
+<h1 id="三、Debug与Release节点区别"><a href="#三、Debug与Release节点区别" class="headerlink" title="三、Debug与Release节点区别"></a>三、Debug与Release节点区别</h1><p>新建一个工程，默认创建两个节点，如下图：</p>
+<table><br><img align="left" width="450" src=""><br></table>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程09_IDE选项配置（二）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程09_IDE选项配置（二）</span>
-              
-            </a>
-        
-      </h2>
+<p>在上一节了解了<strong>工程与节点</strong>之间的关系，那么为什么要一个工程下创建两个节点呢？</p>
+<p>两个节点的区别：<br><strong>Debug节点</strong>：主要用于调试使用，包含调试信息。<br><strong>Release节点</strong>：主要用于生成代码（正式产品），不包含调试信息。</p>
+<p>细心的朋友会发现，这两个<strong>节点选项配置</strong>中有几个地方不同，如：C/C++ Compiler下的Output和Preprocessor选项、Assembler下的Output选项等。</p>
+<p>关于节点选项配置内容可以参看文章<a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E8%8A%82%E7%82%B9%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89.html">《EWSTM8系列教程06_工程节点选项配置（一）》</a>。</p>
+<p>看了Debug和Release这两个节点的区别，相信你应该大概理解了为什么一个工程下要创建多个节点了。</p>
+<p>其实，实际项目中还有很多用途，比如：同款产品，不同配置（不同芯片型号，不同编译等级…等节点选项配置不同）。</p>
+<h1 id="四、如何创建多个节点"><a href="#四、如何创建多个节点" class="headerlink" title="四、如何创建多个节点"></a>四、如何创建多个节点</h1><h2 id="4-1-主要步骤"><a href="#4-1-主要步骤" class="headerlink" title="4.1 主要步骤"></a>4.1 主要步骤</h2><p>1.创建一个工程<br>2.添加组，添加文件<br>3.工程节点选项配置<br>4.基于某一个节点添加新的节点</p>
+<p>其实这四个步骤中前三个都已经在文章<a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E6%96%B0%E5%BB%BA%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B.html">《EWSTM8系列教程02_新建基础软件工程》</a>中实现了，这里列出来主要是给初学者一个（从前到后的）提示。</p>
+<p>下面就基于<a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E6%96%B0%E5%BB%BA%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B.html">《EWSTM8系列教程02_新建基础软件工程》</a>建好的工程，在Debug节点基础上添加一个Test节点。</p>
+<h2 id="4-2-添加Test节点"><a href="#4-2-添加Test节点" class="headerlink" title="4.2 添加Test节点"></a>4.2 添加Test节点</h2><p><strong>1.Project -&gt; Edit Configurations进入编辑配置</strong></p>
+<table><br><img align="left" width="450" src=""><br></table>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-15T18:00:00+08:00"
-              content="2018-08-15" >
-          08-15
-        </time>
-      </div>
+<p><strong>2.点击“New”进入添加新节点配置</strong></p>
+<table><br><img align="left" width="450" src=""><br></table>
 
-    </header>
-  </article>
+<p>A.填写节点名称；<br>B.基于某节点，这里相当于拷贝选择节点选项配置；<br>C.默认设置为Debug或Release;</p>
+<p>配置好之后，点击OK，再点击OK就行了。</p>
+<p><strong>3.修改节点选项配置</strong><br>比如：修改Test节点输出格式从hex格式修改为bin格式；</p>
+<p>选择Test节点 -&gt; 选中节点右键 -&gt; Options -&gt; Output Converter -&gt;修改成bin格式。具体操作可以参看下面动画效果：</p>
+<table><br>修改节点选项配置动画效果：<br><img align="left" width="600" src=""><br></table>
 
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程08_IDE选项配置（一）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程08_IDE选项配置（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-11T18:00:00+08:00"
-              content="2018-08-11" >
-          08-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程07_工程节点选项配置（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-08T18:00:00+08:00"
-              content="2018-08-08" >
-          08-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程06_工程节点选项配置（一）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程06_工程节点选项配置（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-03T12:00:00+08:00"
-              content="2018-08-03" >
-          08-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程05_菜单概述（二）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程05_菜单概述（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-24T18:00:00+08:00"
-              content="2018-07-24" >
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程04_菜单概述（一）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程04_菜单概述（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-21T18:00:00+08:00"
-              content="2018-07-21" >
-          07-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程03_主窗口、工具栏的概述.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程03_主窗口、工具栏的概述</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-11T12:00:00+08:00"
-              content="2018-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程02_新建基础软件工程.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程02_新建基础软件工程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-05T22:00:00+08:00"
-              content="2018-07-05" >
-          07-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<p>最后提示：<br>多个节点之间的区别总结来说就是：各自节点的选项配置不同。当然，可能就一个选项配置不同，也可能多个。节点选项的配置内容很多，请参看<a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E8%8A%82%E7%82%B9%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89.html">《EWSTM8系列教程06_工程节点选项配置（一）》</a>。</p>
+<h1 id="五、多节点工程源代码下载"><a href="#五、多节点工程源代码下载" class="headerlink" title="五、多节点工程源代码下载"></a>五、多节点工程源代码下载</h1><p>为方便大家学习，我这里提供可直线编译运行的源代码供大家下载。<br>百度网盘下载地址：<a href="https://pan.baidu.com/s/16elpok-5IdPYoeNGXXFszw" target="_blank" rel="noopener">https://pan.baidu.com/s/16elpok-5IdPYoeNGXXFszw</a><br>密码：m9pa</p>
+<p>GitHub下载地址：<a href="https://github.com/EmbeddedDevelop/STM8S_Multi-Node.git" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop/STM8S_Multi-Node.git</a></p>
+<p>（提示：下载链接后期可能会失效， 请关注微信公众号公告消息）</p>
+<h1 id="六、说明"><a href="#六、说明" class="headerlink" title="六、说明"></a>六、说明</h1><p>1.本文大部分内容也适合IAR其它版本，如EWARM、EW430等。<br>2.该文档仅供个人学习使用，版权所有，禁止商用。<br>3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。 </p>
+<h1 id="七、最后"><a href="#七、最后" class="headerlink" title="七、最后"></a>七、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>更多精彩内容我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。</p>
 
       
     </div>
+    
+    
+    
 
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/EmdeddDeveloper.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IAR/" rel="tag"># IAR</a>
+          
+            <a href="/tags/STM8/" rel="tag"># STM8</a>
+          
+            <a href="/tags/EWSTM8/" rel="tag"># EWSTM8</a>
+          
+            <a href="/tags/IAR-for-STM8/" rel="tag"># IAR for STM8</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/IAR/EWSTM8/EWSTM8系列教程09_IDE选项配置（二）.html" rel="next" title="EWSTM8系列教程09_IDE选项配置（二）">
+                <i class="fa fa-chevron-left"></i> EWSTM8系列教程09_IDE选项配置（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/IAR/EWSTM8/EWSTM8系列教程.html" rel="prev" title="EWSTM8系列教程">
+                EWSTM8系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/IAR-for-STM8/page/2/">2</a><a class="extend next" rel="next" href="/tags/IAR-for-STM8/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -595,6 +576,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -615,8 +600,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -737,6 +731,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、什么是节点"><span class="nav-text">二、什么是节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Debug与Release节点区别"><span class="nav-text">三、Debug与Release节点区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、如何创建多个节点"><span class="nav-text">四、如何创建多个节点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-主要步骤"><span class="nav-text">4.1 主要步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-添加Test节点"><span class="nav-text">4.2 添加Test节点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、多节点工程源代码下载"><span class="nav-text">五、多节点工程源代码下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、说明"><span class="nav-text">六、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、最后"><span class="nav-text">七、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -885,6 +895,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

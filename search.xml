@@ -3,7 +3,21 @@
   <entry>
     <title><![CDATA[EWSTM8系列教程]]></title>
     <url>%2FIAR%2FEWSTM8%2FEWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。 二、教程列表1.EWSTM8系列教程01_IAR介绍、下载、安装和注册 2.EWSTM8系列教程02_新建基础软件工程 3.EWSTM8系列教程03_主窗口、工具栏的概述 4.EWSTM8系列教程04_菜单概述（一） 5.EWSTM8系列教程05_菜单概述（二） 6.EWSTM8系列教程06_工程节点选项配置（一） 7.EWSTM8系列教程07_工程节点选项配置（二） 8.EWSTM8系列教程08_IDE选项配置（一） 9.EWSTM8系列教程09_IDE选项配置（二） 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。2.本文主要针对个人学习使用的朋友，若你是商业用途，建议购买正版软件。3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。 二、教程列表1.EWSTM8系列教程01_IAR介绍、下载、安装和注册 2.EWSTM8系列教程02_新建基础软件工程 3.EWSTM8系列教程03_主窗口、工具栏的概述 4.EWSTM8系列教程04_菜单概述（一） 5.EWSTM8系列教程05_菜单概述（二） 6.EWSTM8系列教程06_工程节点选项配置（一） 7.EWSTM8系列教程07_工程节点选项配置（二） 8.EWSTM8系列教程08_IDE选项配置（一） 9.EWSTM8系列教程09_IDE选项配置（二） 10.EWSTM8系列教程10_一个工程添加多个节点 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。2.本文主要针对个人学习使用的朋友，若你是商业用途，建议购买正版软件。3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>EWSTM8系列教程</category>
+      </categories>
+      <tags>
+        <tag>IAR</tag>
+        <tag>STM8</tag>
+        <tag>EWSTM8</tag>
+        <tag>IAR for STM8</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[EWSTM8系列教程10_一个工程添加多个节点]]></title>
+    <url>%2FIAR%2FEWSTM8%2FEWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B%E6%B7%BB%E5%8A%A0%E5%A4%9A%E4%B8%AA%E8%8A%82%E7%82%B9.html</url>
+    <content type="text"><![CDATA[一、写在前面 使用IAR新建一个工程，默认会创建Debug（调试）和Release（释放）两个Node（节点）。 什么是节点？ 为什么要创建这两个节点？ 创建多个节点目的和意义？ 如何创建多个节点？ 带着这些疑问来学习本文才会有更多收获。 本文章收录于【EWSTM8系列教程】，在我的博客分类“EWSTM8系列教程”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。 二、什么是节点本文讲述添加多个节点，就需要了解什么是节点。之前文章《EWSTM8系列教程06_工程节点选项配置（一）》初略讲述了一下工作空间、 工程、 节点三者的关系： 提示：在IAR中叫Node（节点），而在Keil中叫Target（目标）。其实这两者意思一样，都是隶属于工程的下一级。 三、Debug与Release节点区别新建一个工程，默认创建两个节点，如下图： 在上一节了解了工程与节点之间的关系，那么为什么要一个工程下创建两个节点呢？ 两个节点的区别：Debug节点：主要用于调试使用，包含调试信息。Release节点：主要用于生成代码（正式产品），不包含调试信息。 细心的朋友会发现，这两个节点选项配置中有几个地方不同，如：C/C++ Compiler下的Output和Preprocessor选项、Assembler下的Output选项等。 关于节点选项配置内容可以参看文章《EWSTM8系列教程06_工程节点选项配置（一）》。 看了Debug和Release这两个节点的区别，相信你应该大概理解了为什么一个工程下要创建多个节点了。 其实，实际项目中还有很多用途，比如：同款产品，不同配置（不同芯片型号，不同编译等级…等节点选项配置不同）。 四、如何创建多个节点4.1 主要步骤1.创建一个工程2.添加组，添加文件3.工程节点选项配置4.基于某一个节点添加新的节点 其实这四个步骤中前三个都已经在文章《EWSTM8系列教程02_新建基础软件工程》中实现了，这里列出来主要是给初学者一个（从前到后的）提示。 下面就基于《EWSTM8系列教程02_新建基础软件工程》建好的工程，在Debug节点基础上添加一个Test节点。 4.2 添加Test节点1.Project -&gt; Edit Configurations进入编辑配置 2.点击“New”进入添加新节点配置 A.填写节点名称；B.基于某节点，这里相当于拷贝选择节点选项配置；C.默认设置为Debug或Release; 配置好之后，点击OK，再点击OK就行了。 3.修改节点选项配置比如：修改Test节点输出格式从hex格式修改为bin格式； 选择Test节点 -&gt; 选中节点右键 -&gt; Options -&gt; Output Converter -&gt;修改成bin格式。具体操作可以参看下面动画效果： 修改节点选项配置动画效果： 最后提示：多个节点之间的区别总结来说就是：各自节点的选项配置不同。当然，可能就一个选项配置不同，也可能多个。节点选项的配置内容很多，请参看《EWSTM8系列教程06_工程节点选项配置（一）》。 五、多节点工程源代码下载为方便大家学习，我这里提供可直线编译运行的源代码供大家下载。百度网盘下载地址：https://pan.baidu.com/s/16elpok-5IdPYoeNGXXFszw密码：m9pa GitHub下载地址：https://github.com/EmbeddedDevelop/STM8S_Multi-Node.git （提示：下载链接后期可能会失效， 请关注微信公众号公告消息） 六、说明1.本文大部分内容也适合IAR其它版本，如EWARM、EW430等。2.该文档仅供个人学习使用，版权所有，禁止商用。3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。 七、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 更多精彩内容我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。]]></content>
       <categories>
         <category>EWSTM8系列教程</category>
       </categories>

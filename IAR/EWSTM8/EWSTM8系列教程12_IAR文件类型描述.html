@@ -89,10 +89,14 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面1.你保存、或者打包拷贝一个项目时，你会删掉不必要的文件吗？2.你知道这些eww、ewp、ewd……是什么文件吗？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-23T09:43:01.218Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0/1.%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0/2.%E6%B5%8F%E8%A7%88%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0/3.IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B.png?raw=true">
+<meta property="og:updated_time" content="2018-08-23T09:51:55.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EWSTM8系列教程12_IAR文件类型描述">
 <meta name="twitter:description" content="一、写在前面1.你保存、或者打包拷贝一个项目时，你会删掉不必要的文件吗？2.你知道这些eww、ewp、ewd……是什么文件吗？">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0/1.%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B.png?raw=true">
 
 
 
@@ -417,21 +421,18 @@
 
       
         <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>1.你保存、或者打包拷贝一个项目时，你会<strong>删掉不必要的文件</strong>吗？<br>2.你知道这些<strong>eww、ewp、ewd……</strong>是什么文件吗？</p>
-<table><br><img align="left" width="500" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0/1.%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B.png?raw=true"><br></table>
 
 <a id="more"></a>
-<table><br>主要文件：<br><img align="left" width="500" src=""><br></table>
+<table><br>主要文件：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0/2.%E6%B5%8F%E8%A7%88%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true"><br></table>
 
 
 <p><strong>现象or疑问</strong>：<br>1.购买一块开发板，厂家提供的源代码例程没有几个，但文件大小却有几百兆。<br>2.百度网盘下载一个别人提供的代码压缩包，大小几十兆。<br>3.打开别人下载的源代码工程，各种类型文件混杂在一起。<br>4.我看有些人提供的源代码没有dep文件，这个文件可以删除吗？ 删除了会有什么影响？</p>
-<p>当你看完本文，理解这些文件类型的含义，你就不会有上面这些烦恼了。</p>
+<p>　　当你看完本文，理解这些文件类型的含义，你就不会有上面这些烦恼了。</p>
 <p>　　本文章收录于<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【EWSTM8系列教程】</a>，在我的博客分类“EWSTM8系列教程”也能查找到。</p>
 <p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
-<h1 id="二、IAR文件类型概述"><a href="#二、IAR文件类型概述" class="headerlink" title="二、IAR文件类型概述"></a>二、IAR文件类型概述</h1><p>IAR中用到的文件类型很多，大概有四五十种，一般就是<strong>源代码和工程</strong>文件（含配置，编译生成文件）。下面会<strong>重点讲述常用的文件类型</strong>，一些不重要的，或者不常见的只简单概述。</p>
+<h1 id="二、IAR文件类型概述"><a href="#二、IAR文件类型概述" class="headerlink" title="二、IAR文件类型概述"></a>二、IAR文件类型概述</h1><p>　　IAR中用到的文件类型很多，大概有四五十种，一般就是<strong>源代码和工程</strong>文件（含配置，编译生成文件）。下面会<strong>重点讲述常用的文件类型</strong>，一些不重要的，或者不常见的只简单概述。</p>
 <p><strong>分类</strong>：<br>1.源代码类：.c、 .h、 .cpp、 .asm、 .a等；<br>2.工程文件类：.eww、 .ewp、 .ewd、 .ewt、 .dep等；<br>3.Exe文件类：hex、 .bin、 .out等；<br>4.List类：.map、 .lst等；<br>5.Obj类：.o、 .pbi、 .xcl等；<br>6.settings类：.dbgdt、 .bat、 .ps1等；</p>
-<p>请看下图按照拼音顺序汇总的文件类型及说明：</p>
-<table><br>汇总文件类型：<br><img align="left" width="500" src=""><br></table>
-
 <p>下面我就按照上面分类，进行分章节讲述，重要的会标记出来，请注意查看标注内容。</p>
 <h1 id="三、源代码类文件"><a href="#三、源代码类文件" class="headerlink" title="三、源代码类文件"></a>三、源代码类文件</h1><p>这类文件类型编程时我们最先了解的，不多说，只概述。<br><strong>1.c</strong><br>C语言源代码文件</p>
 <p><strong>2.h</strong><br>头文件</p>
@@ -467,7 +468,7 @@
 <p><strong>1.wsdt</strong><br>工作区桌面设置文件，打开工作空间就会存在该文件。</p>
 <p><strong>2.bat</strong><br>批处理文件</p>
 <p>好啦，就讲述到这里，更多文件类型及说明请看下图：</p>
-<table><br>汇总文件类型：<br><img align="left" width="500" src=""><br></table>
+<table><br>汇总文件类型：<br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0/3.IAR%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B.png?raw=true"><br></table>
 
 
 <h1 id="九、说明"><a href="#九、说明" class="headerlink" title="九、说明"></a>九、说明</h1><p>1.本文大部分内容也适合IAR其它版本，如EWARM、EW430等。<br>2.该文档仅供个人学习使用，版权所有，禁止商用。<br>3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。 </p>

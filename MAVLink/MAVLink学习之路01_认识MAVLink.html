@@ -89,10 +89,13 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面1.MAVLink是一种非常轻量级的通信协议，在简单的8位单片机上也可以运行。 2.MAVLink的初衷主要是用于无人机上，但它的通用性和可移植性非常好，它也可以应用于其它很多场合。 3.MAVLink的设计方式值得学习通信的朋友研究一下。 因此，学习无人机开发、学习通信原理、需要实现设备间通信的朋友都值得参看本文。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T13:08:59.543Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/MAVLink/MAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF01_%E8%AE%A4%E8%AF%86MAVLink/1.MAVLink%20V1%E5%92%8CV2%E6%A0%BC%E5%BC%8F%E5%B7%AE%E5%BC%82.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/MAVLink/MAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF01_%E8%AE%A4%E8%AF%86MAVLink/%E6%95%B0%E6%8D%AE%E5%B8%A7%E6%A0%BC%E5%BC%8F.png?raw=true">
+<meta property="og:updated_time" content="2018-08-24T13:23:38.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAVLink学习之路01_认识MAVLink">
 <meta name="twitter:description" content="一、写在前面1.MAVLink是一种非常轻量级的通信协议，在简单的8位单片机上也可以运行。 2.MAVLink的初衷主要是用于无人机上，但它的通用性和可移植性非常好，它也可以应用于其它很多场合。 3.MAVLink的设计方式值得学习通信的朋友研究一下。 因此，学习无人机开发、学习通信原理、需要实现设备间通信的朋友都值得参看本文。">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/MAVLink/MAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF01_%E8%AE%A4%E8%AF%86MAVLink/1.MAVLink%20V1%E5%92%8CV2%E6%A0%BC%E5%BC%8F%E5%B7%AE%E5%BC%82.png?raw=true">
 
 
 
@@ -434,12 +437,12 @@
 <p>地面站：<a href="http://qgroundcontrol.org/mavlink/start" target="_blank" rel="noopener">http://qgroundcontrol.org/mavlink/start</a></p>
 <p>维基百科：<a href="https://en.wikipedia.org/wiki/MAVLink" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/MAVLink</a></p>
 <h1 id="三、MAVLink协议格式"><a href="#三、MAVLink协议格式" class="headerlink" title="三、MAVLink协议格式"></a>三、MAVLink协议格式</h1><p>目前MAVLink有两个版本：V1和V2版本，差异及详情请看下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/MAVLink/MAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF01_%E8%AE%A4%E8%AF%86MAVLink/1.MAVLink%20V1%E5%92%8CV2%E6%A0%BC%E5%BC%8F%E5%B7%AE%E5%BC%82.png?raw=true"><br></table>
 
 <p>MAVLink V2是V1的拓展版本，是一个<strong>更加安全和可扩展</strong>的协议。</p>
 <p>由于市面上应用较广的还是V1版本，且支持的编程语言也是V1多余V2。因此，接下来（MAVLink学习之路）我都会结合MAVLink V1来讲述（学会V1，V2和容易就掌握了）。</p>
 <h2 id="3-1-MAVLink-V1格式"><a href="#3-1-MAVLink-V1格式" class="headerlink" title="3.1 MAVLink V1格式"></a>3.1 MAVLink V1格式</h2><p>MAVLink通信内容包含常见通信协议帧头、帧尾、长度、校验等。协议格式及详情见下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/MAVLink/MAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF01_%E8%AE%A4%E8%AF%86MAVLink/%E6%95%B0%E6%8D%AE%E5%B8%A7%E6%A0%BC%E5%BC%8F.png?raw=true"><br></table>
 
 
 <h1 id="四、MAVLink使用方法和步骤"><a href="#四、MAVLink使用方法和步骤" class="headerlink" title="四、MAVLink使用方法和步骤"></a>四、MAVLink使用方法和步骤</h1><p>MAVLink之所以受广大无人机开发朋友的喜爱，原因就在于MAVLink移植方便、操作简单，以及它的兼容性很好（当然，这些都是它的优点，缺点肯定也是有的）。</p>
@@ -454,7 +457,7 @@
 <p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
 <p>3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。  </p>
 <h1 id="六、最后"><a href="#六、最后" class="headerlink" title="六、最后"></a>六、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
-<p>更多精彩内容我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。</p>
+<p>我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
 
       
     </div>

@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MAVLink学习之路]]></title>
+    <url>%2FMAVLink%2FMAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF.html</url>
+    <content type="text"><![CDATA[一、写在前面 本文对【MAVLink学习之路】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、教程列表1.MAVLink学习之路01_认识MAVLink 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。2.本文主要针对个人学习使用的朋友，若你是商业用途，建议购买正版软件。3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>MAVLink学习之路</category>
+      </categories>
+      <tags>
+        <tag>MAVLink</tag>
+        <tag>无人机</tag>
+        <tag>通信协议</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MAVLink学习之路01_认识MAVLink]]></title>
+    <url>%2FMAVLink%2FMAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF01_%E8%AE%A4%E8%AF%86MAVLink.html</url>
+    <content type="text"><![CDATA[一、写在前面1.MAVLink是一种非常轻量级的通信协议，在简单的8位单片机上也可以运行。 2.MAVLink的初衷主要是用于无人机上，但它的通用性和可移植性非常好，它也可以应用于其它很多场合。 3.MAVLink的设计方式值得学习通信的朋友研究一下。 因此，学习无人机开发、学习通信原理、需要实现设备间通信的朋友都值得参看本文。 本文章收录于【MAVLink学习之路】，在我的博客分类“MAVLink学习之路”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、关于MAVLink2.1 描述MAVLink：Micro Air Vehicle Link，即微型飞行器连接通信协议，于2009年初由Lorenz Meier首次发布。 Mavlink协议是在串口通讯基础上的一种更高层的开源通讯协议。 MAVLink是一种非常轻量级的通信协议，主要用于与无人机（以及板载无人机组件之间）进行通信。 2.2 主要特征1.效率很高MAVLink V1每帧最少只有8个字节的数据，包括帧头和数据包丢弃检测；MAVLink V2每帧最少只有14个字节的数据(是一个更加安全和可扩展的协议); 2.非常可靠自2009年以来，MAVLink一直被用于在各种不同且具有挑战性的通信信道上的许多不同车辆，地面站（和其他节点）之间进行通信。它提供了检测数据包丢失，损坏和数据包身份验证的方法。 3.支持多种编程语言可在多种MCU（如：STM32、Atmega、ARM7）和操作系统（如：Windows，Linux，MacOS，Android和iOS）上运行。 4.支持网络上最多255个并发系统 2.3 参考网址官网：https://mavlink.io/en 地面站：http://qgroundcontrol.org/mavlink/start 维基百科：https://en.wikipedia.org/wiki/MAVLink 三、MAVLink协议格式目前MAVLink有两个版本：V1和V2版本，差异及详情请看下图： MAVLink V2是V1的拓展版本，是一个更加安全和可扩展的协议。 由于市面上应用较广的还是V1版本，且支持的编程语言也是V1多余V2。因此，接下来（MAVLink学习之路）我都会结合MAVLink V1来讲述（学会V1，V2和容易就掌握了）。 3.1 MAVLink V1格式MAVLink通信内容包含常见通信协议帧头、帧尾、长度、校验等。协议格式及详情见下图： 四、MAVLink使用方法和步骤MAVLink之所以受广大无人机开发朋友的喜爱，原因就在于MAVLink移植方便、操作简单，以及它的兼容性很好（当然，这些都是它的优点，缺点肯定也是有的）。 要想使用MAVLink，一些基本的操作肯定还是得有。方便初学者对MAVLinK有进一步的认识，我先罗列主要步骤。 4.1 主要步骤1.下载相应安装包及工具 2.环境搭建 3.通过xml配置MSG 4.移植到STM32 5.结合实例应用编程 当然，以上几点只是概要内容，后续的文章会详细讲述其中的内容，敬请等待… 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 六、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 更多精彩内容我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>MAVLink学习之路</category>
+      </categories>
+      <tags>
+        <tag>MAVLink</tag>
+        <tag>无人机</tag>
+        <tag>通信协议</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[EWSTM8系列教程]]></title>
     <url>%2FIAR%2FEWSTM8%2FEWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
     <content type="text"><![CDATA[一、写在前面 本文对【EWSTM8系列教程】做了整理并汇总，会随着系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看。 二、教程列表1.EWSTM8系列教程01_IAR介绍、下载、安装和注册 2.EWSTM8系列教程02_新建基础软件工程 3.EWSTM8系列教程03_主窗口、工具栏的概述 4.EWSTM8系列教程04_菜单概述（一） 5.EWSTM8系列教程05_菜单概述（二） 6.EWSTM8系列教程06_工程节点选项配置（一） 7.EWSTM8系列教程07_工程节点选项配置（二） 8.EWSTM8系列教程08_IDE选项配置（一） 9.EWSTM8系列教程09_IDE选项配置（二） 10.EWSTM8系列教程10_一个工程添加多个节点 11.EWSTM8系列教程11_一个工作空间添加多个工程 12.EWSTM8系列教程12_IAR文件类型描述 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。2.本文主要针对个人学习使用的朋友，若你是商业用途，建议购买正版软件。3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。]]></content>

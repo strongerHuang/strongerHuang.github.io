@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="MAVLink,无人机,通信协议," />
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="更多内容，尽在微信公众号！">
-<meta name="keywords" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="EmbeddedDevelop">
-<meta property="og:url" content="http://www.strongerhuang.com/tags/EWSTM8/index.html">
+<meta name="description" content="一、写在前面1.MAVLink是一种非常轻量级的通信协议，在简单的8位单片机上也可以运行。 2.MAVLink的初衷主要是用于无人机上，但它的通用性和可移植性非常好，它也可以应用于其它很多场合。 3.MAVLink的设计方式值得学习通信的朋友研究一下。 因此，学习无人机开发、学习通信原理、需要实现设备间通信的朋友都值得参看本文。">
+<meta name="keywords" content="MAVLink,无人机,通信协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MAVLink学习之路01_认识MAVLink">
+<meta property="og:url" content="http://www.strongerhuang.com/MAVLink/MAVLink学习之路01_认识MAVLink.html">
 <meta property="og:site_name" content="EmbeddedDevelop">
-<meta property="og:description" content="更多内容，尽在微信公众号！">
+<meta property="og:description" content="一、写在前面1.MAVLink是一种非常轻量级的通信协议，在简单的8位单片机上也可以运行。 2.MAVLink的初衷主要是用于无人机上，但它的通用性和可移植性非常好，它也可以应用于其它很多场合。 3.MAVLink的设计方式值得学习通信的朋友研究一下。 因此，学习无人机开发、学习通信原理、需要实现设备间通信的朋友都值得参看本文。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-24T13:08:59.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EmbeddedDevelop">
-<meta name="twitter:description" content="更多内容，尽在微信公众号！">
+<meta name="twitter:title" content="MAVLink学习之路01_认识MAVLink">
+<meta name="twitter:description" content="一、写在前面1.MAVLink是一种非常轻量级的通信协议，在简单的8位单片机上也可以运行。 2.MAVLink的初衷主要是用于无人机上，但它的通用性和可移植性非常好，它也可以应用于其它很多场合。 3.MAVLink的设计方式值得学习通信的朋友研究一下。 因此，学习无人机开发、学习通信原理、需要实现设备间通信的朋友都值得参看本文。">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.strongerhuang.com/tags/EWSTM8/"/>
+  <link rel="canonical" href="http://www.strongerhuang.com/MAVLink/MAVLink学习之路01_认识MAVLink.html"/>
 
 
 
 
 
-  <title>标签: EWSTM8 | EmbeddedDevelop</title>
+  <title>MAVLink学习之路01_认识MAVLink | EmbeddedDevelop</title>
   
 
 
@@ -146,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -284,310 +285,286 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>EWSTM8<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/MAVLink/MAVLink学习之路01_认识MAVLink.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">MAVLink学习之路01_认识MAVLink</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-23T18:30:00+08:00"
-              content="2018-08-23" >
-          08-23
-        </time>
-      </div>
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-24T18:57:01+08:00">
+                2018-08-24
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MAVLink学习之路/" itemprop="url" rel="index">
+                    <span itemprop="name">MAVLink学习之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/MAVLink/MAVLink学习之路01_认识MAVLink.html" title="MAVLink学习之路01_认识MAVLink">http://www.strongerhuang.com/MAVLink/MAVLink学习之路01_认识MAVLink.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程12_IAR文件类型描述.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程12_IAR文件类型描述</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-23T18:00:00+08:00"
-              content="2018-08-23" >
-          08-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>1.MAVLink是一种非常轻量级的通信协议，在简单的8位单片机上也可以运行。</p>
+<p>2.MAVLink的初衷主要是用于无人机上，但它的通用性和可移植性非常好，它也可以应用于其它很多场合。</p>
+<p>3.MAVLink的设计方式值得学习通信的朋友研究一下。</p>
+<p><strong>因此，学习无人机开发、学习通信原理、需要实现设备间通信的朋友都值得参看本文。</strong></p>
+<a id="more"></a>
+<p>　　本文章收录于<a href="https://www.strongerhuang.com/MAVLink/MAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF.html">【MAVLink学习之路】</a>，在我的博客分类“MAVLink学习之路”也能查找到。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【MAVLink学习之路】即可查看。</p>
+<h1 id="二、关于MAVLink"><a href="#二、关于MAVLink" class="headerlink" title="二、关于MAVLink"></a>二、关于MAVLink</h1><h2 id="2-1-描述"><a href="#2-1-描述" class="headerlink" title="2.1 描述"></a>2.1 描述</h2><p>MAVLink：Micro Air Vehicle Link，即微型飞行器连接通信协议，于2009年初由Lorenz Meier首次发布。</p>
+<p>Mavlink协议是在串口通讯基础上的一种更高层的开源通讯协议。</p>
+<p>MAVLink是一种非常轻量级的通信协议，主要用于与无人机（以及板载无人机组件之间）进行通信。</p>
+<h2 id="2-2-主要特征"><a href="#2-2-主要特征" class="headerlink" title="2.2 主要特征"></a>2.2 主要特征</h2><p><strong>1.效率很高</strong><br>MAVLink V1每帧最少只有8个字节的数据，包括帧头和数据包丢弃检测；<br>MAVLink V2每帧最少只有14个字节的数据(是一个更加安全和可扩展的协议);</p>
+<p><strong>2.非常可靠</strong><br>自2009年以来，MAVLink一直被用于在各种不同且具有挑战性的通信信道上的许多不同车辆，地面站（和其他节点）之间进行通信。它提供了检测数据包丢失，损坏和数据包身份验证的方法。</p>
+<p><strong>3.支持多种编程语言</strong><br>可在多种MCU（如：STM32、Atmega、ARM7）和操作系统（如：Windows，Linux，MacOS，Android和iOS）上运行。</p>
+<p><strong>4.支持网络上最多255个并发系统</strong></p>
+<h2 id="2-3-参考网址"><a href="#2-3-参考网址" class="headerlink" title="2.3 参考网址"></a>2.3 参考网址</h2><p>官网：<a href="https://mavlink.io/en" target="_blank" rel="noopener">https://mavlink.io/en</a></p>
+<p>地面站：<a href="http://qgroundcontrol.org/mavlink/start" target="_blank" rel="noopener">http://qgroundcontrol.org/mavlink/start</a></p>
+<p>维基百科：<a href="https://en.wikipedia.org/wiki/MAVLink" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/MAVLink</a></p>
+<h1 id="三、MAVLink协议格式"><a href="#三、MAVLink协议格式" class="headerlink" title="三、MAVLink协议格式"></a>三、MAVLink协议格式</h1><p>目前MAVLink有两个版本：V1和V2版本，差异及详情请看下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程11_一个工作空间添加多个工程.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程11_一个工作空间添加多个工程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-22T18:00:00+08:00"
-              content="2018-08-22" >
-          08-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程10_一个工程添加多个节点.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程10_一个工程添加多个节点</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-16T18:00:00+08:00"
-              content="2018-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
+<p>MAVLink V2是V1的拓展版本，是一个<strong>更加安全和可扩展</strong>的协议。</p>
+<p>由于市面上应用较广的还是V1版本，且支持的编程语言也是V1多余V2。因此，接下来（MAVLink学习之路）我都会结合MAVLink V1来讲述（学会V1，V2和容易就掌握了）。</p>
+<h2 id="3-1-MAVLink-V1格式"><a href="#3-1-MAVLink-V1格式" class="headerlink" title="3.1 MAVLink V1格式"></a>3.1 MAVLink V1格式</h2><p>MAVLink通信内容包含常见通信协议帧头、帧尾、长度、校验等。协议格式及详情见下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
 
 
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程09_IDE选项配置（二）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程09_IDE选项配置（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-15T18:00:00+08:00"
-              content="2018-08-15" >
-          08-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程08_IDE选项配置（一）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程08_IDE选项配置（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-11T18:00:00+08:00"
-              content="2018-08-11" >
-          08-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程07_工程节点选项配置（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-08T18:00:00+08:00"
-              content="2018-08-08" >
-          08-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程06_工程节点选项配置（一）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程06_工程节点选项配置（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-03T12:00:00+08:00"
-              content="2018-08-03" >
-          08-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程05_菜单概述（二）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程05_菜单概述（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-24T18:00:00+08:00"
-              content="2018-07-24" >
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程04_菜单概述（一）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程04_菜单概述（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-21T18:00:00+08:00"
-              content="2018-07-21" >
-          07-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<h1 id="四、MAVLink使用方法和步骤"><a href="#四、MAVLink使用方法和步骤" class="headerlink" title="四、MAVLink使用方法和步骤"></a>四、MAVLink使用方法和步骤</h1><p>MAVLink之所以受广大无人机开发朋友的喜爱，原因就在于MAVLink移植方便、操作简单，以及它的兼容性很好（当然，这些都是它的优点，缺点肯定也是有的）。</p>
+<p>要想使用MAVLink，一些基本的操作肯定还是得有。方便初学者对MAVLinK有进一步的认识，我先罗列主要步骤。</p>
+<h2 id="4-1-主要步骤"><a href="#4-1-主要步骤" class="headerlink" title="4.1 主要步骤"></a>4.1 主要步骤</h2><p>1.下载相应安装包及工具</p>
+<p>2.环境搭建</p>
+<p>3.通过xml配置MSG</p>
+<p>4.移植到STM32</p>
+<p>5.结合实例应用编程</p>
+<p>当然，以上几点只是概要内容，后续的文章会详细讲述其中的内容，敬请等待…</p>
+<h1 id="五、说明"><a href="#五、说明" class="headerlink" title="五、说明"></a>五、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。  </p>
+<h1 id="六、最后"><a href="#六、最后" class="headerlink" title="六、最后"></a>六、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>更多精彩内容我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。</p>
 
       
     </div>
+    
+    
+    
 
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MAVLink/" rel="tag"># MAVLink</a>
+          
+            <a href="/tags/无人机/" rel="tag"># 无人机</a>
+          
+            <a href="/tags/通信协议/" rel="tag"># 通信协议</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/IAR/EWSTM8/EWSTM8系列教程.html" rel="next" title="EWSTM8系列教程">
+                <i class="fa fa-chevron-left"></i> EWSTM8系列教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/MAVLink/MAVLink学习之路.html" rel="prev" title="MAVLink学习之路">
+                MAVLink学习之路 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/EWSTM8/page/2/">2</a><a class="extend next" rel="next" href="/tags/EWSTM8/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -595,6 +572,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -615,8 +596,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -737,6 +727,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、关于MAVLink"><span class="nav-text">二、关于MAVLink</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-描述"><span class="nav-text">2.1 描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-主要特征"><span class="nav-text">2.2 主要特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-参考网址"><span class="nav-text">2.3 参考网址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、MAVLink协议格式"><span class="nav-text">三、MAVLink协议格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-MAVLink-V1格式"><span class="nav-text">3.1 MAVLink V1格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、MAVLink使用方法和步骤"><span class="nav-text">四、MAVLink使用方法和步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-主要步骤"><span class="nav-text">4.1 主要步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、说明"><span class="nav-text">五、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、最后"><span class="nav-text">六、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -885,6 +891,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

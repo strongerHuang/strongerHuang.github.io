@@ -3,7 +3,20 @@
   <entry>
     <title><![CDATA[MAVLink学习之路]]></title>
     <url>%2FMAVLink%2FMAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【MAVLink学习之路】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、教程列表1.MAVLink学习之路01_认识MAVLink 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。2.本文主要针对个人学习使用的朋友，若你是商业用途，建议购买正版软件。3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【MAVLink学习之路】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、教程列表1.MAVLink学习之路01_认识MAVLink 2.MAVLink学习之路02_工具下载、环境搭建 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 更多精彩文章我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>MAVLink学习之路</category>
+      </categories>
+      <tags>
+        <tag>MAVLink</tag>
+        <tag>无人机</tag>
+        <tag>通信协议</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MAVLink学习之路02_工具下载、环境搭建]]></title>
+    <url>%2FMAVLink%2FMAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF02_%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD%E3%80%81%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html</url>
+    <content type="text"><![CDATA[一、写在前面初学者学习本文之前，建议参看我的上一篇文章：《MAVLink学习之路01_认识MAVLink》 本文主要两个内容： ·下载相应安装包及工具 ·环境搭建 其中环境搭建是很多初学朋友从入门到放弃的一个重要阶段。环境搭建难度不大，解决问题重要的一点：针对问题找解决办法。不要看到问题就撤退，否则，只有一个结果：就是放弃。 本文章收录于【MAVLink学习之路】，在我的博客分类“MAVLink学习之路”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、下载2.1 下载说明1.git工具建议提前git工具，方便下载、环境搭建、启动GUI等。（当然，不使用git也行，下载压缩包，使用Windows自带命令行） 2.系统MAVLink开发环境可以搭建在Windoes和Linux系统，本教程只讲述基于Windows搭建环境以及后期的开发。（基于Linux系统的环境搭建可以自己研究一下） 3.下载内容第一类：MAVlink环境搭建工具包 ·Python ·Future 第二类：MAVlink代码生成工具包 ·MAVLink（含pymavlink） 我把它分为以上两类（当然，这是我自己的分类方式，可能不完全正确），主要就是下载Python、Future、MAVLink、pymavlink四项内容。 下载的方式： ·官网（推荐） ·百度网盘（可能会失效） 2.2 环境搭建安装包下载2.2.1 PythonPython版本分Python2和Python3。官方推荐安装：Python 2.7+ or 3.3+. 因为许多使用Python支持的工具对Python 2具有更好的兼容性（比如我接下来要讲述的CANOpen文章，生成对象字典同样需要Python 2的支持），我一般推荐使用Python 2.7。 官网下载地址：https://www.python.org/downloads 百度网盘：https://pan.baidu.com/s/1431mrvqMA-oucVPPGPHyDA密码: q8ic （目前2018年8月最新Python 2.7.15，网盘后期地址可能会失效，建议到官网下载最新版本） 2.2.2 Futurefuture可以下载安装文件进行离线安装，也可以输入命令在线安装。（下章节讲述安装） 官网下载地址：https://pypi.org/project/future/#files 百度网盘：https://pan.baidu.com/s/1431mrvqMA-oucVPPGPHyDA密码: q8ic 2.3 MAVlink代码生成工具包MAVlink代码生成工具包，环境搭建完成之后，用于代码生成的一项工具包（后面文章讲述代码生成会用到这工具包）。 官网下载地址：https://github.com/mavlink/mavlink 建议使用Git工具下载（当然，也可以直接下载压缩包）。 百度网盘：https://pan.baidu.com/s/1dIzR3YzYsyecBGZgReSpYg密码: t9pi 三、环境搭建3.1 环境搭建说明环境搭建也就是安装相关软件，主要是安装Python和Future这两个软件。 安装这两个软件很容易，难点在于有些细节问题，下面我会针对常见问题提出来（当然，因系统或配置等各种原因，所体现出来的问题也有所不同）。 3.2 安装Python1.直接双击Python安装，会出现类似如下图错误 所以，不建议直接双击Python安装包进行安装，按照下面方式：以管理员方式运行安装。 2.以管理员是身份运行cmd Win -&gt; 输入cmd -&gt; 选中“命令提示符”右键 -&gt; 以管理员身份运行 3.安装 路径 + 安装文件（含后缀）：D:\Desktop\python-2.7.15.msi（根据自己路径修改） 安装的很多步骤按照提示操作即可（一般点击next即可），重要的内容下面我提示一下。 4.添加路径 这一步添加路径的作用就是添加系统环境变量（也是很多朋友失败的原因）。不选择的话，就需要安装好之后自己在环境变量中添加路径。 安装Python主要注意以上两点即可。 5.检验是否安装成功A.查看系统环境变量，是否具有python路径。B.CMD输入python，验证是否安装成功，如下图： 3.3 安装Future安装future有两种方法：1.输入命令在线安装； 2.下载安装文件，离线安装。（这里可以使用windows自带命令行，也可以使用git命令行） 1.在线安装输入命令：pip install future （推荐使用该方法） 2.离线安装前提是下载好安装包，进入安装包路径，输入安装命令：python setup.py install 四、验证环境变量 验证环境变量是否安装成功：下载“MAVlink代码生成工具包” -&gt; 解压 -&gt; 进入MAVlink路径 -&gt; 输入命令python mavgenerate.py，出现对话框则成功。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 4.官方网站存在更新和改版，某些网址可能打不开或者不同。 六、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
       <categories>
         <category>MAVLink学习之路</category>
       </categories>

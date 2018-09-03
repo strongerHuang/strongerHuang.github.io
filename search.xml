@@ -3,7 +3,20 @@
   <entry>
     <title><![CDATA[MAVLink学习之路]]></title>
     <url>%2FMAVLink%2FMAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【MAVLink学习之路】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、教程列表1.MAVLink学习之路01_认识MAVLink 2.MAVLink学习之路02_工具下载、环境搭建 3.MAVLink学习之路03_XML中定义MSG并生成C代码 4.MAVLink学习之路04_MAVLink移植到STM32具体步骤 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【MAVLink学习之路】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、教程列表1.MAVLink学习之路01_认识MAVLink 2.MAVLink学习之路02_工具下载、环境搭建 3.MAVLink学习之路03_XML中定义MSG并生成C代码 4.MAVLink学习之路04_MAVLink移植到STM32具体步骤 5.MAVLink学习之路05_MAVLink应用编程接口分析 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>MAVLink学习之路</category>
+      </categories>
+      <tags>
+        <tag>MAVLink</tag>
+        <tag>无人机</tag>
+        <tag>通信协议</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MAVLink学习之路05_MAVLink应用编程接口分析]]></title>
+    <url>%2FMAVLink%2FMAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF05_MAVLink%E5%BA%94%E7%94%A8%E7%BC%96%E7%A8%8B%E6%8E%A5%E5%8F%A3%E5%88%86%E6%9E%90.html</url>
+    <content type="text"><![CDATA[一、写在前面 前面写的几篇文章你掌握了，说明你离成功很近了。那么本文就带你真正进入编程的世界，让你进一步掌握MAVLink应用编程的重要知识点。 本文主要内容： ·MAVLink应用编程主要内容 ·MAVLink函数接口详细说明 提示：本文结合上一篇文章提供给大家下载的“MAVLink发送接收例程”进行讲解，请结合例程理解本文。 本文章收录于【MAVLink学习之路】，在我的博客分类“MAVLink学习之路”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、MAVLink应用编程主要内容2.1 发送和接收说明利用MAVLink通信协议进行编程，主要实现的功能就是： 1.发送端将需要发送的数据（如：SysState, BatVol），添加MAVLink通信协议，通过硬件（如：UART、CAN）发送出去。 2.接收端硬件（如：UART、CAN）接收到的数据，通过MAVLink协议解析，得到一帧完整的MAVLink数据包，提取发送端发送的数据（如：SysState, BatVol），将得到的数据应用到我们程序中。 主要流程：数据 -&gt; MAVLink封装 -&gt; 发送 -&gt; 接收 -&gt; MAVLink解析 -&gt;数据 2.2 发送和接收流程图 该流程图是结合我上一篇文章提供的源代码例程画出来，包含的只是主要内容，更多细节没有在流程图中呈现。 提示：我提供例程是针对初学者提供比较单一发送和接收例程（MDK-ARM和EWARM包含各自的发送和接收工程）。 而实际项目可能会：1.发送和接收在一个工程；2.包含操作系统；3.发送、接收数据FIFO（队列）处理； 所以，实际项目，请按需修改我提供的源码。 三、MAVLink函数接口详细说明这一章节讲述发送和接收主要用到的函数接口，请参考我提供的源代码例程理解。为方便初学者理解，我将其分为发送和接收两个部分来讲述。 3.1 发送主要函数接口 上面是我提供例程的代码，主要讲4个接口。 1.MAVLink_SendTest这个接口是根据自己情况进行封装函数，用于应用程序调用，这里不多说。 2.mavlink_msg_sys_info_pack这个函数接口主要目的：将变量信息（SysID、CompID、SysState、BatVol）打包，最终得到MAVLink_Msg这个消息包。 3.mavlink_msg_to_send_buffer将上一步得到的MAVLink_Msg转换成我们要发送的数据BUF缓存。 4.MAV_USART_SendNByte这个函数接口也是我自己根据硬件（UART）封装的，如果你是其它硬件通信，只需要封装一个类似的接口（参数具有BUF，LEN）即可。 发送数据的流程：从应用代码 -&gt; 底层硬件（发送出去）。 如果要深入了解，可以先熟悉软件流程，再结合源代码工程，同时参看接口函数具体实现。相信你很快就明白了。 3.2 接收主要函数接口 上面是我提供例程的代码（方便截图，去掉了部分），主要讲以上4点内容。 1.MAV_USART_GetByte该函数接口也是硬件底层通信接口，请根据自己情况修改，只需要传递数据（流）进来即可。 2.mavlink_parse_charMAVLink解析是按照一个一个字符进行解析，我们接收到一个字符，就对其进行解析，直到解析完（根据返回标志判断）一帧数据为止。 3.if(MAVLINK_MSG_ID_SYS_INFO == MAVLinkMsg.msgid)这里就是对解析好的一包完整消息进行分类判断吧。其实，我是想说，这个地方还有两个ID需要进行判断，SysID系统ID和CompID部件ID。 我提供例程为方便初学者快速理解，未提供SysID和CompID判断，在后续应用编程中会用到。 4.mavlink_msg_sys_info_get_voltage_battery通过该接口获取消息变量，看图中说明文字，前面是消息，后面是消息变量。 接收数据的流程：从应用代码 -&gt; 底层硬件（发送出去）。 以上就是发送和接收的主要函数接口，如果你只是简单的进行通信，这几个接口就够你使用了。当然，更高级的编程应用还需要你进一步掌握其中的内容。 四、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 五、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
       <categories>
         <category>MAVLink学习之路</category>
       </categories>

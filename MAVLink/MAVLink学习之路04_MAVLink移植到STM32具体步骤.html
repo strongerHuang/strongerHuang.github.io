@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="IAR,STM8,EWSTM8,IAR for STM8," />
+  <meta name="keywords" content="MAVLink,无人机,通信协议," />
 
 
 
@@ -81,35 +81,18 @@
 
 
 
-<meta name="description" content="一、写在前面　　前面两篇文章针对的是工程节点各选项的配置，而本文讲述的是关于集成开发环境（IDE）各选项的配置。 　　本文讲述的内容包含字体、快捷键、语言、编辑、消息等许多与IDE相关的配置。因为属于Tools菜单，我也把它称为“工具配置选项”。也就是菜单Tools -&amp;gt; Options下IDE选项，如下图：">
-<meta name="keywords" content="IAR,STM8,EWSTM8,IAR for STM8">
+<meta name="description" content="一、写在前面　　《MAVLink学习之路》前面三篇文章，可以说是一些基础知识，也是为本文做的准备工作（建议初学者先了解前面三篇文章）。 　　本文主要内容：　　　·MAVLink移植主要步骤　　　·MAVLink移植过程要点 　　提示：为方便广大初学者朋友尽快掌握MAVLink，我在文末提供MAVLink发送接收例程（基于STM32硬件、MDK-ARM和EWARM开发环境）。">
+<meta name="keywords" content="MAVLink,无人机,通信协议">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EWSTM8系列教程08_IDE选项配置（一）">
-<meta property="og:url" content="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程08_IDE选项配置（一）.html">
+<meta property="og:title" content="MAVLink学习之路04_MAVLink移植到STM32具体步骤">
+<meta property="og:url" content="http://www.strongerhuang.com/MAVLink/MAVLink学习之路04_MAVLink移植到STM32具体步骤.html">
 <meta property="og:site_name" content="EmbeddedDevelop">
-<meta property="og:description" content="一、写在前面　　前面两篇文章针对的是工程节点各选项的配置，而本文讲述的是关于集成开发环境（IDE）各选项的配置。 　　本文讲述的内容包含字体、快捷键、语言、编辑、消息等许多与IDE相关的配置。因为属于Tools菜单，我也把它称为“工具配置选项”。也就是菜单Tools -&amp;gt; Options下IDE选项，如下图：">
+<meta property="og:description" content="一、写在前面　　《MAVLink学习之路》前面三篇文章，可以说是一些基础知识，也是为本文做的准备工作（建议初学者先了解前面三篇文章）。 　　本文主要内容：　　　·MAVLink移植主要步骤　　　·MAVLink移植过程要点 　　提示：为方便广大初学者朋友尽快掌握MAVLink，我在文末提供MAVLink发送接收例程（基于STM32硬件、MDK-ARM和EWARM开发环境）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/1.IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/2.Common%20Fonts%E6%99%AE%E9%80%9A%E5%AD%97%E4%BD%93.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/3.%E5%B8%B8%E8%A7%81%E5%AD%97%E4%BD%93%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/4.Key%20Bindings%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%85%8D%E7%BD%AE.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/5.%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%85%8D%E7%BD%AE%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/6.Language%E8%AF%AD%E8%A8%80.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/7.Editor%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/8.%E8%87%AA%E5%8A%A8%E7%BC%A9%E8%BF%9B%E9%85%8D%E7%BD%AE.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/9.%E4%B9%A6%E7%AD%BE%E3%80%81%E8%A1%8C%E6%95%B0%E3%80%81%E6%8A%98%E5%8F%A0.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/10.%E6%8D%A2%E8%A1%8C%E7%AC%A6.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/11.Use%20External%20Editor%E4%BD%BF%E7%94%A8%E5%A4%96%E9%83%A8%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/12.DDE.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/13.Setup%20Files%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/14.Colors%20and%20Fonts%E9%A2%9C%E8%89%B2%E5%92%8C%E5%AD%97%E4%BD%93.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/15.Enable%20All%20Dialogs%E4%BD%BF%E8%83%BD%E6%89%80%E6%9C%89%E5%AF%B9%E8%AF%9D%E6%A1%86.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/16.Dialogs%E5%AF%B9%E8%AF%9D%E6%A1%86.png?raw=true">
-<meta property="og:updated_time" content="2018-08-15T09:17:05.428Z">
+<meta property="og:updated_time" content="2018-09-03T00:46:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EWSTM8系列教程08_IDE选项配置（一）">
-<meta name="twitter:description" content="一、写在前面　　前面两篇文章针对的是工程节点各选项的配置，而本文讲述的是关于集成开发环境（IDE）各选项的配置。 　　本文讲述的内容包含字体、快捷键、语言、编辑、消息等许多与IDE相关的配置。因为属于Tools菜单，我也把它称为“工具配置选项”。也就是菜单Tools -&amp;gt; Options下IDE选项，如下图：">
-<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/1.IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE.png?raw=true">
+<meta name="twitter:title" content="MAVLink学习之路04_MAVLink移植到STM32具体步骤">
+<meta name="twitter:description" content="一、写在前面　　《MAVLink学习之路》前面三篇文章，可以说是一些基础知识，也是为本文做的准备工作（建议初学者先了解前面三篇文章）。 　　本文主要内容：　　　·MAVLink移植主要步骤　　　·MAVLink移植过程要点 　　提示：为方便广大初学者朋友尽快掌握MAVLink，我在文末提供MAVLink发送接收例程（基于STM32硬件、MDK-ARM和EWARM开发环境）。">
 
 
 
@@ -139,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程08_IDE选项配置（一）.html"/>
+  <link rel="canonical" href="http://www.strongerhuang.com/MAVLink/MAVLink学习之路04_MAVLink移植到STM32具体步骤.html"/>
 
 
 
 
 
-  <title>EWSTM8系列教程08_IDE选项配置（一） | EmbeddedDevelop</title>
+  <title>MAVLink学习之路04_MAVLink移植到STM32具体步骤 | EmbeddedDevelop</title>
   
 
 
@@ -316,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程08_IDE选项配置（一）.html">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/MAVLink/MAVLink学习之路04_MAVLink移植到STM32具体步骤.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="strongerHuang">
@@ -333,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">EWSTM8系列教程08_IDE选项配置（一）</h1>
+          <h1 class="post-title" itemprop="name headline">MAVLink学习之路04_MAVLink移植到STM32具体步骤</h1>
         
 
         <div class="post-meta">
@@ -346,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T18:00:00+08:00">
-                2018-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T09:00:00+08:00">
+                2018-09-03
               </time>
             
 
@@ -369,8 +352,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/EWSTM8系列教程/" itemprop="url" rel="index">
-                    <span itemprop="name">EWSTM8系列教程</span>
+                  <a href="/categories/MAVLink学习之路/" itemprop="url" rel="index">
+                    <span itemprop="name">MAVLink学习之路</span>
                   </a>
                 </span>
 
@@ -413,7 +396,7 @@
 
         <li class="post-copyright-link">
           <strong>本文链接：</strong>
-          <a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程08_IDE选项配置（一）.html" title="EWSTM8系列教程08_IDE选项配置（一）">http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8系列教程08_IDE选项配置（一）.html</a>
+          <a href="http://www.strongerhuang.com/MAVLink/MAVLink学习之路04_MAVLink移植到STM32具体步骤.html" title="MAVLink学习之路04_MAVLink移植到STM32具体步骤">http://www.strongerhuang.com/MAVLink/MAVLink学习之路04_MAVLink移植到STM32具体步骤.html</a>
         </li>
 
         <li class="post-copyright-license">
@@ -433,93 +416,47 @@
       
 
       
-        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　前面两篇文章针对的是<strong>工程节点各选项</strong>的配置，而本文讲述的是关于<strong>集成开发环境（IDE）各选项</strong>的配置。</p>
-<p>　　本文讲述的内容包含字体、快捷键、语言、编辑、消息等许多与<strong>IDE相关的配置</strong>。因为属于Tools菜单，我也把它称为“工具配置选项”。也就是菜单Tools -&gt; Options下IDE选项，如下图：<br><img width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/1.IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE.png?raw=true"></p>
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　《MAVLink学习之路》前面三篇文章，可以说是一些基础知识，也是为本文做的准备工作（建议初学者先了解前面三篇文章）。</p>
+<p>　　本文主要内容：<br>　　　<strong>·</strong>MAVLink移植主要步骤<br>　　　<strong>·</strong>MAVLink移植过程要点</p>
+<p>　　<strong>提示</strong>：为方便广大初学者朋友尽快掌握MAVLink，我在<strong>文末提供MAVLink发送接收例程</strong>（基于STM32硬件、MDK-ARM和EWARM开发环境）。</p>
 <a id="more"></a>
-<p>　　由于IDE选项的配置较多，我将其分为<strong>IDE选项配置（一）和IDE选项配置（二）</strong>两篇文章来讲述，本文主要讲述前五项内容：<strong>Common Fonts普通字体、Key Bindings快捷键配置、Language语言、Editor编辑器、Messages消息</strong>。</p>
-<p>　　本文章收录于<a href="http://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【EWSTM8系列教程】</a>，在我的博客分类“EWSTM8系列教程”也能查找到。</p>
-<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【EWSTM8系列教程】即可查看。</p>
-<h1 id="二、Common-Fonts普通字体"><a href="#二、Common-Fonts普通字体" class="headerlink" title="二、Common Fonts普通字体"></a>二、Common Fonts普通字体</h1><h2 id="2-1-Custom-Tool-Configuration自定义工具配置"><a href="#2-1-Custom-Tool-Configuration自定义工具配置" class="headerlink" title="2.1 Custom Tool Configuration自定义工具配置"></a>2.1 Custom Tool Configuration自定义工具配置</h2><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/2.Common%20Fonts%E6%99%AE%E9%80%9A%E5%AD%97%E4%BD%93.png?raw=true"><br></table>
+<p>　　本文章收录于<a href="https://www.strongerhuang.com/MAVLink/MAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF.html">【MAVLink学习之路】</a>，在我的博客分类“MAVLink学习之路”也能查找到。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【MAVLink学习之路】即可查看。</p>
+<h1 id="二、MAVLink移植主要步骤"><a href="#二、MAVLink移植主要步骤" class="headerlink" title="二、MAVLink移植主要步骤"></a>二、MAVLink移植主要步骤</h1><h2 id="2-1-移植说明"><a href="#2-1-移植说明" class="headerlink" title="2.1 移植说明"></a>2.1 移植说明</h2><p>　　本文主要针对MAVLink C源代码移植进行讲述。其中，MAVLink的C源代码可以<strong>下载网上预生成的C源代码库</strong>，也可以通过<strong>生成器工具生成</strong>。</p>
+<p><strong>A.下载预生成C代码库</strong><br>　　如果是使用标准MAVLink的MSG消息，则可以现在官方指定地址预先生成的C代码库。预先生成C代码库总共两个版本：<br>MAVLink V1版：<a href="https://github.com/mavlink/c_library_v1" target="_blank" rel="noopener">https://github.com/mavlink/c_library_v1</a><br>MAVLink V2版：<a href="https://github.com/mavlink/c_library_v1" target="_blank" rel="noopener">https://github.com/mavlink/c_library_v1</a></p>
+<p><strong>B.生成器生成C代码</strong><br>　　如果你需要自定义MSG消息，则需要自己通过工具生成C代码，具体生成方法请参看文章：<a href="https://www.strongerhuang.com/MAVLink/MAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF03_XML%E4%B8%AD%E5%AE%9A%E4%B9%89MSG%E5%B9%B6%E7%94%9F%E6%88%90C%E4%BB%A3%E7%A0%81.html">《MAVLink学习之路03_XML中定义MSG并生成C代码.》</a></p>
+<p><strong>提示：</strong><br>　　官方预生成C代码库就是通过生成器而生成的，官方提供的生成器工具、预生成C代码库不定期更新。也就是说可能你<strong>不同时期看到的预生成库不同，不同时期的生成器及其生成的代码也有所不同</strong>。</p>
+<table><br><img align="left" width="600" src=""><br></table>
 
-<p>本节内容主要是配置<strong>除编辑窗口（如代码）之外</strong>的其它窗口的字体设置（如工程窗口、编译窗口等）。</p>
-<p><strong>1.Fixed Width Font：固定宽度字体</strong><br>比如：Sysbolic Memory窗口中数据<strong>“0xCDCDCDCD”</strong>的字体。</p>
-<p><strong>2.Proportional Width Font：比例宽度字体</strong><br>比如：Sysbolic Memory窗口中数据<strong>“Data”</strong>这个标识的字体。</p>
-<p>从字面意思翻译有点别扭，请结合下面动画效果理解。</p>
-<table><br>普通字体配置动画效果：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/3.%E5%B8%B8%E8%A7%81%E5%AD%97%E4%BD%93%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true"><br></table>
+<p>　　如上图，官方预生成的C代码（V1版），与通过生成器生成的代码完全一样。如common.xml通过生成器生成的C代码就和上面紫红色框出来的代码一样。当然，生成器版本也是这最新的才对。</p>
+<h2 id="2-2-移植主要步骤"><a href="#2-2-移植主要步骤" class="headerlink" title="2.2 移植主要步骤"></a>2.2 移植主要步骤</h2><p>1.下载相关工具<br>2.环境搭建<br>3.生成C代码（如果下载官方预生成代码，前面两步可以不用）<br>4.将C代码添加到工程<br>5.配置（如添加MAVLink路径、修改代码适配工程）<br>6.添加MAVLink发送接收（及应用）代码</p>
+<p>步骤1， 2， 3已经在前面文章详细讲述了，本文主要讲述步骤4， 5。步骤6下一篇文章详细讲述。</p>
+<h1 id="三、MAVLink移植过程要点"><a href="#三、MAVLink移植过程要点" class="headerlink" title="三、MAVLink移植过程要点"></a>三、MAVLink移植过程要点</h1><p>本节主要内容讲述将C代码添加到工程，然后配置，到编译没有错误这一过程中的一些重要知识点。</p>
+<h2 id="3-1-代码添加到工程"><a href="#3-1-代码添加到工程" class="headerlink" title="3.1 代码添加到工程"></a>3.1 代码添加到工程</h2><p>代码添加到工程其实很简单，将代码拷贝工程文件下，类似如下图，添加组，添加源文件。</p>
+<table><br><img align="left" width="600" src=""><br></table>
 
-<p><strong>提示：</strong><br>这里的字体不包含编辑器的字体，编辑器相关的字体见下面【5.3Colors and Fonts颜色和字体】说明。</p>
-<h1 id="三、Key-Bindings快捷键配置"><a href="#三、Key-Bindings快捷键配置" class="headerlink" title="三、Key Bindings快捷键配置"></a>三、Key Bindings快捷键配置</h1><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/4.Key%20Bindings%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%85%8D%E7%BD%AE.png?raw=true"><br></table>
+<p>但是，MAVLink源代码都是.h头文件，可以不用像上面那样添加到工程。当然，添加头文件到工程的好处就是可以快速打开头文件，查找相关代码。</p>
+<p>说这一小节是想提示大家：<strong>MAVLink的C源代码都是.h头文件。头文件只需要添加对应路径，包含头文件即可（#include “mavlink.h”）</strong>。</p>
+<h2 id="3-2-配置"><a href="#3-2-配置" class="headerlink" title="3.2 配置"></a>3.2 配置</h2><p><strong>1.添加路径</strong><br>Keil MDK-ARM和IAR EWARM添加路径这项内容我就不在这里详细讲述了，不会的朋友可以参看看我的文章：<br><strong>Keil MDK-ARM系列教程（一）_新建软件工程详细过程</strong><br><strong>IAR EWARM系列教程（一）_新建软件工程详细过程</strong></p>
+<h2 id="3-3-修改代码"><a href="#3-3-修改代码" class="headerlink" title="3.3 修改代码"></a>3.3 修改代码</h2><p>这小节内容可以参看网上一篇博文：<br><a href="https://www.cnblogs.com/lovechen/p/5809709.html" target="_blank" rel="noopener">https://www.cnblogs.com/lovechen/p/5809709.html</a><br>那篇文章讲述的很多，我讲一下重点：它修改的代码是针对老版本主要需要修改两个地方。<br>而且新版本MAVLink生成器已经优化了一个项，也就是只有一个地方需要修改：修改mavlink_types.h.</p>
+<table><br><strong>1.针对Keil MDK-ARM</strong><br><img align="left" width="600" src=""><br></table>
 
-<p><strong>Key Bindings</strong>：直译为：键绑定，也就是配置快捷键。</p>
-<p>Menu主菜单，下面对应的就是其中的子菜单。关于主菜单和子菜单里面具体内容，建议参看该系列教程：<br><a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_%E8%8F%9C%E5%8D%95%E6%A6%82%E8%BF%B0%EF%BC%88%E4%B8%80%EF%BC%89.html">EWSTM8系列教程04_菜单概述（一）</a><br><a href="https://www.strongerhuang.com/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_%E8%8F%9C%E5%8D%95%E6%A6%82%E8%BF%B0%EF%BC%88%E4%BA%8C%EF%BC%89.html">EWSTM8系列教程05_菜单概述（二）</a></p>
-<p>具体操作：选择主菜单，再选中子菜单，按住需要配置的快捷键，点击<strong>Set或Add</strong>添加，点击<strong>Clear</strong>删除，点击<strong>Reset All</strong>复位所有快捷键（出厂默认）。具体可参看下面动画效果。</p>
-<p><strong>提示：</strong><br><strong>primary：首要</strong>快捷键<br><strong>Alias：次要</strong>（别名）快捷键<br>所以：点击Set是设置首要快捷键，点击Add是添加次要快捷键。</p>
-<table><br>快捷键配置动画效果：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/5.%E5%BF%AB%E6%8D%B7%E9%94%AE%E9%85%8D%E7%BD%AE%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true"><br></table>
+<table><br><strong>2.针对IAR EWARM</strong><br><img align="left" width="600" src=""><br></table>
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">替换代码：#define MAVPACKED( __Declaration__ ) __Declaration__</span><br></pre></td></tr></table></figure>
+<p>那篇文章针对的是老版MAVLink还需要修改一个const的地方，我这里就不说了（新来的建议用新版的）。</p>
+<p><strong>为什么这里要修改呢？</strong><br>原因在于编译器的差异导致的。</p>
+<h2 id="3-4-补充知识点"><a href="#3-4-补充知识点" class="headerlink" title="3.4 补充知识点"></a>3.4 补充知识点</h2><p><strong>1.#pragma anon_unions</strong><br>keil中默认是不支持匿名结构体的，需要编译指令#pragma anon_unions指名。</p>
+<p><strong>2.MAVPACKED</strong><br>如果不修改代码，直接编译，发现有许多错误，原因都来自MAVPACKED。结合修改的内容，再看下图，有什么启发没有。</p>
+<table><br><img align="left" width="600" src=""><br></table>
 
-<h1 id="四、Language语言"><a href="#四、Language语言" class="headerlink" title="四、Language语言"></a>四、Language语言</h1><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/6.Language%E8%AF%AD%E8%A8%80.png?raw=true"><br></table>
-
-<p>这个配置选项比较简单，选择语言，目前EWSTM8只支持英语，像EWARM支持英语和日语。</p>
-<h1 id="五、Editor编辑器"><a href="#五、Editor编辑器" class="headerlink" title="五、Editor编辑器"></a>五、Editor编辑器</h1><p>编辑器选项下面还包含<strong>External Editor外部编辑器、Setup Files设置文件、Colors and Fonts颜色和字体</strong>三个子选项。</p>
-<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/7.Editor%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true"><br></table>
-
-<h2 id="第1区域：Tab"><a href="#第1区域：Tab" class="headerlink" title="第1区域：Tab"></a>第1区域：Tab</h2><p><strong>1.Tab size：Tab键尺寸</strong><br>假如为2，则一个Tab键尺寸相当于2个空格大小。</p>
-<p><strong>2.Indent size：缩进尺寸</strong></p>
-<p><strong>3.Tab Key Function：Tab键功能</strong><br>Insert tab：插入Tab符<br>Indent with spaces：缩进为空格符</p>
-<h2 id="第2区域：边缘线"><a href="#第2区域：边缘线" class="headerlink" title="第2区域：边缘线"></a>第2区域：边缘线</h2><p><strong>1.Show right margin：显示右边缘线</strong><br>Printing edge：打印边缘（打印范围）<br>Columns：根据列数显示</p>
-<p>一条浅灰色的竖线，默认勾选上并显示（第80列）</p>
-<h2 id="第3区域：File-Encoding：文件编码"><a href="#第3区域：File-Encoding：文件编码" class="headerlink" title="第3区域：File Encoding：文件编码"></a>第3区域：File Encoding：文件编码</h2><p><strong>1.Default character encoding：默认字符编码</strong><br>有多种类型可选择，默认System（系统）；</p>
-<p><strong>2.Auto-detect character encoding：自动检测字符编码</strong><br>勾选上则自动检测文件。</p>
-<p><strong>3.EOL characters：结束符</strong><br>可选择：PC、 UNIX、 Preserve。</p>
-<h2 id="第4区域：show：显示"><a href="#第4区域：show：显示" class="headerlink" title="第4区域：show：显示"></a>第4区域：show：显示</h2><p><strong>1.Syntax highlighting：语法高亮显示</strong><br>默认勾选，按照语法规则高亮显示文字。如关键字（if、 while），注释语句，预定于#include等。</p>
-<p><strong>2.Auto indent：配置自动缩进</strong></p>
-<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/8.%E8%87%AA%E5%8A%A8%E7%BC%A9%E8%BF%9B%E9%85%8D%E7%BD%AE.png?raw=true"><br></table>
-
-<p>勾选上，则自动缩进。<br>如上图，如果我在“case 0:”按下回车（换行），则在下一行自动缩进到return的<strong>r</strong>这个位置。（不勾选，则到每行的开始位置）</p>
-<p><strong>3.Show line numbers：显示行数（见下图）</strong><br>这个很好理解，就是显示代码、文本前面的行数；</p>
-<p><strong>4.Scan for changed files：扫描修改的文件</strong><br>比如：main.c在EWSTM8中打开（<strong>未修改</strong>），这时又通过其他软件把main.c打开，添加了一行i++代码，并保存。则这时将自动显示添加了一行i++的文件。</p>
-<p>如果打开<strong>修改过</strong>，则会提示（是否更新，并显示那边添加了i++的文件）。</p>
-<p><strong>5.Show bookmarks：显示书签（见下图）</strong><br>包含错误、警告、断点、书签等一些标记符号。</p>
-<p><strong>6.Show fold margin：显示折叠边缘（见下图）</strong></p>
-<p><strong>书签、行数、折叠说明图：</strong></p>
-<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/9.%E4%B9%A6%E7%AD%BE%E3%80%81%E8%A1%8C%E6%95%B0%E3%80%81%E6%8A%98%E5%8F%A0.png?raw=true"><br></table>
-
-<p><strong>7.Enable virtual space：使能虚拟空间</strong><br>勾选上则光标可以放在编辑窗口任何一个位置编辑（则前面多处许多空格）。</p>
-<p><strong>8.Remove trailing blanks：去除末尾的空白</strong><br>当保存文件时（如Ctrl+S），删除每行后面的空格符号。</p>
-<p><strong>9.Auto code completion and parameter hints：自动代码完形和参数提示</strong></p>
-<p><strong>10.Show source browser tooltips：显示源代码浏览器工具提示</strong></p>
-<p><strong>11.Show line break characters：显示换行字符</strong><br>勾选则显示换行符。如下图：默认的换行符CR+LF（一般不建议勾选）</p>
-<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/10.%E6%8D%A2%E8%A1%8C%E7%AC%A6.png?raw=true"><br></table>
-
-<h2 id="5-1-External-Editor外部编辑器"><a href="#5-1-External-Editor外部编辑器" class="headerlink" title="5.1 External Editor外部编辑器"></a>5.1 External Editor外部编辑器</h2><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/11.Use%20External%20Editor%E4%BD%BF%E7%94%A8%E5%A4%96%E9%83%A8%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true"><br></table>
-
-<p>勾选“Use External Editor”，则使用外部编辑器。</p>
-<p><strong>1.Type：类型</strong><br>有两种可选类型：<br><strong>Command Line</strong>：命令行<br><strong>DDE(Dynamic Data Exchange)</strong>：Windows动态数据交换</p>
-<p><strong>2.Editor：编辑器</strong><br>指定外部编辑器的文件名和路径。可以通过“浏览按钮”方便操作。</p>
-<p><strong>3.Arguments：参数</strong><br>指定要传递给编辑器的任何参数。这只适用于选择命令行类型。</p>
-<p>类型为DDE时，对应的配置不同，如下图：</p>
-<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/12.DDE.png?raw=true"><br></table>
-
-<p><strong>4.Service：服务</strong><br>指定由编辑器使用DDE服务名称，指定由编辑器使用DDE服务名称。</p>
-<p><strong>5.Command：命令</strong><br>指定要传递给编辑器的命令字符串序列。</p>
-<h2 id="5-2-Setup-Files设置文件"><a href="#5-2-Setup-Files设置文件" class="headerlink" title="5.2 Setup Files设置文件"></a>5.2 Setup Files设置文件</h2><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/13.Setup%20Files%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
-
-<p><strong>1.Use Custom Keyword File：使用自定义关键字文件</strong><br>自定义关键字文件，如添加uint32_t这种自定义的数据类型，在文本中就会高亮显示。</p>
-<p><strong>提示：</strong><br>文件类型：txt本文文件<br>一行一个关键字</p>
-<p><strong>2.Use Code Templates：使用代码模板</strong><br>使用方法请参考文章《EWSTM8系列教程04_菜单概述（一）》4.1 插入/编辑模板。</p>
-<h2 id="5-3-Colors-and-Fonts颜色和字体"><a href="#5-3-Colors-and-Fonts颜色和字体" class="headerlink" title="5.3 Colors and Fonts颜色和字体"></a>5.3 Colors and Fonts颜色和字体</h2><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/14.Colors%20and%20Fonts%E9%A2%9C%E8%89%B2%E5%92%8C%E5%AD%97%E4%BD%93.png?raw=true"><br></table>
-
-<p><strong>1.Editor Font编辑字体</strong><br>字体和大小</p>
-<p><strong>2.语法颜色</strong><br>这里包含关键字、字符串、数字…等的<strong>字体颜色和背景颜色</strong>配置。</p>
-<h1 id="六、Messages消息"><a href="#六、Messages消息" class="headerlink" title="六、Messages消息"></a>六、Messages消息</h1><table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/15.Enable%20All%20Dialogs%E4%BD%BF%E8%83%BD%E6%89%80%E6%9C%89%E5%AF%B9%E8%AF%9D%E6%A1%86.png?raw=true"><br></table>
-
-<p><strong>1.Enable All Dialogs使能所有对话框</strong><br>类似如下图对话框，如果勾选“Don’t show again”，就禁用该对话框。使用此选项可以重新启用所有被禁止的对话框。</p>
-<table><br><img align="left" width="250" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/IAR/EWSTM8/EWSTM8%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_IDE%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/16.Dialogs%E5%AF%B9%E8%AF%9D%E6%A1%86.png?raw=true"><br></table>
-
-
-<h1 id="七、说明"><a href="#七、说明" class="headerlink" title="七、说明"></a>七、说明</h1><p>1.本文大部分内容也适合IAR其它版本，如EWARM、EW430等。<br>2.该文档仅供个人学习使用，版权所有，禁止商用。<br>3.本教程收录于微信公众号【EmbeddedDevelop】，关注微信公众号回复【EWSTM8系列教程】即可查看全系列教程。 </p>
-<h1 id="八、最后"><a href="#八、最后" class="headerlink" title="八、最后"></a>八、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
-<p>更多精彩内容我将第一时间在微信公众号里面分享， 如果不想错过,可以关注我的微信公众号。</p>
+<h1 id="四、源代码下载"><a href="#四、源代码下载" class="headerlink" title="四、源代码下载"></a>四、源代码下载</h1><p>地址：<a href="https://pan.baidu.com/s/1xraErAnmL-BN9CMwE6aQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1xraErAnmL-BN9CMwE6aQ</a><br>密码：cusq</p>
+<p><strong>提示</strong>：包含四个工程：Keil、IAR各自的发送和接收工程。如果链接失效，请到公众号回复【MAVLink学习之路】查看更新链接。</p>
+<h1 id="五、说明"><a href="#五、说明" class="headerlink" title="五、说明"></a>五、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。  </p>
+<h1 id="六、最后"><a href="#六、最后" class="headerlink" title="六、最后"></a>六、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
 
       
     </div>
@@ -574,13 +511,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/IAR/" rel="tag"># IAR</a>
+            <a href="/tags/MAVLink/" rel="tag"># MAVLink</a>
           
-            <a href="/tags/STM8/" rel="tag"># STM8</a>
+            <a href="/tags/无人机/" rel="tag"># 无人机</a>
           
-            <a href="/tags/EWSTM8/" rel="tag"># EWSTM8</a>
-          
-            <a href="/tags/IAR-for-STM8/" rel="tag"># IAR for STM8</a>
+            <a href="/tags/通信协议/" rel="tag"># 通信协议</a>
           
         </div>
       
@@ -593,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/IAR/EWSTM8/EWSTM8系列教程07_工程节点选项配置（二）.html" rel="next" title="EWSTM8系列教程07_工程节点选项配置（二）">
-                <i class="fa fa-chevron-left"></i> EWSTM8系列教程07_工程节点选项配置（二）
+              <a href="/MAVLink/MAVLink学习之路03_XML中定义MSG并生成C代码.html" rel="next" title="MAVLink学习之路03_XML中定义MSG并生成C代码">
+                <i class="fa fa-chevron-left"></i> MAVLink学习之路03_XML中定义MSG并生成C代码
               </a>
             
           </div>
@@ -603,8 +538,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/IAR/EWSTM8/EWSTM8系列教程09_IDE选项配置（二）.html" rel="prev" title="EWSTM8系列教程09_IDE选项配置（二）">
-                EWSTM8系列教程09_IDE选项配置（二） <i class="fa fa-chevron-right"></i>
+              <a href="/MAVLink/MAVLink学习之路.html" rel="prev" title="MAVLink学习之路">
+                MAVLink学习之路 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -804,7 +739,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Common-Fonts普通字体"><span class="nav-text">二、Common Fonts普通字体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Custom-Tool-Configuration自定义工具配置"><span class="nav-text">2.1 Custom Tool Configuration自定义工具配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、Key-Bindings快捷键配置"><span class="nav-text">三、Key Bindings快捷键配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Language语言"><span class="nav-text">四、Language语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、Editor编辑器"><span class="nav-text">五、Editor编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1区域：Tab"><span class="nav-text">第1区域：Tab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第2区域：边缘线"><span class="nav-text">第2区域：边缘线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3区域：File-Encoding：文件编码"><span class="nav-text">第3区域：File Encoding：文件编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4区域：show：显示"><span class="nav-text">第4区域：show：显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-External-Editor外部编辑器"><span class="nav-text">5.1 External Editor外部编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Setup-Files设置文件"><span class="nav-text">5.2 Setup Files设置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-Colors-and-Fonts颜色和字体"><span class="nav-text">5.3 Colors and Fonts颜色和字体</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、Messages消息"><span class="nav-text">六、Messages消息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、说明"><span class="nav-text">七、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、最后"><span class="nav-text">八、最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、MAVLink移植主要步骤"><span class="nav-text">二、MAVLink移植主要步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-移植说明"><span class="nav-text">2.1 移植说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-移植主要步骤"><span class="nav-text">2.2 移植主要步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、MAVLink移植过程要点"><span class="nav-text">三、MAVLink移植过程要点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-代码添加到工程"><span class="nav-text">3.1 代码添加到工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-配置"><span class="nav-text">3.2 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-修改代码"><span class="nav-text">3.3 修改代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-补充知识点"><span class="nav-text">3.4 补充知识点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、源代码下载"><span class="nav-text">四、源代码下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、说明"><span class="nav-text">五、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、最后"><span class="nav-text">六、最后</span></a></li></ol></div>
             
 
           </div>

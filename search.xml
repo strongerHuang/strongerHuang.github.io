@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CANOpen系列教程]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
+    <content type="text"><![CDATA[一、写在前面 本文对【CANOpen系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、教程列表1.CANOpen系列教程01_初识CAN与CANOpen及相关内容2.CANOpen系列教程02_理解CAN总线协议3.CANOpen系列教程03_CAN收发器功能、原理及作用 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程03_CAN收发器功能、原理及作用]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_CAN%E6%94%B6%E5%8F%91%E5%99%A8%E5%8A%9F%E8%83%BD%E3%80%81%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BD%9C%E7%94%A8.html</url>
+    <content type="text"><![CDATA[一、写在前面 前面文章是从大方向介绍了CAN网络，让大家对CAN网络有一定的认识。本文将范围缩小，讲述整个CAN网络其中的一个CAN收发器。如下图标记出来的部分： 本文结合众多初学者容易产生的疑问来讲述CAN收发器相关的知识点，大概有如下几点： ·什么是CAN收发器？ ·CAN总线差分信号 ·CAN收发器芯片和485芯片差异 本文章收录于【CANOpen系列教程】，在我的博客分类“CANOpen系列教程”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、什么是CAN收发器？CAN收发器在整个CAN网络中所处的位置如上图所示。CAN收发器就是一块类似232或485的转换芯片，它的主要功能是将CAN控制器的TTL信号转换成CAN总线的差分信号。 2.1 什么CAN控制器TTL信号？现在的CAN控制器一般都与MCU集成在一起，其发送和接收TTL信号就是MCU引脚（高或低）信号。 以前还有独立的CAN控制器，一个CAN网络节点会包含三块芯片：MCU芯片、CAN控制器、CAN收发器。现在是将前两者集成在一起了（看文章开篇图片）。 三、CAN总线差分信号CAN总线信号从CAN收发器出来，为「两线」「差分」信号，用隐形代表逻辑1，显性代表逻辑0。 1.CAN收发器两线芯片引脚CAN_H、CAN_L 2.CAN_H和CAN_L电压电压的大小根据芯片型号而定，一般常见的CAN收发芯片有3.3V和5V两种芯片。 如上图，为5V CAN收发芯片，在逻辑0和逻辑1时电压情况：逻辑0时：显性，CAN_H=3.5V，CAN_L=1.5V；逻辑1时：隐性，CAN_H=2.5V，CAN_L=2.5V； 当然，3.3V电压芯片的总线电压原理类似。而实际应用中，总线电压并非绝对的像上面说的3.5V、2.5V、1.5V这种电压，会受到导线电阻、外界干扰等影响。 3.隐性和显性学过生物都知道，基因有隐性和显性，隐性的基因实际存在，但不会表现出来。有显性的基因就会变现出来。这里CAN总线隐性信号和显性信号道理一样，当总线两者信号都有时，总线表现出来的就是显性信号。 提示：我们这里说的显性和隐性信号，指的是总线传输的bit位信号。 所以，CAN总线平时空闲表现为隐性状态。如果想要发送的信号为隐性位，那么总线才会呈现出来隐性。否则，只要其它有一个节点发送显性信号，你这个节点发送出来的隐性信号就无效。 4.CAN收发器R引脚CAN收发器R引脚就是与CAN控制器接收相连的引脚。如下图： R引脚的信号是表示总线当前的信号，用于控制器实时监测总线信号。主要两个目的：A.监测其它节点发送出来的信号：别人给它发送数据；B.监测自身节点发送出去的信号：自己发送是否失败。就像上面说的，自己发送一个隐形信号，结果监测出来是显性信号，那就说明是别人在发送数据。 四、CAN收发器芯片和485芯片差异CAN通信和485通信一样，属于半双工。但是，为什么CAN总线相比485通信不管在速度和稳定性上都具有明显优势呢？ 4.1 总线利用率CAN收发器工作原理与485具有较大差异。从上面的差分信号可以看得出来，两种芯片同时存在，只有显性信号有效，而不会影响总线传输。简单来说就是CAN总线具有自动仲裁功能，这样就提高了总线的利用率。 RS485总线是一种常规的通信总线，它不能够做总线的自动仲裁，也就是不能够同时发送数据以避免总线竞争，所以整个系统的通信效率必然较低，数据冗余量较大，对于速度要求高的应用场所不适应用RS485总线。 提示：CAN总线没有被发送出去的隐性信号，会由CAN控制器后续发送出去。这里牵涉到CAN总线优先级的问题，后续进一步讲述。当然，CAN相比485具有明显优势，主要原因还是在于CAN控制器。 4.2 可以不使用CAN收发器吗？UART可以直接通过TX连接对方的RX引脚，利用TTL信号进行通信，那么CAN也可以吗？ 答案：单向传输可以，双向传输就不行。原因很简单，上面说了，CAN控制器会实时监测发送出去的信号是否正确。也就是说TX要与RX信号一致才行，否则CAN控制器认为你发送失败。 五、说明1.该文档部分文字来自网络，仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 六、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程02_理解CAN总线协议]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE.html</url>
+    <content type="text"><![CDATA[一、写在前面 上一篇文章讲述了CAN和CANOpen，相信大家CAN和CANOpen有一定理解了。本文说的CAN即是一种总线，也是一种协议。因此，我们常听见CAN总线，也常听见CAN协议。 CAN协议和CANOpen协议是两套不同的协议。从软硬件层次来划分，CAN协议属于硬件协议，而CANOpen属于软件协议。 本篇文章先概述一下CAN网络，让大家对CAN总线协议有一个全局的概念，再到底层的CAN总线协议知识。 本文章收录于【CANOpen系列教程】，在我的博客分类“CANOpen系列教程”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、CAN网络CAN网络可以理解为多台CAN设备连接在同一条CAN总线上组合成的网络，其中的CAN设备我们称之为节点。CAN网络拓扑结构如下图： 如上图，一个CAN节点主要包含三类：MCU应用程序、CAN控制器、CAN收发器。 2.1 MCU应用程序MCU应用程序我将其分为三块：业务逻辑代码、协议层代码、底层驱动代码。 A.业务逻辑代码：是根据项目需求而定，也很好理解。比如我读取一个传感器数据，并对其做出相应逻辑处理。 B.协议层代码：比如后续要讲述的CANOpen。 C.底层驱动代码：配置CAN总线相应参数、控制收发的代码。 2.2 CAN控制器CAN控制器内部结构还是挺复杂的，一般现在CAN控制器都是与处理器集成在一起。 其实对于编程的人来说，无非也就是包含一些控制、状态、配置等寄存器。 比如我们看到有些STM32芯片带有CAN，也就是说CAN控制器已经集成在STM32芯片中了，我们只需要编程操作其中的寄存器即可。 2.3 CAN收发器CAN收发器：将CAN收发引脚（CAN_TX和CAN_RX）的TTL信号转换成CAN总线的电平信号。 PS：你可以把CAN总线通信认为是UART通过485进行通信：CAN控制器就如UART的控制器，而CAN收发器就如485转换芯片。 三、ISO标准化的CAN协议写这一章节的主要目的就是想让大家了解CAN总线位于OSI所在层次。 3.1 ISO/OSI基本参照模型 【注】ISO：International Standardization Organization国际标准化组织；OSI：Open Systems Interconnection开放式系统间互联； 3.2 CAN在OSI模型中的定义 【注】LLC：Logical Link Control逻辑链路控制；MAC：Medium Access Control媒介访问控制； 从上图可以知道CAN总线底层硬件的内容（CAN控制器、收发器）主要位于OSI的第1层和第2层。 四、概述CAN总线协议CAN总线协议：就是为了保证通信（收发）数据在CAN总线上能稳定传输而制订的一套协议。 CAN总线协议的内容很多，为方便初学者理解，本文先大概描述一下CAN总线协议，后续文章详细讲述CAN总线协议的内容。 4.1 总线信号CAN总线为「两线」「差分」信号，用隐形代表逻辑1，显性代表逻辑0。如下图： 4.2 优先级假如某一时刻，一个设备（节点）往总线发0，一个设备往总线发1。那么总线会呈现什么现象？ 答案：最后总线呈现为显性，也就是0。 4.3 位时序位时序逻辑将监视串行总线，执行采样并调整采样点，在调整采样点时，需要在起始位边沿进行同步并后续的边沿进行再同步。 简单的说就是对一个bit位分几段进行采样，目的就是提高数据传输稳定性。在STM32中底层驱动代码就需要进行位时序编程，在STM32参考手册中也会发现如下位时序图： 4.4 帧的种类和格式帧的种类有多种：数据帧：用于发送单元向接收单元传送数据的帧。遥控帧：用于接收单元向具有相同 ID 的发送单元请求数据的帧。错误帧：用于当检测出错误时向其它单元通知错误的帧。过载帧：用于接收单元通知其尚未做好接收准备的帧。帧间隔：用于将数据帧及遥控帧与前面的帧分离开来的帧。 数据帧和遥控帧有标准格式和扩展格式两种格式。标准格式有11个位的标识符ID，扩展格式有29个位的ID。 4.5 位填充位填充是为防止突发错误而设定的功能。当同样的电平持续 5 位时则添加一个位的反型数据。如下图： 4.6 错误的种类 CAN总线协议内容很多，初学者先了解这些，后面文章具体到每一个点上，相信大家就会更明白其中的含义。 五、说明1.该文档部分文字来自网络，仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 六、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程01_初识CAN与CANOpen及相关内容]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_%E5%88%9D%E8%AF%86CAN%E4%B8%8ECANOpen%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9.html</url>
+    <content type="text"><![CDATA[一、写在前面 我之前学习CANOpen的时候，网上有用的资料极少，走了不少弯路。到目前为止，网上关于CANOpen的资料依然很少。所以，特地写下该系列教程，帮助初学者跨过这道坎。 从我个人学习CANOpen的经历来看，学会使用CANOpen难度其实不大。难点在于需要掌握的基础知识很多，而且许多都有关联性，容易把人绕晕。 那么，我希望通过结合之前我的学习经历，以及工作经验，站在小白的角度写下该系列教程。当然，该教程由我个人编辑并整理，难免有些废话，或者错误，还请谅解。 本文章收录于【CANOpen系列教程】，在我的博客分类“CANOpen系列教程”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、初识CAN与CANOpen2.1 什么是CAN?CAN：是Controller Area Network的缩写，即控制器局域网络，属于工业现场总线，是ISO国际标准化的串行通信协议。 从OSI（Open System Interconnection开放系统互联）7层网络模型的角度来看，CAN现场总线仅仅定义了第 1 层（物理层）和第 2 层（数据链路层）。 而在实际设计中，这两层完全由硬件实现，设计人员无需再为此开发相关软件或固件（Firmware），只要了解如何调用相关的接口和寄存器，即可完成对CAN的控制。 上面介绍的内容可能太官方，初学者可能看了之后还是不明白。简单的说：CAN总线就是一层硬件协议。比如：差分信号电平的定义、数据帧的定义等等。 PS：初学者可以结合UART来理解，比如UART串口发送一个字符’A’，它就是一种串行通信的方式。 2.2 什么是CANOpen?CANopen是一种架构在CAN控制局域网上的高层软件通信协议，包括通信子协议及设备子协议，常在嵌入式系统中使用，也是工业控制常用到的一种现场总线协议。 CANopen协议是在20世纪90年代末，由总部位于德国纽伦堡的 CiA 组织——CAN-in-Automation，在 CAL（CAN Application Layer）的基础上发展而来。 所以，关于CANOpen协议内容请参看：http://www.can-cia.org 由于CAN总线只定义了OSI中的物理层和数据链路层，因此对于不同的应用出现了不同的【应用层协议】，为了使不同厂商的产品能够相互兼容，世界范围内需要通用的CAN应用层通信协议。 在过去的二三十年中涌现出许多的协议，不过到现在为止能够广泛被承认的协议却不多，现在应用较广的CAN应用层协议主要有以下三种：CANopen协议：主要应用在汽车、工业控制、自动化仪表等领域，目前由 CIA 负责管理和维护； J1939协议：CAN总线在商用车领域占有绝大部分市场份额的应用层协议，由美国机动车工程师学会发起，现已在全球范围内得到广泛的应用； DeviceNet协议：在美国等地占有相当大的市场份额，主要用于工业通信及控制和仪器仪表等领域。 而本文说的CANOpen也是目前应用较广的一种协议。简单的说，CANOpen就是CAN总线应用层协议。 PS：学习CANOpen应用层协议之前请务必先了解CAN总线协议。 三、CAN总线特点CAN总线采用差分信号传输，通常情况下只需要两根信号线（CAN-H和CAN-L）就可以进行正常的通信。在干扰比较强的场合，还需要用到屏蔽地即CAN-G（主要功能是屏蔽干扰信号）， CAN协议推荐用户使用屏蔽双绞线作为CAN总线的传输线。 CAN总线通信的优势和特点：A.CAN总线上任意节点，均可在任意时刻主动的向其它节点发起通信，但在同一时刻优先级高的节点能获得总线的使用权。 B.标准CAN总线传输波特率可达到1Mbps。在5Kbps的通信波特率下最远传输距离可以达到 10Km，即使在1Mbps的波特率下也能传输40m的距离。 C.CAN总线定义使用了硬件报文滤波，可实现点对点及点对多点的通信方式，不需要软件来控制。 D.CAN总线所挂接的节点数量主要取决于CAN总线收发器或驱动器，目前的驱动器一般都可以使同一网络容量达到110个节点。 E.CAN总线通信介质可采用双绞线、同轴电缆或光纤，选择极为灵活。可大大节约组网成本。 当然，CAN总线的优势还有许多，当你掌握之后就会明白为什么CAN总线应用得如此广泛了。 四、教程规划CAN总线及CANOpen协议相关的内容相对比较多，如果每一个细节知识点都写出来，可能花掉我业余时间写一年也写不完。 我写该教程目的在于引导初学者入门，我会结合实例代码让大家边学边理解，至于实际项目编程应用不一定讲述的很多（这个看后面情况）。 首先从CAN底层讲起，再到CANOpen协议相关基础知识，最后实际应用。当然，中间每一个环节内容相对可能较多，也有可能会遗漏部分内容。 五、说明1.该文档部分文字来自周立功的相关教程，仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 六、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MAVLink学习之路]]></title>
     <url>%2FMAVLink%2FMAVLink%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF.html</url>
     <content type="text"><![CDATA[一、写在前面 本文对【MAVLink学习之路】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看。 二、教程列表1.MAVLink学习之路01_认识MAVLink 2.MAVLink学习之路02_工具下载、环境搭建 3.MAVLink学习之路03_XML中定义MSG并生成C代码 4.MAVLink学习之路04_MAVLink移植到STM32具体步骤 5.MAVLink学习之路05_MAVLink应用编程接口分析 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【MAVLink学习之路】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>

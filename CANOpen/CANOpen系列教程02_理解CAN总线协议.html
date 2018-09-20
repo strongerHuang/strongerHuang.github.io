@@ -89,10 +89,18 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　上一篇文章讲述了CAN和CANOpen，相信大家CAN和CANOpen有一定理解了。本文说的CAN即是一种总线，也是一种协议。因此，我们常听见CAN总线，也常听见CAN协议。 　　CAN协议和CANOpen协议是两套不同的协议。从软硬件层次来划分，CAN协议属于硬件协议，而CANOpen属于软件协议。 　　本篇文章先概述一下CAN网络，让大家对CAN总线协议有一个全局的概念，再到底">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-20T08:37:53.789Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/1.CAN%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/2.ISO%E3%80%81OSI%E5%9F%BA%E6%9C%AC%E5%8F%82%E7%85%A7%E6%A8%A1%E5%9E%8B.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/3.CAN%E5%9C%A8OSI%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%AE%9A%E4%B9%89.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/3.CAN%E6%80%BB%E7%BA%BF%E4%BF%A1%E5%8F%B7.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/4.%E4%BD%8D%E6%97%B6%E5%BA%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/5.%E4%BD%8D%E5%A1%AB%E5%85%85.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/6.%E9%94%99%E8%AF%AF%E7%9A%84%E7%A7%8D%E7%B1%BB.png?raw=true">
+<meta property="og:updated_time" content="2018-09-20T09:04:58.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程02_理解CAN总线协议">
 <meta name="twitter:description" content="一、写在前面　　上一篇文章讲述了CAN和CANOpen，相信大家CAN和CANOpen有一定理解了。本文说的CAN即是一种总线，也是一种协议。因此，我们常听见CAN总线，也常听见CAN协议。 　　CAN协议和CANOpen协议是两套不同的协议。从软硬件层次来划分，CAN协议属于硬件协议，而CANOpen属于软件协议。 　　本篇文章先概述一下CAN网络，让大家对CAN总线协议有一个全局的概念，再到底">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/1.CAN%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png?raw=true">
 
 
 
@@ -423,7 +431,7 @@
 <p>　　本文章收录于<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【CANOpen系列教程】</a>，在我的博客分类“CANOpen系列教程”也能查找到。</p>
 <p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【CANOpen系列教程】即可查看。</p>
 <h1 id="二、CAN网络"><a href="#二、CAN网络" class="headerlink" title="二、CAN网络"></a>二、CAN网络</h1><p>CAN网络可以理解为多台CAN设备连接在同一条CAN总线上组合成的网络，<strong>其中的CAN设备我们称之为节点</strong>。CAN网络拓扑结构如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/1.CAN%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png?raw=true"><br></table>
 
 
 <p>如上图，一个CAN节点主要包含三类：<strong>MCU应用程序、CAN控制器、CAN收发器</strong>。</p>
@@ -437,37 +445,37 @@
 <h2 id="2-3-CAN收发器"><a href="#2-3-CAN收发器" class="headerlink" title="2.3 CAN收发器"></a>2.3 CAN收发器</h2><p>CAN收发器：将CAN收发引脚（CAN_TX和CAN_RX）的<strong>TTL信号转换成CAN总线的电平信号</strong>。</p>
 <p><strong>PS：你可以把CAN总线通信认为是UART通过485进行通信</strong>：CAN控制器就如UART的控制器，而CAN收发器就如485转换芯片。</p>
 <h1 id="三、ISO标准化的CAN协议"><a href="#三、ISO标准化的CAN协议" class="headerlink" title="三、ISO标准化的CAN协议"></a>三、ISO标准化的CAN协议</h1><p>写这一章节的主要目的就是想让大家<strong>了解CAN总线位于OSI所在层次</strong>。</p>
-<h2 id="3-1-ISO-OSI基本参照模型"><a href="#3-1-ISO-OSI基本参照模型" class="headerlink" title="3.1 ISO/OSI基本参照模型"></a>3.1 ISO/OSI基本参照模型</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="3-1-ISO-OSI基本参照模型"><a href="#3-1-ISO-OSI基本参照模型" class="headerlink" title="3.1 ISO/OSI基本参照模型"></a>3.1 ISO/OSI基本参照模型</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/2.ISO%E3%80%81OSI%E5%9F%BA%E6%9C%AC%E5%8F%82%E7%85%A7%E6%A8%A1%E5%9E%8B.png?raw=true"><br></table>
 
 <p>【注】<br><strong>ISO</strong>：International Standardization Organization国际标准化组织；<br><strong>OSI</strong>：Open Systems Interconnection开放式系统间互联；</p>
-<h2 id="3-2-CAN在OSI模型中的定义"><a href="#3-2-CAN在OSI模型中的定义" class="headerlink" title="3.2 CAN在OSI模型中的定义"></a>3.2 CAN在OSI模型中的定义</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="3-2-CAN在OSI模型中的定义"><a href="#3-2-CAN在OSI模型中的定义" class="headerlink" title="3.2 CAN在OSI模型中的定义"></a>3.2 CAN在OSI模型中的定义</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/3.CAN%E5%9C%A8OSI%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%AE%9A%E4%B9%89.png?raw=true"><br></table>
 
 <p>【注】<br><strong>LLC</strong>：Logical Link Control逻辑链路控制；<br><strong>MAC</strong>：Medium Access Control媒介访问控制；</p>
 <p>从上图可以知道CAN总线底层硬件的内容（CAN控制器、收发器）主要位于OSI的第1层和第2层。</p>
 <h1 id="四、概述CAN总线协议"><a href="#四、概述CAN总线协议" class="headerlink" title="四、概述CAN总线协议"></a>四、概述CAN总线协议</h1><p>CAN总线协议：就是为了保证通信（收发）数据在CAN总线上能稳定传输而制订的一套协议。</p>
 <p>CAN总线协议的内容很多，为方便初学者理解，本文先大概描述一下CAN总线协议，后续文章详细讲述CAN总线协议的内容。</p>
 <h2 id="4-1-总线信号"><a href="#4-1-总线信号" class="headerlink" title="4.1 总线信号"></a>4.1 总线信号</h2><p>CAN总线为<strong>「两线」「差分」</strong>信号，用隐形代表逻辑1，显性代表逻辑0。如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/3.CAN%E6%80%BB%E7%BA%BF%E4%BF%A1%E5%8F%B7.png?raw=true"><br></table>
 
 <h2 id="4-2-优先级"><a href="#4-2-优先级" class="headerlink" title="4.2 优先级"></a>4.2 优先级</h2><p>假如某一时刻，一个设备（节点）往总线发0，一个设备往总线发1。那么总线会呈现什么现象？</p>
 <p>答案：最后总线呈现为<strong>显性</strong>，也就是0。</p>
 <h2 id="4-3-位时序"><a href="#4-3-位时序" class="headerlink" title="4.3 位时序"></a>4.3 位时序</h2><p>位时序逻辑将监视串行总线，执行采样并调整采样点，在调整采样点时，需要在起始位边沿进行同步并后续的边沿进行再同步。</p>
 <p>简单的说就是对一个bit位分几段进行采样，目的就是提高数据传输稳定性。在STM32中底层驱动代码就需要进行位时序编程，在STM32参考手册中也会发现如下位时序图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/4.%E4%BD%8D%E6%97%B6%E5%BA%8F.png?raw=true"><br></table>
 
 <h2 id="4-4-帧的种类和格式"><a href="#4-4-帧的种类和格式" class="headerlink" title="4.4 帧的种类和格式"></a>4.4 帧的种类和格式</h2><p>帧的种类有多种：<br><strong>数据帧</strong>：用于发送单元向接收单元传送数据的帧。<br><strong>遥控帧</strong>：用于接收单元向具有相同 ID 的发送单元请求数据的帧。<br><strong>错误帧</strong>：用于当检测出错误时向其它单元通知错误的帧。<br><strong>过载帧</strong>：用于接收单元通知其尚未做好接收准备的帧。<br><strong>帧间隔</strong>：用于将数据帧及遥控帧与前面的帧分离开来的帧。</p>
 <p><strong>数据帧和遥控帧</strong>有标准格式和扩展格式两种格式。标准格式有11个位的标识符ID，扩展格式有29个位的ID。</p>
 <h2 id="4-5-位填充"><a href="#4-5-位填充" class="headerlink" title="4.5 位填充"></a>4.5 位填充</h2><p>位填充是为防止突发错误而设定的功能。当同样的电平持续 5 位时则添加一个位的反型数据。如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/5.%E4%BD%8D%E5%A1%AB%E5%85%85.png?raw=true"><br></table>
 
-<h2 id="4-6-错误的种类"><a href="#4-6-错误的种类" class="headerlink" title="4.6 错误的种类"></a>4.6 错误的种类</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-6-错误的种类"><a href="#4-6-错误的种类" class="headerlink" title="4.6 错误的种类"></a>4.6 错误的种类</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E7%90%86%E8%A7%A3CAN%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/6.%E9%94%99%E8%AF%AF%E7%9A%84%E7%A7%8D%E7%B1%BB.png?raw=true"><br></table>
 
 <p>CAN总线协议内容很多，初学者先了解这些，后面文章具体到每一个点上，相信大家就会更明白其中的含义。</p>
 <h1 id="五、说明"><a href="#五、说明" class="headerlink" title="五、说明"></a>五、说明</h1><p>1.该文档部分文字来自网络，仅供个人学习使用，版权所有，禁止商用。</p>
 <p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
 <p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。  </p>
 <h1 id="六、最后"><a href="#六、最后" class="headerlink" title="六、最后"></a>六、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
-<p>我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
 
       
     </div>

@@ -89,10 +89,25 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　上一篇文章讲述了CAN收发器的重要作用，也提及了一下CAN总线的优势主要在于CAN控制器。CAN控制器在CAN网络中所处的位置如下图：   　　本文讲述的CAN控制器实现的几个重要功能：CAN总线波特率、位时序、帧类型。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T08:20:46.330Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/1.CAN%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/2.STM32%E4%BD%8D%E6%97%B6%E5%BA%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/3.%E6%B3%A2%E7%89%B9%E7%8E%87%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/4.%E6%95%B0%E6%8D%AE%E5%B8%A7.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/5.%E8%B5%B7%E5%A7%8B%E6%AE%B5.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/6.%E4%BB%B2%E8%A3%81%E6%AE%B5.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/7.%E6%8E%A7%E5%88%B6%E6%AE%B5.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/8.CRC%E6%AE%B5.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/9.ACK%E6%AE%B5.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/10.%E5%B8%A7%E7%BB%93%E6%9D%9F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/11.%E9%81%A5%E6%8E%A7%E5%B8%A7.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/12.%E9%94%99%E8%AF%AF%E5%B8%A7.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/13.%E8%BF%87%E8%BD%BD%E5%B8%A7.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/14.%E5%B8%A7%E9%97%B4%E9%9A%94.png?raw=true">
+<meta property="og:updated_time" content="2018-09-22T08:31:43.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明">
 <meta name="twitter:description" content="一、写在前面　　上一篇文章讲述了CAN收发器的重要作用，也提及了一下CAN总线的优势主要在于CAN控制器。CAN控制器在CAN网络中所处的位置如下图：   　　本文讲述的CAN控制器实现的几个重要功能：CAN总线波特率、位时序、帧类型。">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/1.CAN%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png?raw=true">
 
 
 
@@ -417,7 +432,7 @@
 
       
         <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　上一篇文章讲述了<strong>CAN收发器</strong>的重要作用，也提及了一下CAN总线的优势主要在于<strong>CAN控制器</strong>。CAN控制器在CAN网络中所处的位置如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/1.CAN%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png?raw=true"><br></table>
 
 <p>　　本文讲述的CAN控制器实现的几个重要功能：<strong>CAN总线波特率、位时序、帧类型</strong>。</p>
 <a id="more"></a>
@@ -437,65 +452,65 @@
 <p>这些段又由可称为 Time Quantum（简称Tq）的最小时间单位构成。</p>
 <p>1位分为4个段，每个段又由若干个Tq构成，这称为位时序。</p>
 <p>而在STM32参考手册中，将位时序分为三段，但它将它传播段和位段1合并在一起了，如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/2.STM32%E4%BD%8D%E6%97%B6%E5%BA%8F.png?raw=true"><br></table>
 
 <p>1位由多少个Tq构成、每个段又由多少个Tq构成等，可任意设定位时序。通过设定位时序，<strong>决定传输的波特率</strong>：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/3.%E6%B3%A2%E7%89%B9%E7%8E%87%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png?raw=true"><br></table>
 
 <p>这几个参数会在以后编程中进行配置，从而决定通信的波特率。</p>
 <p>关于同步，还有硬件同步、再同步等操作。但初学者可以不必过多理解，掌握上面基础内容就行了。更多关于位时序的内容可以参看 ISO 11898 标准。</p>
 <h1 id="四、帧类型及格式说明"><a href="#四、帧类型及格式说明" class="headerlink" title="四、帧类型及格式说明"></a>四、帧类型及格式说明</h1><p>CAN总线是通过以下5种类型的帧进行通信：<br><strong>数据帧</strong>：用于发送单元向接收单元传送数据的帧。<br><strong>遥控帧</strong>：用于接收单元向具有相同 ID 的发送单元请求数据的帧。<br><strong>错误帧</strong>：用于当检测出错误时向其它单元通知错误的帧。<br><strong>过载帧</strong>：用于接收单元通知其尚未做好接收准备的帧。<br><strong>帧间隔</strong>：用于将数据帧及遥控帧与前面的帧分离开来的帧。</p>
 <p><strong>数据帧和遥控帧</strong>有标准格式和扩展格式两种格式。标准格式有11个位的标识符ID，扩展格式有29个位的ID。</p>
-<h2 id="4-1-数据帧"><a href="#4-1-数据帧" class="headerlink" title="4.1 数据帧"></a>4.1 数据帧</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-1-数据帧"><a href="#4-1-数据帧" class="headerlink" title="4.1 数据帧"></a>4.1 数据帧</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/4.%E6%95%B0%E6%8D%AE%E5%B8%A7.png?raw=true"><br></table>
 
 <p>如上图，数据帧由7个段构成：<br><strong>(1) 帧起始</strong><br>表示数据帧开始的段。<br><strong>(2) 仲裁段</strong><br>表示该帧优先级的段。<br><strong>(3) 控制段</strong><br>表示数据的字节数及保留位的段。<br><strong>(4) 数据段</strong><br>数据的内容，可发送 0～8 个字节的数据。<br><strong>(5) CRC 段</strong><br>检查帧的传输错误的段。<br><strong>(6) ACK 段</strong><br>表示确认正常接收的段。<br><strong>(7) 帧结束</strong><br>表示数据帧结束的段。</p>
 <p>理解数据帧的含义，请从认真理解它的定义：用于发送单元向接收单元传送数据的帧。</p>
 <p>一般的CAN总线通信，总线上通信绝大部分时候都是数据帧。像在CANOpen协议中，用的最多的PDO过程数据对象就是通过数据帧进行的通信。</p>
 <p>初学者可以先理解数据帧，然后其他就容易理解了。下面再来讲述一下<strong>数据帧7段的详情</strong>。</p>
 <h3 id="4-1-1-帧起始"><a href="#4-1-1-帧起始" class="headerlink" title="4.1.1 帧起始"></a>4.1.1 帧起始</h3><p>标准和扩展格式相同。表示帧开始的段，1个位的显性位（如下图）：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/5.%E8%B5%B7%E5%A7%8B%E6%AE%B5.png?raw=true"><br></table>
 
 <p>关于显性和隐性电平，请参看我上一篇文章差分信号章节。</p>
 <p><strong>总线上的电平有显性电平和隐性电平两种</strong>。<br>总线上执行逻辑上的线“与”时，显性电平的逻辑值为“0”，隐性电平为“1”。</p>
 <p>“显性”具有“优先”的意味，只要有一个单元输出显性电平，总线上即为显性电平。并且，“隐性”具有“包容”的意味，<strong>只有所有的单元都输出隐性电平，总线上才为隐性电平</strong>。（显性电平比隐性电平更强）</p>
 <h3 id="4-1-2-仲裁段"><a href="#4-1-2-仲裁段" class="headerlink" title="4.1.2 仲裁段"></a>4.1.2 仲裁段</h3><p>标准格式和扩展格式在此的构成有所不同。仲裁段表示该帧优先级的段，扩展格式多了18位ID（如下图）：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/6.%E4%BB%B2%E8%A3%81%E6%AE%B5.png?raw=true"><br></table>
 
 <p>RTR = 0代表数据帧，RTR = 1代表远程帧。</p>
 <p>为什么叫仲裁段，就是通过ID来判断总线上哪一个节点具有优先发送的权利。ID越小（0代表显性），优先级越高。</p>
 <h3 id="4-1-3-控制段"><a href="#4-1-3-控制段" class="headerlink" title="4.1.3 控制段"></a>4.1.3 控制段</h3><p>标准和扩展格式的构成有所不同。控制段由 6 个位构成（如下图）：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/7.%E6%8E%A7%E5%88%B6%E6%AE%B5.png?raw=true"><br></table>
 
 <p>它们除了都有4位表示数据段长度代码（DLC）外，标准帧有IDE（数值为0）位和r0保留位，扩展帧有r0和r1保留位。</p>
 <p>保留位必须全部以显性电平发送。但接收方可以接收显性、隐性及其任意组合的电平。</p>
 <h3 id="4-1-4-数据段"><a href="#4-1-4-数据段" class="headerlink" title="4.1.4 数据段"></a>4.1.4 数据段</h3><p>标准和扩展格式相同。数据段表示传输数据的内容，从 MSB（最高位）开始输出，可发送 0～8 个字节的数据，长度由前面控制段决定。</p>
 <h3 id="4-1-5-CRC段"><a href="#4-1-5-CRC段" class="headerlink" title="4.1.5 CRC段"></a>4.1.5 CRC段</h3><p>标准和扩展格式相同。CRC段是检查帧传输错误的帧，由 15 个位的 CRC 顺序和 1 个位的 CRC 界定符（用于分隔的位）构成。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/8.CRC%E6%AE%B5.png?raw=true"><br></table>
 
 <p>相比485这类通信，CAN控制器就已经把CRC校验做了，不需要你的程序再次去计算，从而节约了处理器资源。</p>
 <h3 id="4-1-6-ACK段"><a href="#4-1-6-ACK段" class="headerlink" title="4.1.6 ACK段"></a>4.1.6 ACK段</h3><p>标准和扩展格式相同。ACK段用来确认是否正常接收。由 ACK 槽(ACK Slot)和 ACK 界定符 2 个位构成。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/9.ACK%E6%AE%B5.png?raw=true"><br></table>
 
 <p>A.发送单元在 ACK 段发送 2 个位的隐性位。<br>B.接收到正确消息的单元在 ACK 槽(ACK Slot)发送显性位， 通知发送单元正常接收结束。这称作“发送 ACK”或者“返回 ACK”。</p>
 <h3 id="4-1-7-帧结束"><a href="#4-1-7-帧结束" class="headerlink" title="4.1.7 帧结束"></a>4.1.7 帧结束</h3><p>标准和扩展格式相同。帧结束是表示该该帧的结束的段。由 7 个位的隐性位构成。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/10.%E5%B8%A7%E7%BB%93%E6%9D%9F.png?raw=true"><br></table>
 
-<h2 id="4-2-遥控帧"><a href="#4-2-遥控帧" class="headerlink" title="4.2 遥控帧"></a>4.2 遥控帧</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-2-遥控帧"><a href="#4-2-遥控帧" class="headerlink" title="4.2 遥控帧"></a>4.2 遥控帧</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/11.%E9%81%A5%E6%8E%A7%E5%B8%A7.png?raw=true"><br></table>
 
 <p>和数据帧相比，遥控帧是接收单元向发送单元请求发送数据所用的帧。所以，遥控帧没有数据段。因此，遥控帧由如下 6 个段组成：<br><strong>(1) 帧起始（SOF）</strong><br>表示帧开始的段。<br><strong>(2) 仲裁段</strong><br>表示该帧优先级的段。可请求具有相同 ID 的数据帧。<br><strong>(3) 控制段</strong><br>表示数据的字节数及保留位的段。<br><strong>(4) CRC 段</strong><br>检查帧的传输错误的段。<br><strong>(5) ACK 段</strong><br>表示确认正常接收的段。<br><strong>(6) 帧结束</strong><br>表示遥控帧结束的段。</p>
 <p>这6个段和上面数据帧的内容基本一样，这里就不一一讲述了。讲一下遥控帧和数据帧的区别：<br><strong>遥控帧的 RTR 位为隐性位，没有数据段。</strong><br><strong>没有数据段的数据帧和遥控帧可通过 RTR 位区别开来。</strong></p>
 <p><strong>问题一：遥控帧没有数据段，数据长度码该如何表示？</strong><br>遥控帧的数据长度码以所请求数据帧的数据长度码表示。</p>
 <p><strong>问题二：没有数据段的数据帧有何用途？</strong><br>例如，可用于各单元的定期连接确认/应答、或仲裁段本身带有实质性信息的情况下。</p>
-<h2 id="4-3-错误帧"><a href="#4-3-错误帧" class="headerlink" title="4.3 错误帧"></a>4.3 错误帧</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-3-错误帧"><a href="#4-3-错误帧" class="headerlink" title="4.3 错误帧"></a>4.3 错误帧</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/12.%E9%94%99%E8%AF%AF%E5%B8%A7.png?raw=true"><br></table>
 
 <p>用于在接收和发送消息时检测出错误通知错误的帧。错误帧由错误标志和错误界定符构成。</p>
 <p><strong>(1) 错误标志</strong><br>错误标志包括主动错误标志和被动错误标志两种。<br>主动错误标志： 6 个位的显性位。<br>被动错误标志： 6 个位的隐性位。</p>
 <p><strong>(2) 错误界定符</strong><br>错误界定符由 8 个位的隐性位构成。</p>
-<h2 id="4-4-过载帧"><a href="#4-4-过载帧" class="headerlink" title="4.4 过载帧"></a>4.4 过载帧</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-4-过载帧"><a href="#4-4-过载帧" class="headerlink" title="4.4 过载帧"></a>4.4 过载帧</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/13.%E8%BF%87%E8%BD%BD%E5%B8%A7.png?raw=true"><br></table>
 
 <p>过载帧是用于接收单元通知其尚未完成接收准备的帧。过载帧由过载标志和过载界定符构成。<br><strong>(1) 过载标志</strong><br>6 个位的显性位。<br>过载标志的构成与主动错误标志的构成相同。</p>
 <p><strong>(2) 过载界定符</strong><br>8 个位的隐性位。<br>过载界定符的构成与错误界定符的构成相同。</p>
-<h2 id="4-5-帧间隔"><a href="#4-5-帧间隔" class="headerlink" title="4.5 帧间隔"></a>4.5 帧间隔</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-5-帧间隔"><a href="#4-5-帧间隔" class="headerlink" title="4.5 帧间隔"></a>4.5 帧间隔</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/14.%E5%B8%A7%E9%97%B4%E9%9A%94.png?raw=true"><br></table>
 
 <p>帧间隔是用于分隔数据帧和遥控帧的帧。数据帧和遥控帧可通过插入帧间隔将本帧与前面的任何帧（数据帧、遥控帧、错误帧、过载帧）分开。</p>
 <p>过载帧和错误帧前不能插入帧间隔。</p>

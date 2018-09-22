@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-my.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CAN,CAN总线,CANOpen,CanFestival," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EmbeddedDevelop" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、写在前面　　上一篇文章讲述了CAN收发器的重要作用，也提及了一下CAN总线的优势主要在于CAN控制器。CAN控制器在CAN网络中所处的位置如下图：   　　本文讲述的CAN控制器实现的几个重要功能：CAN总线波特率、位时序、帧类型。">
+<meta name="keywords" content="CAN,CAN总线,CANOpen,CanFestival">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明">
+<meta property="og:url" content="http://www.strongerhuang.com/CANOpen/CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明.html">
+<meta property="og:site_name" content="EmbeddedDevelop">
+<meta property="og:description" content="一、写在前面　　上一篇文章讲述了CAN收发器的重要作用，也提及了一下CAN总线的优势主要在于CAN控制器。CAN控制器在CAN网络中所处的位置如下图：   　　本文讲述的CAN控制器实现的几个重要功能：CAN总线波特率、位时序、帧类型。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-22T08:20:46.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明">
+<meta name="twitter:description" content="一、写在前面　　上一篇文章讲述了CAN收发器的重要作用，也提及了一下CAN总线的优势主要在于CAN控制器。CAN控制器在CAN网络中所处的位置如下图：   　　本文讲述的CAN控制器实现的几个重要功能：CAN总线波特率、位时序、帧类型。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明.html"/>
+
+
+
+
+
+  <title>CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明 | EmbeddedDevelop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EmbeddedDevelop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">作者：strongerHuang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-22T16:00:00+08:00">
+                2018-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CANOpen系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">CANOpen系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明.html" title="CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明">http://www.strongerhuang.com/CANOpen/CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　上一篇文章讲述了<strong>CAN收发器</strong>的重要作用，也提及了一下CAN总线的优势主要在于<strong>CAN控制器</strong>。CAN控制器在CAN网络中所处的位置如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>　　本文讲述的CAN控制器实现的几个重要功能：<strong>CAN总线波特率、位时序、帧类型</strong>。</p>
+<a id="more"></a>
+<p>　　本文章收录于<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【CANOpen系列教程】</a>，在我的博客分类“CANOpen系列教程”也能查找到。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【CANOpen系列教程】即可查看。</p>
+<h1 id="二、CAN总线波特率"><a href="#二、CAN总线波特率" class="headerlink" title="二、CAN总线波特率"></a>二、CAN总线波特率</h1><p>CAN总线属于异步通信，因此就有通信波特率，而这个波特率发生器就位于CAN控制器内部。我们不需要了解它是如何产生的，但需要了解它的含义。这章节针对初学者讲述以下两点内容。</p>
+<h2 id="2-1-异步通信"><a href="#2-1-异步通信" class="headerlink" title="2.1 异步通信"></a>2.1 异步通信</h2><p>在串行通信中，主要分<strong>异步通信和同步通信</strong>。</p>
+<p><strong>同步通信</strong>：通信设备之间通过同步信号（CLK时钟）来实现数据传输的通信叫同步通信。如I2C、SPI这类通信中都具有一个时钟信号，其实在STM32中USART也具有同步功能，只是我们大多数人都只用了它的异步功能。</p>
+<p><strong>异步通信</strong>：简单来说，就是通信设备之间通过约定一样的时间来收发数据。而这个时间就会决定本节说的波特率。</p>
+<h2 id="2-2-波特率"><a href="#2-2-波特率" class="headerlink" title="2.2 波特率"></a>2.2 波特率</h2><p>很多工程师一直都没彻底搞明白什么是波特率，我这里还是结合UART波特率来简述一下其含义。</p>
+<p>在电子通信领域，波特（Baud）即调制速率，指的是有效数据信号调制载波的速率，即单位时间内载波调制状态变化的次数。它是对符号传输速率的一种度量，<strong>1波特即指每秒传输1个符号</strong>。</p>
+<p>UART每秒钟传送240个字符，而每个字符格式包含10位（1个起始位，1个停止位，8个数据位），这时的<strong>波特率为240Bd，比特率为10位*240个/秒=2400bps</strong>。</p>
+<p>从上面的描述可以总结：<br><strong>比特率</strong>：即单位时间内传送的二进制位数；</p>
+<p><strong>波特率</strong>：即单位时间内传输的符号个数；</p>
+<p>只有在每个符号只代表一个比特信息的情况下，波特率与比特率才在数值上相等，但是它们的意义并不相同。</p>
+<h1 id="三、位时序"><a href="#三、位时序" class="headerlink" title="三、位时序"></a>三、位时序</h1><p>上一章节讲述了波特率，而<strong>决定波特率大小的就是本节说的位时序</strong>。在CAN标准中一个位可分为4段：<br><strong>·同步段（SS）</strong><br><strong>·传播时间段（PTS）</strong><br><strong>·相位缓冲段1（PBS1）</strong><br><strong>·相位缓冲段2（PBS2）</strong></p>
+<p>这些段又由可称为 Time Quantum（简称Tq）的最小时间单位构成。</p>
+<p>1位分为4个段，每个段又由若干个Tq构成，这称为位时序。</p>
+<p>而在STM32参考手册中，将位时序分为三段，但它将它传播段和位段1合并在一起了，如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>1位由多少个Tq构成、每个段又由多少个Tq构成等，可任意设定位时序。通过设定位时序，<strong>决定传输的波特率</strong>：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>这几个参数会在以后编程中进行配置，从而决定通信的波特率。</p>
+<p>关于同步，还有硬件同步、再同步等操作。但初学者可以不必过多理解，掌握上面基础内容就行了。更多关于位时序的内容可以参看 ISO 11898 标准。</p>
+<h1 id="四、帧类型及格式说明"><a href="#四、帧类型及格式说明" class="headerlink" title="四、帧类型及格式说明"></a>四、帧类型及格式说明</h1><p>CAN总线是通过以下5种类型的帧进行通信：<br><strong>数据帧</strong>：用于发送单元向接收单元传送数据的帧。<br><strong>遥控帧</strong>：用于接收单元向具有相同 ID 的发送单元请求数据的帧。<br><strong>错误帧</strong>：用于当检测出错误时向其它单元通知错误的帧。<br><strong>过载帧</strong>：用于接收单元通知其尚未做好接收准备的帧。<br><strong>帧间隔</strong>：用于将数据帧及遥控帧与前面的帧分离开来的帧。</p>
+<p><strong>数据帧和遥控帧</strong>有标准格式和扩展格式两种格式。标准格式有11个位的标识符ID，扩展格式有29个位的ID。</p>
+<h2 id="4-1-数据帧"><a href="#4-1-数据帧" class="headerlink" title="4.1 数据帧"></a>4.1 数据帧</h2><table><br><img align="left" width="600" src=""><br></table>
+
+<p>如上图，数据帧由7个段构成：<br><strong>(1) 帧起始</strong><br>表示数据帧开始的段。<br><strong>(2) 仲裁段</strong><br>表示该帧优先级的段。<br><strong>(3) 控制段</strong><br>表示数据的字节数及保留位的段。<br><strong>(4) 数据段</strong><br>数据的内容，可发送 0～8 个字节的数据。<br><strong>(5) CRC 段</strong><br>检查帧的传输错误的段。<br><strong>(6) ACK 段</strong><br>表示确认正常接收的段。<br><strong>(7) 帧结束</strong><br>表示数据帧结束的段。</p>
+<p>理解数据帧的含义，请从认真理解它的定义：用于发送单元向接收单元传送数据的帧。</p>
+<p>一般的CAN总线通信，总线上通信绝大部分时候都是数据帧。像在CANOpen协议中，用的最多的PDO过程数据对象就是通过数据帧进行的通信。</p>
+<p>初学者可以先理解数据帧，然后其他就容易理解了。下面再来讲述一下<strong>数据帧7段的详情</strong>。</p>
+<h3 id="4-1-1-帧起始"><a href="#4-1-1-帧起始" class="headerlink" title="4.1.1 帧起始"></a>4.1.1 帧起始</h3><p>标准和扩展格式相同。表示帧开始的段，1个位的显性位（如下图）：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>关于显性和隐性电平，请参看我上一篇文章差分信号章节。</p>
+<p><strong>总线上的电平有显性电平和隐性电平两种</strong>。<br>总线上执行逻辑上的线“与”时，显性电平的逻辑值为“0”，隐性电平为“1”。</p>
+<p>“显性”具有“优先”的意味，只要有一个单元输出显性电平，总线上即为显性电平。并且，“隐性”具有“包容”的意味，<strong>只有所有的单元都输出隐性电平，总线上才为隐性电平</strong>。（显性电平比隐性电平更强）</p>
+<h3 id="4-1-2-仲裁段"><a href="#4-1-2-仲裁段" class="headerlink" title="4.1.2 仲裁段"></a>4.1.2 仲裁段</h3><p>标准格式和扩展格式在此的构成有所不同。仲裁段表示该帧优先级的段，扩展格式多了18位ID（如下图）：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>RTR = 0代表数据帧，RTR = 1代表远程帧。</p>
+<p>为什么叫仲裁段，就是通过ID来判断总线上哪一个节点具有优先发送的权利。ID越小（0代表显性），优先级越高。</p>
+<h3 id="4-1-3-控制段"><a href="#4-1-3-控制段" class="headerlink" title="4.1.3 控制段"></a>4.1.3 控制段</h3><p>标准和扩展格式的构成有所不同。控制段由 6 个位构成（如下图）：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>它们除了都有4位表示数据段长度代码（DLC）外，标准帧有IDE（数值为0）位和r0保留位，扩展帧有r0和r1保留位。</p>
+<p>保留位必须全部以显性电平发送。但接收方可以接收显性、隐性及其任意组合的电平。</p>
+<h3 id="4-1-4-数据段"><a href="#4-1-4-数据段" class="headerlink" title="4.1.4 数据段"></a>4.1.4 数据段</h3><p>标准和扩展格式相同。数据段表示传输数据的内容，从 MSB（最高位）开始输出，可发送 0～8 个字节的数据，长度由前面控制段决定。</p>
+<h3 id="4-1-5-CRC段"><a href="#4-1-5-CRC段" class="headerlink" title="4.1.5 CRC段"></a>4.1.5 CRC段</h3><p>标准和扩展格式相同。CRC段是检查帧传输错误的帧，由 15 个位的 CRC 顺序和 1 个位的 CRC 界定符（用于分隔的位）构成。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>相比485这类通信，CAN控制器就已经把CRC校验做了，不需要你的程序再次去计算，从而节约了处理器资源。</p>
+<h3 id="4-1-6-ACK段"><a href="#4-1-6-ACK段" class="headerlink" title="4.1.6 ACK段"></a>4.1.6 ACK段</h3><p>标准和扩展格式相同。ACK段用来确认是否正常接收。由 ACK 槽(ACK Slot)和 ACK 界定符 2 个位构成。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>A.发送单元在 ACK 段发送 2 个位的隐性位。<br>B.接收到正确消息的单元在 ACK 槽(ACK Slot)发送显性位， 通知发送单元正常接收结束。这称作“发送 ACK”或者“返回 ACK”。</p>
+<h3 id="4-1-7-帧结束"><a href="#4-1-7-帧结束" class="headerlink" title="4.1.7 帧结束"></a>4.1.7 帧结束</h3><p>标准和扩展格式相同。帧结束是表示该该帧的结束的段。由 7 个位的隐性位构成。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<h2 id="4-2-遥控帧"><a href="#4-2-遥控帧" class="headerlink" title="4.2 遥控帧"></a>4.2 遥控帧</h2><table><br><img align="left" width="600" src=""><br></table>
+
+<p>和数据帧相比，遥控帧是接收单元向发送单元请求发送数据所用的帧。所以，遥控帧没有数据段。因此，遥控帧由如下 6 个段组成：<br><strong>(1) 帧起始（SOF）</strong><br>表示帧开始的段。<br><strong>(2) 仲裁段</strong><br>表示该帧优先级的段。可请求具有相同 ID 的数据帧。<br><strong>(3) 控制段</strong><br>表示数据的字节数及保留位的段。<br><strong>(4) CRC 段</strong><br>检查帧的传输错误的段。<br><strong>(5) ACK 段</strong><br>表示确认正常接收的段。<br><strong>(6) 帧结束</strong><br>表示遥控帧结束的段。</p>
+<p>这6个段和上面数据帧的内容基本一样，这里就不一一讲述了。讲一下遥控帧和数据帧的区别：<br><strong>遥控帧的 RTR 位为隐性位，没有数据段。</strong><br><strong>没有数据段的数据帧和遥控帧可通过 RTR 位区别开来。</strong></p>
+<p><strong>问题一：遥控帧没有数据段，数据长度码该如何表示？</strong><br>遥控帧的数据长度码以所请求数据帧的数据长度码表示。</p>
+<p><strong>问题二：没有数据段的数据帧有何用途？</strong><br>例如，可用于各单元的定期连接确认/应答、或仲裁段本身带有实质性信息的情况下。</p>
+<h2 id="4-3-错误帧"><a href="#4-3-错误帧" class="headerlink" title="4.3 错误帧"></a>4.3 错误帧</h2><table><br><img align="left" width="600" src=""><br></table>
+
+<p>用于在接收和发送消息时检测出错误通知错误的帧。错误帧由错误标志和错误界定符构成。</p>
+<p><strong>(1) 错误标志</strong><br>错误标志包括主动错误标志和被动错误标志两种。<br>主动错误标志： 6 个位的显性位。<br>被动错误标志： 6 个位的隐性位。</p>
+<p><strong>(2) 错误界定符</strong><br>错误界定符由 8 个位的隐性位构成。</p>
+<h2 id="4-4-过载帧"><a href="#4-4-过载帧" class="headerlink" title="4.4 过载帧"></a>4.4 过载帧</h2><table><br><img align="left" width="600" src=""><br></table>
+
+<p>过载帧是用于接收单元通知其尚未完成接收准备的帧。过载帧由过载标志和过载界定符构成。<br><strong>(1) 过载标志</strong><br>6 个位的显性位。<br>过载标志的构成与主动错误标志的构成相同。</p>
+<p><strong>(2) 过载界定符</strong><br>8 个位的隐性位。<br>过载界定符的构成与错误界定符的构成相同。</p>
+<h2 id="4-5-帧间隔"><a href="#4-5-帧间隔" class="headerlink" title="4.5 帧间隔"></a>4.5 帧间隔</h2><table><br><img align="left" width="600" src=""><br></table>
+
+<p>帧间隔是用于分隔数据帧和遥控帧的帧。数据帧和遥控帧可通过插入帧间隔将本帧与前面的任何帧（数据帧、遥控帧、错误帧、过载帧）分开。</p>
+<p>过载帧和错误帧前不能插入帧间隔。</p>
+<p><strong>(1) 间隔</strong><br>3 个位的隐性位。</p>
+<p><strong>(2) 总线空闲</strong><br>隐性电平，无长度限制（0 亦可）。<br>本状态下，可视为总线空闲，要发送的单元可开始访问总线。</p>
+<p><strong>(3) 延迟传送（发送暂时停止）</strong><br>8 个位的隐性位。<br>只在处于被动错误状态的单元刚发送一个消息后的帧间隔中包含的段。</p>
+<h1 id="五、说明"><a href="#五、说明" class="headerlink" title="五、说明"></a>五、说明</h1><p>1.该文档部分文字来自网络，仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。  </p>
+<h1 id="六、最后"><a href="#六、最后" class="headerlink" title="六、最后"></a>六、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CAN/" rel="tag"># CAN</a>
+          
+            <a href="/tags/CAN总线/" rel="tag"># CAN总线</a>
+          
+            <a href="/tags/CANOpen/" rel="tag"># CANOpen</a>
+          
+            <a href="/tags/CanFestival/" rel="tag"># CanFestival</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程03_CAN收发器功能、原理及作用.html" rel="next" title="CANOpen系列教程03_CAN收发器功能、原理及作用">
+                <i class="fa fa-chevron-left"></i> CANOpen系列教程03_CAN收发器功能、原理及作用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程.html" rel="prev" title="CANOpen系列教程">
+                CANOpen系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="strongerHuang" />
+            
+              <p class="site-author-name" itemprop="name">strongerHuang</p>
+              <p class="site-description motion-element" itemprop="description">更多内容，尽在微信公众号！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/EmbeddedDevelop" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/strongerHuang.com" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.st.com" title="ST" target="_blank">ST</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nxp.com/cn" title="NXP" target="_blank">NXP</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.keil.com" title="Keil" target="_blank">Keil</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.iar.com" title="IAR" target="_blank">IAR</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.micrium.com" title="uCOS" target="_blank">uCOS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.freertos.org" title="FreeRTOS" target="_blank">FreeRTOS</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、CAN总线波特率"><span class="nav-text">二、CAN总线波特率</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-异步通信"><span class="nav-text">2.1 异步通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-波特率"><span class="nav-text">2.2 波特率</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、位时序"><span class="nav-text">三、位时序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、帧类型及格式说明"><span class="nav-text">四、帧类型及格式说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-数据帧"><span class="nav-text">4.1 数据帧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-帧起始"><span class="nav-text">4.1.1 帧起始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-仲裁段"><span class="nav-text">4.1.2 仲裁段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-3-控制段"><span class="nav-text">4.1.3 控制段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-4-数据段"><span class="nav-text">4.1.4 数据段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-5-CRC段"><span class="nav-text">4.1.5 CRC段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-6-ACK段"><span class="nav-text">4.1.6 ACK段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-7-帧结束"><span class="nav-text">4.1.7 帧结束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-遥控帧"><span class="nav-text">4.2 遥控帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-错误帧"><span class="nav-text">4.3 错误帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-过载帧"><span class="nav-text">4.4 过载帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-帧间隔"><span class="nav-text">4.5 帧间隔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、说明"><span class="nav-text">五、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、最后"><span class="nav-text">六、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">strongerHuang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"> 访客人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"> 总访问量:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

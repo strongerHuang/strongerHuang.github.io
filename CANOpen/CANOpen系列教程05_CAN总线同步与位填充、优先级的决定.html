@@ -68,12 +68,10 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CAN,CAN总线,CANOpen,CanFestival," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="EmbeddedDevelop" type="application/atom+xml" />
@@ -83,18 +81,18 @@
 
 
 
-<meta name="description" content="一、关于我　　关于我，一个从技术小白慢慢自学过来，从事嵌入式软件开发工作的一名90后朋友，和你们一路成长的伙伴。在博客和微信公众号上面免费分享一些技术知识，促进你我成长。 　　我不是什么牛人，也不是什么大神，我只是一个愿意整理知识，并愿意分享给大家的普通人。 　　很多关注我的朋友称呼我为“博主”、“大神”、“大佬”、“老师”、“微主”、“大哥”······感谢你们这么抬举我。在技术上，真正的牛人太">
-<meta name="keywords" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://www.strongerhuang.com/about/index.html">
+<meta name="description" content="一、写在前面　　继续为大家更新CAN总线协议相关内容，这些内容其实也比较重要，会直接影响到你后期CAN总线的编程，夸张一点的说会影响到你的软件架构。 　　本文内容相对来说比较容易理解，初学者有必要了解一下。">
+<meta name="keywords" content="CAN,CAN总线,CANOpen,CanFestival">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CANOpen系列教程05_CAN总线同步与位填充、优先级的决定">
+<meta property="og:url" content="http://www.strongerhuang.com/CANOpen/CANOpen系列教程05_CAN总线同步与位填充、优先级的决定.html">
 <meta property="og:site_name" content="EmbeddedDevelop">
-<meta property="og:description" content="一、关于我　　关于我，一个从技术小白慢慢自学过来，从事嵌入式软件开发工作的一名90后朋友，和你们一路成长的伙伴。在博客和微信公众号上面免费分享一些技术知识，促进你我成长。 　　我不是什么牛人，也不是什么大神，我只是一个愿意整理知识，并愿意分享给大家的普通人。 　　很多关注我的朋友称呼我为“博主”、“大神”、“大佬”、“老师”、“微主”、“大哥”······感谢你们这么抬举我。在技术上，真正的牛人太">
+<meta property="og:description" content="一、写在前面　　继续为大家更新CAN总线协议相关内容，这些内容其实也比较重要，会直接影响到你后期CAN总线的编程，夸张一点的说会影响到你的软件架构。 　　本文内容相对来说比较容易理解，初学者有必要了解一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-03T03:18:42.322Z">
+<meta property="og:updated_time" content="2018-09-27T01:24:22.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="一、关于我　　关于我，一个从技术小白慢慢自学过来，从事嵌入式软件开发工作的一名90后朋友，和你们一路成长的伙伴。在博客和微信公众号上面免费分享一些技术知识，促进你我成长。 　　我不是什么牛人，也不是什么大神，我只是一个愿意整理知识，并愿意分享给大家的普通人。 　　很多关注我的朋友称呼我为“博主”、“大神”、“大佬”、“老师”、“微主”、“大哥”······感谢你们这么抬举我。在技术上，真正的牛人太">
+<meta name="twitter:title" content="CANOpen系列教程05_CAN总线同步与位填充、优先级的决定">
+<meta name="twitter:description" content="一、写在前面　　继续为大家更新CAN总线协议相关内容，这些内容其实也比较重要，会直接影响到你后期CAN总线的编程，夸张一点的说会影响到你的软件架构。 　　本文内容相对来说比较容易理解，初学者有必要了解一下。">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.strongerhuang.com/about/"/>
+  <link rel="canonical" href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程05_CAN总线同步与位填充、优先级的决定.html"/>
 
 
 
 
 
-  <title>关于 | EmbeddedDevelop</title>
+  <title>CANOpen系列教程05_CAN总线同步与位填充、优先级的决定 | EmbeddedDevelop</title>
   
 
 
@@ -289,43 +287,279 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程05_CAN总线同步与位填充、优先级的决定.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h1 id="一、关于我"><a href="#一、关于我" class="headerlink" title="一、关于我"></a>一、关于我</h1><p>　　关于我，一个从技术小白慢慢自学过来，从事嵌入式软件开发工作的一名90后朋友，和你们一路成长的伙伴。在博客和微信公众号上面免费分享一些技术知识，促进你我成长。</p>
-<p>　　我不是什么牛人，也不是什么大神，我只是一个愿意整理知识，并愿意分享给大家的普通人。</p>
-<p>　　很多关注我的朋友称呼我为“博主”、“大神”、“大佬”、“老师”、“微主”、“大哥”······感谢你们这么抬举我。在技术上，真正的牛人太多了，与那些真正的牛人相比较，我可能微不足道。</p>
-<p>　　很多朋友从我的名称“strongerHuang”都已知道我姓黄，称呼我为“黄哥”、“黄工”。其实，你们怎么称呼我都行，只要听上去顺耳就行。实在不知道怎么称呼，就叫“黄工”也行。</p>
-<h1 id="二、关于博客"><a href="#二、关于博客" class="headerlink" title="二、关于博客"></a>二、关于博客</h1><h2 id="2-1-原CSDN博客"><a href="#2-1-原CSDN博客" class="headerlink" title="2.1 原CSDN博客"></a>2.1 原CSDN博客</h2><p>　　由于我原来的<a href="https://blog.csdn.net/ybhuangfugui" target="_blank" rel="noopener">【CSDN博客】</a>文章比较杂乱，也没有整理归类，不方便查找，文章中提供的代码工程下载地址都失效了。还有个主要原因，在别人地盘写文章总觉得不爽。所以，决定自己搭建博客，在自己的地盘写出属于自己的博客文章。</p>
-<p>　　我的CSDN博客目前没有更新文章了，最后一次更新文章应该是停留在去年八九月份的样子，所以那个时候都有计划搭建属于自己的博客了。后续可能很少在CSDN上面更新文章了（兴许哪一天高兴了，会整理一下CSDN博客）。</p>
-<p>原CSDN博客主页：<a href="https://blog.csdn.net/ybhuangfugui" target="_blank" rel="noopener">https://blog.csdn.net/ybhuangfugui</a></p>
-<h2 id="2-1-我的新博客"><a href="#2-1-我的新博客" class="headerlink" title="2.1 我的新博客"></a>2.1 我的新博客</h2><p>　　其实，我去年就打算自己搭建博客，但是由于工作原因，没有足够的时间（自己搭建博客也是挺折腾的），一直耽搁了。直到今年，终于狠下心，搭建成功了属于自己的个人博客网站。</p>
-<p>个人新博客主页：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a></p>
-<h1 id="三、更多"><a href="#三、更多" class="headerlink" title="三、更多"></a>三、更多</h1><p>关于我更多的故事，敬请期待！</p>
-
+          <h1 class="post-title" itemprop="name headline">CANOpen系列教程05_CAN总线同步与位填充、优先级的决定</h1>
         
-      </div>
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T09:00:00+08:00">
+                2018-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CANOpen系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">CANOpen系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程05_CAN总线同步与位填充、优先级的决定.html" title="CANOpen系列教程05_CAN总线同步与位填充、优先级的决定">http://www.strongerhuang.com/CANOpen/CANOpen系列教程05_CAN总线同步与位填充、优先级的决定.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　继续为大家更新CAN总线协议相关内容，这些内容其实也比较重要，会直接影响到你后期CAN总线的编程，夸张一点的说会影响到你的软件架构。</p>
+<p>　　本文内容相对来说比较容易理解，初学者有必要了解一下。</p>
+<a id="more"></a>
+<p>　　本文章收录于<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【CANOpen系列教程】</a>，在我的博客分类“CANOpen系列教程”也能查找到。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【CANOpen系列教程】即可查看。</p>
+<h1 id="二、位填充"><a href="#二、位填充" class="headerlink" title="二、位填充"></a>二、位填充</h1><p>位填充是<strong>为防止突发错误而设定的功能</strong>。当同样的电平持续 5 位时则添加一个位的反型数据。</p>
+<p>这个功能很好理解，如下图所示。<strong>位填充的数据不需要编程控制，由控制器自动完成</strong>。其目的也是提高CAN总线的稳定性。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p><strong>(1) 发送单元的工作</strong><br>在发送数据帧和遥控帧时， SOF～CRC 段间的数据，相同电平如果持续 5 位，在下一个位（第 6 个位）则要插入 1 位与前 5 位反型的电平。</p>
+<p><strong>(2) 接收单元的工作</strong><br>在接收数据帧和遥控帧时， SOF～CRC 段间的数据，相同电平如果持续 5 位，需要删除下一个位（第 6 个位）再接收。如果这个第 6 个位的电平与前 5 位相同，将被视为错误并发送错误帧。</p>
+<h1 id="三、优先级的决定"><a href="#三、优先级的决定" class="headerlink" title="三、优先级的决定"></a>三、优先级的决定</h1><p>前面讲述“CAN 总线差分信号”时描述了显性和隐性，其实这是CAN总线的特点，也是决定CAN总线优先级比较重要的功能。</p>
+<p>在CAN总线空闲态，最先开始发送消息的单元获得发送权。</p>
+<p><strong>多个单元同时开始发送时，各发送单元从仲裁段的第一位开始进行仲裁</strong>。连续输出显性电平最多的单元可继续发送。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>上图描述了CAN控制仲裁的过程，单元2最终获得了抢占CAN总线的权利，也就是说单元2具有更高的优先级。</p>
+<p>当单元1 仲裁失利时，自动转换为接收（本来该发送，优先级比别人低，就开始接收数据了。 同时，控制器将会在下一轮继续发送这次未完成的数据）。</p>
+<h2 id="3-1-数据帧和遥控帧的优先级"><a href="#3-1-数据帧和遥控帧的优先级" class="headerlink" title="3.1 数据帧和遥控帧的优先级"></a>3.1 数据帧和遥控帧的优先级</h2><p>具有相同 ID 的数据帧和遥控帧在总线上竞争时，仲裁段的最后一位（RTR）为显性位的数据帧具有优先权，可继续发送。</p>
+<p>数据帧和遥控帧的仲裁过程如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<h2 id="3-2-标准格式和扩展格式的优先级"><a href="#3-2-标准格式和扩展格式的优先级" class="headerlink" title="3.2 标准格式和扩展格式的优先级"></a>3.2 标准格式和扩展格式的优先级</h2><p>标准格式 ID 与具有相同 ID 的遥控帧或者扩展格式的数据帧在总线上竞争时，标准格式的 RTR 位为显性位的具有优先权，可继续发送。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p><strong>提示：</strong><br>不明白数据帧和遥控帧，标准格式和扩展格式之间差异的朋友，建议参看我上一篇文章<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E.html">《CANOpen系列教程04》</a>。</p>
+<h1 id="四、其他"><a href="#四、其他" class="headerlink" title="四、其他"></a>四、其他</h1><p>CAN总线协议的重要内容在这前面基本是讲述的差不多了，还有一些不是很重要的内容，比如硬件设计需要在CAN_H和CAN_L之间添加一个120欧电阻，总线的传输距离等。</p>
+<p>接下来的文章会结合STM32芯片集成CAN控制器、例程讲述如何编程控制CAN总线数据的收发等。</p>
+<h1 id="五、说明"><a href="#五、说明" class="headerlink" title="五、说明"></a>五、说明</h1><p>1.该文档部分文字来自网络，仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。  </p>
+<h1 id="六、最后"><a href="#六、最后" class="headerlink" title="六、最后"></a>六、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
+
       
     </div>
     
     
     
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CAN/" rel="tag"># CAN</a>
+          
+            <a href="/tags/CAN总线/" rel="tag"># CAN总线</a>
+          
+            <a href="/tags/CANOpen/" rel="tag"># CANOpen</a>
+          
+            <a href="/tags/CanFestival/" rel="tag"># CanFestival</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明.html" rel="next" title="CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明">
+                <i class="fa fa-chevron-left"></i> CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程.html" rel="prev" title="CANOpen系列教程">
+                CANOpen系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -499,7 +733,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、关于我"><span class="nav-text">一、关于我</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、关于博客"><span class="nav-text">二、关于博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-原CSDN博客"><span class="nav-text">2.1 原CSDN博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-我的新博客"><span class="nav-text">2.1 我的新博客</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、更多"><span class="nav-text">三、更多</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、位填充"><span class="nav-text">二、位填充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、优先级的决定"><span class="nav-text">三、优先级的决定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-数据帧和遥控帧的优先级"><span class="nav-text">3.1 数据帧和遥控帧的优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-标准格式和扩展格式的优先级"><span class="nav-text">3.2 标准格式和扩展格式的优先级</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、其他"><span class="nav-text">四、其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、说明"><span class="nav-text">五、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、最后"><span class="nav-text">六、最后</span></a></li></ol></div>
             
 
           </div>

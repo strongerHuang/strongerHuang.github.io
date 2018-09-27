@@ -89,10 +89,15 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　继续为大家更新CAN总线协议相关内容，这些内容其实也比较重要，会直接影响到你后期CAN总线的编程，夸张一点的说会影响到你的软件架构。 　　本文内容相对来说比较容易理解，初学者有必要了解一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-27T01:24:22.842Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/1.%E4%BD%8D%E5%A1%AB%E5%85%85.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/2.%E6%80%BB%E7%BA%BF%E4%BB%B2%E8%A3%81.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/3.%E6%95%B0%E6%8D%AE%E5%B8%A7%E5%92%8C%E9%81%A5%E6%8E%A7%E5%B8%A7%E7%9A%84%E4%BB%B2%E8%A3%81%E8%BF%87%E7%A8%8B.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/4.%E6%A0%87%E5%87%86%E6%A0%BC%E5%BC%8F%E4%B8%8E%E6%89%A9%E5%B1%95%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%BB%B2%E8%A3%81%E8%BF%87%E7%A8%8B.png?raw=true">
+<meta property="og:updated_time" content="2018-09-27T01:27:19.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程05_CAN总线同步与位填充、优先级的决定">
 <meta name="twitter:description" content="一、写在前面　　继续为大家更新CAN总线协议相关内容，这些内容其实也比较重要，会直接影响到你后期CAN总线的编程，夸张一点的说会影响到你的软件架构。 　　本文内容相对来说比较容易理解，初学者有必要了解一下。">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/1.%E4%BD%8D%E5%A1%AB%E5%85%85.png?raw=true">
 
 
 
@@ -423,23 +428,23 @@
 <p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【CANOpen系列教程】即可查看。</p>
 <h1 id="二、位填充"><a href="#二、位填充" class="headerlink" title="二、位填充"></a>二、位填充</h1><p>位填充是<strong>为防止突发错误而设定的功能</strong>。当同样的电平持续 5 位时则添加一个位的反型数据。</p>
 <p>这个功能很好理解，如下图所示。<strong>位填充的数据不需要编程控制，由控制器自动完成</strong>。其目的也是提高CAN总线的稳定性。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/1.%E4%BD%8D%E5%A1%AB%E5%85%85.png?raw=true"><br></table>
 
 <p><strong>(1) 发送单元的工作</strong><br>在发送数据帧和遥控帧时， SOF～CRC 段间的数据，相同电平如果持续 5 位，在下一个位（第 6 个位）则要插入 1 位与前 5 位反型的电平。</p>
 <p><strong>(2) 接收单元的工作</strong><br>在接收数据帧和遥控帧时， SOF～CRC 段间的数据，相同电平如果持续 5 位，需要删除下一个位（第 6 个位）再接收。如果这个第 6 个位的电平与前 5 位相同，将被视为错误并发送错误帧。</p>
 <h1 id="三、优先级的决定"><a href="#三、优先级的决定" class="headerlink" title="三、优先级的决定"></a>三、优先级的决定</h1><p>前面讲述“CAN 总线差分信号”时描述了显性和隐性，其实这是CAN总线的特点，也是决定CAN总线优先级比较重要的功能。</p>
 <p>在CAN总线空闲态，最先开始发送消息的单元获得发送权。</p>
 <p><strong>多个单元同时开始发送时，各发送单元从仲裁段的第一位开始进行仲裁</strong>。连续输出显性电平最多的单元可继续发送。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/2.%E6%80%BB%E7%BA%BF%E4%BB%B2%E8%A3%81.png?raw=true"><br></table>
 
 <p>上图描述了CAN控制仲裁的过程，单元2最终获得了抢占CAN总线的权利，也就是说单元2具有更高的优先级。</p>
 <p>当单元1 仲裁失利时，自动转换为接收（本来该发送，优先级比别人低，就开始接收数据了。 同时，控制器将会在下一轮继续发送这次未完成的数据）。</p>
 <h2 id="3-1-数据帧和遥控帧的优先级"><a href="#3-1-数据帧和遥控帧的优先级" class="headerlink" title="3.1 数据帧和遥控帧的优先级"></a>3.1 数据帧和遥控帧的优先级</h2><p>具有相同 ID 的数据帧和遥控帧在总线上竞争时，仲裁段的最后一位（RTR）为显性位的数据帧具有优先权，可继续发送。</p>
 <p>数据帧和遥控帧的仲裁过程如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/3.%E6%95%B0%E6%8D%AE%E5%B8%A7%E5%92%8C%E9%81%A5%E6%8E%A7%E5%B8%A7%E7%9A%84%E4%BB%B2%E8%A3%81%E8%BF%87%E7%A8%8B.png?raw=true"><br></table>
 
 <h2 id="3-2-标准格式和扩展格式的优先级"><a href="#3-2-标准格式和扩展格式的优先级" class="headerlink" title="3.2 标准格式和扩展格式的优先级"></a>3.2 标准格式和扩展格式的优先级</h2><p>标准格式 ID 与具有相同 ID 的遥控帧或者扩展格式的数据帧在总线上竞争时，标准格式的 RTR 位为显性位的具有优先权，可继续发送。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_CAN%E6%80%BB%E7%BA%BF%E5%90%8C%E6%AD%A5%E4%B8%8E%E4%BD%8D%E5%A1%AB%E5%85%85%E3%80%81%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E5%86%B3%E5%AE%9A/4.%E6%A0%87%E5%87%86%E6%A0%BC%E5%BC%8F%E4%B8%8E%E6%89%A9%E5%B1%95%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%BB%B2%E8%A3%81%E8%BF%87%E7%A8%8B.png?raw=true"><br></table>
 
 <p><strong>提示：</strong><br>不明白数据帧和遥控帧，标准格式和扩展格式之间差异的朋友，建议参看我上一篇文章<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E.html">《CANOpen系列教程04》</a>。</p>
 <h1 id="四、其他"><a href="#四、其他" class="headerlink" title="四、其他"></a>四、其他</h1><p>CAN总线协议的重要内容在这前面基本是讲述的差不多了，还有一些不是很重要的内容，比如硬件设计需要在CAN_H和CAN_L之间添加一个120欧电阻，总线的传输距离等。</p>

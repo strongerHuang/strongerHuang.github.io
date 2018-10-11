@@ -89,10 +89,18 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　该教程前面讲述了许多关于CAN协议的一些概念，可能许多初学者看的云里雾里，那么本文将结合代码让大家理解之前讲述的内容。 　　因为关注我的人大部分都在学习STM32，我将结合STM32F103、标准外设库例程来让大家理解之前讲述的一些概念。 　　本文主要讲述内容：　　·1.传输数据相关参数　　·2.位时序及传输波特率 　　为方便大家理解，我将在最后提供对应例程「CANOpen系列教程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-08T09:14:39.394Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/1.%E6%95%B0%E6%8D%AE%E5%B8%A7.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/2.CanTxMsg%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/3.%E5%8F%91%E9%80%81%E5%8F%82%E6%95%B0.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/4.CanRxMsg%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/5.%E4%B8%AD%E6%96%AD%E6%8E%A5%E6%94%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/6.%E6%B3%A2%E7%89%B9%E7%8E%87%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/7.%E6%B3%A2%E7%89%B9%E7%8E%87%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%A0%81.png?raw=true">
+<meta property="og:updated_time" content="2018-10-11T01:19:34.616Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程06_结合代码理解CAN底层收发数据（含STM32例程）">
 <meta name="twitter:description" content="一、写在前面　　该教程前面讲述了许多关于CAN协议的一些概念，可能许多初学者看的云里雾里，那么本文将结合代码让大家理解之前讲述的内容。 　　因为关注我的人大部分都在学习STM32，我将结合STM32F103、标准外设库例程来让大家理解之前讲述的一些概念。 　　本文主要讲述内容：　　·1.传输数据相关参数　　·2.位时序及传输波特率 　　为方便大家理解，我将在最后提供对应例程「CANOpen系列教程">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/1.%E6%95%B0%E6%8D%AE%E5%B8%A7.png?raw=true">
 
 
 
@@ -427,26 +435,26 @@
 <p>CAN总线传输的内容主要就是发送和接收，下面我将结合代码中发送和接收参数来让大家理解我们编程控制CAN总线上那些参数。</p>
 <h2 id="2-1-CAN总线数据帧"><a href="#2-1-CAN总线数据帧" class="headerlink" title="2.1 CAN总线数据帧"></a>2.1 CAN总线数据帧</h2><p>本文提供例程主要是CAN总线使用最多的数据帧为例，让大家理解数据帧传输由我们编程控制的参数。</p>
 <p>先看下图回顾一下数据帧格式，其中有些字段内容由控制器自动完成，如：帧起始，CRC校验。而有些就是由我们编程控制，如：ID、数据等。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/1.%E6%95%B0%E6%8D%AE%E5%B8%A7.png?raw=true"><br></table>
 
 <h2 id="2-2-CAN发送代码"><a href="#2-2-CAN发送代码" class="headerlink" title="2.2 CAN发送代码"></a>2.2 CAN发送代码</h2><p><strong>A.CAN发送数据结构</strong><br>下图主要就是CAN发送由我们编程控制的参数。其实你会发现，主要就是上面帧格式中部分内容：ID、IDE、RTR、DLC、Data。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/2.CanTxMsg%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png?raw=true"><br></table>
 
 <p><strong>B.发送配置参数</strong><br>下图为实际发送配置的参数。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/3.%E5%8F%91%E9%80%81%E5%8F%82%E6%95%B0.png?raw=true"><br></table>
 
 <h2 id="2-3-CAN接收代码"><a href="#2-3-CAN接收代码" class="headerlink" title="2.3 CAN接收代码"></a>2.3 CAN接收代码</h2><p>CAN接收其实和发送类似，CAN总线上的字段就那些，在接收端接收的那些参数无非就是发送端发送出来的那些参数。<br>针对STM32内部集成的CAN，接收数据结构多了一个FMI参数，大概意思就是接收消息邮箱筛选器索引。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/4.CanRxMsg%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png?raw=true"><br></table>
 
 <p><strong>接收操作</strong><br>为方便初学者理解，这里这要就是使用中断接收CAN总线数据，在中断函数里面打印也主要是用于测试，一般实际项目打印不会出现在中断函数（打印相对耗时）。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/5.%E4%B8%AD%E6%96%AD%E6%8E%A5%E6%94%B6.png?raw=true"><br></table>
 
 <h1 id="三、位时序及传输波特率"><a href="#三、位时序及传输波特率" class="headerlink" title="三、位时序及传输波特率"></a>三、位时序及传输波特率</h1><p>同样，在前面<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_CAN%E6%80%BB%E7%BA%BF%E6%B3%A2%E7%89%B9%E7%8E%87%E3%80%81%E4%BD%8D%E6%97%B6%E5%BA%8F%E3%80%81%E5%B8%A7%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E.html">《CANOpen系列教程04》</a>中有讲述“位时序及传输波特率”的概念。其实，位时序间接决定了传输的波特率。换句话说，传输的波特率由位时序几个参数决定。</p>
 <p>看下图，回顾一下波特率计算公式：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/6.%E6%B3%A2%E7%89%B9%E7%8E%87%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png?raw=true"><br></table>
 
 <h2 id="3-1-波特率配置代码"><a href="#3-1-波特率配置代码" class="headerlink" title="3.1 波特率配置代码"></a>3.1 波特率配置代码</h2><p>结合上图计算公式和下图代码，可以看出位时序中几个参数和波特率的关系。波特率为1M时，几个位时序参数可以配置为如下图值：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89/7.%E6%B3%A2%E7%89%B9%E7%8E%87%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%A0%81.png?raw=true"><br></table>
 
 <p><strong>提示：</strong><br>36M代表CAN时钟，具体要看时钟相关配置。</p>
 <p>波特率固定，位时序参数可以不同。比如波特率固定为1M，位时序参数可以为上图配置；也可以修改其中的值，如修改位段1为CAN_BS1_5tq，位段2为CAN_BS2_3tq。只要遵循波特率计算公式即可。</p>

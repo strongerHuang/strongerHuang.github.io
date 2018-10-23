@@ -3,7 +3,35 @@
   <entry>
     <title><![CDATA[CANOpen系列教程]]></title>
     <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【CANOpen系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、教程列表1.CANOpen系列教程01_初识CAN与CANOpen及相关内容2.CANOpen系列教程02_理解CAN总线协议3.CANOpen系列教程03_CAN收发器功能、原理及作用4.CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明5.CANOpen系列教程05_CAN总线同步与位填充、优先级的决定6.CANOpen系列教程06_结合代码理解CAN底层收发数据（含STM32例程）7.CANOpen系列教程07_CANOpen协议概述 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【CANOpen系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、教程列表1.CANOpen系列教程01_初识CAN与CANOpen及相关内容2.CANOpen系列教程02_理解CAN总线协议3.CANOpen系列教程03_CAN收发器功能、原理及作用4.CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明5.CANOpen系列教程05_CAN总线同步与位填充、优先级的决定6.CANOpen系列教程06_结合代码理解CAN底层收发数据（含STM32例程）7.CANOpen系列教程07_CANOpen协议概述8.CANOpen系列教程08_CANOpen通信接口引导学习9.CANOpen系列教程09_CANOpen对象字典 正在努力更新中，敬请等待…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程09_CANOpen对象字典]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8.html</url>
+    <content type="text"><![CDATA[一、写在前面 上一篇文章主要是引导大家学习CANOpen协议通信接口的相关内容。通信接口的内容有点多，对于初学者来说，如果看不懂，请多看几遍（最好有个印象）。 CANopen设备最重要的一个部分就是对象字典。对象字典本质上是一种被预先安排的对象序列，可通过网络访问。字典里面的每一对象均可使用一个16-bit主索引和8-bit子索引寻址到。 初学者学习如果难理解通信接口（上一篇）有些内容，如：PDO、SDO及网络管理对象，可以结合对象字典索引来学习和记忆。 本文章收录于【CANOpen系列教程】，在我的博客分类“CANOpen系列教程”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、对象字典重要内容对象字典OD：Object dictionary。 一组带有 16 位索引和 8 位子索引的数据或对象。对象字典下面主要包含：数据类型、通信对象、应用对象。 对象字典主索引： 2.1 通信子协议区通信子协议区，如上图1000h 到 1FFFh这个区域。也就是通信接口（或通信对象）协议区。 对于初学者来说，通信对象子协议区是比较重要的一个区域，牵涉到上一篇文章《通信接口》讲述的大部分内容。同时，这之间的关系也非常紧密。 通讯对象子协议区： 如上图，通讯对象子协议区又划分为几个区域，而其中的1000h 到 1029h为通用通讯对象。 通用通讯对象里面的内容已经被约定好，如果我们需要用到，可直接配置使用即可。 通用通讯对象内容： 通信子协议区的内容非常重要，也比较多，需要拆分并一个一个掌握。可结合周立功提供相关教程，以及前面提到的CiA 301手册理解。 我这里就不一一列出来了，简单再列一个通信子协议区中PDO通信参数（对象）与映射参数： 写到这里，想必很多朋友都能理解，也能明白这些内容。更多的内容，可以结合这种拆分的思路去理解。 三、对象字典生成工具上面介绍了对象字典的一些内容，可能还是有很多初学者不明白。同时，也就可能会产生疑问：这个对象字典我们需要字典和我们代码有什么关系呢？ 可以简单来说，就是一些16位索引和8位子索引对应的变量数据，来下看下代码（下面两图），加深理解： 3.1 对象字典的代码需要自己写吗？很多初学者，包括我（之前初学时）也会产生疑问：对象字典的代码需要我们自己写吗？ 答案：不用自己写。 当然，对象字典的代码可以自己写，但完全没必要。1.自己写不一定正确；2.有现成工具可以节约大量时间。 3.2 Canfestival对象字典生成工具我微信公众号分享《CANOpen系列教程》的封面中有一行英文：Canfestival.相信学过CANOpen的朋友都应该知道我接下来会结合这套Canfestival免费开源的CANOpen架构来讲述。 其中，Canfestival里面包含我们需要的CANOpen协议源码和对象字典生成工具。 有了对象字典生成工具，对象字典的代码就可以通过它来自动生成。搭建Canfestival对象字典生成工具的环境是一个重点。 对于很多初学者来说搭建环境也是一个难点，不少初学者就卡在这一关，然后，学习CANOpen就没有继续下去了。 简单的说，搭建对象字典生成工具的环境步骤不多，可能会因为诸多因素导致搭建失败。搭建成功，运行之后会出现如下图界面： 在学习对象字典生成工具时，会看见一个词：EDS，即Electronic Data Sheet电子数据单。 像周立功的CANOpen从站模块就配有工具生成EDS文件。当然，Canfestival提供的工具也能导出EDS文件。 Canfestival对象字典生成工具搭建过程，及相关内容我将在下一篇文章详细讲述。 四、说明1.该文档部分内容来自网络，仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 五、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程08_CANOpen通信接口引导学习]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_CANOpen%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E5%BC%95%E5%AF%BC%E5%AD%A6%E4%B9%A0.html</url>
+    <content type="text"><![CDATA[一、写在前面 上一章上一篇文章让大家了解了一下CANOpen协议的模型，也就是说CANOpen协议的内容都包含在这个模型里面，而模型里面的内容可以细分出来许许多多的知识。 但是对于初学者来说，并不是必须要掌握的所有的细节知识才行。只需要掌握其中必备的一些基础知识，就可以编写CANOpen的应用程序代码了。 那么本文将带你掌握其中部分基础知识，让你大脑中有CANOpen协议的这些概念知识（先有初步认识，以便于后面综合理解）。 本文章收录于【CANOpen系列教程】，在我的博客分类“CANOpen系列教程”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、通信接口主要内容我这里按照CANOpen CiA 301协议文档，提取了通信接口的主要内容，我把它用思维导图方式列出来了，如下图： 初学者需要掌握通信接口后面的四项内容：网络管理(NMT)、服务数据对象 (SDO)、过程数据对象(PDO)、特殊协议； 这四项内容细分出来的知识点不多（相对来说），但对初学者来说，理解起来的难度较大。难点就在于：有许多抽象概念，且知识点关联性较强。 比如：什么是报文？ CAN-ID、COB-ID、Node-ID是什么思，各有什么区别？ COB-ID和对象字典索引有关联吗？ 三、CANopen轻松入门相信学习CANOpen的朋友都在网上看到过周立功的这么一本电子书：《CANopen 轻松入门》。 本来我是打算再造一次轮子，重新结合CANOpen CiA 301标准写一遍。但我之前有做计划，发现太费时了，而且做出来的效果也没有《CANopen轻松入门》这么好。我思前想后，还是觉得没有必要。 所以，本文主要目的在于引导初学者，网上下载《CANopen轻松入门》这本电子书来好好研究一下。关于通信接口主要内容，目录如下图： 《CANopen轻松入门》这本电子书是我站在初学者的角度考虑，觉得比较适合初学者，并不是为周立功打广告。当你把这本电子书里面内容都掌握了，我觉得你就已经入门了。 《CANopen轻松入门》网盘下载地址（百度、谷歌随处可见）：https://pan.baidu.com/s/15Or8ox3LgXKR6Z7ul7Zt1g 提取码：9ja0 四、CiA 301入门之后若要深入理解，我建议参看官网的《CANOpen CiA 301》标准这本文档。为什么是CiA 301标准呢？ 因为这些入门知识大部分都是CiA 301标准里面的内容。 CiA 301标准有多个版本，建议下载已经公开的V4.2.0版本： CiA技术文档下载地址（需要登录）：https://www.can-cia.org/standardization/specifications CiA 301网盘下载地址（含中、英文版本）：https://pan.baidu.com/s/1efnJAmB7tkSsMwIf39p8sg 提取码：x1m0 提示：CiA（CAN in Automation） 301也是大家所说的DS301，为CANopen 基础协议。 我们还常看到类似CiA 401 402这些协议，其实它们是在CiA 301 之上，对各个行业不断推出设备子协议。 所谓的子协议，就是针对不同行业的应用对象，对 CANopen 内部的数据含义进行重新定义，或者添加新的控制逻辑。 五、提取通信接口要点这里针对通信接口简单罗列一些基础知识，方便初学者理解。 5.1 网络管理(NMT)1.CANOpen网络一般是一个主站，多个从站的局域网络； 2.NMT节点具有6种状态：初始化、应用层复位、通讯复位、预操作状态、操作状态、停止状态。可以自己切换状态，也可主站切换状态； 3.任何一个 CANopen 从站上线后发出节点上线报文（boot-up）; 5.2 过程数据对象 PDO1.PDO用来传输实时数据，属于“生产消费”模型； 2.COB-ID 定义只是预定义，TPDO5、6、7这些也是可以存在。PDO 的COB-ID 与 Node-ID 无必然规则上的联系， 3.PDO 的两种传输方式：同步传输和异步传输； 4.PDO 的通信参数可通过对象字典工具配置； 5.PDO 的映射参数是一个相对难理解的参数，请结合《CANopen 轻松入门》图文（请关注颜色）理解； 5.3 服务数据对象 SDO1.SDO为请求应答方式； 2.发送方（客户端）、接收方（服务器） ； 3.通常从节点为 SDO 服务器，主节点为客户端； 4.两种协议：快速、普通 SDO 协议； 5.CS命令符含义需熟记（查表）； 5.4 特殊协议1.常见的就是罗列出来的3种：同步协议、时间戳协议、紧急报文协议； 2.特殊协议CAN-ID定义（查表）； 3.紧急报文错误代码分类及含义； 以上许多内容都有一张对应的表格，可以搜索一下“CANopen备忘录”，就有详细列出各自对应的内容。 六、说明1.该文档部分内容来自网络，仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 七、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
       <categories>
         <category>CANOpen系列教程</category>
       </categories>

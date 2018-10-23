@@ -89,10 +89,20 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　上一篇文章主要是引导大家学习CANOpen协议通信接口的相关内容。通信接口的内容有点多，对于初学者来说，如果看不懂，请多看几遍（最好有个印象）。 　　CANopen设备最重要的一个部分就是对象字典。对象字典本质上是一种被预先安排的对象序列，可通过网络访问。字典里面的每一对象均可使用一个16-bit主索引和8-bit子索引寻址到。 　　初学者学习如果难理解通信接口（上一篇）有些内容，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T02:12:59.007Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/1.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E5%8C%BA%E5%9F%9F%E5%88%92%E5%88%86.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/2.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E4%B8%BB%E7%B4%A2%E5%BC%95.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/3.%E9%80%9A%E8%AE%AF%E5%AF%B9%E8%B1%A1%E5%AD%90%E5%8D%8F%E8%AE%AE%E5%8C%BA.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/4.%E9%80%9A%E7%94%A8%E9%80%9A%E8%AE%AF%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AE%B91.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/5.%E9%80%9A%E7%94%A8%E9%80%9A%E8%AE%AF%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AE%B92.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/6.PDO%E9%80%9A%E4%BF%A1%E5%8F%82%E6%95%B0%E4%B8%8E%E6%98%A0%E5%B0%84%E5%8F%82%E6%95%B0.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/7.%E4%BB%A3%E7%A0%81_%E4%B8%BB%E7%B4%A2%E5%BC%95.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/8.%E4%BB%A3%E7%A0%81_SDO.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/9.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%95%8C%E9%9D%A2.png?raw=true">
+<meta property="og:updated_time" content="2018-10-23T02:34:45.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程09_CANOpen对象字典">
 <meta name="twitter:description" content="一、写在前面　　上一篇文章主要是引导大家学习CANOpen协议通信接口的相关内容。通信接口的内容有点多，对于初学者来说，如果看不懂，请多看几遍（最好有个印象）。 　　CANopen设备最重要的一个部分就是对象字典。对象字典本质上是一种被预先安排的对象序列，可通过网络访问。字典里面的每一对象均可使用一个16-bit主索引和8-bit子索引寻址到。 　　初学者学习如果难理解通信接口（上一篇）有些内容，">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/1.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E5%8C%BA%E5%9F%9F%E5%88%92%E5%88%86.png?raw=true">
 
 
 
@@ -417,51 +427,51 @@
 
       
         <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　上一篇文章主要是引导大家学习CANOpen协议通信接口的相关内容。通信接口的内容有点多，对于初学者来说，如果看不懂，请多看几遍（最好有个印象）。</p>
-<p>　　CANopen设备最重要的一个部分就是对象字典。对象字典本质上是一种被预先安排的对象序列，可通过网络访问。字典里面的每一对象均可使用一个16-bit主索引和8-bit子索引寻址到。</p>
+<p>　　CANopen设备最重要的一个部分就是对象字典。对象字典本质上是一种被预先安排的对象序列，可通过网络访问。<strong>字典里面的每一对象均可使用一个16-bit主索引和8-bit子索引寻址到</strong>。</p>
 <p>　　初学者学习如果难理解通信接口（上一篇）有些内容，如：PDO、SDO及网络管理对象，可以结合对象字典索引来学习和记忆。</p>
 <a id="more"></a>
 <p>　　本文章收录于<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【CANOpen系列教程】</a>，在我的博客分类“CANOpen系列教程”也能查找到。</p>
 <p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【CANOpen系列教程】即可查看。</p>
 <h1 id="二、对象字典重要内容"><a href="#二、对象字典重要内容" class="headerlink" title="二、对象字典重要内容"></a>二、对象字典重要内容</h1><p><strong>对象字典OD</strong>：Object dictionary。</p>
 <p>一组带有 16 位索引和 8 位子索引的数据或对象。对象字典下面主要包含：<strong>数据类型、通信对象、应用对象</strong>。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/1.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E5%8C%BA%E5%9F%9F%E5%88%92%E5%88%86.png?raw=true"><br></table>
 
 <p><strong>对象字典主索引</strong>：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/2.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E4%B8%BB%E7%B4%A2%E5%BC%95.png?raw=true"><br></table>
 
 <h2 id="2-1-通信子协议区"><a href="#2-1-通信子协议区" class="headerlink" title="2.1 通信子协议区"></a>2.1 通信子协议区</h2><p>通信子协议区，如上图1000h 到 1FFFh这个区域。也就是通信接口（或通信对象）协议区。</p>
 <p>对于初学者来说，<strong>通信对象子协议区</strong>是比较重要的一个区域，牵涉到上一篇文章《通信接口》讲述的大部分内容。同时，这之间的关系也非常紧密。</p>
 <p><strong>通讯对象子协议区</strong>：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/3.%E9%80%9A%E8%AE%AF%E5%AF%B9%E8%B1%A1%E5%AD%90%E5%8D%8F%E8%AE%AE%E5%8C%BA.png?raw=true"><br></table>
 
 <p>如上图，通讯对象子协议区又划分为几个区域，而其中的1000h 到 1029h为通用通讯对象。</p>
 <p>通用通讯对象里面的内容已经被约定好，如果我们需要用到，可直接配置使用即可。</p>
 <p>通用通讯对象内容：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/4.%E9%80%9A%E7%94%A8%E9%80%9A%E8%AE%AF%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AE%B91.png?raw=true"><br></table>
 
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/5.%E9%80%9A%E7%94%A8%E9%80%9A%E8%AE%AF%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AE%B92.png?raw=true"><br></table>
 
 <p>通信子协议区的内容非常重要，也比较多，需要拆分并一个一个掌握。可结合周立功提供相关教程，以及前面提到的CiA 301手册理解。</p>
 <p>我这里就不一一列出来了，简单再列一个<strong>通信子协议区中PDO通信参数（对象）与映射参数</strong>：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/6.PDO%E9%80%9A%E4%BF%A1%E5%8F%82%E6%95%B0%E4%B8%8E%E6%98%A0%E5%B0%84%E5%8F%82%E6%95%B0.png?raw=true"><br></table>
 
 
 <p>写到这里，想必很多朋友都能理解，也能明白这些内容。更多的内容，可以结合这种拆分的思路去理解。</p>
 <h1 id="三、对象字典生成工具"><a href="#三、对象字典生成工具" class="headerlink" title="三、对象字典生成工具"></a>三、对象字典生成工具</h1><p>上面介绍了对象字典的一些内容，可能还是有很多初学者不明白。同时，也就可能会产生疑问：这个对象字典我们需要字典和我们代码有什么关系呢？</p>
 <p>可以简单来说，就是一些16位索引和8位子索引对应的变量数据，来下看下代码（下面两图），加深理解：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/7.%E4%BB%A3%E7%A0%81_%E4%B8%BB%E7%B4%A2%E5%BC%95.png?raw=true"><br></table>
 
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/8.%E4%BB%A3%E7%A0%81_SDO.png?raw=true"><br></table>
 
 <h2 id="3-1-对象字典的代码需要自己写吗？"><a href="#3-1-对象字典的代码需要自己写吗？" class="headerlink" title="3.1 对象字典的代码需要自己写吗？"></a>3.1 对象字典的代码需要自己写吗？</h2><p>很多初学者，包括我（之前初学时）也会产生疑问：对象字典的代码需要我们自己写吗？</p>
 <p>答案：不用自己写。</p>
 <p>当然，对象字典的代码可以自己写，但完全没必要。1.自己写不一定正确；2.有现成工具可以节约大量时间。</p>
-<h2 id="3-2-Canfestival对象字典生成工具"><a href="#3-2-Canfestival对象字典生成工具" class="headerlink" title="3.2 Canfestival对象字典生成工具"></a>3.2 Canfestival对象字典生成工具</h2><p>我微信公众号分享《CANOpen系列教程》的封面中有一行英文：Canfestival.相信学过CANOpen的朋友都应该知道我接下来会结合这套Canfestival免费开源的CANOpen架构来讲述。</p>
-<p>其中，Canfestival里面包含我们需要的CANOpen协议源码和对象字典生成工具。</p>
+<h2 id="3-2-Canfestival对象字典生成工具"><a href="#3-2-Canfestival对象字典生成工具" class="headerlink" title="3.2 Canfestival对象字典生成工具"></a>3.2 Canfestival对象字典生成工具</h2><p>我微信公众号分享《CANOpen系列教程》的封面中有一行英文：Canfestival.相信学过CANOpen的朋友都应该知道我接下来会结合这套<strong>Canfestival免费开源的CANOpen架构</strong>来讲述。</p>
+<p>其中，Canfestival里面包含我们需要的<strong>CANOpen协议源码和对象字典生成工具</strong>。</p>
 <p>有了对象字典生成工具，对象字典的代码就可以通过它来自动生成。搭建Canfestival对象字典生成工具的环境是一个重点。</p>
 <p>对于很多初学者来说搭建环境也是一个难点，不少初学者就卡在这一关，然后，学习CANOpen就没有继续下去了。</p>
 <p>简单的说，搭建对象字典生成工具的环境步骤不多，可能会因为诸多因素导致搭建失败。搭建成功，运行之后会出现如下图界面：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B09_CANOpen%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8/9.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%95%8C%E9%9D%A2.png?raw=true"><br></table>
 
 <p>在学习对象字典生成工具时，会看见一个词：EDS，<strong>即Electronic Data Sheet电子数据单</strong>。</p>
 <p>像周立功的CANOpen从站模块就配有工具生成EDS文件。当然，Canfestival提供的工具也能导出EDS文件。</p>

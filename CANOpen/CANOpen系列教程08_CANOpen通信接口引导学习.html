@@ -89,10 +89,14 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　上一章上一篇文章让大家了解了一下CANOpen协议的模型，也就是说CANOpen协议的内容都包含在这个模型里面，而模型里面的内容可以细分出来许许多多的知识。 　　但是对于初学者来说，并不是必须要掌握的所有的细节知识才行。只需要掌握其中必备的一些基础知识，就可以编写CANOpen的应用程序代码了。 　　那么本文将带你掌握其中部分基础知识，让你大脑中有CANOpen协议的这些概念知识（">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-23T01:25:46.749Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_CANOpen%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E5%BC%95%E5%AF%BC%E5%AD%A6%E4%B9%A0/1.CANOpen%E9%80%9A%E8%AE%AF%E6%8E%A5%E5%8F%A3.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_CANOpen%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E5%BC%95%E5%AF%BC%E5%AD%A6%E4%B9%A0/2.CANopen%E8%BD%BB%E6%9D%BE%E5%85%A5%E9%97%A8%EF%BC%88%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E7%9B%AE%E5%BD%95%EF%BC%89.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_CANOpen%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E5%BC%95%E5%AF%BC%E5%AD%A6%E4%B9%A0/3.CiA%20301.png?raw=true">
+<meta property="og:updated_time" content="2018-10-23T02:27:25.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程08_CANOpen通信接口引导学习">
 <meta name="twitter:description" content="一、写在前面　　上一章上一篇文章让大家了解了一下CANOpen协议的模型，也就是说CANOpen协议的内容都包含在这个模型里面，而模型里面的内容可以细分出来许许多多的知识。 　　但是对于初学者来说，并不是必须要掌握的所有的细节知识才行。只需要掌握其中必备的一些基础知识，就可以编写CANOpen的应用程序代码了。 　　那么本文将带你掌握其中部分基础知识，让你大脑中有CANOpen协议的这些概念知识（">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_CANOpen%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E5%BC%95%E5%AF%BC%E5%AD%A6%E4%B9%A0/1.CANOpen%E9%80%9A%E8%AE%AF%E6%8E%A5%E5%8F%A3.png?raw=true">
 
 
 
@@ -423,7 +427,7 @@
 <p>　　本文章收录于<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【CANOpen系列教程】</a>，在我的博客分类“CANOpen系列教程”也能查找到。</p>
 <p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【CANOpen系列教程】即可查看。</p>
 <h1 id="二、通信接口主要内容"><a href="#二、通信接口主要内容" class="headerlink" title="二、通信接口主要内容"></a>二、通信接口主要内容</h1><p>我这里按照CANOpen CiA 301协议文档，提取了通信接口的主要内容，我把它用思维导图方式列出来了，如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_CANOpen%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E5%BC%95%E5%AF%BC%E5%AD%A6%E4%B9%A0/1.CANOpen%E9%80%9A%E8%AE%AF%E6%8E%A5%E5%8F%A3.png?raw=true"><br></table>
 
 <p>初学者需要掌握通信接口后面的四项内容：<strong>网络管理(NMT)、服务数据对象 (SDO)、过程数据对象(PDO)、特殊协议</strong>；</p>
 <p>这四项内容细分出来的知识点不多（相对来说），但对初学者来说，理解起来的难度较大。<strong>难点就在于：有许多抽象概念，且知识点关联性较强</strong>。</p>
@@ -431,14 +435,14 @@
 <h1 id="三、CANopen轻松入门"><a href="#三、CANopen轻松入门" class="headerlink" title="三、CANopen轻松入门"></a>三、CANopen轻松入门</h1><p>相信学习CANOpen的朋友都在网上看到过<strong>周立功的这么一本电子书：《CANopen 轻松入门》</strong>。</p>
 <p>本来我是打算再造一次轮子，重新结合CANOpen CiA 301标准写一遍。但我之前有做计划，发现太费时了，而且做出来的效果也没有《CANopen轻松入门》这么好。我思前想后，还是觉得没有必要。</p>
 <p>所以，本文主要目的在于引导初学者，网上下载《CANopen轻松入门》这本电子书来好好研究一下。关于通信接口主要内容，目录如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_CANOpen%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E5%BC%95%E5%AF%BC%E5%AD%A6%E4%B9%A0/2.CANopen%E8%BD%BB%E6%9D%BE%E5%85%A5%E9%97%A8%EF%BC%88%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E7%9B%AE%E5%BD%95%EF%BC%89.png?raw=true"><br></table>
 
 <p><strong>《CANopen轻松入门》</strong>这本电子书是我站在初学者的角度考虑，觉得比较适合初学者，并不是为周立功打广告。当你把这本电子书里面内容都掌握了，我觉得你就已经入门了。 </p>
 <p>《CANopen轻松入门》网盘下载地址（百度、谷歌随处可见）：<br><a href="https://pan.baidu.com/s/15Or8ox3LgXKR6Z7ul7Zt1g" target="_blank" rel="noopener">https://pan.baidu.com/s/15Or8ox3LgXKR6Z7ul7Zt1g</a></p>
 <p>提取码：9ja0</p>
 <h1 id="四、CiA-301"><a href="#四、CiA-301" class="headerlink" title="四、CiA 301"></a>四、CiA 301</h1><p>入门之后若要深入理解，我建议参看官网的《<strong>CANOpen CiA 301</strong>》标准这本文档。为什么是CiA 301标准呢？ 因为这些入门知识大部分都是CiA 301标准里面的内容。</p>
 <p>CiA 301标准有多个版本，建议下载已经公开的V4.2.0版本：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_CANOpen%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3%E5%BC%95%E5%AF%BC%E5%AD%A6%E4%B9%A0/3.CiA%20301.png?raw=true"><br></table>
 
 <p>CiA技术文档下载地址（需要登录）：<br><a href="https://www.can-cia.org/standardization/specifications" target="_blank" rel="noopener">https://www.can-cia.org/standardization/specifications</a></p>
 <p>CiA 301网盘下载地址（含中、英文版本）：<br><a href="https://pan.baidu.com/s/1efnJAmB7tkSsMwIf39p8sg" target="_blank" rel="noopener">https://pan.baidu.com/s/1efnJAmB7tkSsMwIf39p8sg</a></p>

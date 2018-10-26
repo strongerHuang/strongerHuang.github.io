@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-my.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Keil,MDK-ARM,µVision," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EmbeddedDevelop" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、写在前面　　对于学习单片机和嵌入式开发的朋友来说，掌握Keil这款软件可以说是必备的技能。鉴于目前网上没有完整的Keil教程，因此我打算整理一套完整的Keil系列教程。 　　目前Keil有四种产品（软件）：MDK-ARM、C51、C251、C166。四种软件都是基于µVision，在用法上极为相似。 　　所以，该系列教程结合目前使用最多的MDK-ARM来讲述，大部分内容也适用于其它三种软件。">
+<meta name="keywords" content="Keil,MDK-ARM,µVision">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keil系列教程01_Keil介绍、下载、安装与注册">
+<meta property="og:url" content="http://www.strongerhuang.com/Keil/Keil系列教程01_Keil介绍、下载、安装与注册.html">
+<meta property="og:site_name" content="EmbeddedDevelop">
+<meta property="og:description" content="一、写在前面　　对于学习单片机和嵌入式开发的朋友来说，掌握Keil这款软件可以说是必备的技能。鉴于目前网上没有完整的Keil教程，因此我打算整理一套完整的Keil系列教程。 　　目前Keil有四种产品（软件）：MDK-ARM、C51、C251、C166。四种软件都是基于µVision，在用法上极为相似。 　　所以，该系列教程结合目前使用最多的MDK-ARM来讲述，大部分内容也适用于其它三种软件。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-26T02:42:35.395Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Keil系列教程01_Keil介绍、下载、安装与注册">
+<meta name="twitter:description" content="一、写在前面　　对于学习单片机和嵌入式开发的朋友来说，掌握Keil这款软件可以说是必备的技能。鉴于目前网上没有完整的Keil教程，因此我打算整理一套完整的Keil系列教程。 　　目前Keil有四种产品（软件）：MDK-ARM、C51、C251、C166。四种软件都是基于µVision，在用法上极为相似。 　　所以，该系列教程结合目前使用最多的MDK-ARM来讲述，大部分内容也适用于其它三种软件。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.strongerhuang.com/Keil/Keil系列教程01_Keil介绍、下载、安装与注册.html"/>
+
+
+
+
+
+  <title>Keil系列教程01_Keil介绍、下载、安装与注册 | EmbeddedDevelop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EmbeddedDevelop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">作者：strongerHuang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/Keil/Keil系列教程01_Keil介绍、下载、安装与注册.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Keil系列教程01_Keil介绍、下载、安装与注册</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T10:00:00+08:00">
+                2018-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Keil系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">Keil系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/Keil/Keil系列教程01_Keil介绍、下载、安装与注册.html" title="Keil系列教程01_Keil介绍、下载、安装与注册">http://www.strongerhuang.com/Keil/Keil系列教程01_Keil介绍、下载、安装与注册.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　对于学习单片机和嵌入式开发的朋友来说，掌握Keil这款软件可以说是必备的技能。鉴于目前网上没有完整的Keil教程，因此我打算整理一套完整的Keil系列教程。</p>
+<p>　　目前Keil有四种产品（软件）：<strong>MDK-ARM、C51、C251、C166</strong>。四种软件都是基于µVision，在用法上极为相似。</p>
+<p>　　所以，该系列教程结合目前使用最多的MDK-ARM来讲述，大部分内容也适用于其它三种软件。</p>
+<a id="more"></a>
+<h1 id="二、Keil介绍"><a href="#二、Keil介绍" class="headerlink" title="二、Keil介绍"></a>二、Keil介绍</h1><h2 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h2><p>对于我们程序员来说，大家常说的Keil，其实指的是一款开发工具。同时，Keil也是一家公司名称。</p>
+<p>Keil公司是一家业界领先的微控制器（MCU）软件开发工具的独立供应商。Keil公司由两家私人公司联合运营，分别是德国慕尼黑的Keil Elektronik GmbH和美国德克萨斯的Keil Software Inc。</p>
+<p>Keil公司2005年由ARM公司收购。其两家公司分别更名为ARM Germany GmbH和ARM Inc。</p>
+<h2 id="2-2-MDK-ARM"><a href="#2-2-MDK-ARM" class="headerlink" title="2.2 MDK-ARM"></a>2.2 MDK-ARM</h2><p>MDK-ARM软件为基于Cortex-M、Cortex-R4、ARM7、ARM9处理器设备提供了一个完整的开发环境。 MDK-ARM专为微控制器应用而设计，而且功能强大，能够满足大多数苛刻的嵌入式应用。</p>
+<p>与Keil MDK4及之前版本不同，<strong>Keil MDK5分成MDK Core和Software Packs两部分</strong>。MDK Core主要包含uVision5 IDE集成开发环境和ARM Compiler5。Software Packs则可以在不更换MDK Core的情况下，单独管理（下载、更新、移除）设备支持包和中间件更新包。</p>
+<p>MDK-ARM有四个可用版本，分别是<strong>MDK-Lite（免费评估版）、MDK-Essential（基础版）、MDK-Plus（标准版）、MDK-Professional（专业版）</strong>。所有版本均提供一个完善的C / C++开发环境，其中MDK-Professional还包含大量的中间库。</p>
+<p><strong>MDK产品组件：</strong></p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>关于MDK-ARM的更多详细介绍，及四个版本的差异，请参看我之前在公众号分享的一篇文章<a href="https://mp.weixin.qq.com/s/kaeI81tcCxzQ26WalUQRBQ" target="_blank" rel="noopener">《你们都认真了解过MDK-ARM吗？》</a></p>
+<h2 id="2-3-支持芯片"><a href="#2-3-支持芯片" class="headerlink" title="2.3 支持芯片"></a>2.3 支持芯片</h2><p>Keil MDK-ARM 支持的器件包含 Cortex-M、 Cortex-R、 ARM7、 ARM9、 Cortex-A8系列等多达几千种。</p>
+<p>官方支持芯片地址： <a href="http://www.keil.com/dd2" target="_blank" rel="noopener">http://www.keil.com/dd2</a></p>
+<h1 id="三、下载"><a href="#三、下载" class="headerlink" title="三、下载"></a>三、下载</h1><p>Keil MDK-ARM这个软件建议到官网下载最新版本，我这里也提供百度网盘下载地址（和官网一样）。</p>
+<p>上面说了：Keil MDK5分成<strong>MDK Core和Software Packs</strong>两部分，也就是安装包和支持包。</p>
+<h2 id="3-1-MDK-ARM安装包下载"><a href="#3-1-MDK-ARM安装包下载" class="headerlink" title="3.1 MDK-ARM安装包下载"></a>3.1 MDK-ARM安装包下载</h2><p>目前（2018年10月）Keil MDK-ARM官方最新版本是V5.26，更多老版本及MDK-ARM V4版本，可以在我百度网盘下载【定期更新】。</p>
+<p>官方网站：<a href="http://www.keil.com/download/product" target="_blank" rel="noopener">http://www.keil.com/download/product</a><br>百度网盘：<a href="http://pan.baidu.com/s/1eRLbgIY" target="_blank" rel="noopener">http://pan.baidu.com/s/1eRLbgIY</a></p>
+<h2 id="3-2-MDK-ARM支持包下载"><a href="#3-2-MDK-ARM支持包下载" class="headerlink" title="3.2 MDK-ARM支持包下载"></a>3.2 MDK-ARM支持包下载</h2><p>MDK-ARM V4 和 V5版本在安装的时候最大的区别在于：<strong>V4版本安装包里面集成器件的支持包，而V5版本是独立出来，自己下载安装的</strong>。</p>
+<p>因此需要下载自己芯片型号对应的器件支持包（我百度网盘提供STM32的器件支持包供大家下载）。</p>
+<p>官方网站：<a href="http://www.keil.com/dd2/Pack" target="_blank" rel="noopener">http://www.keil.com/dd2/Pack</a><br>百度网盘：<a href="http://pan.baidu.com/s/1o8fd6jS" target="_blank" rel="noopener">http://pan.baidu.com/s/1o8fd6jS</a></p>
+<p>提示：如果下载链接失效，可关注公众号回复【Keil系列教程】查看更新链接。</p>
+<h1 id="四、安装软件"><a href="#四、安装软件" class="headerlink" title="四、安装软件"></a>四、安装软件</h1><h2 id="4-1-支持的操作系统"><a href="#4-1-支持的操作系统" class="headerlink" title="4.1 支持的操作系统"></a>4.1 支持的操作系统</h2><p>目前（2018年10月）最新版本MDK-ARM V5.26只支持Windows 7、 Windows 8 和 Windows 10这三个版本操作系统。<strong>已经不再支持Windows Vista和 Windows XP系统了</strong>。</p>
+<p>我记得MDK-ARM V5前面几个版本（好像是V5.19之前版本）还能安装在Windows Vista和 Windows XP这种老系统上，只是部分功能兼容性不好，但也能用。</p>
+<p>目前最新版本Keil软件支持的操作系统，可以参看官网说明：<br><a href="http://www2.keil.com/system-requirements" target="_blank" rel="noopener">http://www2.keil.com/system-requirements</a></p>
+<h2 id="4-2-安装详细步骤"><a href="#4-2-安装详细步骤" class="headerlink" title="4.2 安装详细步骤"></a>4.2 安装详细步骤</h2><p>Keil四款软件（MDK-ARM、C51、C251、C166）安装方法基本一样，很简单，一路Next下去就行了。</p>
+<p>本章节主要针对初学者，下面以图文方式讲述一下安装全过程。</p>
+<p>1.以管理员身份运行软件， 进入安装向导界面， 点击“Next”</p>
+<table><br><img align="left" width="500" src=""><br></table>
+
+<p>2.勾选“I agree to…”，许可同意，点击“Next”</p>
+<table><br><img align="left" width="500" src=""><br></table>
+
+<p>3.选择软件和支持包安装路径（可以默认），点击“Next”</p>
+<table><br><img align="left" width="500" src=""><br></table>
+
+<p>4.填写客户信息（可以随便填写），点击“Next”</p>
+<table><br><img align="left" width="500" src=""><br></table>
+
+<p>5.安装过程需要等待几分钟</p>
+<table><br><img align="left" width="500" src=""><br></table>
+
+<p>6.安装完成，点击“Finish”</p>
+<table><br><img align="left" width="500" src=""><br></table>
+
+<p>7.自动更新“支持包”列表，可以直接退出，自己下载安装。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>安装软件之后，如果我们不关闭上面自动更新，自动更新完成之后，就会出现“支持包”列表，如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+
+<h1 id="五、安装支持包"><a href="#五、安装支持包" class="headerlink" title="五、安装支持包"></a>五、安装支持包</h1><p>我把MDK-ARM中用于支持MCU芯片的软件包叫“器件支持包”，所以，我简称“支持包”。</p>
+<p>支持包可以通过在线安装，或者下载离线包自己离线安装，这两种安装方式。</p>
+<h2 id="5-1-在线安装"><a href="#5-1-在线安装" class="headerlink" title="5.1 在线安装"></a>5.1 在线安装</h2><p>1.打开MDK-ARM软件，点击“软件支持包”按钮</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>2.更新列表，选择芯片，安装</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>在线安装过程就上面几个步骤，点击“Install”之后，需要等待一会儿，下面状态栏有提示，提示安装完成即可直接使用。</p>
+<h2 id="5-2-离线安装"><a href="#5-2-离线安装" class="headerlink" title="5.2 离线安装"></a>5.2 离线安装</h2><p>离线安装支持包就如安装软件一样：下载支持包（上面提供下载），双击下载好的离线包，此时会识别安装路径（前提是已经安装MDK），点击“Next”，一会儿就安装完成。</p>
+<table><br><img align="left" width="500" src=""><br></table>
+
+
+<h1 id="六、注册"><a href="#六、注册" class="headerlink" title="六、注册"></a>六、注册</h1><p>Keil MDK是一个收费的软件，官方严厉打击盗版，若你是商业用途，建议购买正版软件。</p>
+<p>针对个人学习的朋友，可以使用MDK-Lite免费评估版，只是代码大小有32KB的限制。如果还不能满足你自己需求，建议自行在网上查找注册机或购买正版软件。</p>
+<p>同时，ST意法半导体与ARM公司合作，<strong>使用MDK-ARM开发STM32F0和L0系列芯片，可以免费获取License</strong>。具体请参看：<br><a href="http://www2.keil.com/stmicroelectronics-stm32/mdk" target="_blank" rel="noopener">http://www2.keil.com/stmicroelectronics-stm32/mdk</a></p>
+<p>在国内由米尔科技、亿道电子、英倍特提供Keil 的销售和技术支持服务。具体如何购买Keil正版软件，以及它的价格，可以向这些经销商咨询。</p>
+<h1 id="七、说明"><a href="#七、说明" class="headerlink" title="七、说明"></a>七、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。  </p>
+<h1 id="八、最后"><a href="#八、最后" class="headerlink" title="八、最后"></a>八、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Keil/" rel="tag"># Keil</a>
+          
+            <a href="/tags/MDK-ARM/" rel="tag"># MDK-ARM</a>
+          
+            <a href="/tags/µVision/" rel="tag"># µVision</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程.html" rel="next" title="CANOpen系列教程">
+                <i class="fa fa-chevron-left"></i> CANOpen系列教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Keil/Keil系列教程.html" rel="prev" title="Keil系列教程">
+                Keil系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="strongerHuang" />
+            
+              <p class="site-author-name" itemprop="name">strongerHuang</p>
+              <p class="site-description motion-element" itemprop="description">更多内容，尽在微信公众号！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/EmbeddedDevelop" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/strongerHuang.com" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.st.com" title="ST" target="_blank">ST</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nxp.com/cn" title="NXP" target="_blank">NXP</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.keil.com" title="Keil" target="_blank">Keil</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.iar.com" title="IAR" target="_blank">IAR</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.micrium.com" title="uCOS" target="_blank">uCOS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.freertos.org" title="FreeRTOS" target="_blank">FreeRTOS</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、Keil介绍"><span class="nav-text">二、Keil介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-概述"><span class="nav-text">2.1 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-MDK-ARM"><span class="nav-text">2.2 MDK-ARM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-支持芯片"><span class="nav-text">2.3 支持芯片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、下载"><span class="nav-text">三、下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-MDK-ARM安装包下载"><span class="nav-text">3.1 MDK-ARM安装包下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-MDK-ARM支持包下载"><span class="nav-text">3.2 MDK-ARM支持包下载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、安装软件"><span class="nav-text">四、安装软件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-支持的操作系统"><span class="nav-text">4.1 支持的操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-安装详细步骤"><span class="nav-text">4.2 安装详细步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、安装支持包"><span class="nav-text">五、安装支持包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-在线安装"><span class="nav-text">5.1 在线安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-离线安装"><span class="nav-text">5.2 离线安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、注册"><span class="nav-text">六、注册</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、说明"><span class="nav-text">七、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、最后"><span class="nav-text">八、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">strongerHuang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"> 访客人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"> 总访问量:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

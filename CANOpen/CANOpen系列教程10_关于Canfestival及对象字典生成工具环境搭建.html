@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-my.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CAN,CAN总线,CANOpen,CanFestival," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EmbeddedDevelop" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、写在前面　　这一篇文章讲述如标题所描述的两大知识点，这两点内容对于初学者来说非常重要，希望想学习CANOpen协议的朋友认真把文章看完。 　　1.讲述Canfestival框架、官网简述，及衍生出的CANOpen源码基础知识； 　　2.基于Canfestival框架中对象字典生成工具的环境搭建。">
+<meta name="keywords" content="CAN,CAN总线,CANOpen,CanFestival">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建">
+<meta property="og:url" content="http://www.strongerhuang.com/CANOpen/CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建.html">
+<meta property="og:site_name" content="EmbeddedDevelop">
+<meta property="og:description" content="一、写在前面　　这一篇文章讲述如标题所描述的两大知识点，这两点内容对于初学者来说非常重要，希望想学习CANOpen协议的朋友认真把文章看完。 　　1.讲述Canfestival框架、官网简述，及衍生出的CANOpen源码基础知识； 　　2.基于Canfestival框架中对象字典生成工具的环境搭建。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-26T01:41:21.272Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建">
+<meta name="twitter:description" content="一、写在前面　　这一篇文章讲述如标题所描述的两大知识点，这两点内容对于初学者来说非常重要，希望想学习CANOpen协议的朋友认真把文章看完。 　　1.讲述Canfestival框架、官网简述，及衍生出的CANOpen源码基础知识； 　　2.基于Canfestival框架中对象字典生成工具的环境搭建。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建.html"/>
+
+
+
+
+
+  <title>CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建 | EmbeddedDevelop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EmbeddedDevelop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">作者：strongerHuang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T09:00:00+08:00">
+                2018-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CANOpen系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">CANOpen系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建.html" title="CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建">http://www.strongerhuang.com/CANOpen/CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　这一篇文章讲述如标题所描述的两大知识点，<strong>这两点内容对于初学者来说非常重要，希望想学习CANOpen协议的朋友认真把文章看完</strong>。</p>
+<p>　　1.讲述Canfestival框架、官网简述，及衍生出的CANOpen源码基础知识；</p>
+<p>　　2.基于Canfestival框架中对象字典生成工具的环境搭建。</p>
+<a id="more"></a>
+<p>　　本文章收录于<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html">【CANOpen系列教程】</a>，在我的博客分类“CANOpen系列教程”也能查找到。</p>
+<p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【CANOpen系列教程】即可查看。</p>
+<h1 id="二、关于Canfestival"><a href="#二、关于Canfestival" class="headerlink" title="二、关于Canfestival"></a>二、关于Canfestival</h1><p>Canfestival是一套<strong>免费开源的CANOpen协议栈框架</strong>，遵循ANSI-C，支持多平台，我们完全可以借助这一套开源框架来学会CANOpen。</p>
+<p>官方主页：<a href="https://canfestival.org/index.html.en" target="_blank" rel="noopener">https://canfestival.org/index.html.en</a></p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>从上面主页可以看得出来，网址主要包含三部分内容：<strong>Code源码、Documentation文档、Applications应用</strong>。</p>
+<p>这个网站目前访问有点慢，但还是能访问。可能是因为服务器在法国（IP地址），及这套协议免费开源，没有得到更多资金支持。</p>
+<p>下面我将针对初学者，重点讲述一下这三部分内容，以及我们需要重点关注的内容。</p>
+<h2 id="2-1-Code源码"><a href="#2-1-Code源码" class="headerlink" title="2.1 Code源码"></a>2.1 Code源码</h2><p>网址：<a href="https://canfestival.org/code.html.en" target="_blank" rel="noopener">https://canfestival.org/code.html.en</a></p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>Code代码提供4个资源库（如上图），<strong>4个资源库中CANOpen协议源码都沿用一套，简单说协议源码大致相同</strong>。</p>
+<p>推荐下载第2个的原因：<br>1.有人负责更新维护，目前（2018年）版本最新；<br>2.提供STM32F0、F1、F4系列驱动代码；<br>（下面提供下载）</p>
+<h2 id="2-2-Documentation文档"><a href="#2-2-Documentation文档" class="headerlink" title="2.2 Documentation文档"></a>2.2 Documentation文档</h2><p>网址：<a href="https://canfestival.org/doc.html.en" target="_blank" rel="noopener">https://canfestival.org/doc.html.en</a></p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>这一项里面主要讲述Canfestival这套框架里面的一些内容，如遵循许可、CanFestival提供了一些GUI和命令行工具，帮助创建一个新的CANOpen节点并编辑对象字典，供主从使用。</p>
+<p>我们需要获取的重要内容，<strong>都在那个PDF手册里面</strong>，建议下载仔细阅读。（这个手册在源码压缩包里面也有：manual_en.pdf）</p>
+<h2 id="2-3-Applications应用"><a href="#2-3-Applications应用" class="headerlink" title="2.3 Applications应用"></a>2.3 Applications应用</h2><p>网址：<a href="https://canfestival.org/apps.html.en" target="_blank" rel="noopener">https://canfestival.org/apps.html.en</a></p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>这里的“应用”，不是说教你如何编写应用程序，<strong>主要是Canfestival应用在哪些地方</strong>。如Product产品、Research研究方面。</p>
+<p>Beremiz是法国一家公司开发的一款开源的PLC编程工具。在Beremiz里面就集成了CanFestival这套框架（相信折腾过CANOpen的都知道Beremiz）。<br>（这里的“应用”大家可以不用过多深究）</p>
+<h1 id="三、CANOpen源码说明及下载"><a href="#三、CANOpen源码说明及下载" class="headerlink" title="三、CANOpen源码说明及下载"></a>三、CANOpen源码说明及下载</h1><h2 id="3-1-CANOpen源码说明"><a href="#3-1-CANOpen源码说明" class="headerlink" title="3.1 CANOpen源码说明"></a>3.1 CANOpen源码说明</h2><p>许多初学者都有这么一个疑问：<strong>CANOpen协议的源码我们必须要用CanFestival的吗</strong>？</p>
+<p>因为CANOpen协议是遵循CiA301、302、CiA401…这些协议，我们的源代码只要符合这些协议规范即可。</p>
+<p>CANOpen协议源码也可以自己写，但是耗时耗力完全没必要。所以，我们就使用了免费开源的CanFestival。当然，也可以购买商业化的CANOpen协议源码来开发产品。</p>
+<p>不管我们使用免费的CanFestival，还是购买的源码，只要支持CANOpen协议，我们就能与支持CANOpen协议的设备通信。</p>
+<h2 id="3-2-下载"><a href="#3-2-下载" class="headerlink" title="3.2 下载"></a>3.2 下载</h2><p>我们从官网的“Code”进去，会出现4个选项，我推荐下载第2个（上面有说明为什么下载第2个）。进去之后，会看到如下图一些描述：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>对于关注我的朋友，大部分都在使用STM32，提供相关的源码参看，想必会有更浓学习的兴趣。</p>
+<p>这个源码有多人在更新和维护，所以你会看到有许多分支，我们下载最新版本即可。</p>
+<p>下载地址：<a href="https://bitbucket.org/Mongo/canfestival-3-asc/downloads" target="_blank" rel="noopener">https://bitbucket.org/Mongo/canfestival-3-asc/downloads</a></p>
+<p>百度网盘下载：<a href="https://pan.baidu.com/s/1b9K0vIzu_EVWK1BLURJEPQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1b9K0vIzu_EVWK1BLURJEPQ</a></p>
+<p>提取码：j2w2</p>
+<h1 id="四、对象字典生成工具的环境搭建"><a href="#四、对象字典生成工具的环境搭建" class="headerlink" title="四、对象字典生成工具的环境搭建"></a>四、对象字典生成工具的环境搭建</h1><p>这里的环境搭建可以参考Canfestival手册（manual_en.pdf）里面的指导，具体位置在3.1.1节：Object Dictionary Editor GUI.</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>我们需要下载安装第1，2个，第3个就不用单独下载了。</p>
+<p>因为我们是在STM32上进行开发，手册中3.1.2节Linux、3.1.3节Windows这些内容我们就不用管了。</p>
+<h2 id="4-1-下载Python和wxPython"><a href="#4-1-下载Python和wxPython" class="headerlink" title="4.1 下载Python和wxPython"></a>4.1 下载Python和wxPython</h2><p>因为和其它工具兼容性的原因，我目前在Win10系统上安装可使用的是python-2.7.15 + wxPython2.8。</p>
+<p>其它高版本的Python 3我之前试过好像不行，还有32位和64的也有差异。这里提供给大家（我安装的版本）下载，大家有时间可以在官网下载其它版本试试。</p>
+<p><strong>1.百度网盘</strong><br>链接：<a href="https://pan.baidu.com/s/1bRS403m4B31m4ovSJ-_HwA" target="_blank" rel="noopener">https://pan.baidu.com/s/1bRS403m4B31m4ovSJ-_HwA</a><br>提取码：38sn</p>
+<p><strong>2.官方下载</strong><br>Python：<a href="https://www.python.org/downloads" target="_blank" rel="noopener">https://www.python.org/downloads</a><br>wxPython：<a href="https://wxpython.org/pages/downloads" target="_blank" rel="noopener">https://wxpython.org/pages/downloads</a><br>wxPython镜像：<a href="https://sourceforge.net/projects/wxpython/files/wxPython" target="_blank" rel="noopener">https://sourceforge.net/projects/wxpython/files/wxPython</a></p>
+<h2 id="4-2-安装"><a href="#4-2-安装" class="headerlink" title="4.2 安装"></a>4.2 安装</h2><p><strong>1.Python安装</strong><br>Python的安装需要注意两点：1.以管理员身份运行； 2.添加（环境变量）路径。</p>
+<p>具体可以参看我公众号之前推送文章《工具下载、环境搭建》中3.2 安装Python.</p>
+<p><strong>2.wxPython安装</strong><br>可以通过下载离线包直接安装，也可以通过命令行直接安装。（请看上面给的地址）</p>
+<h2 id="4-3-如何成功运行"><a href="#4-3-如何成功运行" class="headerlink" title="4.3 如何成功运行"></a>4.3 如何成功运行</h2><p>1.解压（上面3.2 下载的）Canfestival-3；<br>2.在解压objdictgen目录下的Gnosis_Utils-current.tar.gz<br>3.将第2步解压目录下的<strong>gnosis</strong>拷贝到<strong>objdictgen</strong>目录下（注意路径），如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>4.双击，或者以命令方式运行<strong>objdictgen</strong>下的objdictedit.py，如果环境没问题，此时就会出现如下界面：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>如果不能出现上面界面，请检查环境是否搭建成功。</p>
+<h1 id="四、说明"><a href="#四、说明" class="headerlink" title="四、说明"></a>四、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。  </p>
+<h1 id="五、最后"><a href="#五、最后" class="headerlink" title="五、最后"></a>五、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CAN/" rel="tag"># CAN</a>
+          
+            <a href="/tags/CAN总线/" rel="tag"># CAN总线</a>
+          
+            <a href="/tags/CANOpen/" rel="tag"># CANOpen</a>
+          
+            <a href="/tags/CanFestival/" rel="tag"># CanFestival</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程09_CANOpen对象字典.html" rel="next" title="CANOpen系列教程09_CANOpen对象字典">
+                <i class="fa fa-chevron-left"></i> CANOpen系列教程09_CANOpen对象字典
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程.html" rel="prev" title="CANOpen系列教程">
+                CANOpen系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="strongerHuang" />
+            
+              <p class="site-author-name" itemprop="name">strongerHuang</p>
+              <p class="site-description motion-element" itemprop="description">更多内容，尽在微信公众号！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/EmbeddedDevelop" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/strongerHuang.com" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.st.com" title="ST" target="_blank">ST</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nxp.com/cn" title="NXP" target="_blank">NXP</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.keil.com" title="Keil" target="_blank">Keil</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.iar.com" title="IAR" target="_blank">IAR</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.micrium.com" title="uCOS" target="_blank">uCOS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.freertos.org" title="FreeRTOS" target="_blank">FreeRTOS</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、关于Canfestival"><span class="nav-text">二、关于Canfestival</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Code源码"><span class="nav-text">2.1 Code源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Documentation文档"><span class="nav-text">2.2 Documentation文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Applications应用"><span class="nav-text">2.3 Applications应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、CANOpen源码说明及下载"><span class="nav-text">三、CANOpen源码说明及下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-CANOpen源码说明"><span class="nav-text">3.1 CANOpen源码说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-下载"><span class="nav-text">3.2 下载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、对象字典生成工具的环境搭建"><span class="nav-text">四、对象字典生成工具的环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-下载Python和wxPython"><span class="nav-text">4.1 下载Python和wxPython</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-安装"><span class="nav-text">4.2 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-如何成功运行"><span class="nav-text">4.3 如何成功运行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、说明"><span class="nav-text">四、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、最后"><span class="nav-text">五、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">strongerHuang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"> 访客人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"> 总访问量:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

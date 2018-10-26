@@ -89,10 +89,19 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　这一篇文章讲述如标题所描述的两大知识点，这两点内容对于初学者来说非常重要，希望想学习CANOpen协议的朋友认真把文章看完。 　　1.讲述Canfestival框架、官网简述，及衍生出的CANOpen源码基础知识； 　　2.基于Canfestival框架中对象字典生成工具的环境搭建。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-26T01:41:21.272Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.Canfestival%E4%B8%BB%E9%A1%B5.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.Coed%E4%BB%A3%E7%A0%81.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.Documentation%E6%96%87%E6%A1%A3.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/4.Applications%E5%BA%94%E7%94%A8.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/5.%E6%BA%90%E7%A0%81%E6%8F%8F%E8%BF%B0.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/6.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%9D%A1%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/7.%E6%8B%B7%E8%B4%9Dgnosis%E5%B7%A5%E5%85%B7.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/8.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true">
+<meta property="og:updated_time" content="2018-10-26T02:59:56.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建">
 <meta name="twitter:description" content="一、写在前面　　这一篇文章讲述如标题所描述的两大知识点，这两点内容对于初学者来说非常重要，希望想学习CANOpen协议的朋友认真把文章看完。 　　1.讲述Canfestival框架、官网简述，及衍生出的CANOpen源码基础知识； 　　2.基于Canfestival框架中对象字典生成工具的环境搭建。">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.Canfestival%E4%B8%BB%E9%A1%B5.png?raw=true">
 
 
 
@@ -424,23 +433,23 @@
 <p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【EmbeddedDevelop】</a>，关注微信公众号回复【CANOpen系列教程】即可查看。</p>
 <h1 id="二、关于Canfestival"><a href="#二、关于Canfestival" class="headerlink" title="二、关于Canfestival"></a>二、关于Canfestival</h1><p>Canfestival是一套<strong>免费开源的CANOpen协议栈框架</strong>，遵循ANSI-C，支持多平台，我们完全可以借助这一套开源框架来学会CANOpen。</p>
 <p>官方主页：<a href="https://canfestival.org/index.html.en" target="_blank" rel="noopener">https://canfestival.org/index.html.en</a></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.Canfestival%E4%B8%BB%E9%A1%B5.png?raw=true"><br></table>
 
 <p>从上面主页可以看得出来，网址主要包含三部分内容：<strong>Code源码、Documentation文档、Applications应用</strong>。</p>
 <p>这个网站目前访问有点慢，但还是能访问。可能是因为服务器在法国（IP地址），及这套协议免费开源，没有得到更多资金支持。</p>
 <p>下面我将针对初学者，重点讲述一下这三部分内容，以及我们需要重点关注的内容。</p>
 <h2 id="2-1-Code源码"><a href="#2-1-Code源码" class="headerlink" title="2.1 Code源码"></a>2.1 Code源码</h2><p>网址：<a href="https://canfestival.org/code.html.en" target="_blank" rel="noopener">https://canfestival.org/code.html.en</a></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.Coed%E4%BB%A3%E7%A0%81.png?raw=true"><br></table>
 
 <p>Code代码提供4个资源库（如上图），<strong>4个资源库中CANOpen协议源码都沿用一套，简单说协议源码大致相同</strong>。</p>
 <p>推荐下载第2个的原因：<br>1.有人负责更新维护，目前（2018年）版本最新；<br>2.提供STM32F0、F1、F4系列驱动代码；<br>（下面提供下载）</p>
 <h2 id="2-2-Documentation文档"><a href="#2-2-Documentation文档" class="headerlink" title="2.2 Documentation文档"></a>2.2 Documentation文档</h2><p>网址：<a href="https://canfestival.org/doc.html.en" target="_blank" rel="noopener">https://canfestival.org/doc.html.en</a></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.Documentation%E6%96%87%E6%A1%A3.png?raw=true"><br></table>
 
 <p>这一项里面主要讲述Canfestival这套框架里面的一些内容，如遵循许可、CanFestival提供了一些GUI和命令行工具，帮助创建一个新的CANOpen节点并编辑对象字典，供主从使用。</p>
 <p>我们需要获取的重要内容，<strong>都在那个PDF手册里面</strong>，建议下载仔细阅读。（这个手册在源码压缩包里面也有：manual_en.pdf）</p>
 <h2 id="2-3-Applications应用"><a href="#2-3-Applications应用" class="headerlink" title="2.3 Applications应用"></a>2.3 Applications应用</h2><p>网址：<a href="https://canfestival.org/apps.html.en" target="_blank" rel="noopener">https://canfestival.org/apps.html.en</a></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/4.Applications%E5%BA%94%E7%94%A8.png?raw=true"><br></table>
 
 <p>这里的“应用”，不是说教你如何编写应用程序，<strong>主要是Canfestival应用在哪些地方</strong>。如Product产品、Research研究方面。</p>
 <p>Beremiz是法国一家公司开发的一款开源的PLC编程工具。在Beremiz里面就集成了CanFestival这套框架（相信折腾过CANOpen的都知道Beremiz）。<br>（这里的“应用”大家可以不用过多深究）</p>
@@ -449,7 +458,7 @@
 <p>CANOpen协议源码也可以自己写，但是耗时耗力完全没必要。所以，我们就使用了免费开源的CanFestival。当然，也可以购买商业化的CANOpen协议源码来开发产品。</p>
 <p>不管我们使用免费的CanFestival，还是购买的源码，只要支持CANOpen协议，我们就能与支持CANOpen协议的设备通信。</p>
 <h2 id="3-2-下载"><a href="#3-2-下载" class="headerlink" title="3.2 下载"></a>3.2 下载</h2><p>我们从官网的“Code”进去，会出现4个选项，我推荐下载第2个（上面有说明为什么下载第2个）。进去之后，会看到如下图一些描述：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/5.%E6%BA%90%E7%A0%81%E6%8F%8F%E8%BF%B0.png?raw=true"><br></table>
 
 <p>对于关注我的朋友，大部分都在使用STM32，提供相关的源码参看，想必会有更浓学习的兴趣。</p>
 <p>这个源码有多人在更新和维护，所以你会看到有许多分支，我们下载最新版本即可。</p>
@@ -457,7 +466,7 @@
 <p>百度网盘下载：<a href="https://pan.baidu.com/s/1b9K0vIzu_EVWK1BLURJEPQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1b9K0vIzu_EVWK1BLURJEPQ</a></p>
 <p>提取码：j2w2</p>
 <h1 id="四、对象字典生成工具的环境搭建"><a href="#四、对象字典生成工具的环境搭建" class="headerlink" title="四、对象字典生成工具的环境搭建"></a>四、对象字典生成工具的环境搭建</h1><p>这里的环境搭建可以参考Canfestival手册（manual_en.pdf）里面的指导，具体位置在3.1.1节：Object Dictionary Editor GUI.</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/6.%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%9D%A1%E4%BB%B6.png?raw=true"><br></table>
 
 <p>我们需要下载安装第1，2个，第3个就不用单独下载了。</p>
 <p>因为我们是在STM32上进行开发，手册中3.1.2节Linux、3.1.3节Windows这些内容我们就不用管了。</p>
@@ -468,11 +477,10 @@
 <h2 id="4-2-安装"><a href="#4-2-安装" class="headerlink" title="4.2 安装"></a>4.2 安装</h2><p><strong>1.Python安装</strong><br>Python的安装需要注意两点：1.以管理员身份运行； 2.添加（环境变量）路径。</p>
 <p>具体可以参看我公众号之前推送文章《工具下载、环境搭建》中3.2 安装Python.</p>
 <p><strong>2.wxPython安装</strong><br>可以通过下载离线包直接安装，也可以通过命令行直接安装。（请看上面给的地址）</p>
-<h2 id="4-3-如何成功运行"><a href="#4-3-如何成功运行" class="headerlink" title="4.3 如何成功运行"></a>4.3 如何成功运行</h2><p>1.解压（上面3.2 下载的）Canfestival-3；<br>2.在解压objdictgen目录下的Gnosis_Utils-current.tar.gz<br>3.将第2步解压目录下的<strong>gnosis</strong>拷贝到<strong>objdictgen</strong>目录下（注意路径），如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-3-如何成功运行"><a href="#4-3-如何成功运行" class="headerlink" title="4.3 如何成功运行"></a>4.3 如何成功运行</h2><p>1.解压（上面3.2 下载的）Canfestival-3；<br>2.在解压objdictgen目录下的Gnosis_Utils-current.tar.gz</p>
+<table><br>3.将第2步解压目录下的<strong>gnosis</strong>拷贝到<strong>objdictgen</strong>目录下（注意路径），如下图：<br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/7.%E6%8B%B7%E8%B4%9Dgnosis%E5%B7%A5%E5%85%B7.png?raw=true"><br></table>
 
-<p>4.双击，或者以命令方式运行<strong>objdictgen</strong>下的objdictedit.py，如果环境没问题，此时就会出现如下界面：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br>4.双击，或者以命令方式运行<strong>objdictgen</strong>下的objdictedit.py，如果环境没问题，此时就会出现如下界面：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/8.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true"><br></table>
 
 <p>如果不能出现上面界面，请检查环境是否搭建成功。</p>
 <h1 id="四、说明"><a href="#四、说明" class="headerlink" title="四、说明"></a>四、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>

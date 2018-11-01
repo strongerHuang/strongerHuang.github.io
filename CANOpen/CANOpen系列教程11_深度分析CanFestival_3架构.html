@@ -89,10 +89,14 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　教程上一篇文章《关于Canfestival及对象字典生成工具环境搭建》中我们简单认识了一下Canfestival这套免费开源CANOpen协议的框架。 　　那么，本文将会以下载的PDF手册（源码里面也有）为导向，来深入解析Canfestival这套框架。 　　本文大概分两部分来讲述：　　1.manual手册概要内容；　　2.解析Canfestival源码；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-01T06:44:49.501Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B11_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90CanFestival_3%E6%9E%B6%E6%9E%84/1.%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B11_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90CanFestival_3%E6%9E%B6%E6%9E%84/2.%E6%BA%90%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E5%85%B3%E7%B3%BB.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B11_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90CanFestival_3%E6%9E%B6%E6%9E%84/3.%E4%BA%8B%E4%BB%B6%E8%B0%83%E5%BA%A6.png?raw=true">
+<meta property="og:updated_time" content="2018-11-01T07:20:05.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程11_深度分析CanFestival_3架构">
 <meta name="twitter:description" content="一、写在前面　　教程上一篇文章《关于Canfestival及对象字典生成工具环境搭建》中我们简单认识了一下Canfestival这套免费开源CANOpen协议的框架。 　　那么，本文将会以下载的PDF手册（源码里面也有）为导向，来深入解析Canfestival这套框架。 　　本文大概分两部分来讲述：　　1.manual手册概要内容；　　2.解析Canfestival源码；">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B11_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90CanFestival_3%E6%9E%B6%E6%9E%84/1.%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png?raw=true">
 
 
 
@@ -441,13 +445,13 @@
 <p><strong>第11章文档资源</strong><br>主要就是一些参考网址。</p>
 <p><strong>第12章关于这个项目</strong><br>不是重点，可以了解一下这些信息。</p>
 <h1 id="三、解析Canfestival源码"><a href="#三、解析Canfestival源码" class="headerlink" title="三、解析Canfestival源码"></a>三、解析Canfestival源码</h1><h2 id="3-1-源文件目录"><a href="#3-1-源文件目录" class="headerlink" title="3.1 源文件目录"></a>3.1 源文件目录</h2><p>解压下载的源码压缩包，会看到如下图文件及文件夹：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B11_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90CanFestival_3%E6%9E%B6%E6%9E%84/1.%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png?raw=true"><br></table>
 
 <p>我们主要需要的三个.c .h源文件目录：<br><strong>drivers</strong>：底层驱动；<br><strong>include</strong>：.h头文件；<br><strong>src</strong>：.c源代码；</p>
 <p>一个对象字典生成工具：<br><strong>objdictgen</strong>：object dictionary generate.</p>
 <p><strong>examples</strong>：例程，初学者可以参考；</p>
 <h2 id="3-2-源代码结构关系及应用程序如何实现"><a href="#3-2-源代码结构关系及应用程序如何实现" class="headerlink" title="3.2 源代码结构关系及应用程序如何实现"></a>3.2 源代码结构关系及应用程序如何实现</h2><p>这里有一张源文件的结构关系图，大致就是将源文件按照其作用进行了划分，初学者需要多看多理解。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B11_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90CanFestival_3%E6%9E%B6%E6%9E%84/2.%E6%BA%90%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E5%85%B3%E7%B3%BB.png?raw=true"><br></table>
 
 <p>从图中我们可以看出，将源代码划分成三块。中间的Library库文件我们不会去动它。主要修改左右两边的代码。</p>
 <p>左边CAN底层驱动接口（前面我提供过STM32例程）。Target目标接口，如定时器。</p>
@@ -455,7 +459,7 @@
 <p>提示：最右边的英文希望大家理解一下，对初学者有帮助，如打开CAN接口（也可以叫初始化）、初始化定时器……等。</p>
 <h2 id="3-3-CAN底层接口实现和要求"><a href="#3-3-CAN底层接口实现和要求" class="headerlink" title="3.3 CAN底层接口实现和要求"></a>3.3 CAN底层接口实现和要求</h2><p>我们底层发送要求非阻塞的方式实现，一般我建议跑一个操作系统，加一个队列的方式实现。</p>
 <p>需要一个发送线程、一个接收线程，同时需要定时器实现事件的调度。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B11_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90CanFestival_3%E6%9E%B6%E6%9E%84/3.%E4%BA%8B%E4%BB%B6%E8%B0%83%E5%BA%A6.png?raw=true"><br></table>
 
 <p>这一节的内容，对于初学者理解起来相对较难，可以先了解，有一个概念，后面我会结合代码让大家更容易理解其中含义。</p>
 <h1 id="四、说明"><a href="#四、说明" class="headerlink" title="四、说明"></a>四、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>

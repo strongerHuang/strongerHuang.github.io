@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Keil系列教程]]></title>
     <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【Keil系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看。 二、教程列表1.Keil系列教程01_Keil介绍、下载、安装与注册 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【Keil系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看。 二、教程列表1.Keil系列教程01_Keil介绍、下载、安装与注册2.Keil系列教程02_新建基础软件工程 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
       <categories>
         <category>Keil系列教程</category>
       </categories>
@@ -11,6 +11,47 @@
         <tag>Keil</tag>
         <tag>MDK-ARM</tag>
         <tag>µVision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Keil系列教程02_新建基础软件工程]]></title>
+    <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E6%96%B0%E5%BB%BA%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B.html</url>
+    <content type="text"><![CDATA[一、写在前面 目前Keil的四款产品（软件）：MDK-ARM、C51、C251、C166，在用法上极为相似，包括本文讲述的新建软件工程。 本文以目前（2018年10月）最新Keil MDK-ARM V5.26、STM32F103标准外设库为例，来给大家讲述新建软件工程的具体步骤。 本文讲述的新建软件工程，只是最基础的软件工程（一个工程，一个目标）。其中只修改了必要的配置，大部分配置默认。 如果你是Keil C51、或者其它MCU器件，本文也适用，只是针对MCU器件有略微差异。 二、准备工作俗话说“磨刀不误砍柴工”，做好了准备工作，后面新建基础软件工程的工作就很容易实现了。 这里针对STM32会下载“标准外设库”这个准备工作，如果你是C51，或者不用库，这个准备工作就可略过。 2.1 下载安装Keil工具本文必备工具，详情请参看该系列教程上一篇文章《Keil系列教程01_Keil介绍、下载、安装与注册》。 2.2 下载STM32标准外设库这一节是准备源代码（库），如果你使用C51、寄存器开发，本节内容可以略过。下面提供官方下载链接，嫌麻烦的朋友可以在我百度网盘下载。 A.官网下载http://www.st.com/content/st_com/en/products/embedded-software/mcus-embedded-software/stm32-embedded-software.html?querycriteria=productId=SC961 根据芯片型号下载对应的标准外设库（如芯片为STM32F103ZE，则下载对应的STM32F10x_StdPeriph_Lib），如下图： B.百度网盘http://pan.baidu.com/s/1qYbBKMK 提示：如果以上链接失效，可以关注微信公众号，获取更新链接。 2.3 整理工程文件夹这一小节的内容可根据自己习惯来整理，我整理的文件及文件夹结构是按照常规的整理方式。你如果觉得合理，可以引用； 首先建立一个存放工程文件的总文件夹：STM32F103ZE（Keil）_Demo A.提取ST标准外设库文件ST标准外设库里面源代码文件我们只需要使用部分文件。因此，提取需要使用的文件及文件夹到我们的工程中。 解压“STM32F10x_StdPeriph_Lib”，可以看到在主目录下面有四个文件夹：_htmresc：图片文件夹（不提取）Libraries：库文件夹（提取大部分）Project： 示例工程（提取少部分）Utilities： 公共代码、评估板代码（不提取） 我们需要使用Libraries和Project目录下的文件，但也有部分不用。因此，我们需要删除不用的文件。（具体保留了哪些，可以下载我提供例程查看） B.新建文件和文件夹除了上面提取的文件之外，我们需要建立存放自己代码的文件和文件夹。我这里主要新建三个文件夹：App: 应用部分代码Bsp: 底层部分代码Doc: 说明文档 在新建的文件夹下面还需要新建自己的源文件，源文件里面添加源代码。我们提供的Demo工程，实现的一个LED闪烁的功能。（这里不描述）。 上面两个步骤完成之后，我们就可以看到在“STM32F103ZE（Keil）_Demo”下面整理的文件夹： 至此，准备工作算完成了，上面提取的文件、新建的文件里面具体的内容请下载Demo工程查看。 三、新建软件工程新建一个简单、基础的软件工程大概需要有三个步骤：建立工程、添加文件和配置工程。 上面的准备工作做好之后，就可新建自己的软件工程了，下面将一步一步讲述从零开始新建一个软件工程的详细过程。 3.1 建立工程建立工程的步骤是基础，也比较简单，下面一步一步教大家新建一个空的工程。 A.打开软件,新建立工程（Project -&gt; New uVision Project） B.选择保存路径，保存名称 C.选择芯片型号 D.基础工程 一个基础的工程就完成了，但还不够，还需要下面的步骤。 3.2 添加文件准确的来说，应该是添加组（文件夹）和添加文件。直接的说，就是将你自己的源代码（前面提取的库、新建的文件等）添加到工程中。 这里的工程项目管理可根据自己的想法来定义（类似于自己分类、命名文件夹和文件），我这里按照常规的方式进行管理项目。 点击“项目管理”快捷按钮，或者Project -&gt; Manage -&gt; Project Items 进入“项目管理”界面。 ·· 一步一步添加，直到最后完成··## 3.3 配置工程配置工程对于初学者来说，大部分内容只需要默认即可，这里只讲述几个常见的配置，能满足基本的功能。** A.点击“工程目标选项”进入配置（或Project -&gt; Options for Target） B.输出Hex文件很多朋友初学的朋友都会问怎么输出Hex，只需要勾选上【Project -&gt; Options for Target -&gt; Output】“Create HEX File”即可。 C.C/C++配置这个选项的配置参数比较多，对于大型项目来说比较重要，但对于初学者来说，只需要简单配置两项就行。 第一处配置—预定义：【这里以STM32F103大容量芯片为例】 预定义STM32F10X_HD，等同于#define STM32F10X_HD. 有些工程还预定义USE_STDPERIPH_DRIVER。由于都是使用“标准外设库”，我个人习惯把USE_STDPERIPH_DRIVER，定义在stm32f10x.h文件里面，所以在这里就看不到我定义的这一项了。 第二处配置—包含路径：由于我们前面工程中有很多文件夹，因此需要添加对应的路径，这样编译器才能找得到。 ··一步一步添加，直到最后完成 一步一步添加，直到最后完成··D.选择下载调试工具这个选项根据自己的下载调试器来选择（比如：ST-Link） E.下载复位并运行设置有些初学的朋友说“为什么我下载程序之后，需要按一下复位键才能运行？”，只需要在工程中勾选上“Reset and Run”就可实现，下载完程序马上运行了。 至此，一个新建立的工程就算完成了（当然，我新建的文件是添加了正确的源代码），只需要编译，接上下载器就可以下载运行了。 四、下载为方便广大STM32学习者，我将常见的STM32“Demo软件工程”已经建好，里面还包含EWARM建立的工程供大家下载。 STM32F0工程模板:http://pan.baidu.com/s/1pKSkSxt STM32F1工程模板:http://pan.baidu.com/s/1c1AWupM STM32F2工程模板:http://pan.baidu.com/s/1o8yGWg6 STM32F3工程模板:http://pan.baidu.com/s/1boVXh2f STM32F4工程模板:http://pan.baidu.com/s/1qYzYMuS STM32L1工程模板:https://pan.baidu.com/s/1rNPC3JQD7iLchVUEJlTjCQ 提示：如果以上链接失效，可以关注微信公众号，获取更新链接。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 五、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>Keil系列教程</category>
+      </categories>
+      <tags>
+        <tag>Keil</tag>
+        <tag>MDK-ARM</tag>
+        <tag>µVision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
+    <content type="text"><![CDATA[一、写在前面 本文对【CANOpen系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、教程列表1.CANOpen系列教程01_初识CAN与CANOpen及相关内容2.CANOpen系列教程02_理解CAN总线协议3.CANOpen系列教程03_CAN收发器功能、原理及作用4.CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明5.CANOpen系列教程05_CAN总线同步与位填充、优先级的决定6.CANOpen系列教程06_结合代码理解CAN底层收发数据（含STM32例程）7.CANOpen系列教程07_CANOpen协议概述8.CANOpen系列教程08_CANOpen通信接口引导学习9.CANOpen系列教程09_CANOpen对象字典10.CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建11.CANOpen系列教程11_深度分析CanFestival_3架构 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程11_深度分析CanFestival_3架构]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B11_%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90CanFestival_3%E6%9E%B6%E6%9E%84.html</url>
+    <content type="text"><![CDATA[一、写在前面 教程上一篇文章《关于Canfestival及对象字典生成工具环境搭建》中我们简单认识了一下Canfestival这套免费开源CANOpen协议的框架。 那么，本文将会以下载的PDF手册（源码里面也有）为导向，来深入解析Canfestival这套框架。 本文大概分两部分来讲述： 1.manual手册概要内容； 2.解析Canfestival源码； 本文章收录于【CANOpen系列教程】，在我的博客分类“CANOpen系列教程”也能查找到。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、manual手册概要内容请先下载我们教程上一篇文章《关于Canfestival及对象字典生成工具环境搭建》提到的PDF手册（解压源码，在目录objdictgen\doc下面也有manual_en.pdf手册文档）。 打开PDF手册，我们可以清楚的看到手册共有12章。对于使用STM32开发的初学者来说，相对重要一点的章节有：2, 3, 4, 9这些章节。 为了照顾初学者，这里先把每一章节内容概述一下，后面在重点讲述部分的内容。 2.1 内容概要第1章Introduction介绍主要介绍了CanFestival是一个开源(LGPL和GPL) CANopen框架，CanFestival项目的起源及支持。同时，也介绍了什么是CANOpen协议，以及协议相关的规范。 第2章CanFestival特征1.工具：提供对象字典GUI图形化编辑器、代码生成，以及脚本等配套工具；2.多平台：库源代码是ANSI标准C，支持多平台编译和开发；3.CANopen标准：支持DS-301、302、305等标准的CANOpen协议。 第3章How to start如何开始这一章节其实主要就是对一些环境的要求和配置，及如何获取CanFestival等。 其实，对我我们使用MCU开发的人来说，重要的就是对象字典编辑和生成工具的环境（具体请参看教程上一篇文章《对象字典生成工具环境搭建》）。其它基于Windows、Linux开发的环境，大家可以参考文档配置一下，这里不讲述。 第4章理解Canfestival主要讲述：理解源代码文件目录划分情况、在应用程序中实现CanFestival以及源文件结构关系、CAN底层驱动接口的调用和实现、对事件调度的实现方法。 本章节内容直接牵涉源代码相关内容，所以说比较重要，下面章节将进一步详解。 第5、6章这两章节主要是针对Linux、Windows平台的配置和开发相关内容，感兴趣朋友可以认真研究一下，这里不讲述。 第7章主要讲述源码提供的HCS12例程相关的编译、下载、硬件连接以及演示。这里参考意义也不大，如果你有对应的板卡，可以参考进行演示一下。 第8章例程和测试程序这一章节讲述了配套提供的一些例程的相关说明。比如TestMasterSlave主从站测试例程中心跳发生器时间为1000毫秒等。 这些说明在源代码中也有，通过查看提供的源代码一目了然。所以，参看价值也不是很大。 第9章开发一个新节点这一章比较重要，我们开发一个新的节点，就需要编辑其对象字典，那么就需要通过编辑器编辑对象字典并生成代码。 简单的说，这章节的重要内容就是让你学会如何使用这个对象字典编辑器工具。 第10章FAQ常见问题这一章节，初学者能看懂的还建议看下有些问题可能对你有帮助，比如：CanFestival3是否符合DS301 V4.02版本? 第11章文档资源主要就是一些参考网址。 第12章关于这个项目不是重点，可以了解一下这些信息。 三、解析Canfestival源码3.1 源文件目录解压下载的源码压缩包，会看到如下图文件及文件夹： 我们主要需要的三个.c .h源文件目录：drivers：底层驱动；include：.h头文件；src：.c源代码； 一个对象字典生成工具：objdictgen：object dictionary generate. examples：例程，初学者可以参考； 3.2 源代码结构关系及应用程序如何实现这里有一张源文件的结构关系图，大致就是将源文件按照其作用进行了划分，初学者需要多看多理解。 从图中我们可以看出，将源代码划分成三块。中间的Library库文件我们不会去动它。主要修改左右两边的代码。 左边CAN底层驱动接口（前面我提供过STM32例程）。Target目标接口，如定时器。 右边底部对象字典，我们需要通过工具事先配置好，不需要人为编写。最后就是我们通过调用API函数，实现应用程序。 提示：最右边的英文希望大家理解一下，对初学者有帮助，如打开CAN接口（也可以叫初始化）、初始化定时器……等。 3.3 CAN底层接口实现和要求我们底层发送要求非阻塞的方式实现，一般我建议跑一个操作系统，加一个队列的方式实现。 需要一个发送线程、一个接收线程，同时需要定时器实现事件的调度。 这一节的内容，对于初学者理解起来相对较难，可以先了解，有一个概念，后面我会结合代码让大家更容易理解其中含义。 四、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 五、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
       </tags>
   </entry>
   <entry>
@@ -24,20 +65,6 @@
         <tag>Keil</tag>
         <tag>MDK-ARM</tag>
         <tag>µVision</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CANOpen系列教程]]></title>
-    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【CANOpen系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、教程列表1.CANOpen系列教程01_初识CAN与CANOpen及相关内容2.CANOpen系列教程02_理解CAN总线协议3.CANOpen系列教程03_CAN收发器功能、原理及作用4.CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明5.CANOpen系列教程05_CAN总线同步与位填充、优先级的决定6.CANOpen系列教程06_结合代码理解CAN底层收发数据（含STM32例程）7.CANOpen系列教程07_CANOpen协议概述8.CANOpen系列教程08_CANOpen通信接口引导学习9.CANOpen系列教程09_CANOpen对象字典10.CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
-      <categories>
-        <category>CANOpen系列教程</category>
-      </categories>
-      <tags>
-        <tag>CAN</tag>
-        <tag>CAN总线</tag>
-        <tag>CANOpen</tag>
-        <tag>CanFestival</tag>
       </tags>
   </entry>
   <entry>

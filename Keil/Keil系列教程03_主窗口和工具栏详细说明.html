@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-my.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Keil,MDK-ARM,µVision," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EmbeddedDevelop" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、写在前面　　本文先让大家简单认识一下Keil的主窗口界面，然后再进一步认识Keil的文件、编译和调试工具栏。 　　Toolbars工具栏就是在菜单下面的两行快捷图标按钮，这些快捷按钮之所以在工具栏里面，在于它们使用的频率较高。比如保存按钮、编译按钮、下载按钮等。 　　本文讲述的Toolbars工具栏和大部分上位机软件的工具栏类似，就是一些常用的快捷按钮。 　　本文以Keil MDK-ARM为例">
+<meta name="keywords" content="Keil,MDK-ARM,µVision">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keil系列教程03_主窗口和工具栏详细说明">
+<meta property="og:url" content="http://www.strongerhuang.com/Keil/Keil系列教程03_主窗口和工具栏详细说明.html">
+<meta property="og:site_name" content="EmbeddedDevelop">
+<meta property="og:description" content="一、写在前面　　本文先让大家简单认识一下Keil的主窗口界面，然后再进一步认识Keil的文件、编译和调试工具栏。 　　Toolbars工具栏就是在菜单下面的两行快捷图标按钮，这些快捷按钮之所以在工具栏里面，在于它们使用的频率较高。比如保存按钮、编译按钮、下载按钮等。 　　本文讲述的Toolbars工具栏和大部分上位机软件的工具栏类似，就是一些常用的快捷按钮。 　　本文以Keil MDK-ARM为例">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-05T09:19:08.298Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Keil系列教程03_主窗口和工具栏详细说明">
+<meta name="twitter:description" content="一、写在前面　　本文先让大家简单认识一下Keil的主窗口界面，然后再进一步认识Keil的文件、编译和调试工具栏。 　　Toolbars工具栏就是在菜单下面的两行快捷图标按钮，这些快捷按钮之所以在工具栏里面，在于它们使用的频率较高。比如保存按钮、编译按钮、下载按钮等。 　　本文讲述的Toolbars工具栏和大部分上位机软件的工具栏类似，就是一些常用的快捷按钮。 　　本文以Keil MDK-ARM为例">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.strongerhuang.com/Keil/Keil系列教程03_主窗口和工具栏详细说明.html"/>
+
+
+
+
+
+  <title>Keil系列教程03_主窗口和工具栏详细说明 | EmbeddedDevelop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EmbeddedDevelop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">作者：strongerHuang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/Keil/Keil系列教程03_主窗口和工具栏详细说明.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Keil系列教程03_主窗口和工具栏详细说明</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-05T17:00:00+08:00">
+                2018-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Keil系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">Keil系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/Keil/Keil系列教程03_主窗口和工具栏详细说明.html" title="Keil系列教程03_主窗口和工具栏详细说明">http://www.strongerhuang.com/Keil/Keil系列教程03_主窗口和工具栏详细说明.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　本文先让大家简单认识一下Keil的主窗口界面，然后再进一步<strong>认识Keil的文件、编译和调试工具栏</strong>。</p>
+<p>　　<strong>Toolbars工具栏</strong>就是在菜单下面的两行快捷图标按钮，这些快捷按钮之所以在工具栏里面，在于<strong>它们使用的频率较高</strong>。比如保存按钮、编译按钮、下载按钮等。</p>
+<p>　　本文讲述的Toolbars工具栏和大部分上位机软件的工具栏类似，就是一些常用的快捷按钮。</p>
+<p>　　本文以Keil MDK-ARM为例，因Keil C51的工具栏和MDK-ARM类似。因此，本文大部分内容也适用于Keil C51。</p>
+<a id="more"></a>
+<h1 id="二、主窗口界面"><a href="#二、主窗口界面" class="headerlink" title="二、主窗口界面"></a>二、主窗口界面</h1><p>为了让大家对Keil集成开发环境有一个大概的了解，这里先概述一下Keil 默认编辑状态（模式）主窗口界面下各个窗口的含义。</p>
+<p><strong>说明</strong>：Keil主窗口界面在<strong>编辑状态与调试状态</strong>下存在一定差异，本章节主要基于【编辑状态】进行简单的概述，里面详细的内容、以及调试状态下的窗口在该系列教材后续会逐步讲述。</p>
+<p>在编辑模式下，一般会出现类似下图的主窗口界面，如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p><strong>1.Menu Bar菜单栏</strong><br>相信大家对菜单栏都不陌生，包含<strong>File文件、 Edit编辑、 View视图、 Project工程、 Help帮助</strong>等这样的一栏窗口。</p>
+<p>菜单栏是 Keil 比较重要的一个窗口，几乎 Keil 所有操作的内容都包含在里面。同时。在<strong>编辑状态和调试状态</strong>下存在一些不同，后续会详细讲述。</p>
+<p><strong>2.Tool Bar工具栏</strong><br>该窗口是一些常见的快捷按钮，本文<strong>下面会重点讲述</strong>。</p>
+<p><strong>3.Project工程窗口</strong><br>一个工作空间可以包含多个工程，该窗口主要<strong>显示工作空间下面工程项目的内容</strong>（工程、 组、 源代码文件等）。 后续也会讲述新建多工程。</p>
+<p><strong>4.Edit Window编辑窗口</strong><br>该窗口不用多解释，就是我们平时编辑代码的窗口。</p>
+<p><strong>5.Message Window信息窗口</strong><br>该窗口包括编译信息、调试信息、查找信息等一些信息的窗口。</p>
+<p><strong>6.Status Bar状态栏</strong><br>该窗口包含就绪状态、错误警告数量、光标行列、字符编码、键盘Num锁定等一些状态信息。</p>
+<h1 id="三、工具栏"><a href="#三、工具栏" class="headerlink" title="三、工具栏"></a>三、工具栏</h1><p>Keil的Toolbars工具栏共有三种：<strong>File Toolbar文件工具栏、 Build Toolbar编译工具栏、 Debug Toolbar调试工具栏</strong>。</p>
+<p>在两种状态（模式）下呈现不同工具栏。在<strong>编辑状态</strong>时，呈现文件、编译两种工具栏；在<strong>调试状态</strong>时，呈现文件、调试两种工具栏。</p>
+<h2 id="3-1-两种状态下的工具栏"><a href="#3-1-两种状态下的工具栏" class="headerlink" title="3.1 两种状态下的工具栏"></a>3.1 两种状态下的工具栏</h2><p>1.编辑状态包含：File Toolbar文件工具栏、 Build Toolbar编译工具栏；</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>2.调试状态包含：File Toolbar文件工具栏、 Debug Toolbar调试工具栏；</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<h2 id="3-2-工具栏详细内容"><a href="#3-2-工具栏详细内容" class="headerlink" title="3.2 工具栏详细内容"></a>3.2 工具栏详细内容</h2><p>如下图，将编辑状态和调试状态的工具栏按钮分为12类，下面将这12类工具栏按钮依次进行详细说明。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<h3 id="1-文件操作类按钮"><a href="#1-文件操作类按钮" class="headerlink" title="1.文件操作类按钮"></a>1.文件操作类按钮</h3><p>这一类按钮可以说在大部分上位机软件都可见，比较简单，不过多描述。<br><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New…</td>
+<td>新建文件</td>
+<td>Ctrl + N</td>
+</tr>
+<tr>
+<td>Open</td>
+<td>打开</td>
+<td>Ctrl + O</td>
+</tr>
+<tr>
+<td>Save</td>
+<td>保存当前文件</td>
+<td>Ctrl + S</td>
+</tr>
+<tr>
+<td>Save All</td>
+<td>保存所有文件</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Cut</td>
+<td>剪切</td>
+<td>Ctrl + X</td>
+</tr>
+<tr>
+<td>Copy</td>
+<td>复制</td>
+<td>Ctrl + C</td>
+</tr>
+<tr>
+<td>Paste</td>
+<td>粘贴</td>
+<td>Ctrl + V</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-文件编辑跳转类按钮"><a href="#2-文件编辑跳转类按钮" class="headerlink" title="2.文件编辑跳转类按钮"></a>2.文件编辑跳转类按钮</h3><p>撤销恢复按钮比较常用，可以使用快捷键代替。<br><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Undo</td>
+<td>撤销编辑</td>
+<td>Ctrl + Z</td>
+</tr>
+<tr>
+<td>Redo</td>
+<td>恢复编辑</td>
+<td>Ctrl + Y</td>
+</tr>
+<tr>
+<td>Navigate Backwards</td>
+<td>跳转到上一步</td>
+<td>Ctrl + -</td>
+</tr>
+<tr>
+<td>Navigate Forwards</td>
+<td>跳转到下一步</td>
+<td>Ctrl + Shift + -</td>
+</tr>
+</tbody>
+</table>
+<table><br><strong>撤销恢复</strong>动画效果<br><img align="left" width="600" src=""><br></table>
+
+<table><br><strong>跳转</strong>动画效果<br><img align="left" width="600" src=""><br></table>
+
+
+<h3 id="3-书签类按钮"><a href="#3-书签类按钮" class="headerlink" title="3.书签类按钮"></a>3.书签类按钮</h3><p>书签的作用主要是标记位置方便查看。<br><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insert/Remove Bookmark</td>
+<td>添加书签</td>
+<td>Ctrl + F2</td>
+</tr>
+<tr>
+<td>Go to Next Bookmark</td>
+<td>跳转到上一个书签</td>
+<td>Shift + F2</td>
+</tr>
+<tr>
+<td>Go to Previous Bookmark</td>
+<td>跳转到下一个书签</td>
+<td>F2</td>
+</tr>
+<tr>
+<td>Clear All Bookmarks</td>
+<td>清空所有书签</td>
+<td>Ctrl + Shift + F2</td>
+</tr>
+</tbody>
+</table>
+<table><br><strong>书签</strong>动画效果<br><img align="left" width="600" src=""><br></table>
+
+
+<h3 id="4-选中行操作类按钮"><a href="#4-选中行操作类按钮" class="headerlink" title="4.选中行操作类按钮"></a>4.选中行操作类按钮</h3><p>选中行操作的作用主要就是为了使选中行缩进、注释。<br><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Indent Selection</td>
+<td>插入缩进</td>
+<td>Tab</td>
+</tr>
+<tr>
+<td>Unindent Selection</td>
+<td>取消缩进</td>
+<td>Shift + Tab</td>
+</tr>
+<tr>
+<td>Comment Selection</td>
+<td>确定注释</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Uncomment Selection</td>
+<td>取消注释</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<table><br><strong>缩进</strong>动画效果<br><img align="left" width="600" src=""><br></table>
+
+<table><br><strong>注释</strong>动画效果<br><img align="left" width="600" src=""><br></table>
+
+
+<h3 id="5-查找文本类按钮"><a href="#5-查找文本类按钮" class="headerlink" title="5.查找文本类按钮"></a>5.查找文本类按钮</h3><p>查找文本意思就是搜索，比较简单，也比较常用。<br><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Find in Files</td>
+<td>在文件中查找文本</td>
+<td>Ctrl + Shift + F</td>
+</tr>
+<tr>
+<td>–</td>
+<td>查找文本输入框</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Find</td>
+<td>查找单个文本</td>
+<td>Ctrl + F</td>
+</tr>
+<tr>
+<td>Incremental Find</td>
+<td>逐个查找文本</td>
+<td>Ctrl + I</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-仿真类按钮"><a href="#6-仿真类按钮" class="headerlink" title="6.仿真类按钮"></a>6.仿真类按钮</h3><p>这些按钮针对仿真时，具有断电标记作用。<br><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start/Stop Debug Session</td>
+<td>打开/关闭调试</td>
+<td>Ctrl + F5</td>
+</tr>
+<tr>
+<td>Insert/Remove Breakpoint</td>
+<td>插入/移除断点</td>
+<td>F9</td>
+</tr>
+<tr>
+<td>Enable/Disable Breakpoint</td>
+<td>使能/失能断点</td>
+<td>Ctrl + F9</td>
+</tr>
+<tr>
+<td>Disable All Breakpoints</td>
+<td>失能所有断点</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Kill All Breakpoints</td>
+<td>取消所有断点</td>
+<td>Ctrl + Shift + F9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-窗口配置类按钮"><a href="#7-窗口配置类按钮" class="headerlink" title="7.窗口配置类按钮"></a>7.窗口配置类按钮</h3><p><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project Windows</td>
+<td>工程窗口</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Configuration</td>
+<td>配置</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<p>工程窗口按钮支持快速打开/关闭某些窗口，和View视图菜单功能一样，工程窗口内容下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+
+<h3 id="8-编译类按钮"><a href="#8-编译类按钮" class="headerlink" title="8.编译类按钮"></a>8.编译类按钮</h3><p>这些按钮使用频率较高，特别是编译目标F7快捷键。<br><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Translate</td>
+<td>编译当前文件</td>
+<td>Ctrl + F7</td>
+</tr>
+<tr>
+<td>Build Target</td>
+<td>编译工程目标</td>
+<td>F7</td>
+</tr>
+<tr>
+<td>Rebuild all Target files</td>
+<td>重新编译所有目标文件</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Stop Build</td>
+<td>停止编译（正在编译时有效）</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Batch Build</td>
+<td>分批编译(多工程)</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Download</td>
+<td>下载</td>
+<td>F8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="9-工程选项类按钮"><a href="#9-工程选项类按钮" class="headerlink" title="9.工程选项类按钮"></a>9.工程选项类按钮</h3><p><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–</td>
+<td>工程目标选择框</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Options for Target</td>
+<td>工程目标选项(配置)</td>
+<td>Alt + F7</td>
+</tr>
+</tbody>
+</table>
+<p>一个工程下面可以建立多个目标，<strong>工程目标选择框的目标（STM32F103ZE）也就是当前所选中（使用）的工程目标</strong>（后期会讲述多目标）。</p>
+<p>Options for Target即对选中目标（STM32F103ZE）的配置。</p>
+<h3 id="10-工程项目管理类按钮"><a href="#10-工程项目管理类按钮" class="headerlink" title="10.工程项目管理类按钮"></a>10.工程项目管理类按钮</h3><p><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manage Project Items</td>
+<td>单工程管理</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Manage Multi-Project</td>
+<td>多工程管理</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Manage Run-Time</td>
+<td>管理运行时环境</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Select Software Packs</td>
+<td>选择软件包</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Pack Installer</td>
+<td>软件包安装</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11-调试按钮"><a href="#11-调试按钮" class="headerlink" title="11.调试按钮"></a>11.调试按钮</h3><p><img align="left" width="120" src=""></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reset</td>
+<td>复位</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Run</td>
+<td>全速运行</td>
+<td>F5</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>停止运行</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Step</td>
+<td>单步运行</td>
+<td>F11</td>
+</tr>
+<tr>
+<td>Step Over</td>
+<td>逐步运行</td>
+<td>F10</td>
+</tr>
+<tr>
+<td>Step Out</td>
+<td>跳出运行</td>
+<td>Ctrl + F11</td>
+</tr>
+<tr>
+<td>Run to Cursor Line</td>
+<td>运行到光标行</td>
+<td>Ctrl + F10</td>
+</tr>
+<tr>
+<td>Show Next Statement</td>
+<td>跳转到暂停行</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-调试窗口开关按钮"><a href="#12-调试窗口开关按钮" class="headerlink" title="12.调试窗口开关按钮"></a>12.调试窗口开关按钮</h3><p>调试视图窗口开关按钮这里就不说了，<strong>快捷按钮内容就是View视图菜单下的内容</strong>（如下图）。在后面《菜单》、《调试》还会继续讲述。</p>
+<h1 id="四、说明"><a href="#四、说明" class="headerlink" title="四、说明"></a>四、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。  </p>
+<h1 id="五、最后"><a href="#五、最后" class="headerlink" title="五、最后"></a>五、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Keil/" rel="tag"># Keil</a>
+          
+            <a href="/tags/MDK-ARM/" rel="tag"># MDK-ARM</a>
+          
+            <a href="/tags/µVision/" rel="tag"># µVision</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程.html" rel="next" title="CANOpen系列教程">
+                <i class="fa fa-chevron-left"></i> CANOpen系列教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Keil/Keil系列教程.html" rel="prev" title="Keil系列教程">
+                Keil系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="strongerHuang" />
+            
+              <p class="site-author-name" itemprop="name">strongerHuang</p>
+              <p class="site-description motion-element" itemprop="description">更多内容，尽在微信公众号！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/EmbeddedDevelop" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/strongerHuang.com" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.st.com" title="ST" target="_blank">ST</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nxp.com/cn" title="NXP" target="_blank">NXP</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.keil.com" title="Keil" target="_blank">Keil</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.iar.com" title="IAR" target="_blank">IAR</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.micrium.com" title="uCOS" target="_blank">uCOS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.freertos.org" title="FreeRTOS" target="_blank">FreeRTOS</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、主窗口界面"><span class="nav-text">二、主窗口界面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、工具栏"><span class="nav-text">三、工具栏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-两种状态下的工具栏"><span class="nav-text">3.1 两种状态下的工具栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-工具栏详细内容"><span class="nav-text">3.2 工具栏详细内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文件操作类按钮"><span class="nav-text">1.文件操作类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文件编辑跳转类按钮"><span class="nav-text">2.文件编辑跳转类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-书签类按钮"><span class="nav-text">3.书签类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-选中行操作类按钮"><span class="nav-text">4.选中行操作类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-查找文本类按钮"><span class="nav-text">5.查找文本类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-仿真类按钮"><span class="nav-text">6.仿真类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-窗口配置类按钮"><span class="nav-text">7.窗口配置类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-编译类按钮"><span class="nav-text">8.编译类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-工程选项类按钮"><span class="nav-text">9.工程选项类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-工程项目管理类按钮"><span class="nav-text">10.工程项目管理类按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-调试按钮"><span class="nav-text">11.调试按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-调试窗口开关按钮"><span class="nav-text">12.调试窗口开关按钮</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、说明"><span class="nav-text">四、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、最后"><span class="nav-text">五、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">strongerHuang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"> 访客人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"> 总访问量:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

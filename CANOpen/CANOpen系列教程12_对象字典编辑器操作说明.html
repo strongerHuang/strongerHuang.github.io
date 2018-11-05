@@ -89,10 +89,15 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　教程前面文章讲述了《对象字典生成工具环境搭建》，因为对象字典在CANOpen中的分量比较重。所以，关于对象字典的内容，及对象字典编辑工具也需要我们深入了解。 　　对象字典编辑器这个工具的操作并不难，这里需要强调两点：1.先了解「CANOpen通信接口」相关知识； 2.理论结合实践，只看不动手实践操作，想要掌握这些知识就很难。 　　本文讲述的内容在该教程前一篇文章《CanFestiv">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-05T05:53:22.552Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/1.%E6%88%90%E5%8A%9F%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/2.%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E8%8A%82%E7%82%B9.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/3.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/4.%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%BB%E7%95%8C%E9%9D%A2.png?raw=true">
+<meta property="og:updated_time" content="2018-11-05T09:41:09.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程12_对象字典编辑器操作说明">
 <meta name="twitter:description" content="一、写在前面　　教程前面文章讲述了《对象字典生成工具环境搭建》，因为对象字典在CANOpen中的分量比较重。所以，关于对象字典的内容，及对象字典编辑工具也需要我们深入了解。 　　对象字典编辑器这个工具的操作并不难，这里需要强调两点：1.先了解「CANOpen通信接口」相关知识； 2.理论结合实践，只看不动手实践操作，想要掌握这些知识就很难。 　　本文讲述的内容在该教程前一篇文章《CanFestiv">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/1.%E6%88%90%E5%8A%9F%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true">
 
 
 
@@ -425,19 +430,21 @@
 <h1 id="二、对象字典编辑器操作步骤"><a href="#二、对象字典编辑器操作步骤" class="headerlink" title="二、对象字典编辑器操作步骤"></a>二、对象字典编辑器操作步骤</h1><p>依然，针对初学的朋友，讲述的非常基础，希望初学的朋友先阅读该教程前面的文章。我们基于Windows的GUI图形化界面为例，</p>
 <h2 id="1-下载并搭建好环境"><a href="#1-下载并搭建好环境" class="headerlink" title="1.下载并搭建好环境"></a>1.下载并搭建好环境</h2><p>请参看<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E5%85%B3%E4%BA%8ECanfestival%E5%8F%8A%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.html">《对象字典生成工具环境搭建》</a>！</p>
 <h2 id="2-运行对象字典编辑器"><a href="#2-运行对象字典编辑器" class="headerlink" title="2.运行对象字典编辑器"></a>2.运行对象字典编辑器</h2><p>保证环境搭建没有问题，双击objdictgen目录下的objdictedit.py（或进入该目录，以命令方式运行）：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/1.%E6%88%90%E5%8A%9F%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8.png?raw=true"><br></table>
 
-<h2 id="3-创建一个新节点"><a href="#3-创建一个新节点" class="headerlink" title="3.创建一个新节点"></a>3.创建一个新节点</h2><p>文件 -&gt; 新建，出现如下界面：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<h2 id="3-创建一个新节点"><a href="#3-创建一个新节点" class="headerlink" title="3.创建一个新节点"></a>3.创建一个新节点</h2><p><strong>文件 -&gt; 新建</strong>，出现创建节点界面，如下图：</p>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/2.%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E8%8A%82%E7%82%B9.png?raw=true"><br></table>
 
 <p><strong>A.类型</strong>：可选主、从节点；<br><strong>B.名字</strong>：自己定义节点名称；<br><strong>C.Profile</strong>：配置，如DS401等；<br><strong>D.网络管理</strong>：是否选择相关网络管理（请先了解网络管理）；</p>
 <p>初学者可以从基础学起，如上图最简单方式配置，这里以新建从节点“SlaveNode”为例。</p>
 <p><strong>提示</strong>：这里SlaveNode是从节点的名字，是<strong>生成对象字典（代码）的名字</strong>，和保存的名字有区别。</p>
 <h2 id="4-配置对象字典"><a href="#4-配置对象字典" class="headerlink" title="4.配置对象字典"></a>4.配置对象字典</h2><p>创建节点确认后，会进入对象字典配置界面。此时，你会发现里面内容就是之前讲述的对象字典索引，如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/3.%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%B4%A2%E5%BC%95.png?raw=true"><br></table>
 
 <p>对象字典内容很多，大概就分为如上图几类。图形化界面，配置方式可以说很简单。也就是对字典的16 位索引和 8 位子索引进行配置。</p>
-<p>当然，我这里不会一一讲述每项内容，后面会结合例程，针对性讲述相关内容。配置方法大致如下三步骤：<br><img align="left" width="600" src=""><br></p>
+<p>当然，我这里不会一一讲述每项内容，后面会结合例程，针对性讲述相关内容。配置方法大致如下三步骤：</p>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8%E7%BC%96%E8%BE%91%E5%99%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/4.%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%BB%E7%95%8C%E9%9D%A2.png?raw=true"><br></table>
+
 <h2 id="5-保存对象字典"><a href="#5-保存对象字典" class="headerlink" title="5.保存对象字典"></a>5.保存对象字典</h2><p><strong>文件 -&gt; 保存，输入对象字典（工程）名称</strong>。</p>
 <p>我们这里的名称，我把叫做其“工程名称”，建议与前面创建节点名字一样（当然，这两个名字意义不一样，所以也可以不一样）。</p>
 <p>这个对象字典（工程）是用于后面升级或者更改使用，所以建议保存好。</p>

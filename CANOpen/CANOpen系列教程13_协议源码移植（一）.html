@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-my.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CAN,CAN总线,CANOpen,CanFestival," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EmbeddedDevelop" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、写在前面　　基于Canfestival框架的CANOpen协议栈移植教程网上流传着许多，而且有一份不知道被复制、粘贴了多少遍的“CANOpen移植教程”相信许多朋友都知道。 　　同时，百度、谷歌还能搜出许多所谓“移植代码”。其实，这许多内容，对初学者并没有多大帮助。相反，我觉得还有误导的作用。 　　我认为基于Canfestival框架的CANOpen协议栈移植需要做的工作并不多，但许多初学者无">
+<meta name="keywords" content="CAN,CAN总线,CANOpen,CanFestival">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CANOpen系列教程13_协议源码移植（一）">
+<meta property="og:url" content="http://www.strongerhuang.com/CANOpen/CANOpen系列教程13_协议源码移植（一）.html">
+<meta property="og:site_name" content="EmbeddedDevelop">
+<meta property="og:description" content="一、写在前面　　基于Canfestival框架的CANOpen协议栈移植教程网上流传着许多，而且有一份不知道被复制、粘贴了多少遍的“CANOpen移植教程”相信许多朋友都知道。 　　同时，百度、谷歌还能搜出许多所谓“移植代码”。其实，这许多内容，对初学者并没有多大帮助。相反，我觉得还有误导的作用。 　　我认为基于Canfestival框架的CANOpen协议栈移植需要做的工作并不多，但许多初学者无">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-16T01:22:01.485Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CANOpen系列教程13_协议源码移植（一）">
+<meta name="twitter:description" content="一、写在前面　　基于Canfestival框架的CANOpen协议栈移植教程网上流传着许多，而且有一份不知道被复制、粘贴了多少遍的“CANOpen移植教程”相信许多朋友都知道。 　　同时，百度、谷歌还能搜出许多所谓“移植代码”。其实，这许多内容，对初学者并没有多大帮助。相反，我觉得还有误导的作用。 　　我认为基于Canfestival框架的CANOpen协议栈移植需要做的工作并不多，但许多初学者无">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程13_协议源码移植（一）.html"/>
+
+
+
+
+
+  <title>CANOpen系列教程13_协议源码移植（一） | EmbeddedDevelop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EmbeddedDevelop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">作者：strongerHuang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程13_协议源码移植（一）.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CANOpen系列教程13_协议源码移植（一）</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-16T09:00:00+08:00">
+                2018-11-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CANOpen系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">CANOpen系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/CANOpen/CANOpen系列教程13_协议源码移植（一）.html" title="CANOpen系列教程13_协议源码移植（一）">http://www.strongerhuang.com/CANOpen/CANOpen系列教程13_协议源码移植（一）.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　基于Canfestival框架的CANOpen协议栈移植教程网上流传着许多，而且有一份不知道被复制、粘贴了多少遍的“CANOpen移植教程”相信许多朋友都知道。</p>
+<p>　　同时，百度、谷歌还能搜出许多所谓“移植代码”。其实，这许多内容，对初学者并没有多大帮助。相反，我觉得还有误导的作用。</p>
+<p>　　我认为基于Canfestival框架的CANOpen协议栈移植<strong>需要做的工作并不多</strong>，但许多初学者无从下手，究其原因还是<strong>有许多内容没有理解到位</strong>。</p>
+<a id="more"></a>
+<p>　　本教程站在初学者角度，尽量将重要内容讲述到位，后面提供移植好的Demo供大家参考学习。</p>
+<h1 id="二、移植准备"><a href="#二、移植准备" class="headerlink" title="二、移植准备"></a>二、移植准备</h1><p>移植前，先让大家认识一下移植的一些准备条件。</p>
+<h2 id="2-1-硬件"><a href="#2-1-硬件" class="headerlink" title="2.1 硬件"></a>2.1 硬件</h2><p>两块带有MCU、CAN控制器和收发器的板卡。</p>
+<p>该移植教程以STM32F1（自带CAN控制器），带有CAN收发器的开发板为例来讲述。</p>
+<p>条件允许的情况下，可以购买一个CAN总线分析仪。没有分析仪的朋友，可以用我<a href="https://www.strongerhuang.com/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E7%BB%93%E5%90%88%E4%BB%A3%E7%A0%81%E7%90%86%E8%A7%A3CAN%E5%BA%95%E5%B1%82%E6%94%B6%E5%8F%91%E6%95%B0%E6%8D%AE%EF%BC%88%E5%90%ABSTM32%E4%BE%8B%E7%A8%8B%EF%BC%89.html">《CANOpen系列教程06》</a>提供的一个例程来抓取CAN总线数据。</p>
+<p>因例程在中断里用串口打印传输数据。所以，用例程抓取的CAN总线传输速率不能太快（建议低于20帧/秒）。</p>
+<h2 id="2-2-MCU资源"><a href="#2-2-MCU资源" class="headerlink" title="2.2 MCU资源"></a>2.2 MCU资源</h2><p><strong>1.CAN：</strong>CAN总线通信（<strong>必备</strong>）；<br><strong>2.TIM：</strong>CANOpen协议调度（<strong>必备</strong>）；<br><strong>3.UART：</strong>调试信息（选配）；<br><strong>4.GPIO：</strong>板卡状态指示灯（选配）；</p>
+<h2 id="2-3-STM32标准外设库-FreeRTOS工程"><a href="#2-3-STM32标准外设库-FreeRTOS工程" class="headerlink" title="2.3 STM32标准外设库+FreeRTOS工程"></a>2.3 STM32标准外设库+FreeRTOS工程</h2><p>本教程基于STM32标准外设库和FreeRTOS系统搭建的工程为例（很早之前我分享过），这里不讲述。</p>
+<p>运行RTOS主要是牵涉到CAN总线数据的发送和接收需要两个线程来处理，以及增加一个CANOpen应用程序线程。</p>
+<p>基于其他MCU以及RTOS原理类似，也可参考本文。</p>
+<h2 id="2-4-下载Canfestival源码并搭建好环境"><a href="#2-4-下载Canfestival源码并搭建好环境" class="headerlink" title="2.4 下载Canfestival源码并搭建好环境"></a>2.4 下载Canfestival源码并搭建好环境</h2><p>这里的内容，如果你不明白，请务必先阅读该教程前几篇相关文章。</p>
+<h1 id="三、生成对象字典"><a href="#三、生成对象字典" class="headerlink" title="三、生成对象字典"></a>三、生成对象字典</h1><p>本移植教程重点是将CANOpen协议源码移植到MCU中，使其成功运行。因此，对象字典只配置最基础的“心跳”。</p>
+<p>下面教大家在对象字典编辑器中生成带“心跳”的对象字典。</p>
+<table><br><strong>1.打开编辑器，文件 -&gt; 新建</strong><br><img align="left" width="600" src=""><br></table>
+
+<table><br><strong>2.新建“主站”节点</strong><br><img align="left" width="600" src=""><br></table>
+
+<table><br><strong>3.配置心跳信息</strong><br><img align="left" width="600" src=""><br></table>
+
+<table><br><strong>4.保存对象字典：文件 -&gt; 保存 -&gt; 保存在一个指定位置</strong><br><img align="left" width="600" src=""><br></table>
+
+<table><br><strong>5.建立对象字典</strong><br><img align="left" width="600" src=""><br></table>
+
+<p>到这里就生成了三个文件：<strong>TestMaster.od、 TestMaster.c 和 TestMaster.h</strong>需保存好，在后面需要使用这个对象字典源码。</p>
+<p><strong>提示：</strong><br>A.上面牵涉到三个地方保存名字：节点名字、对象字典工程名字、对象字典源文件名字，建议都一样。</p>
+<p>B.主站和从站的生成原理一样，上面是生成主站TestMaster对象字典，从站TestSlave对象字典请按照同样方式生成即可。</p>
+<h1 id="四、提取CANOpen源码"><a href="#四、提取CANOpen源码" class="headerlink" title="四、提取CANOpen源码"></a>四、提取CANOpen源码</h1><p>本节内容主要针对初学者使其更加理解移植的代码工程，将CanFestival中源代码提取做一定说明，并且尽量将源码文件对应到自己工程下。</p>
+<p>当然，本文按照常规方式提取，你也可以按照自己方式提取。同时，整个工程下其它，如STM32标准外设库、FreeRTOS这些文件在这里不作说明。</p>
+<table><br><strong>1.提取头、源文件（如下图）</strong><br><img align="left" width="600" src=""><br></table>
+
+<p>CANOpen\inc目录下19个.h头文件，来自Canfestival-&gt;include下目录19个头文件；</p>
+<p>CANOpen\inc\stm32目录下3个.h头文件来自Canfestival-&gt;include\cm4；<br>其中canfestival.h文件是函数接口定义（声明），函数内容需要自己实现（位于：App\canopen目录下canopen_drv.c）；</p>
+<p>CANOpen\src目录下12个.c源文件，来自Canfestival-&gt;src目录12个源文件（symbols.c源文件为linux下使用的文件，不需要提取）；<br>其中需要删除dcf.c文件下第59、98行前面的“inline”关键字；</p>
+<table><br><strong>2.头文件说明</strong><br><img align="left" width="600" src=""><br></table>
+
+<table><br>要修改一下其中的canfestival.h文件：<br><img align="left" width="600" src=""><br></table>
+
+<table><br><strong>3.建立canopen文件夹并提取文件</strong><br><img align="left" width="600" src=""><br></table>
+
+<p>在工程下建立canopen文件夹，提取相应的文件，同时建立自己的文件：canopen_app和canopen_drv.</p>
+<p>还需要修改一下congfig.h文件，如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<table><br><strong>4.建立CAN和TIM底层驱动文件</strong><br><img align="left" width="600" src=""><br></table>
+
+<p>在上面canfestival.h文件提供了CAN和TIM的驱动接口，但我们这里不用它那一套接口，自己定义在bsp_can和bsp_timer源代码下。</p>
+<h1 id="五、下载"><a href="#五、下载" class="headerlink" title="五、下载"></a>五、下载</h1><p>为照顾初学者，将移植过程讲述的更加详细，移植工作在下一篇文章还会继续讲述，提前把移植好的、带有“心跳”的Demo工程给大家下载。</p>
+<p><a href="https://pan.baidu.com/s/1LzD0Epc-Z8vlHsb-sD3WVw" target="_blank" rel="noopener">https://pan.baidu.com/s/1LzD0Epc-Z8vlHsb-sD3WVw</a><br>提取码：l2dc</p>
+<p>提示：如果链接失效，公众号回复【CANOpen系列教程】获取更新链接；</p>
+<h1 id="六、说明"><a href="#六、说明" class="headerlink" title="六、说明"></a>六、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。  </p>
+<h1 id="七、最后"><a href="#七、最后" class="headerlink" title="七、最后"></a>七、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CAN/" rel="tag"># CAN</a>
+          
+            <a href="/tags/CAN总线/" rel="tag"># CAN总线</a>
+          
+            <a href="/tags/CANOpen/" rel="tag"># CANOpen</a>
+          
+            <a href="/tags/CanFestival/" rel="tag"># CanFestival</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Keil/Keil系列教程.html" rel="next" title="Keil系列教程">
+                <i class="fa fa-chevron-left"></i> Keil系列教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程.html" rel="prev" title="CANOpen系列教程">
+                CANOpen系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="strongerHuang" />
+            
+              <p class="site-author-name" itemprop="name">strongerHuang</p>
+              <p class="site-description motion-element" itemprop="description">更多内容，尽在微信公众号！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/EmbeddedDevelop" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/strongerHuang.com" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.st.com" title="ST" target="_blank">ST</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nxp.com/cn" title="NXP" target="_blank">NXP</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.keil.com" title="Keil" target="_blank">Keil</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.iar.com" title="IAR" target="_blank">IAR</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.micrium.com" title="uCOS" target="_blank">uCOS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.freertos.org" title="FreeRTOS" target="_blank">FreeRTOS</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、移植准备"><span class="nav-text">二、移植准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-硬件"><span class="nav-text">2.1 硬件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-MCU资源"><span class="nav-text">2.2 MCU资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-STM32标准外设库-FreeRTOS工程"><span class="nav-text">2.3 STM32标准外设库+FreeRTOS工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-下载Canfestival源码并搭建好环境"><span class="nav-text">2.4 下载Canfestival源码并搭建好环境</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、生成对象字典"><span class="nav-text">三、生成对象字典</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、提取CANOpen源码"><span class="nav-text">四、提取CANOpen源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、下载"><span class="nav-text">五、下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、说明"><span class="nav-text">六、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、最后"><span class="nav-text">七、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">strongerHuang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"> 访客人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"> 总访问量:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -89,10 +89,22 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面　　基于Canfestival框架的CANOpen协议栈移植教程网上流传着许多，而且有一份不知道被复制、粘贴了多少遍的“CANOpen移植教程”相信许多朋友都知道。 　　同时，百度、谷歌还能搜出许多所谓“移植代码”。其实，这许多内容，对初学者并没有多大帮助。相反，我觉得还有误导的作用。 　　我认为基于Canfestival框架的CANOpen协议栈移植需要做的工作并不多，但许多初学者无">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-16T01:22:01.485Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/1.%E6%89%93%E5%BC%80%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%8C%E6%96%B0%E5%BB%BA.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/2.%E6%96%B0%E5%BB%BA%E2%80%9C%E4%B8%BB%E7%AB%99%E2%80%9D%E8%8A%82%E7%82%B9.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/3.%E9%85%8D%E7%BD%AE%E5%BF%83%E8%B7%B3%E4%BF%A1%E6%81%AF.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/4.%E4%BF%9D%E5%AD%98%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/5.%E5%BB%BA%E7%AB%8B%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/6.%E6%8F%90%E5%8F%96%E5%A4%B4%E3%80%81%E6%BA%90%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/7.%E5%A4%B4%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/8.%E4%BF%AE%E6%94%B9canfestival%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/9.%E5%BB%BA%E7%AB%8Bcanopen%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B9%B6%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/10.%E9%9C%80%E4%BF%AEcongfig%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/11.%E5%BA%95%E5%B1%82%E9%A9%B1%E5%8A%A8.png?raw=true">
+<meta property="og:updated_time" content="2018-11-16T01:35:17.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CANOpen系列教程13_协议源码移植（一）">
 <meta name="twitter:description" content="一、写在前面　　基于Canfestival框架的CANOpen协议栈移植教程网上流传着许多，而且有一份不知道被复制、粘贴了多少遍的“CANOpen移植教程”相信许多朋友都知道。 　　同时，百度、谷歌还能搜出许多所谓“移植代码”。其实，这许多内容，对初学者并没有多大帮助。相反，我觉得还有误导的作用。 　　我认为基于Canfestival框架的CANOpen协议栈移植需要做的工作并不多，但许多初学者无">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/1.%E6%89%93%E5%BC%80%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%8C%E6%96%B0%E5%BB%BA.png?raw=true">
 
 
 
@@ -433,42 +445,42 @@
 <h2 id="2-4-下载Canfestival源码并搭建好环境"><a href="#2-4-下载Canfestival源码并搭建好环境" class="headerlink" title="2.4 下载Canfestival源码并搭建好环境"></a>2.4 下载Canfestival源码并搭建好环境</h2><p>这里的内容，如果你不明白，请务必先阅读该教程前几篇相关文章。</p>
 <h1 id="三、生成对象字典"><a href="#三、生成对象字典" class="headerlink" title="三、生成对象字典"></a>三、生成对象字典</h1><p>本移植教程重点是将CANOpen协议源码移植到MCU中，使其成功运行。因此，对象字典只配置最基础的“心跳”。</p>
 <p>下面教大家在对象字典编辑器中生成带“心跳”的对象字典。</p>
-<table><br><strong>1.打开编辑器，文件 -&gt; 新建</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>1.打开编辑器，文件 -&gt; 新建</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/1.%E6%89%93%E5%BC%80%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%8C%E6%96%B0%E5%BB%BA.png?raw=true"><br></table>
 
-<table><br><strong>2.新建“主站”节点</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>2.新建“主站”节点</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/2.%E6%96%B0%E5%BB%BA%E2%80%9C%E4%B8%BB%E7%AB%99%E2%80%9D%E8%8A%82%E7%82%B9.png?raw=true"><br></table>
 
-<table><br><strong>3.配置心跳信息</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>3.配置心跳信息</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/3.%E9%85%8D%E7%BD%AE%E5%BF%83%E8%B7%B3%E4%BF%A1%E6%81%AF.png?raw=true"><br></table>
 
-<table><br><strong>4.保存对象字典：文件 -&gt; 保存 -&gt; 保存在一个指定位置</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>4.保存对象字典：文件 -&gt; 保存 -&gt; 保存在一个指定位置</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/4.%E4%BF%9D%E5%AD%98%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8.png?raw=true"><br></table>
 
-<table><br><strong>5.建立对象字典</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>5.建立对象字典</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/5.%E5%BB%BA%E7%AB%8B%E5%AF%B9%E8%B1%A1%E5%AD%97%E5%85%B8.png?raw=true"><br></table>
 
 <p>到这里就生成了三个文件：<strong>TestMaster.od、 TestMaster.c 和 TestMaster.h</strong>需保存好，在后面需要使用这个对象字典源码。</p>
 <p><strong>提示：</strong><br>A.上面牵涉到三个地方保存名字：节点名字、对象字典工程名字、对象字典源文件名字，建议都一样。</p>
 <p>B.主站和从站的生成原理一样，上面是生成主站TestMaster对象字典，从站TestSlave对象字典请按照同样方式生成即可。</p>
 <h1 id="四、提取CANOpen源码"><a href="#四、提取CANOpen源码" class="headerlink" title="四、提取CANOpen源码"></a>四、提取CANOpen源码</h1><p>本节内容主要针对初学者使其更加理解移植的代码工程，将CanFestival中源代码提取做一定说明，并且尽量将源码文件对应到自己工程下。</p>
 <p>当然，本文按照常规方式提取，你也可以按照自己方式提取。同时，整个工程下其它，如STM32标准外设库、FreeRTOS这些文件在这里不作说明。</p>
-<table><br><strong>1.提取头、源文件（如下图）</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>1.提取头、源文件（如下图）</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/6.%E6%8F%90%E5%8F%96%E5%A4%B4%E3%80%81%E6%BA%90%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
 <p>CANOpen\inc目录下19个.h头文件，来自Canfestival-&gt;include下目录19个头文件；</p>
 <p>CANOpen\inc\stm32目录下3个.h头文件来自Canfestival-&gt;include\cm4；<br>其中canfestival.h文件是函数接口定义（声明），函数内容需要自己实现（位于：App\canopen目录下canopen_drv.c）；</p>
 <p>CANOpen\src目录下12个.c源文件，来自Canfestival-&gt;src目录12个源文件（symbols.c源文件为linux下使用的文件，不需要提取）；<br>其中需要删除dcf.c文件下第59、98行前面的“inline”关键字；</p>
-<table><br><strong>2.头文件说明</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>2.头文件说明</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/7.%E5%A4%B4%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E.png?raw=true"><br></table>
 
-<table><br>要修改一下其中的canfestival.h文件：<br><img align="left" width="600" src=""><br></table>
+<table><br>要修改一下其中的canfestival.h文件：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/8.%E4%BF%AE%E6%94%B9canfestival%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
-<table><br><strong>3.建立canopen文件夹并提取文件</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>3.建立canopen文件夹并提取文件</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/9.%E5%BB%BA%E7%AB%8Bcanopen%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B9%B6%E6%8F%90%E5%8F%96%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
 <p>在工程下建立canopen文件夹，提取相应的文件，同时建立自己的文件：canopen_app和canopen_drv.</p>
 <p>还需要修改一下congfig.h文件，如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/10.%E9%9C%80%E4%BF%AEcongfig%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
-<table><br><strong>4.建立CAN和TIM底层驱动文件</strong><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>4.建立CAN和TIM底层驱动文件</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/CANOpen/CANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B13_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%B8%80%EF%BC%89/11.%E5%BA%95%E5%B1%82%E9%A9%B1%E5%8A%A8.png?raw=true"><br></table>
 
 <p>在上面canfestival.h文件提供了CAN和TIM的驱动接口，但我们这里不用它那一套接口，自己定义在bsp_can和bsp_timer源代码下。</p>
 <h1 id="五、下载"><a href="#五、下载" class="headerlink" title="五、下载"></a>五、下载</h1><p>为照顾初学者，将移植过程讲述的更加详细，移植工作在下一篇文章还会继续讲述，提前把移植好的、带有“心跳”的Demo工程给大家下载。</p>
 <p><a href="https://pan.baidu.com/s/1LzD0Epc-Z8vlHsb-sD3WVw" target="_blank" rel="noopener">https://pan.baidu.com/s/1LzD0Epc-Z8vlHsb-sD3WVw</a><br>提取码：l2dc</p>
-<p>提示：如果链接失效，公众号回复【CANOpen系列教程】获取更新链接；</p>
+<p><strong>提示</strong>：如果链接失效，公众号回复【CANOpen系列教程】获取更新链接；</p>
 <h1 id="六、说明"><a href="#六、说明" class="headerlink" title="六、说明"></a>六、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
 <p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
 <p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。  </p>

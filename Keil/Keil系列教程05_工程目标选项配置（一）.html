@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-my.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Keil,MDK-ARM,µVision," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EmbeddedDevelop" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、写在前面本文讲述的内容是“Options for Target”，即工程目标选项的配置内容，也就是我们常见的工程配置内容。   由于目标配置的选项比较多，我将其分为工程目标选项配置（一）和工程目标选项配置（二）两篇文章来讲述。 目标选项包含了一个工程目标所有的配置信息，这些信息是保存于我们工程（.uvprojx）和对应的（.uvoptx）文件。">
+<meta name="keywords" content="Keil,MDK-ARM,µVision">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keil系列教程05_工程目标选项配置（一）">
+<meta property="og:url" content="http://www.strongerhuang.com/Keil/Keil系列教程05_工程目标选项配置（一）.html">
+<meta property="og:site_name" content="EmbeddedDevelop">
+<meta property="og:description" content="一、写在前面本文讲述的内容是“Options for Target”，即工程目标选项的配置内容，也就是我们常见的工程配置内容。   由于目标配置的选项比较多，我将其分为工程目标选项配置（一）和工程目标选项配置（二）两篇文章来讲述。 目标选项包含了一个工程目标所有的配置信息，这些信息是保存于我们工程（.uvprojx）和对应的（.uvoptx）文件。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-19T07:38:01.800Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Keil系列教程05_工程目标选项配置（一）">
+<meta name="twitter:description" content="一、写在前面本文讲述的内容是“Options for Target”，即工程目标选项的配置内容，也就是我们常见的工程配置内容。   由于目标配置的选项比较多，我将其分为工程目标选项配置（一）和工程目标选项配置（二）两篇文章来讲述。 目标选项包含了一个工程目标所有的配置信息，这些信息是保存于我们工程（.uvprojx）和对应的（.uvoptx）文件。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.strongerhuang.com/Keil/Keil系列教程05_工程目标选项配置（一）.html"/>
+
+
+
+
+
+  <title>Keil系列教程05_工程目标选项配置（一） | EmbeddedDevelop</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EmbeddedDevelop</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">作者：strongerHuang</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/Keil/Keil系列教程05_工程目标选项配置（一）.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Keil系列教程05_工程目标选项配置（一）</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T15:00:00+08:00">
+                2018-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Keil系列教程/" itemprop="url" rel="index">
+                    <span itemprop="name">Keil系列教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/Keil/Keil系列教程05_工程目标选项配置（一）.html" title="Keil系列教程05_工程目标选项配置（一）">http://www.strongerhuang.com/Keil/Keil系列教程05_工程目标选项配置（一）.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>本文讲述的内容是“<strong>Options for Target</strong>”，即<strong>工程目标选项</strong>的配置内容，也就是我们常见的工程配置内容。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>由于目标配置的选项比较多，我将其分为工程目标选项配置（一）和工程目标选项配置（二）两篇文章来讲述。</p>
+<p>目标选项包含了一个工程目标所有的配置信息，这些信息是保存于我们工程（.uvprojx）和对应的（.uvoptx）文件。</p>
+<a id="more"></a>
+<h1 id="二、本文要点"><a href="#二、本文要点" class="headerlink" title="二、本文要点"></a>二、本文要点</h1><p>本文主要讲述的是目标选项的配置，但为了让更多人明白什么是目标选项，首先将简述工作空间、工程、目标的意思和区别。</p>
+<h2 id="2-1-打开目标选项的三种方法"><a href="#2-1-打开目标选项的三种方法" class="headerlink" title="2.1 打开目标选项的三种方法"></a>2.1 打开目标选项的三种方法</h2><p><strong>A.点击“目标选项”快捷按钮</strong>，如开篇第一张图。</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p><strong>B.快捷键：Alt + F7</strong><br>提示：如果是配置工程，需选中工程，再按Alt + F7。（如果你选中文件，是对文件的一些配置）</p>
+<p><strong>C.从菜单中打开，Project -&gt; Options for Target</strong>，如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<h2 id="2-2-本文所讲述的目标选项"><a href="#2-2-本文所讲述的目标选项" class="headerlink" title="2.2 本文所讲述的目标选项"></a>2.2 本文所讲述的目标选项</h2><table><br><img align="left" width="600" src=""><br></table>
+
+<p>由于目标选项里面内容较多，本文只讲述前五项：<strong>Devie设备、 Target目标、 Output输出、 Listing列表、 User用户</strong>。后五项在下一篇文章讲述。</p>
+<p>本文旨在让大部分人明白目标选项的配置，为了使文章内容精简，过于简单和不常用过于复杂的只简述。</p>
+<h1 id="三、工作空间、工程、目标含义和区别"><a href="#三、工作空间、工程、目标含义和区别" class="headerlink" title="三、工作空间、工程、目标含义和区别"></a>三、工作空间、工程、目标含义和区别</h1><p>什么是工程目标选项配置？或许有些人分不清<strong>工作空间、工程、目标</strong>这三个名词的意思和区别，这里就简单讲述一下它们的含义和区别。</p>
+<p>可以关注该系列教程后面新建多工程，多目标的文章。</p>
+<p>工作空间、工程、目标它们三个是从大到小，依次包含的关系：<strong>工作空间 &gt; 工程 &gt; 节点</strong>。也就是说：<strong>一个工作空间可以有多个工程，一个工程可以有多个目标</strong>。示意图，如下：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>举个例子：一个<strong>项目</strong>，由<strong>主机</strong>和<strong>从机</strong>组成，但项目为了区分产品的高低端，将产品做成<strong>简单</strong>和<strong>复杂</strong>两个版本（简单版只保留复杂版的部分功能）。举例示意如下图：</p>
+<table><br><img align="left" width="600" src=""><br></table>
+
+<p>本节内容不过多描述，在大型的实际项目中容易看见，一般不是很大项目，基本就是一个工程，一个目标或多个目标。</p>
+<p>初学者一般都是<strong>一个工程对应一个目标</strong>，这样简单明了。若初学者不能理解可以略过。</p>
+<h1 id="四、Device设备（器件）"><a href="#四、Device设备（器件）" class="headerlink" title="四、Device设备（器件）"></a>四、Device设备（器件）</h1><table><br><img align="left" width="500" src=""><br></table>
+
+<p><a href="https://www.strongerhuang.com/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E6%96%B0%E5%BB%BA%E5%9F%BA%E7%A1%80%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B.html">《Keil新建软件工程》</a>第一步就是选择设备（器件）。强调一点就是：<strong>器件可以通过输入查找，也可以通过列表查找</strong>。</p>
+<h1 id="五、Target目标"><a href="#五、Target目标" class="headerlink" title="五、Target目标"></a>五、Target目标</h1><table><br><img align="left" width="500" src=""><br></table>
+
+<p>这里说的目标和上面说的工程目标不一样，是工程目标的目标。从内容可以看得出来是工程目标的调试晶振频率、选择的编译器、RAM和ROM分配的地址空间等。</p>
+<font face="黑体" color="green" size="4">第1处：晶振频率</font><br>这个值主要用于仿真调试用，一般我们使用硬件调试可以不用管这个值。<br><br><font face="黑体" color="green" size="4">第2处：操作系统</font><br>很好理解，是否选择Keil自带的RTX操作系统，一般我们都不选。<br><br><font face="黑体" color="green" size="4">第3处：系统预览文件</font><br>这里我们一般是默认使用系统自带，不选择自己定义的。<br><br><font face="黑体" color="green" size="4">第4处：生成代码所选择的编译器<br></font>
+
+<p><font face="黑体" color="green" size="4">第5处：使用交叉模块优化、使用微库</font><br>交叉模块一般我们不使用，微库这个功能常用与printf函数。</p>
+<p><font face="黑体" color="green" size="4">第6处：ROM存储地址</font><br>这里的ROM存储指的是程序储存的地址，分<strong>片外、片内</strong>两种。</p>
+<p>程序存储在片内好理解（初学者一般下载程序都是下载到片内FLASH）,片外存储程序对于初学者来说比较少见，一般都是项目做大了，或有特殊要求时，片内不够使用了才将程序存储在片外。</p>
+<p><font face="黑体" color="green" size="4">第7处：RAM存储地址</font><br>RAM存储地址和ROM道理一样，可以分片内和片外。</p>
+<h1 id="六、Output输出"><a href="#六、Output输出" class="headerlink" title="六、Output输出"></a>六、Output输出</h1><table><br><img align="left" width="500" src=""><br></table>
+
+<p>输出分两类：<br><strong>1.输出（创建）可执行文件</strong>：我们下载到处理器里面的程序就是该类；</p>
+<p><strong>2.输出库</strong>：对于初学者来说一般不使用库，但对于很多从事特殊行业技术开发的公司来说，可能比较常用该功能。</p>
+<p><font face="黑体" color="green" size="4">第1处：输出路径</font><br>输出路径就是在工程编译的过程中，输出这些文件保存的文件夹。（Keil V5一般默认是保存在Objects文件夹下面）</p>
+<p><font face="黑体" color="green" size="4">第2处：输出可执行文件名</font><br>输出的可执行文件和库的名称就是在这里定义。比如我们常见输出Hex文件，其名称就是这里定义的。</p>
+<p><font face="黑体" color="green" size="4">第3处：输出可执行文件</font><br>这里和输出库是二选一，选择了输出可执行文件就不能选择输出库。</p>
+<p>Debug Infomation：输出调试信息。勾选上这个选项，我们才可以进行调试。</p>
+<p>Create HEX File：输出可执行Hex文件。很多初学的朋友问：“在哪里设置生成Hex?”，这里勾选上就行了。</p>
+<p>Browse Information：输出浏览信息。勾选上这个我们才能使用go to definition of这个功能。很多人问：“为什么我不能跟踪代码了”，原因就在这里。</p>
+<p>提示：输出这些中间文件都很费时间，如果都不勾选这些选项，编译速度会很快。</p>
+<p><font face="黑体" color="green" size="4">第4处：输出库</font><br>选择输出库，上面可执行文件就不能输出。<br>提示：这里输出（生成）的是静态库，并非动态库。</p>
+<h1 id="七、Listing列表"><a href="#七、Listing列表" class="headerlink" title="七、Listing列表"></a>七、Listing列表</h1><table><br><img align="left" width="500" src=""><br></table>
+
+<p>这个选项是关于生成列表相关的选项，对代码分析比较透彻的工程师就需要了解这个选项。常见的map地址的分布，就是在这里配置生成的。</p>
+<p><font face="黑体" color="green" size="4">第1处：输出路径、宽高<br></font><br>选择列表文件输出的文件夹。可设置文件页面的宽度，长宽。</p>
+<p><font face="黑体" color="green" size="4">第2处：输出汇编列表</font><br>勾选上会输出汇编列表信息（产生后缀为 .lst的文件）。如果工程中没汇编文件，则不会输出信息。</p>
+<p><font face="黑体" color="green" size="4">第3处：C编译列表</font><br>C编译程序列表选项，勾选上可生成.txt, .i文件。</p>
+<p><font face="黑体" color="green" size="4">第4处：链接列表</font><br>可选择生成或禁止生成.map文件。可设置生成代码的详细信息。可选择性的选取输出MAP文件。</p>
+<h1 id="八、User用户选项"><a href="#八、User用户选项" class="headerlink" title="八、User用户选项"></a>八、User用户选项</h1><table><br><img align="left" width="500" src=""><br></table>
+
+<p>这个选项是针对用户而设计的，方便用户执行一些程序。比如：编译完代码之后，我要将生成的Hex文件拷贝到其它地方。</p>
+<p>纵观上图可以看见，第1、2、3处功能类似，都是让用户运行程序，只是运行的条件不同而已。</p>
+<p>这里可以参看曾在微信公众号分享过的一篇文章<a href="https://mp.weixin.qq.com/s/LIJ7XD33aZyYBFY2Z4nUnw" target="_blank" rel="noopener">《MDK-ARM如何通过配置命令生产Bin文件》</a></p>
+<p><font face="黑体" color="green" size="4">第1处：编辑之前运行用户程序<br></font></p>
+<p><font face="黑体" color="green" size="4">第2处：编译之前运行用户程序<br></font></p>
+<p><font face="黑体" color="green" size="4">第3处：编译之后运行用户程序<br></font></p>
+<p><font face="黑体" color="green" size="4">第4处：编译之后执行条件<br></font><br>Run “After Build” conditionally：执行条件；<br>Beep When Complete：编译完成发出声音；<br>Start Debugging：启动调试程序。</p>
+<h1 id="九、说明"><a href="#九、说明" class="headerlink" title="九、说明"></a>九、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。  </p>
+<h1 id="十、最后"><a href="#十、最后" class="headerlink" title="十、最后"></a>十、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Keil/" rel="tag"># Keil</a>
+          
+            <a href="/tags/MDK-ARM/" rel="tag"># MDK-ARM</a>
+          
+            <a href="/tags/µVision/" rel="tag"># µVision</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/CANOpen/CANOpen系列教程.html" rel="next" title="CANOpen系列教程">
+                <i class="fa fa-chevron-left"></i> CANOpen系列教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Keil/Keil系列教程.html" rel="prev" title="Keil系列教程">
+                Keil系列教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+
+    <div>
+      
+        
+      
+    </div>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="strongerHuang" />
+            
+              <p class="site-author-name" itemprop="name">strongerHuang</p>
+              <p class="site-description motion-element" itemprop="description">更多内容，尽在微信公众号！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/EmbeddedDevelop" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/strongerHuang.com" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.st.com" title="ST" target="_blank">ST</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nxp.com/cn" title="NXP" target="_blank">NXP</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.keil.com" title="Keil" target="_blank">Keil</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.iar.com" title="IAR" target="_blank">IAR</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.micrium.com" title="uCOS" target="_blank">uCOS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.freertos.org" title="FreeRTOS" target="_blank">FreeRTOS</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、本文要点"><span class="nav-text">二、本文要点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-打开目标选项的三种方法"><span class="nav-text">2.1 打开目标选项的三种方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-本文所讲述的目标选项"><span class="nav-text">2.2 本文所讲述的目标选项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、工作空间、工程、目标含义和区别"><span class="nav-text">三、工作空间、工程、目标含义和区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Device设备（器件）"><span class="nav-text">四、Device设备（器件）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、Target目标"><span class="nav-text">五、Target目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、Output输出"><span class="nav-text">六、Output输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、Listing列表"><span class="nav-text">七、Listing列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、User用户选项"><span class="nav-text">八、User用户选项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#九、说明"><span class="nav-text">九、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#十、最后"><span class="nav-text">十、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">strongerHuang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"> 访客人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"> 总访问量:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

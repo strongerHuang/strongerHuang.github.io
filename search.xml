@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Keil系列教程]]></title>
+    <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
+    <content type="text"><![CDATA[一、写在前面 本文对【Keil系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看。 二、教程列表Keil系列教程01_Keil介绍、下载、安装与注册Keil系列教程02_新建基础软件工程Keil系列教程03_主窗口和工具栏详细说明Keil系列教程04_菜单概述Keil系列教程05_工程目标选项配置（一） 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>Keil系列教程</category>
+      </categories>
+      <tags>
+        <tag>Keil</tag>
+        <tag>MDK-ARM</tag>
+        <tag>µVision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Keil系列教程05_工程目标选项配置（一）]]></title>
+    <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_%E5%B7%A5%E7%A8%8B%E7%9B%AE%E6%A0%87%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89.html</url>
+    <content type="text"><![CDATA[一、写在前面本文讲述的内容是“Options for Target”，即工程目标选项的配置内容，也就是我们常见的工程配置内容。 由于目标配置的选项比较多，我将其分为工程目标选项配置（一）和工程目标选项配置（二）两篇文章来讲述。 目标选项包含了一个工程目标所有的配置信息，这些信息是保存于我们工程（.uvprojx）和对应的（.uvoptx）文件。 二、本文要点本文主要讲述的是目标选项的配置，但为了让更多人明白什么是目标选项，首先将简述工作空间、工程、目标的意思和区别。 2.1 打开目标选项的三种方法A.点击“目标选项”快捷按钮，如开篇第一张图。 B.快捷键：Alt + F7提示：如果是配置工程，需选中工程，再按Alt + F7。（如果你选中文件，是对文件的一些配置） C.从菜单中打开，Project -&gt; Options for Target，如下图： 2.2 本文所讲述的目标选项 由于目标选项里面内容较多，本文只讲述前五项：Devie设备、 Target目标、 Output输出、 Listing列表、 User用户。后五项在下一篇文章讲述。 本文旨在让大部分人明白目标选项的配置，为了使文章内容精简，过于简单和不常用过于复杂的只简述。 三、工作空间、工程、目标含义和区别什么是工程目标选项配置？或许有些人分不清工作空间、工程、目标这三个名词的意思和区别，这里就简单讲述一下它们的含义和区别。 可以关注该系列教程后面新建多工程，多目标的文章。 工作空间、工程、目标它们三个是从大到小，依次包含的关系：工作空间 &gt; 工程 &gt; 节点。也就是说：一个工作空间可以有多个工程，一个工程可以有多个目标。示意图，如下： 举个例子：一个项目，由主机和从机组成，但项目为了区分产品的高低端，将产品做成简单和复杂两个版本（简单版只保留复杂版的部分功能）。举例示意如下图： 本节内容不过多描述，在大型的实际项目中容易看见，一般不是很大项目，基本就是一个工程，一个目标或多个目标。 初学者一般都是一个工程对应一个目标，这样简单明了。若初学者不能理解可以略过。 四、Device设备（器件） 《Keil新建软件工程》第一步就是选择设备（器件）。强调一点就是：器件可以通过输入查找，也可以通过列表查找。 五、Target目标 这里说的目标和上面说的工程目标不一样，是工程目标的目标。从内容可以看得出来是工程目标的调试晶振频率、选择的编译器、RAM和ROM分配的地址空间等。 第1处：晶振频率这个值主要用于仿真调试用，一般我们使用硬件调试可以不用管这个值。第2处：操作系统很好理解，是否选择Keil自带的RTX操作系统，一般我们都不选。第3处：系统预览文件这里我们一般是默认使用系统自带，不选择自己定义的。第4处：生成代码所选择的编译器 第5处：使用交叉模块优化、使用微库交叉模块一般我们不使用，微库这个功能常用与printf函数。 第6处：ROM存储地址这里的ROM存储指的是程序储存的地址，分片外、片内两种。 程序存储在片内好理解（初学者一般下载程序都是下载到片内FLASH）,片外存储程序对于初学者来说比较少见，一般都是项目做大了，或有特殊要求时，片内不够使用了才将程序存储在片外。 第7处：RAM存储地址RAM存储地址和ROM道理一样，可以分片内和片外。 六、Output输出 输出分两类：1.输出（创建）可执行文件：我们下载到处理器里面的程序就是该类； 2.输出库：对于初学者来说一般不使用库，但对于很多从事特殊行业技术开发的公司来说，可能比较常用该功能。 第1处：输出路径输出路径就是在工程编译的过程中，输出这些文件保存的文件夹。（Keil V5一般默认是保存在Objects文件夹下面） 第2处：输出可执行文件名输出的可执行文件和库的名称就是在这里定义。比如我们常见输出Hex文件，其名称就是这里定义的。 第3处：输出可执行文件这里和输出库是二选一，选择了输出可执行文件就不能选择输出库。 Debug Infomation：输出调试信息。勾选上这个选项，我们才可以进行调试。 Create HEX File：输出可执行Hex文件。很多初学的朋友问：“在哪里设置生成Hex?”，这里勾选上就行了。 Browse Information：输出浏览信息。勾选上这个我们才能使用go to definition of这个功能。很多人问：“为什么我不能跟踪代码了”，原因就在这里。 提示：输出这些中间文件都很费时间，如果都不勾选这些选项，编译速度会很快。 第4处：输出库选择输出库，上面可执行文件就不能输出。提示：这里输出（生成）的是静态库，并非动态库。 七、Listing列表 这个选项是关于生成列表相关的选项，对代码分析比较透彻的工程师就需要了解这个选项。常见的map地址的分布，就是在这里配置生成的。 第1处：输出路径、宽高选择列表文件输出的文件夹。可设置文件页面的宽度，长宽。 第2处：输出汇编列表勾选上会输出汇编列表信息（产生后缀为 .lst的文件）。如果工程中没汇编文件，则不会输出信息。 第3处：C编译列表C编译程序列表选项，勾选上可生成.txt, .i文件。 第4处：链接列表可选择生成或禁止生成.map文件。可设置生成代码的详细信息。可选择性的选取输出MAP文件。 八、User用户选项 这个选项是针对用户而设计的，方便用户执行一些程序。比如：编译完代码之后，我要将生成的Hex文件拷贝到其它地方。 纵观上图可以看见，第1、2、3处功能类似，都是让用户运行程序，只是运行的条件不同而已。 这里可以参看曾在微信公众号分享过的一篇文章《MDK-ARM如何通过配置命令生产Bin文件》 第1处：编辑之前运行用户程序 第2处：编译之前运行用户程序 第3处：编译之后运行用户程序 第4处：编译之后执行条件Run “After Build” conditionally：执行条件；Beep When Complete：编译完成发出声音；Start Debugging：启动调试程序。 九、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 十、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>Keil系列教程</category>
+      </categories>
+      <tags>
+        <tag>Keil</tag>
+        <tag>MDK-ARM</tag>
+        <tag>µVision</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CANOpen系列教程]]></title>
     <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
     <content type="text"><![CDATA[一、写在前面 本文对【CANOpen系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、教程列表1.CANOpen系列教程01_初识CAN与CANOpen及相关内容2.CANOpen系列教程02_理解CAN总线协议3.CANOpen系列教程03_CAN收发器功能、原理及作用4.CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明5.CANOpen系列教程05_CAN总线同步与位填充、优先级的决定6.CANOpen系列教程06_结合代码理解CAN底层收发数据（含STM32例程）7.CANOpen系列教程07_CANOpen协议概述8.CANOpen系列教程08_CANOpen通信接口引导学习9.CANOpen系列教程09_CANOpen对象字典10.CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建11.CANOpen系列教程11_深度分析CanFestival_3架构12.CANOpen系列教程12_对象字典编辑器操作说明13.CANOpen系列教程13_协议源码移植（一） 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
@@ -26,19 +52,6 @@
         <tag>CAN总线</tag>
         <tag>CANOpen</tag>
         <tag>CanFestival</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Keil系列教程]]></title>
-    <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【Keil系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看。 二、教程列表1.Keil系列教程01_Keil介绍、下载、安装与注册2.Keil系列教程02_新建基础软件工程3.Keil系列教程03_主窗口和工具栏详细说明4.Keil系列教程04_菜单概述 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
-      <categories>
-        <category>Keil系列教程</category>
-      </categories>
-      <tags>
-        <tag>Keil</tag>
-        <tag>MDK-ARM</tag>
-        <tag>µVision</tag>
       </tags>
   </entry>
   <entry>

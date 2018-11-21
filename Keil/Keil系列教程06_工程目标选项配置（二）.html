@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E7%9B%AE%E6%A0%87%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/8.%E9%85%8D%E7%BD%AE%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E7%9B%AE%E6%A0%87%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/9.Utilities%E5%85%AC%E5%85%B1.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_%E5%B7%A5%E7%A8%8B%E7%9B%AE%E6%A0%87%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%BA%8C%EF%BC%89/10.%E5%A4%8D%E4%BD%8D%E9%85%8D%E7%BD%AE.png?raw=true">
-<meta property="og:updated_time" content="2018-11-20T08:09:53.945Z">
+<meta property="og:updated_time" content="2018-11-20T08:50:34.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keil系列教程06_工程目标选项配置（二）">
 <meta name="twitter:description" content="一、写在前面本文接着上一篇文章《Keil系列教程05_工程目标选项配置（一）》讲述的工程目标选项的后五项配置：C/C++编译、 Asm汇编、 Linker链接、 Debug调试、 Utilities公共。">
@@ -438,7 +438,7 @@
 <p><font face="黑体" color="green" size="4">第2处：语言/代码生成（Language / Code Generation）</font><br><strong>Language/code Generation语言/代码生成</strong>。可以理解成编译、链接到最后生成代码。这部分功能对于代码优化比较重要，初学者可以不用过多理解，对代码大小、运行速度等性能要求较高的人就需要深入理解。</p>
 <p><strong>Execute only Code：只生成执行代码</strong><br>【设置编译器命令行：–execute_only】<br>只生成执行代码防止编译器生成任何数据访问代码部分。</p>
 <p><strong>Optimize：优化选择项，有Level0 - Level3四个选项</strong><br>【设置编译器命令行：-Onum】<br>初学者、在线调试建议使用Level0，也就是不优化，这样执行的效果才和代码一样。如果配置成Level3，在线调试可能有些地方优化而不能打断点。</p>
-<p><strong>Optimize for Time：优化时间，即优化代码中费时的地方</strong><br>【设置编译器命令行：-Otime】 –split_sections<br>比如有些算法，本身代码量就比较大，运行需要很长时间（假如需要2秒），这个时候勾选上该功能，会发现运行时间有比较明显的减少（或许不到1秒时间）。</p>
+<p><strong>Optimize for Time：优化时间，即优化代码中费时的地方</strong><br>【设置编译器命令行：-Otime】<br>比如有些算法，本身代码量就比较大，运行需要很长时间（假如需要2秒），这个时候勾选上该功能，会发现运行时间有比较明显的减少（或许不到1秒时间）。</p>
 <p><strong>Split Load and Store Multiple：加载和存储多个分裂</strong><br>【设置编译器命令行：–split_ldm】<br>非对齐数据采用多次访问方式。当 LMD/STM 指令有 4 个以上产生时，列分裂LMD 和 STM 指令，以减不中断延迟。</p>
 <p><strong>One ELF Section per Function：优化每一个函数 ELF 段</strong><br>【设置编译器命令行：–split_sections】<br>每个函数都会产生一个 ELF 段，勾选上，允许优化每一个 ELF 段。这个选项可以减少潜在的共享地址、数据和函数之间的字符串。</p>
 <p>直白的意思：可以减少代码量ROM的大小（内存RAM不会减小）。</p>
@@ -595,8 +595,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Keil/Keil系列教程.html" rel="prev" title="Keil系列教程">
-                Keil系列教程 <i class="fa fa-chevron-right"></i>
+              <a href="/Keil/Keil系列教程07_Configuration（一）.html" rel="prev" title="Keil系列教程07_Configuration（一）">
+                Keil系列教程07_Configuration（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -684,7 +684,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

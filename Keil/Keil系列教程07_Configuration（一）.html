@@ -89,10 +89,30 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面本文带来的内容为“Configuration”，即配置。而这里的“配置”和前面“工程目标选项配置”是完全不同的两种配置。 工程目标选项配置是针对工程目标，保存在工程文件（.uvprojx和.uvoptx）。这里的Configuration是针对IDE，保存在安装目录下。 我们常见的字体大小、颜色、关键字、快捷键等这些都是在“Configuration”中进行设置。本文讲述Configu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-21T08:29:35.621Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/1.Configuration.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/2.%E2%80%9CConfiguration%E2%80%9D%E5%BF%AB%E6%8D%B7%E6%8C%89%E9%92%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/3.Config%E8%8F%9C%E5%8D%95.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/4.Edit%E7%BC%96%E8%BE%91.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/5.Encoding%E3%80%81Auto%20Indent%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/6.Virtual%20Spaces%E3%80%81View%20White%20Space%E3%80%81View%20End%20of%20Line%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/7.Function%20Display%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/8.%E5%9C%A8%E6%9F%A5%E6%89%BE%E6%97%B6%E6%98%BE%E7%A4%BA%E6%B6%88%E6%81%AF%E5%AF%B9%E8%AF%9D%E6%A1%86.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/9.%E9%AB%98%E4%BA%AE%E5%BD%93%E5%89%8D%E8%A1%8C.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/10.%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA%E5%8C%B9%E9%85%8D%E5%92%8C%E4%B8%8D%E5%8C%B9%E9%85%8D%E6%8B%AC%E5%8F%B7.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/11.%E7%BC%96%E8%BE%91%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8D%E9%A2%9C%E8%89%B2.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/12.%E5%8F%B3%E8%BE%B9%E8%B7%9D.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/13.%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/14.%E4%BD%BF%E7%94%A8%E8%AF%AD%E6%B3%95%E9%A2%9C%E8%89%B2.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/15.%E7%AC%A6%E6%8F%92%E5%85%A5%E7%A9%BA%E6%A0%BC.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/16.Colors%20&%20Fonts%E9%A2%9C%E8%89%B2%E5%92%8C%E5%AD%97%E4%BD%93.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/17.%E9%BB%91%E8%89%B2%E8%83%8C%E6%99%AF.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/18.User%20Keywords%E7%94%A8%E6%88%B7%E5%85%B3%E9%94%AE%E5%AD%97.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/19.%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%94%AE%E5%AD%97.png?raw=true">
+<meta property="og:updated_time" content="2018-11-21T08:43:31.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keil系列教程07_Configuration（一）">
 <meta name="twitter:description" content="一、写在前面本文带来的内容为“Configuration”，即配置。而这里的“配置”和前面“工程目标选项配置”是完全不同的两种配置。 工程目标选项配置是针对工程目标，保存在工程文件（.uvprojx和.uvoptx）。这里的Configuration是针对IDE，保存在安装目录下。 我们常见的字体大小、颜色、关键字、快捷键等这些都是在“Configuration”中进行设置。本文讲述Configu">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/1.Configuration.png?raw=true">
 
 
 
@@ -418,20 +438,21 @@
       
         <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>本文带来的内容为“Configuration”，即配置。而这里的“配置”和前面“工程目标选项配置”是完全不同的两种配置。</p>
 <p>工程目标选项配置是针对工程目标，保存在工程文件（.uvprojx和.uvoptx）。这里的Configuration是针对IDE，保存在安装目录下。</p>
-<p>我们常见的字体大小、颜色、关键字、快捷键等这些都是在“Configuration”中进行设置。本文讲述Configuration中的前面3项Editor编辑、 Colors &amp; Fonts字体和颜色、 User KeyWords用户关键字。</p>
-<table><br><img align="left" width="600" src=""><br></table>
-
+<p>我们常见的<strong>字体大小、颜色、关键字、快捷键</strong>等这些都是在“Configuration”中进行设置。本文讲述Configuration中的前面3项：<strong>Editor编辑、 Colors &amp; Fonts字体和颜色、 User KeyWords用户关键字</strong>。</p>
 <a id="more"></a>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/1.Configuration.png?raw=true"><br></table>
+
+
 <h1 id="二、打开“Configuration”方法"><a href="#二、打开“Configuration”方法" class="headerlink" title="二、打开“Configuration”方法"></a>二、打开“Configuration”方法</h1><p><strong>1.点击“Configuration”快捷按钮</strong></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/2.%E2%80%9CConfiguration%E2%80%9D%E5%BF%AB%E6%8D%B7%E6%8C%89%E9%92%AE.png?raw=true"><br></table>
 
 <p><strong>2.快捷键</strong><br>Keil打开Configuration，默认是没有设置快捷键。不过可以进入Configuration，对其打开方式设置快捷键。比如Alt + C（在下一篇文章会讲述设置快捷键）。</p>
 <p><strong>3.从菜单中打开， Edit -&gt; Configuration</strong>，如下图：</p>
-<table><br><img align="left" width="500" src=""><br></table>
+<table><br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/3.Config%E8%8F%9C%E5%8D%95.png?raw=true"><br></table>
 
 
 <h1 id="三、Editor编辑"><a href="#三、Editor编辑" class="headerlink" title="三、Editor编辑"></a>三、Editor编辑</h1><p>如下图，我将Edit分为五部分来讲述：<strong>General Editor Settings、 Function Display、 Look &amp; Feel、 File &amp; Project Handing、 C/C++ &amp; ASM &amp; Other File</strong>。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/4.Edit%E7%BC%96%E8%BE%91.png?raw=true"><br></table>
 
 <h2 id="3-1-General-Editor-Settings"><a href="#3-1-General-Editor-Settings" class="headerlink" title="3.1 General Editor Settings"></a>3.1 General Editor Settings</h2><p><strong>General Editor Settings：通用编辑设置</strong>。这个选项里面内容比较实用，可以参看下面动画效果。</p>
 <p><strong>1.Encoding：编码方式选择</strong><br>Keil提供十几种编码方式供大家选择，默认：Encode in ANSI.</p>
@@ -439,56 +460,58 @@
 <p><strong>3.Virtual Spaces：虚拟空间</strong><br>光标在上下移动时不管有没有“空间”都对齐。也就是说光标可以在任何位置。</p>
 <p><strong>4.View White Space：显示空白（空格）</strong><br>勾选会将“空格”和“Tab”显示出来。</p>
 <p><strong>5.View End of Line：显示结束行</strong><br>勾选会在每行最后显示换行符。</p>
-<table><br><strong>Encoding、Auto Indent</strong>动画效果：<br><img align="left" width="600" src=""><br></table>
+<table><br><strong>Encoding、Auto Indent</strong>动画效果：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/5.Encoding%E3%80%81Auto%20Indent%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true"><br></table>
 
-<table><br><strong>Virtual Spaces、View White Space、View End of Line</strong>动画效果：<br><img align="left" width="600" src=""><br></table>
+<table><br><strong>Virtual Spaces、View White Space、View End of Line</strong>动画效果：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/6.Virtual%20Spaces%E3%80%81View%20White%20Space%E3%80%81View%20End%20of%20Line%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true"><br></table>
 
 <h2 id="3-2-Function-Display"><a href="#3-2-Function-Display" class="headerlink" title="3.2 Function Display"></a>3.2 Function Display</h2><p><strong>Function Display：函数显示</strong>，就是在Function Display窗口的一些显示方式。</p>
 <p>这一区域是三个参数组合配置，可以实现多种显示效果。</p>
 <p><strong>1.Display Modules：显示模块【显示方式】</strong><br>简单的说模块显示就是显示C源文件名，将函数名折叠在文件里面。<br>勾选：以模块（分组/文件夹）方式显示。<br>不选：以函数名方式显示。</p>
 <p><strong>2.Scan function names in project files：浏览工程项目中所有函数【显示内容】</strong><br>就是显示工程中所有函数。</p>
 <p><strong>3.Scan function names in current editor files：浏览当前编辑（已打开）文件的函数【显示内容】</strong><br>比如：我打开了main.c和bsp.c两个文件来编辑，那么就显示这两个文件的内容（函数）。</p>
-<table><br><strong>Function Display</strong>动画效果：<br><img align="left" width="600" src=""><br></table>
+<table><br><strong>Function Display</strong>动画效果：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/7.Function%20Display%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C.gif?raw=true"><br></table>
 
 <h2 id="3-3-Look-amp-Feel"><a href="#3-3-Look-amp-Feel" class="headerlink" title="3.3 Look &amp; Feel"></a>3.3 Look &amp; Feel</h2><p><strong>Look &amp; Feel：看&amp;感觉（视觉）</strong>，请看下面描述就能直观的理解这一区域意思。</p>
 <p><strong>1.Show Message Dialog during Find：在查找时显示消息对话框</strong><br>就是在查找结束，或未查找到相关内时容弹出的提示框。</p>
 <p>比如：我在main.c文件中查找main1（文件中实际是没有main1），勾选上就会弹出消息对话框（如下图），不勾选就不会弹出高亮对话框。</p>
-<table><br><img align="left" width="300" src=""><br></table>
+<table><br><img align="left" width="300" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/8.%E5%9C%A8%E6%9F%A5%E6%89%BE%E6%97%B6%E6%98%BE%E7%A4%BA%E6%B6%88%E6%81%AF%E5%AF%B9%E8%AF%9D%E6%A1%86.png?raw=true"><br></table>
 
 <p><strong>2.Highlight Current Line：高亮当前行</strong><br>勾选上，光标放在那一行，这一行就高亮的意思。如下图：</p>
-<table><br><img align="left" width="500" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/9.%E9%AB%98%E4%BA%AE%E5%BD%93%E5%89%8D%E8%A1%8C.png?raw=true"><br></table>
 
 <p><strong>3.Highlight matching and mismatched braces：高亮显示匹配和不匹配括号</strong><br>将光标放在括号处，会高亮括号，如下图：</p>
-<table><br><img align="left" width="500" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/10.%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA%E5%8C%B9%E9%85%8D%E5%92%8C%E4%B8%8D%E5%8C%B9%E9%85%8D%E6%8B%AC%E5%8F%B7.png?raw=true"><br></table>
 
 <p><strong>4.Print with syntax coloring：打印语法颜色</strong><br>打印颜色对应为编辑器中的颜色。</p>
 <p><strong>5.Colored Editor Tabs：颜色编辑器选项卡</strong><br>启用或禁用文件名称标签的颜色，如下图，勾选就显示颜色：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/11.%E7%BC%96%E8%BE%91%E5%99%A8%E6%96%87%E4%BB%B6%E5%90%8D%E9%A2%9C%E8%89%B2.png?raw=true"><br></table>
 
-<p>6.Right Margin：右边距<br>编辑分隔符标记的位置号。位置号的默认值是80,范围[1-999]。<br>None：无标记；<br>Vertical Line：垂直线标记；<br>Colored Background：背景颜色标记。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<p><strong>6.Right Margin：右边距</strong><br>编辑分隔符标记的位置号。位置号的默认值是80,范围[1-999]。<br><strong>None：</strong>无标记；<br><strong>Vertical Line：</strong>垂直线标记；<br><strong>Colored Background：</strong>背景颜色标记。</p>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/12.%E5%8F%B3%E8%BE%B9%E8%B7%9D.png?raw=true"><br></table>
 
 <h2 id="3-4-File-and-Project-Handling"><a href="#3-4-File-and-Project-Handling" class="headerlink" title="3.4 File and Project Handling"></a>3.4 File and Project Handling</h2><p><strong>File and Project Handling：文件和工程操作</strong>，针对的是文件和工程。</p>
 <p><strong>1.Create Backup files：创建备份文件(* . bak)</strong><br>在保存文件时，在文件的目录中创建备份文件，扩展名为.bak。这个选项只影响源文件，对项目文件没有影响。</p>
 <p><strong>2.Automatic reload of externally modified files：自动加载修改过的文件</strong><br>比如：Keil软件打开了main.c文件，再使用其它编辑器打开该main,c修改其中内容并保存，这时Keil软件自动加载修改过的main.c文件。</p>
 <p>不勾选，则不会自动加载，就会有如下重新加载提示：</p>
-<table><br><img align="left" width="300" src=""><br></table>
+<table><br><img align="left" width="300" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/13.%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
 <p><strong>3.Save Project before entering Debug：进入调试之前保存工程项目</strong></p>
 <p><strong>4.Save Files before entering Debug：进入调试之前保存所有文件</strong></p>
 <p><strong>5.Auto save modified File every [x] Minutes：每x分钟自动保存文件</strong></p>
 <h2 id="3-5-C-C-amp-ASM-amp-Other-File"><a href="#3-5-C-C-amp-ASM-amp-Other-File" class="headerlink" title="3.5 C/C++ &amp; ASM &amp; Other File"></a>3.5 C/C++ &amp; ASM &amp; Other File</h2><p>这里三组配置类似，只讲述一组，比较简单。</p>
 <p><strong>1.Use syntax coloring：使用语法颜色</strong><br>不使用语法就等于txt文本那种纯黑色。见下图不使用和使用区别：</p>
-<table><br><img align="left" width="300" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/14.%E4%BD%BF%E7%94%A8%E8%AF%AD%E6%B3%95%E9%A2%9C%E8%89%B2.png?raw=true"><br></table>
 
 <p><strong>2.Insert spaces for tabs：符插入空格</strong><br>这个符号需要配合上面3.1General Editor Settings的View White Space显示出来才能看到效果。</p>
-<table><br><img align="left" width="300" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/15.%E7%AC%A6%E6%8F%92%E5%85%A5%E7%A9%BA%E6%A0%BC.png?raw=true"><br></table>
 
 <p><strong>3.Tab Size：Tab符大小</strong><br>一个Tab符占几个空格。</p>
 <p><strong>4.Show Line Numbers：显示行数</strong></p>
 <p><strong>5.Use monospaced Font：使用等宽字体</strong></p>
 <p><strong>6.Open with Outlining：打开伦廓</strong></p>
 <h1 id="四、Colors-amp-Fonts颜色和字体"><a href="#四、Colors-amp-Fonts颜色和字体" class="headerlink" title="四、Colors &amp; Fonts颜色和字体"></a>四、Colors &amp; Fonts颜色和字体</h1><p>这个选项就是修改字体和颜色。</p>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/16.Colors%20&%20Fonts%E9%A2%9C%E8%89%B2%E5%92%8C%E5%AD%97%E4%BD%93.png?raw=true"><br></table>
+
 <p><strong>Window窗口：</strong>列出所有可配置窗口名称或窗口类型。这个列表是预定义的,用户不能修改。我们常见修改的地方就是“C/C++ Edit files”。</p>
 <p><strong>Element元素：</strong>一个窗口的列表元素。这个列表是预定义的,用户不能修改。</p>
 <p><strong>Font字体：</strong>包含Font字体、Size大小和Style风格三项。</p>
@@ -497,15 +520,15 @@
 <p>修改这里字体和颜色，其实就是修改了Keil_v5\UV4目录下的global.prop文件。</p>
 <p>如下图所示，就是通过修改字体颜色和背景色来达到“黑色”主题。我将下图“黑色”主题提供给大家，只需替换你Keil_v5\UV4目录下global.prop即可。</p>
 <p>链接：<a href="https://pan.baidu.com/s/16AqpplKTNNsqbi5CTrHmCg" target="_blank" rel="noopener">https://pan.baidu.com/s/16AqpplKTNNsqbi5CTrHmCg</a><br>密码：fxc7</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/17.%E9%BB%91%E8%89%B2%E8%83%8C%E6%99%AF.png?raw=true"><br></table>
 
 
 <h1 id="五、User-Keywords用户关键字"><a href="#五、User-Keywords用户关键字" class="headerlink" title="五、User Keywords用户关键字"></a>五、User Keywords用户关键字</h1><p>这个选项比较简单，就是用户自定义关键字。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/18.User%20Keywords%E7%94%A8%E6%88%B7%E5%85%B3%E9%94%AE%E5%AD%97.png?raw=true"><br></table>
 
-<p>Text File Types：文本文件类型。<br>User Keywords：用户关键字。</p>
+<p><strong>Text File Types：</strong>文本文件类型。<br><strong>User Keywords：</strong>用户关键字。</p>
 <p>举例：在C/C++文件里定义关键字“uint8_t”，在编辑C/C++文件时“uint8_t”就会以关键字颜色显示。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_Configuration%EF%BC%88%E4%B8%80%EF%BC%89/19.%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%B3%E9%94%AE%E5%AD%97.png?raw=true"><br></table>
 
 <p>请参看我公众号分享过的一篇文章<a href="https://mp.weixin.qq.com/s/_GJ6yBebbN-YUp34-Uz-4w" target="_blank" rel="noopener">《Keil自定义关键字、快捷键》</a>。</p>
 <h1 id="六、说明"><a href="#六、说明" class="headerlink" title="六、说明"></a>六、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>

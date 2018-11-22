@@ -3,7 +3,20 @@
   <entry>
     <title><![CDATA[Keil系列教程]]></title>
     <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【Keil系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看。 二、教程列表Keil系列教程01_Keil介绍、下载、安装与注册Keil系列教程02_新建基础软件工程Keil系列教程03_主窗口和工具栏详细说明Keil系列教程04_菜单概述Keil系列教程05_工程目标选项配置（一）Keil系列教程06_工程目标选项配置（二）Keil系列教程07_Configuration（一） 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【Keil系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看。 二、教程列表Keil系列教程01_Keil介绍、下载、安装与注册Keil系列教程02_新建基础软件工程Keil系列教程03_主窗口和工具栏详细说明Keil系列教程04_菜单概述Keil系列教程05_工程目标选项配置（一）Keil系列教程06_工程目标选项配置（二）Keil系列教程07_Configuration（一）Keil系列教程08_Configuration（二） 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>Keil系列教程</category>
+      </categories>
+      <tags>
+        <tag>Keil</tag>
+        <tag>MDK-ARM</tag>
+        <tag>µVision</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Keil系列教程08_Configuration（二）]]></title>
+    <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B08_Configuration%EF%BC%88%E4%BA%8C%EF%BC%89.html</url>
+    <content type="text"><![CDATA[一、写在前面本文接着上一篇文章《Keil系列教程07_Configuration（一）》讲述的工程目标选项的后三项配置：Shortcut Keys快捷键、Text Completion代码完形、Other其他。 这后面三部分内容在该系列教程其它也会牵涉，也是一些常用，或重要的配置选项，下面讲述过程中会介绍相关内容。 二、Shortcut Keys快捷键Configuration中Shortcut Keys主要作用：查看、添加、修改、删除快捷键。而这些快捷键主要就是针对各项菜单的内容（命令）。 在默认情况下，不是所有菜单都有快捷键，可以自行添加、修改，或删除。左边列表中的Command（菜单命令）属于系统，用户不能增加、删除和修改。 2.1 创建快捷键快捷键可以增加（创建）、删除（移除）和修改。我们这里简单举例说明一下创建快捷键。 比如：增加（创建）File Colse 关闭文件快捷键为Ctrl+W。点击“Create Shortcut” -&gt; 键盘按住“Ctrl + W” -&gt; 点击“OK”。 增加（创建）快捷键动画效果： 2.2 常用快捷键Keil默认的所有快捷键在列表中都能查找到，这里为了方便大家，也让大家回顾一下，列出常用的快捷键。 在该系列教程前面文章就讲述了快捷键的相关内容，请参看：《Keil系列教程03_主窗口和工具栏详细说明》《Keil系列教程04_菜单概述》 按照菜单列表顺序：1.File类Ctrl + N ：新建文件Ctrl + O ：打开文件Ctrl + S ：保存文件 2.Edit类Ctrl + Z ：撤销编辑Ctrl + Y ：恢复编辑Ctrl + X ：剪切Ctrl + C ：复制Ctrl + V ：粘贴Ctrl + - ：跳转到上一步Ctrl + Shift + - ：跳转到下一步Ctrl + F2 ：添加书签F2 ：跳转到下一个书签Shift + F2 ：跳转到上一个书签Ctrl + Shift + F2 ：清空所有书签Ctrl + F ：查找Ctrl + H ：替换 3.Project类Alt + F7 ：工程目标F7 ：编译目标Ctrl + F7 ：编译文件 4.Flash类F8 ：下载程序 5.Debug类Ctrl + F5 ：启动/停止调试F5 ：运行F11 ：Setp运行F10 ：Setp Over运行Ctrl + F11 ：Setp Out运行Ctrl + F10 ：运行到光标处Ctrl + B : 查看所有断点F9 ：插入/移除断点Ctrl + F9 : 使能/失能单个断点Ctrl + Shift + F9 ：取消所有断点 只是简单列了一些常用快捷键，列表中默认没有的快捷键可以自己添加。 三、Text Completion代码完形这个选项相关的功能比较实用，能帮助你在编程时快速完成编辑。直白的意思就是能提高编程的效率。 3.1 Show Code Completion List：自动完成代码编辑Struct / Class Members编辑时显示结构体/类成员变量列表，直接点击列表中的成员就可以完形代码。 Function Parameters就是显示参数和参数类型 Symbols after [x] Characters自动匹配x字符，在输入时达到x个字符会匹配输入的字符串。 3.2 Dynamic Syntax Checking：语法动态错误检测你编辑代码时会动态（实时）检测你代码是否正确。比如：错误会有红色标识提示。 3.3 Text Templates：代码模板代码模板很好理解，相当于你写了一个模板，以后直接使用就是了。 代码完形、模板动画效果： 四、Other其他这个选项不常用，可以了解一下。 1.UVSOCK (TCP/IP) Settings启动或关闭UV socket端口，这个选项可以说基本很少人使用。 2.Startup (Require Restart)启动启动软件（重新打开）时对应的操作。 Show splash screen：显示启动画面。如下图： Open most recent project：启动软件后打开最近的工程项目。 3.Debug调试调试时，如果都选上，则运行停止后不打开匹配的源文件。 4.Parallel Build Configuration并行编译配置在编译多个工程时，这个选项就会起到作用。 Disable Parallel Build：禁止并行编译Number of parallel jobs：并行编译数量 六、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 七、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
       <categories>
         <category>Keil系列教程</category>
       </categories>

@@ -89,10 +89,14 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面1.你在提交项目、打包保存项目时，你会删掉不必要的文件吗？2.你知道这些uvoptx、uvprojx、map、dep……是什么文件吗？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T08:49:17.952Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/1.Keil%E7%BC%96%E8%AF%91%E4%B8%AD%E9%97%B4%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/2.Listing%20Files%E9%93%BE%E6%8E%A5%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/3.Listing%20Files%E9%93%BE%E6%8E%A5%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:updated_time" content="2018-11-29T09:04:36.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keil系列教程10_文件类型及相关描述">
 <meta name="twitter:description" content="一、写在前面1.你在提交项目、打包保存项目时，你会删掉不必要的文件吗？2.你知道这些uvoptx、uvprojx、map、dep……是什么文件吗？">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/1.Keil%E7%BC%96%E8%AF%91%E4%B8%AD%E9%97%B4%E6%96%87%E4%BB%B6.png?raw=true">
 
 
 
@@ -418,7 +422,7 @@
       
         <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>1.你在提交项目、打包保存项目时，你会<strong>删掉不必要的文件</strong>吗？<br>2.你知道这些<strong>uvoptx、uvprojx、map、dep……</strong>是什么文件吗？</p>
 <a id="more"></a>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/1.Keil%E7%BC%96%E8%AF%91%E4%B8%AD%E9%97%B4%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">现象or疑问：</span><br><span class="line">1.购买一块开发板，厂家提供的源代码例程没有几个，但文件却有几百兆。</span><br><span class="line">2.百度网盘下载一个别人提供的代码压缩包，几十兆。</span><br><span class="line">3.打开别人下载的源代码工程，各种类型文件混杂在一起。</span><br><span class="line">4.有些人提供的源代码没有dep文件，这个文件可以删除吗？ 删除了会有什么影响？</span><br></pre></td></tr></table></figure>
 <p>其实有许多文件都是<strong>编译产生的中间文件</strong>，我习惯放一个双击删除“编译产生文件”.bat”来管理工程。即每次需要保存，或提交工程，会双击该文件，删除不需要的中间文件。</p>
@@ -444,7 +448,7 @@
 <p><strong>*.inc：</strong>汇编头文件</p>
 <p><strong>*.src：</strong>C编译器生成的其他源文件</p>
 <h1 id="五、Listing-Files链接类型文件"><a href="#五、Listing-Files链接类型文件" class="headerlink" title="五、Listing Files链接类型文件"></a>五、Listing Files链接类型文件</h1><p>这一类文件属于中间文件，一般在编译过程中产生。可以在工程目标选项中配置对应的链接文件。Project -&gt; Options for Target -&gt; Listing，如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/2.Listing%20Files%E9%93%BE%E6%8E%A5%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
 <p><strong>*.map：</strong>存储镜像文件<br>这个文件比较重要，我会在后面专门讲述一篇map相关文章。</p>
 <p><strong>*.i：</strong>C预处理器输出文件</p>
@@ -455,7 +459,7 @@
 <p><strong>*.htm：</strong>链接器的列表文件</p>
 <h1 id="六、Object-and-HEX-Files目标和Hex类型文件"><a href="#六、Object-and-HEX-Files目标和Hex类型文件" class="headerlink" title="六、Object and HEX Files目标和Hex类型文件"></a>六、Object and HEX Files目标和Hex类型文件</h1><p>这一类文件同样属于中间文件，一般在编译过程中产生。但这类文件比较重要，<strong>调试信息、预览信息、可执行文件</strong>等都在这里面。</p>
 <p>Project -&gt; Options for Target -&gt; Output，如图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/3.Listing%20Files%E9%93%BE%E6%8E%A5%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
 <p><strong>*.hex：</strong>可执行文件</p>
 <p><strong>*.axf：</strong>包含调试信息的程序文件<br>有时候我们调试出错，可能是axf没有文件。</p>

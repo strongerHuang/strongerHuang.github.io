@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_map%E6%96%87%E4%BB%B6%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/7.%E6%89%A7%E8%A1%8C%E5%8C%BA%E5%9F%9F.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_map%E6%96%87%E4%BB%B6%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/8.Image%20component%20sizes.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_map%E6%96%87%E4%BB%B6%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/9.%E5%8F%AA%E7%9C%8B%E7%BB%9F%E8%AE%A1%E4%BF%A1%E6%81%AF.png?raw=true">
-<meta property="og:updated_time" content="2018-12-07T09:16:40.311Z">
+<meta property="og:updated_time" content="2018-12-08T06:42:17.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keil系列教程12_map文件全面解析">
 <meta name="twitter:description" content="一、写在前面什么是map文件？ 简单的说：map文件是通过编译器编译之后，集程序、数据及IO空间的一种映射文件。 很多技术牛逼的工程师在遇到内存越界，或溢出的情况，首先想到的就是分析map文件。通过map文件可以知道函数大小，入口地址等一些重要信息。 我们在Keil中最常见的就是在编译之后，编译窗口会显示类似如下一段关于程序和数据大小的信息：Program Size: Code=1112 RO-d">
@@ -432,7 +432,7 @@
 <p>我们在Keil中最常见的就是在编译之后，编译窗口会显示类似如下一段关于程序和数据大小的信息：<br><strong>Program Size: Code=1112 RO-data=320 RW-data=0 ZI-data=1632</strong></p>
 <p>这一段提示信息其实是汇总了程序和数据的信息，这些信息其实是单个模块汇总而成，在map文件里有详细列表。</p>
 <a id="more"></a>
-<h1 id="二、关于Keil中的map文件"><a href="#二、关于Keil中的map文件" class="headerlink" title="二、关于Keil中的map文件"></a>二、关于Keil中的map文件</h1><h2 id="2-1-如何打开map文件"><a href="#2-1-如何打开map文件" class="headerlink" title="2.1 如何打开map文件"></a>2.1 如何打开map文件</h2><p>最直接，也是最简单的办法：<strong>双击工程目标，出现map文件</strong>（注意，双击的工程目标，不要双击到工程，或文件组）。如下图：</p>
+<h1 id="二、关于Keil中的map文件"><a href="#二、关于Keil中的map文件" class="headerlink" title="二、关于Keil中的map文件"></a>二、关于Keil中的map文件</h1><h2 id="2-1-如何打开map文件"><a href="#2-1-如何打开map文件" class="headerlink" title="2.1 如何打开map文件"></a>2.1 如何打开map文件</h2><p>最直接，也是最简单的办法：<strong>双击工程目标，出现map文件</strong>（注意，双击的是工程目标，不要双击工程，或文件组）。如下图：</p>
 <table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B12_map%E6%96%87%E4%BB%B6%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/1.%E5%8F%8C%E5%87%BB%E5%B7%A5%E7%A8%8B%E7%9B%AE%E6%A0%87%EF%BC%8C%E5%87%BA%E7%8E%B0map%E6%96%87%E4%BB%B6.gif?raw=true"><br></table>
 
 <p>当然，可以找到map文件位置（Listings文件夹），用编辑器工具打开。</p>
@@ -591,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Keil/Keil系列教程.html" rel="prev" title="Keil系列教程">
-                Keil系列教程 <i class="fa fa-chevron-right"></i>
+              <a href="/Keil/Keil系列教程13_创建多目标工程.html" rel="prev" title="Keil系列教程13_创建多目标工程">
+                Keil系列教程13_创建多目标工程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -680,7 +680,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

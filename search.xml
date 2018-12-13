@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CANOpen系列教程]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
+    <content type="text"><![CDATA[一、写在前面 本文对【CANOpen系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、教程列表CANOpen系列教程01_初识CAN与CANOpen及相关内容CANOpen系列教程02_理解CAN总线协议CANOpen系列教程03_CAN收发器功能、原理及作用CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明CANOpen系列教程05_CAN总线同步与位填充、优先级的决定CANOpen系列教程06_结合代码理解CAN底层收发数据（含STM32例程）CANOpen系列教程07_CANOpen协议概述CANOpen系列教程08_CANOpen通信接口引导学习CANOpen系列教程09_CANOpen对象字典CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建CANOpen系列教程11_深度分析CanFestival_3架构CANOpen系列教程12_对象字典编辑器操作说明CANOpen系列教程13_协议源码移植（一）CANOpen系列教程14_协议源码移植（二）CANOpen系列教程15_NMT网络管理和相关源码说明 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程15_NMT网络管理和相关源码说明]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B15_NMT%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%92%8C%E7%9B%B8%E5%85%B3%E6%BA%90%E7%A0%81%E8%AF%B4%E6%98%8E.html</url>
+    <content type="text"><![CDATA[一、写在前面该系列教程13、14讲述了移植相关内容，以及提供给大家可直接编译、下载运行的源码工程，想必你已经掌握了一些基础的知识了。 在《CANOpen系列教程08_CANOpen通信接口引导学习》中，引导大家参看《CANopen轻松入门》通信接口的相关知识。而没有在文中具体描述关于CANOpen通信接口的知识。 原因在于通信接口的内容太多，单纯的去看这些内容，容易让人产生更多困惑。 对于程序员来说，结合源代码来理解相关理论知识更加容易。所以，我将其留在了这后面来讲述。 下面结合移植好的源代码，讲述CANOpen网络管理（NMT：Network management）的相关知识。 二、关于网络管理NMT在CANOpen网络中，分主站和从站，而通常由主站来管理整个网络。比如：复位、停止等。 《CANopen轻松入门》中军队的例子说的很好：一个军队，如果没有指挥员来管理，下面士兵岂不乱套了。 例子中指挥员就是CANOpen中的网络管理主站，士兵就是从站。 重要的一点：每个 CANopen 从节点的 CANopen 协议栈中，必须具备 NMT 管理的相应代码。也就是说从站是被接收管理。 当然，我们使用的Canfestival这套免费框架，大家不必担心，肯定是具有相关代码，我们需要明白怎么使用这套源码即可。 三、NMT网络管理节点状态3.1 6种节点状态NMT网络管理主要包含以下6种状态：1.初始化（Initializing）：节点上电后对功能部件包括 CAN 控制器进行初始化； 2.应用层复位（Application Reset）：节点中的应用程序复位（开始），比如开关量输出、模拟量输出的初始值； 3.通讯复位（Communication reset）：节点中的CANopen通讯复位（开始），从这个时刻起，此节点就可以进行CANopen通讯了； 4.预操作状态（Pre-operational）：节点的CANopen通讯处于操作就绪状态，此时此节点不能进行PDO通信，而可以进行SDO进行参数配置和NMT网络管理的操作； 5.操作状态（operational）：节点收到NMT主机发来的启动命令后， CANopen通讯被激活， PDO通信启动后， 按照对象字典里面规定的规则进行传输，同样SDO也可以对节点进行数据传输和参数修改； 6.停止状态（Stopped）： 节点收到NMT主机发来的停止命令后，节点的PDO通信被停止，但SDO和NMT网络管理依然可以对节点进行操作； NMT网络管理6种状态如上图所示，其中1 — 15各处代表含义：(1)：Power on上电初始化 (2)：Automatic switch to Pre-operational自动切换预操作状态 (3) 、(6)：NMT switch to Operational网络管理切换到操作状态 (4)、(7)：NMT switch to Pre-operational网络管理切换到预操作状态 (5)、(8)：NMT switch to Stopped网络管理切换到停止状态 (9)、(10)、(11)：NMT switch to Application reset网络管理切换到应用层复位状态 (12)、(13)、(14)：NMT switch to Communication reset网络管理切换到通讯复位状态 (15)：Power-off or hardware reset掉电或硬件复位 3.2 源码说明通过上面描述，需要知道两点重要内容：主站进行网络管理，网络各个节点有多种状态。当然，一个时刻只能一种状态。 在Canfestival框架源码中，主站可通过masterSendNMTstateChange这个函数接口来管理网络节点的状态。可以理解为：主站控制，或切换从站节点的状态。 这里需要理解masterSendNMTstateChange这个函数接口的用法，也就是说接口含义，以及参数。 比如：主站上电之后，让网络中节点0x01复位： 这里我们结合《CANOpen系列教程13》提供的代码基础上，添加一行管理节点0x01的代码：1masterSendNMTstateChange(&amp;TestMaster_Data, 0x01, NMT_Reset_Node); 第1个参数TestMaster_Data：主站对象字典第2个参数0x01：节点（从站）ID第3个参数NMT_Reset_Node：复位节点 第1,2个参数很好理解，第3个参数是通过宏定义在def.h中，总共5种状态，如下图： 写到这里，相信大家对网络管理节点有一定认识了，初学者可以多结合代码理解。 四、NMT网络管理节点上线报文该教程上一篇文章末尾讲述运行效果时，提供了一张运行时CAN总线数据的截图： 任何一个 CANopen 从站上线后，为了提示主站它已经加入网络（便于热插拔），或者避免与其他从站 Node-ID 冲突。这个从站必须发出节点上线报文（boot-up）。 节点上线报文的 ID 为：700h + Node-ID， 数据规定为0。 生产者（Producer）为 CANopen 从站。如下图： 五、NMT网络管理心跳报文为了监控 CANopen 节点是否在线与目前的节点状态。 CANopen 应用中通常都要求在线上电的从站定时发送状态报文（心跳报文），以便于主站确认从站是否故障、是否脱离网络。 格式：CAN-ID：700h + Node-ID数据：一字节状态 在《CANOpen系列教程13》提供例程中，就是包含一个心跳报文。心跳报文比较简单，请结合上图理解。 注意：1.CANopen从站按其对象字典中 1017h 中填写的心跳生产时间（ms）进行心跳报文的发送。 2.CANopen主站则会按其 1016h 中填写的心跳消费时间进行检查，假设超过诺干次心跳消费时间没有收到从站的心跳报文，则认为从站已经离线或者损坏。 还有一些网络管理相关内容，大家可以结合这种思路去理解，建议参看：1.CiA 301 V4.2.0网络管理章节2.周立功的CANOpen轻松入门 六、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 七、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CANOpen系列教程14_协议源码移植（二）]]></title>
+    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%8D%8F%E8%AE%AE%E6%BA%90%E7%A0%81%E7%A7%BB%E6%A4%8D%EF%BC%88%E4%BA%8C%EF%BC%89.html</url>
+    <content type="text"><![CDATA[一、写在前面该系列教程上一篇文章《协议源码移植（一）》算是对CANOpen移植的准备工作，如果想要理解移植过程的知识，其实还有许多内容得了解。 本文挑一些重点来讲述，从协议源码添加到工程，源代码理解，到最后输出效果。 提示：该系列教程基于：CanFestival架构、STM32F1芯片、FreeRTOS操作系统、Keil MDK-ARM开发环境。 二、添加源码、路径本节内容针对初学者做出简要描述，相关内容可参看文章《Keil系列教程02_新建基础软件工程》。 2.1 添加组、文件简单来说，就是在你已建好的工程中添加与CANOpen相关的组和文件，如下图： 2.2 添加路径添加CANOpen源码的inc头文件等相关路径，编译的时候才能找到对应文件。 三、添加代码及分析移植的重要过程就是添加、删除和修改源代码这一步骤。从教程上一篇文章下载，并看过源代码的朋友就会发现，其实我们需要添加的代码并不多，主要就是需要实现几个底层的驱动函数。 下面将重要的几点罗列出来。 1.修改canfestival.h文件 上文说了一下：添加三行语句，防止递归包含。 这里就是CANOpen定义的底层驱动接口，接口函数具体代码需要我们自己实现。 canSend这个函数被CANOpen源代码调用的最多，我们最好不修改函数接口，同时需要我们实现（我在canopen_drv.c中实现的）。 其它initTimer、 canInit等函数接口，在源码中没有调用，我也没有按照这套接口来实现（初始化我在bsp下实现的）。 2.底层驱动初始化代码上面说的initTimer、 canInit初始化，我这边为了与我代码一致，使用TIM_Initializes、CAN_Initializes替代。 分别位于bsp_timer.c 和 bsp_can.c下面，实现的具体内容这里不描述，具体可以下载源码工程参看。 3.定时器调度相关接口 其中setTimer和getElapsedTime这两个函数会被timer.c协议源文件调用。在timer.h里面有什么（如下图），但函数体没有实现，需要我们自己实现。 同时，TimeDispatch函数已经实现，定义在timer.c，但需要被定时调用（调度）。 4.CAN发送接口函数canSend这个CAN发送函数相当重要，接口最好不要自定义，因为scr下面多个源文件都调用了该函数。 同时，发送函数会被定时调度。所以，如果你调度方式像我例程那样，使用定时器中断的方式实现。那么，你就要考虑在中断函数里面发送的情况。 以上就是CANOpen移植，底层驱动相关的一些接口实现和说明。这部分内容，CanFestival框架提供源码是定义在drivers下面，比如STM32F1的就是cm3下面的cm3.c： 我单独提出来实现这些驱动函数是因为我跑了一个FreeRTOS系统。当然，你的驱动也可按照drivers下面那样实现。 5.其它A.发送和接收缓存我这边是通过队列来实现发送和接收缓存，而cm3.c是通过MessBuf_Write和MessBuf_Read来实现缓存。 B.中断接收我使用CAN中断接收数据，和定时器中断调度。 提示：我中断入口函数是宏定义实现的，需要包含宏定义头文件。12#define CAN_RX_IRQHandler USB_LP_CAN1_RX0_IRQHandler#define CANOPEN_TIM_IRQ_Handler TIM2_IRQHandler C.配置节点配置节点ID，节点的状态，这里只是简单的Demo，没有添加应用代码。 四、工程下载及运行效果1.下载工程“CANOpen工程模板（含主、从站-心跳）”https://pan.baidu.com/s/1LzD0Epc-Z8vlHsb-sD3WVw提取码：l2dc 提示：如果链接失效，公众号回复【CANOpen系列教程】获取更新链接； 2.运行效果我提供的这个Demo工程是一个只有心跳（间隔时间我们配置的1000ms），所以，启动之后，你会发现总线上间隔1秒有一个心跳。 下图是我通过CAN分析仪抓取的CAN总线数据（如果你没有分析仪，可以用我系列教程6提供的例程，通过串口打印） 这是先启动一会儿主站，然后关闭，再启动从站的数据，重要信息我都标记出来了。A.上线报文：ID：0x700 Data：0 B.网络管理：ID：0x000 Data：00代表管理所有节点 Data：80代表复位节点 C.心跳报文：ID：0x700 Data：05代表Operational操作状态 提示：主站具有网络管理，而从站没有。同时，数据值（如81、05）的含义可参看CiA 301手册网络管理的章节（后期进行讲述）。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 六、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>CANOpen系列教程</category>
+      </categories>
+      <tags>
+        <tag>CAN</tag>
+        <tag>CAN总线</tag>
+        <tag>CANOpen</tag>
+        <tag>CanFestival</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Keil系列教程]]></title>
     <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
     <content type="text"><![CDATA[一、写在前面 本文对【Keil系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看。 二、教程列表Keil系列教程01_Keil介绍、下载、安装与注册Keil系列教程02_新建基础软件工程Keil系列教程03_主窗口和工具栏详细说明Keil系列教程04_菜单概述Keil系列教程05_工程目标选项配置（一）Keil系列教程06_工程目标选项配置（二）Keil系列教程07_Configuration（一）Keil系列教程08_Configuration（二）Keil系列教程09_调试仿真Keil系列教程10_文件类型及相关描述Keil系列教程11_工程窗口图标说明Keil系列教程12_map文件全面解析Keil系列教程13_创建多目标工程 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
@@ -128,20 +170,6 @@
         <tag>Keil</tag>
         <tag>MDK-ARM</tag>
         <tag>µVision</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CANOpen系列教程]]></title>
-    <url>%2FCANOpen%2FCANOpen%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【CANOpen系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看。 二、教程列表1.CANOpen系列教程01_初识CAN与CANOpen及相关内容2.CANOpen系列教程02_理解CAN总线协议3.CANOpen系列教程03_CAN收发器功能、原理及作用4.CANOpen系列教程04_CAN总线波特率、位时序、帧类型及格式说明5.CANOpen系列教程05_CAN总线同步与位填充、优先级的决定6.CANOpen系列教程06_结合代码理解CAN底层收发数据（含STM32例程）7.CANOpen系列教程07_CANOpen协议概述8.CANOpen系列教程08_CANOpen通信接口引导学习9.CANOpen系列教程09_CANOpen对象字典10.CANOpen系列教程10_关于Canfestival及对象字典生成工具环境搭建11.CANOpen系列教程11_深度分析CanFestival_3架构12.CANOpen系列教程12_对象字典编辑器操作说明13.CANOpen系列教程13_协议源码移植（一） 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【CANOpen系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
-      <categories>
-        <category>CANOpen系列教程</category>
-      </categories>
-      <tags>
-        <tag>CAN</tag>
-        <tag>CAN总线</tag>
-        <tag>CANOpen</tag>
-        <tag>CanFestival</tag>
       </tags>
   </entry>
   <entry>

@@ -90,7 +90,19 @@
 <meta property="og:description" content="一、写在前面继上一篇文章《Keil系列教程13_创建多目标工程》，本文接着讲述创建多工程的工作空间。 本文「创建多工程工作空间」主要的内容不多，会讲述一部分额外的相关内容。 创建多工程工作空间一般用于项目中有多个工程，为了统一管理项目。一般初学者不常用。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_%E5%B7%A5%E7%A8%8B%E7%9B%AE%E6%A0%87%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE%EF%BC%88%E4%B8%80%EF%BC%89/4.%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E3%80%81%E5%B7%A5%E7%A8%8B%E3%80%81%E7%9B%AE%E6%A0%87%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.png?raw=true">
-<meta property="og:updated_time" content="2018-12-18T09:48:50.739Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/1.%E6%95%B4%E7%90%86%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/2.%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/3.%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/4.%E6%B7%BB%E5%8A%A0%E5%B7%A5%E7%A8%8B.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/5.%E6%B7%BB%E5%8A%A0%E5%B7%A5%E7%A8%8B%EF%BC%88%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%EF%BC%89.gif?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/6.%E6%B7%BB%E5%8A%A0%E5%AE%8C%E6%88%90%E5%A4%9A%E5%B7%A5%E7%A8%8B.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/7.%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E5%BF%AB%E6%8D%B7%E6%8C%89%E9%92%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/8.%E8%8F%9C%E5%8D%95%E8%BF%9B%E5%85%A5%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/9.%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/10.%E6%BF%80%E6%B4%BB%E5%B7%A5%E7%A8%8B.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/11.%E8%BF%9B%E5%85%A5%E5%88%86%E6%89%B9%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/12.%E5%88%86%E6%89%B9%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE.png?raw=true">
+<meta property="og:updated_time" content="2018-12-18T09:57:38.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keil系列教程14_创建多工程工作空间">
 <meta name="twitter:description" content="一、写在前面继上一篇文章《Keil系列教程13_创建多目标工程》，本文接着讲述创建多工程的工作空间。 本文「创建多工程工作空间」主要的内容不多，会讲述一部分额外的相关内容。 创建多工程工作空间一般用于项目中有多个工程，为了统一管理项目。一般初学者不常用。">
@@ -437,42 +449,42 @@
 <p>4.文末将提供这个例子代码供大家下载。</p>
 <h1 id="四、创建工作空间"><a href="#四、创建工作空间" class="headerlink" title="四、创建工作空间"></a>四、创建工作空间</h1><p>创建多目标工作空间，就是<strong>先创建一个工作空间（Workspace），再将创建好的工程（Project）添加带工作空间即可</strong>。</p>
 <p>这一章节讲述<strong>创建工作空间，添加工程的基本操作</strong>，下一章节讲述多工程的相关内容。</p>
-<h2 id="4-1-整理文件夹及文件"><a href="#4-1-整理文件夹及文件" class="headerlink" title="4.1 整理文件夹及文件"></a>4.1 整理文件夹及文件</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-1-整理文件夹及文件"><a href="#4-1-整理文件夹及文件" class="headerlink" title="4.1 整理文件夹及文件"></a>4.1 整理文件夹及文件</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/1.%E6%95%B4%E7%90%86%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%8A%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
 <p>我们这里3个工程<strong>使用公共的库Libraries</strong>，一般在实际应用中也存在类似情况，比如多个工程共同使用一些源代码、算法库等。</p>
 <h2 id="4-2-创建工作空间"><a href="#4-2-创建工作空间" class="headerlink" title="4.2 创建工作空间"></a>4.2 创建工作空间</h2><p>打开Keil软件 -&gt; Project -&gt; New Multi-Project Workspace：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/2.%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4.png?raw=true"><br></table>
 
-<h2 id="4-3-保存工作空间"><a href="#4-3-保存工作空间" class="headerlink" title="4.3 保存工作空间"></a>4.3 保存工作空间</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-3-保存工作空间"><a href="#4-3-保存工作空间" class="headerlink" title="4.3 保存工作空间"></a>4.3 保存工作空间</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/3.%E4%BF%9D%E5%AD%98%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4.png?raw=true"><br></table>
 
-<h2 id="4-4-添加工程"><a href="#4-4-添加工程" class="headerlink" title="4.4 添加工程"></a>4.4 添加工程</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-4-添加工程"><a href="#4-4-添加工程" class="headerlink" title="4.4 添加工程"></a>4.4 添加工程</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/4.%E6%B7%BB%E5%8A%A0%E5%B7%A5%E7%A8%8B.png?raw=true"><br></table>
 
-<table><br>添加工程动画效果：<br><img align="left" width="600" src=""><br></table>
+<table><br>添加工程动画效果：<br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/5.%E6%B7%BB%E5%8A%A0%E5%B7%A5%E7%A8%8B%EF%BC%88%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%EF%BC%89.gif?raw=true"><br></table>
 
-<h2 id="4-5-添加完成多工程"><a href="#4-5-添加完成多工程" class="headerlink" title="4.5 添加完成多工程"></a>4.5 添加完成多工程</h2><table><br><img align="left" width="600" src=""><br></table>
+<h2 id="4-5-添加完成多工程"><a href="#4-5-添加完成多工程" class="headerlink" title="4.5 添加完成多工程"></a>4.5 添加完成多工程</h2><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/6.%E6%B7%BB%E5%8A%A0%E5%AE%8C%E6%88%90%E5%A4%9A%E5%B7%A5%E7%A8%8B.png?raw=true"><br></table>
 
 <p>到这里，包含多个工程的工作空间就创建完成了。如果前面创建的3个工程没有问题，则可直接在该工作空间选择工程进行编译、下载等操作。</p>
 <h1 id="五、多工程相关内容"><a href="#五、多工程相关内容" class="headerlink" title="五、多工程相关内容"></a>五、多工程相关内容</h1><p>这一章节讲述多工程工作空间相关的一些内容：工作空间管理、激活工程、编译选项等。</p>
 <h2 id="5-1-工作空间管理"><a href="#5-1-工作空间管理" class="headerlink" title="5.1 工作空间管理"></a>5.1 工作空间管理</h2><p>进入工作空间管理有多种方式：<br><strong>1.快捷按钮</strong></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/7.%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86%E5%BF%AB%E6%8D%B7%E6%8C%89%E9%92%AE.png?raw=true"><br></table>
 
 <p><strong>2.菜单</strong></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/8.%E8%8F%9C%E5%8D%95%E8%BF%9B%E5%85%A5%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86.png?raw=true"><br></table>
 
 <p><strong>工作空间管理</strong></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/9.%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86.png?raw=true"><br></table>
 
 <p>工作空间管理，主要就是<strong>添加、删除、上下移动工程，以及设置“选中”工程为活动（当前使用）工程</strong>。</p>
 <h2 id="5-2-激活工程"><a href="#5-2-激活工程" class="headerlink" title="5.2 激活工程"></a>5.2 激活工程</h2><p>我们工作空间中一般有多个工程，但我们一个时间只能编译、下载、调试一个工程。</p>
 <p>那么，我们就需要选中其中一个作为当前使用的工程，简单说就是需要激活一个工程。</p>
 <p>激活的方法可以在上面工程管理点击“Set as Active Project”实现，也可以通过如下图方式实现：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/10.%E6%BF%80%E6%B4%BB%E5%B7%A5%E7%A8%8B.png?raw=true"><br></table>
 
 <h2 id="5-3-编译选项"><a href="#5-3-编译选项" class="headerlink" title="5.3 编译选项"></a>5.3 编译选项</h2><p>在该教程3,4中讲述工具栏按钮和菜单时，讲过关于编译的几个选项，其中一个「Batch Build分批编译」就是用于本文的多工程。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/11.%E8%BF%9B%E5%85%A5%E5%88%86%E6%89%B9%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE.png?raw=true"><br></table>
 
 <p>进入分批编译设置：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B14_%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B7%A5%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4/12.%E5%88%86%E6%89%B9%E7%BC%96%E8%AF%91%E8%AE%BE%E7%BD%AE.png?raw=true"><br></table>
 
 <p>如果你勾选了所有工程，编译的时候会把工作空间下所有工程都进行编译。大家试一下就明白，很好理解的。</p>
 <h1 id="六、下载"><a href="#六、下载" class="headerlink" title="六、下载"></a>六、下载</h1><p>为方便大家学习，我这里提供可直接编译运行的源代码工程供大家下载。</p>

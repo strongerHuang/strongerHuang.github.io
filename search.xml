@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ST-Link资料]]></title>
+    <url>%2FST-Link%2FST-Link%E8%B5%84%E6%96%99.html</url>
+    <content type="text"><![CDATA[一、写在前面 本文对【ST-Link资料】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【ST-Link资料】即可查看。 二、教程列表ST-Link资料01_ST-Link介绍，认识各版本硬件及特征ST-Link资料02_ST-Link固件介绍，及固件命名规则 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>ST-Link资料</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>ST-Link</tag>
+        <tag>调试器</tag>
+        <tag>编程器</tag>
+        <tag>下载器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ST-Link资料02_ST-Link固件介绍，及固件命名规则]]></title>
+    <url>%2FST-Link%2FST-Link%E8%B5%84%E6%96%9902_ST-Link%E5%9B%BA%E4%BB%B6%E4%BB%8B%E7%BB%8D%EF%BC%8C%E5%8F%8A%E5%9B%BA%E4%BB%B6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99.html</url>
+    <content type="text"><![CDATA[一、写在前面一些人可能看了上一篇关于ST-Link的内容，就会产生疑惑。。。 ST-Link有那么多硬件版本，那么里面的软件（固件）都一样吗？ 我的ST-Link可以升级不同版本的固件吗？ 二、关于ST-Link固件固件Firmware，一般指写入硬件（芯片）里面的程序。 相信大家都看到过ST-Link硬件，里面的MCU就是一块STM32F103R8或RB芯片（不同硬件有差异）。 其实，里面就是STM32程序 ，我们称里面的程序为ST-Link固件。 所以，只要你有固件，设计一样的硬件，就可以做成一个ST-Link了，这就是所谓的山寨ST-Link（后续文章讲述如何自制ST-Link）。 三、ST-Link命名规则由于ST-link硬件和功能的多样性，ST-Link的固件同样也具有多样性，也就是有多种版本。 比如，在升级的时候，我们会看到类似如下版本信息V2.J33.S7，你们知道这代表什么吗？ ST-Link固件命名遵循一定规则，相信很多朋友都没有关注过这个问题，下面详细讲述。 3.1 命名规则主要版本1：代表ST-LINK/V12：代表ST-LINK/V2， ST-LINK/V2-1，ST-LINK/V2-A和 ST-LINK/V2-B3：代表STLINK-V3SET 和 STLINK-V3E 比如V2.J33.S7就是属于V2版本的ST-Link。 次要版本J：支持STM32调试接口的版本(JTAG和SWD协议)。值0表示不支持该接口(对于STM8的Discovery板，如：V2.J0.S4)。 S：支持STM8调试接口的版本(SWIM协议)。值0表示不支持该接口(对于某些STM32的Discovery和Eval板，如：V2.J33.S0) M：用于大容量存储和虚拟COM端口接口的版本（如：V2.J33.M25）。 B：桥接界面版本（V3.J1.M1.B1.S1）。 3.2 举例说明为了让大家进一步了解，下面举几个例说明一下。V1.J13.S4：是ST-LINK/V1独立版本。 V2.J27.S6：是ST-LINK/V2独立版本(具有STM32和STM8调试接口)。 V2.J27.S0：是32F401CDISCOVERY开发板自带ST-Link(具有STM32调试接口，没有STM8调试接口，没有大容量存储接口，没有虚拟COM端口)的版本。 V2.J27.M15：是用于核板和其他ST-LINK/V2-1、ST-LINK/V2-A、ST-LINK/V2-B板(具有STM32调试接口、大容量存储接口、虚拟COM端口)的版本。 V3.J1.M1.B1.S1：是STLINK-V3SET的一个版本(具有STM8和STM32调试接口、大容量存储接口、虚拟COM端口、网桥接口)。 3.3 强调说明ST-Link固件的类型与硬件紧密相连。因此，不可能更改给定板的固件类型(例如：从V2.J27.S6更改为V2.J27.M15)。只能更新同一类型固件的版本(例如：V2.J25.M14到V2.J27.M15)。 所以，ST-Link升级时，固件类型是升级工具自动识别类型，一般不能更改的类型。（后面文章讲述升级相关内容）。 四、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看全系列教程。 五、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>ST-Link资料</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>ST-Link</tag>
+        <tag>调试器</tag>
+        <tag>编程器</tag>
+        <tag>下载器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ST-Link资料01_ST-Link介绍，认识各版本硬件及特征]]></title>
+    <url>%2FST-Link%2FST-Link%E8%B5%84%E6%96%9901_ST-Link%E4%BB%8B%E7%BB%8D%EF%BC%8C%E8%AE%A4%E8%AF%86%E5%90%84%E7%89%88%E6%9C%AC%E7%A1%AC%E4%BB%B6%E5%8F%8A%E7%89%B9%E5%BE%81.html</url>
+    <content type="text"><![CDATA[一、写在前面想必学习过STM32的朋友都应该知道ST-Link这个工具，但大部分人对它的认识仅仅处于表面，只知道它有在线调试、编程（下载）功能。 我一路过来，对ST-Link也积累了一些“扩展”知识，所以特地写下几篇关于ST-Link的专栏文章。 该专栏以简单、基础为原则，重点突出其中内容，相信该专栏文章对你有所帮助。 二、ST-Link介绍ST-Link是用于STM8和STM32微控制器的在线调试器和编程器，也是大家口中的下载器。 ST-Link具有SWIM、JTAG / SWD等通信接口，用于与STM8或STM32微控制器进行通信（各版本有差异）。 三种接口说明：· SWIM：Single Wire Interface Module，单线接口模块。· JTAG：Joint Test Action Group，联合测试工作组，是一种国际标准测试协议。· SWD：Serial Wire Debugging，串行调试接口。 STM8使用USB全速接口与ST Visual Develop（STVD集成开发环境）或ST Visual Program（STVP编程软件）进行通信。 STM32使用USB全速接口与ATOLLIC®，IAR™，KEIL™或TASKING™集成开发环境进行通信。同时，与STVP、STM32 ST-LINK utility、STM32CubeProg编程软件进行通信。 三、ST-Link硬件ST-Link的硬件，官方推出了三大版本：V1、V2和V3。同时，在ST开发板上也自带有ST-Link工具，但其ST-Link版本因开发板不同而各有不同。 ST-Link三大版本硬件上差异还是比较大，所以相应功能也有差异，后续逐渐讲述，下面认识一下各版本硬件。 3.1 ST-Link V1官方地址：https://www.st.com/en/development-tools/st-link.html V1是比较老的版本，目前市面上很少看见有V1版，基本被V2版取代了。 3.2 ST-Link V2官方地址：https://www.st.com/en/development-tools/st-link-v2.html V2包含两个版本：ST-LINK/V2（标准版） 和 ST-LINK/V2-ISOL（隔离版）。 隔离版具有信号隔离功能，但价格要比标准版贵几倍。 3.3 ST-Link V3官方地址：https://www.st.com/en/development-tools/stlink-v3set.html V3是18年下半年新推出的一个版本，功能、速度上也是有很大差异。目前（19年1月）官网指导价35美元，市面上普及率还不是很高。 3.4 开发板自带ST-LinkST原厂推出的各种Nucleo、Discovery Kits、Eval Boards开发板基本都自带有一个ST-link。 这些板子上自带的ST-Link版本各有不同，像以前一些较老的开发板自带的ST-Link为V1版本。这后面新推出的开发板自带的ST-Link基本都是V2及V2的衍生版本。 3.5 山寨ST-link相信10个使用S-Link的人中，有9个都用过山寨ST-link（我也不例外）。目前市面上山寨的ST-Link，大部分是山寨V2标准版。 山寨的ST-Link主要的特点就是便宜，一般某宝上10~20元就能买一个。里面固件一般没什么问题，可以直接升级ST官方的固件，最大差异就是硬件。 如果运气好，能用很久。我有一个山寨货，用了好几年，期间电源短路、芯片发烫等各种折磨，至今都是好的。 当然，如果运气差，可能买回来下载一次就不坏了，而且还有可能损坏你的目标芯片（STM8/32）。 四、ST-Link各版本特征ST-Link站在硬件的角度，目前（2019年01月）官网还将其分为以下6各版本：·ST-LINK/V1·ST-LINK/V2·ST-LINK/V2-1·ST-LINK/V2-A·ST-LINK/V2-B·ST-LINK-V3SET 这些版本就是位于上面章节说的ST-Link硬件中，主要就是V2衍生出了几个版本，嵌入到Nucleo、Discovery Kits、Eval Boards这些开发板中。 这是站在硬件角度来分的几个版本，其实站在软件角度（固件），也是可以分很多版本（后续文章讲述）。 为了让大家更加了解这几个版本，下面给出这几个版本主要特征（来自ST官网信息）。4.1 ST-LINK/V1特征 4.2 ST-LINK/V2特征 4.3 ST-LINK/V2-1特征 4.4 ST-LINK/V2-A特征 4.5 ST-LINK/V2-B特征 4.6 ST-LINK-V3SET特征 4.7 简述各版本来历ST-Link是随着时间的推移，功能和版本逐渐在更新。ST-Link的前两个版本都是独立的，并嵌入到Discovery和Eval Boards开发板中。 这两个版本是：·ST-LINK/V1·ST-LINK/V2 第三个ST-Link版本ST-LINK/V2-1是ST-LINK/V2的演化，增加了USB接口(大容量存储接口和虚拟COM端口)，在应用板中对STM32单片机进行了更好的电源管理控制。 为了支持ST-LINK/V2版本的一些功能，后来又实现了ST-LINK/V2版本的另外两个版本:·ST-LINK/V2-A：用于大容量存储·ST-LINK/V2-B：用于大容量存储和虚拟COM端口 ST-LINK-V3是目前（2019年01月）最新、功能最强大的一款。它首先作为一个模块化的独立探针(STLINK-V3SET)引入，也可以嵌入到演示板(STLINK-V3E)中。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看全系列教程。 六、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>ST-Link资料</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>ST-Link</tag>
+        <tag>调试器</tag>
+        <tag>编程器</tag>
+        <tag>下载器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Keil系列教程]]></title>
     <url>%2FKeil%2FKeil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
     <content type="text"><![CDATA[一、写在前面 本文对【Keil系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看。 二、教程列表Keil系列教程01_Keil介绍、下载、安装与注册Keil系列教程02_新建基础软件工程Keil系列教程03_主窗口和工具栏详细说明Keil系列教程04_菜单概述Keil系列教程05_工程目标选项配置（一）Keil系列教程06_工程目标选项配置（二）Keil系列教程07_Configuration（一）Keil系列教程08_Configuration（二）Keil系列教程09_调试仿真Keil系列教程10_文件类型及相关描述Keil系列教程11_工程窗口图标说明Keil系列教程12_map文件全面解析Keil系列教程13_创建多目标工程Keil系列教程14_创建多工程工作空间Keil系列教程15_编辑窗口右键菜单选项说明 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>

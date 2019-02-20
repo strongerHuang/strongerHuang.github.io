@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9903_ST-Link%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E3%80%81%E9%A9%B1%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/10.%E6%9B%B4%E6%96%B0%E9%A9%B1%E5%8A%A8.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9903_ST-Link%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E3%80%81%E9%A9%B1%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/11.%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8.png?raw=true">
 <meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9903_ST-Link%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E3%80%81%E9%A9%B1%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/12.%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8%E5%AE%8C%E6%88%90.png?raw=true">
-<meta property="og:updated_time" content="2019-02-19T08:12:54.585Z">
+<meta property="og:updated_time" content="2019-02-20T03:27:28.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ST-Link资料03_ST-Link固件升级、驱动下载安装方法">
 <meta name="twitter:description" content="一、写在前面前两篇文章讲述的都是关于ST-Link的一些理论知识，建议初学者看看：ST-Link资料01_ST-Link介绍，认识各版本硬件及特征ST-Link资料02_ST-Link固件介绍，及固件命名规则 本文讲述的就是实践内容：升级固件和安装驱动。这些内容大部分人都没在意过，这里就带领大家了解一下。">
@@ -471,7 +471,7 @@
 <h2 id="2-4-通过MDK-ARM升级固件"><a href="#2-4-通过MDK-ARM升级固件" class="headerlink" title="2.4 通过MDK-ARM升级固件"></a>2.4 通过MDK-ARM升级固件</h2><p>Project -&gt; Options for Target -&gt; Debug -&gt; Setting可以看见如下界面：</p>
 <table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9903_ST-Link%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E3%80%81%E9%A9%B1%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/8.%E9%80%9A%E8%BF%87MDK-ARM%E5%8D%87%E7%BA%A7%E5%9B%BA%E4%BB%B6.png?raw=true"><br></table>
 
-<p>这里集成的升级工具是<strong>基于Windows</strong>平台，所以，电机Update之后，和上面Windows平台操作方式一样。</p>
+<p>这里集成的升级工具是<strong>基于Windows</strong>平台，所以，点击Update之后，和上面Windows平台操作方式一样。</p>
 <p>像这种开发STM32的IDE中很多都集成了这个升级工具，比如EWARM同样也有。</p>
 <p>同样，这里的固件也可能<strong>不是最新的版本的</strong>。因此，推荐使用第一种方法下载官网最新的固件。</p>
 <h2 id="2-5-升级提示"><a href="#2-5-升级提示" class="headerlink" title="2.5 升级提示"></a>2.5 升级提示</h2><p><strong>A.</strong>通过类似STM32CubePro集成的固件不一定是最新的；</p>
@@ -479,14 +479,14 @@
 <p><strong>C.</strong>ST-Link可以自由升级不影响，如果山寨J-Link升级就需要谨慎。</p>
 <h1 id="三、驱动下载安装"><a href="#三、驱动下载安装" class="headerlink" title="三、驱动下载安装"></a>三、驱动下载安装</h1><p>有些人ST-Link不能使用，<strong>有可能就是USB驱动有问题导致的</strong>。所以，如果你的ST-Link有问题了，可以更新一下驱动，看看是不是驱动导致的。</p>
 <p>同样，ST-Link驱动的安装方法有很多种，依然建议大家通过下载官方最新的ST-Link驱动。</p>
-<p>##　3.1 下载官方最新驱动<br>地址：<br><a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank" rel="noopener">https://www.st.com/en/development-tools/stsw-link009.html</a></p>
+<h2 id="3-1-下载官方最新驱动"><a href="#3-1-下载官方最新驱动" class="headerlink" title="3.1 下载官方最新驱动"></a>3.1 下载官方最新驱动</h2><p>地址：<br><a href="https://www.st.com/en/development-tools/stsw-link009.html" target="_blank" rel="noopener">https://www.st.com/en/development-tools/stsw-link009.html</a></p>
 <table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9903_ST-Link%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E3%80%81%E9%A9%B1%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/9.%E4%B8%8B%E8%BD%BD%E5%AE%98%E6%96%B9%E6%9C%80%E6%96%B0%E9%A9%B1%E5%8A%A8.png?raw=true"><br></table>
 
 <p>目前（2019年02月）官网最新驱动版本为V2.0.1,基于<strong>ST-LINK， ST-LINK/V2， ST-LINK/V2-1， ST-LINK-V3</strong>，支持32或64位<strong>Windows 7、 8、 10</strong>操作系统。</p>
 <p>如果连接ST-Link到电脑，在你的设备管理器中出现类似“未知设备”这种情况，可以选择“更新驱动程序”。</p>
 <table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9903_ST-Link%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E3%80%81%E9%A9%B1%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/10.%E6%9B%B4%E6%96%B0%E9%A9%B1%E5%8A%A8.png?raw=true"><br></table>
 
-<p>##　3.2 其他安装方式<br>我们上面说了固件升级的多种方式，其实，在<strong>STM32 ST-LINK Utility、 STM32CubeProg</strong>编程软件，以及<strong>MDK-ARM、 EWARM</strong>这类IDE中同样也<strong>集成了ST-Link的USB驱动程序</strong>，一般在安装这些软件的时候会提示安装驱动。</p>
+<h2 id="3-2-其他安装方式"><a href="#3-2-其他安装方式" class="headerlink" title="3.2 其他安装方式"></a>3.2 其他安装方式</h2><p>我们上面说了固件升级的多种方式，其实，在<strong>STM32 ST-LINK Utility、 STM32CubeProg</strong>编程软件，以及<strong>MDK-ARM、 EWARM</strong>这类IDE中同样也<strong>集成了ST-Link的USB驱动程序</strong>，一般在安装这些软件的时候会提示安装驱动。</p>
 <table><br>如下图，提示安装驱动：<br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9903_ST-Link%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E3%80%81%E9%A9%B1%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/11.%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8.png?raw=true"><br></table>
 
 <table><br>安装成功：<br><img align="left" width="500" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9903_ST-Link%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7%E3%80%81%E9%A9%B1%E5%8A%A8%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/12.%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8%E5%AE%8C%E6%88%90.png?raw=true"><br></table>
@@ -582,8 +582,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/ST-Link/ST-Link资料.html" rel="prev" title="ST-Link资料">
-                ST-Link资料 <i class="fa fa-chevron-right"></i>
+              <a href="/ST-Link/ST-Link资料04_ST-Link编程应用，以及指示灯说明.html" rel="prev" title="ST-Link资料04_ST-Link编程应用，以及指示灯说明">
+                ST-Link资料04_ST-Link编程应用，以及指示灯说明 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -671,7 +671,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -783,7 +783,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、固件升级"><span class="nav-text">二、固件升级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-下载官网固件工具包升级（推荐）"><span class="nav-text">2.1 下载官网固件工具包升级（推荐）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Windows平台"><span class="nav-text">2.1.1 Windows平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-AllPlatforms"><span class="nav-text">2.1.2 AllPlatforms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-通过STM32-ST-LINK-Utility升级"><span class="nav-text">2.2 通过STM32 ST-LINK Utility升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-通过STM32CubeProg升级固件"><span class="nav-text">2.3 通过STM32CubeProg升级固件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-通过MDK-ARM升级固件"><span class="nav-text">2.4 通过MDK-ARM升级固件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-升级提示"><span class="nav-text">2.5 升级提示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、驱动下载安装"><span class="nav-text">三、驱动下载安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、说明"><span class="nav-text">四、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、最后"><span class="nav-text">五、最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、固件升级"><span class="nav-text">二、固件升级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-下载官网固件工具包升级（推荐）"><span class="nav-text">2.1 下载官网固件工具包升级（推荐）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Windows平台"><span class="nav-text">2.1.1 Windows平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-AllPlatforms"><span class="nav-text">2.1.2 AllPlatforms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-通过STM32-ST-LINK-Utility升级"><span class="nav-text">2.2 通过STM32 ST-LINK Utility升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-通过STM32CubeProg升级固件"><span class="nav-text">2.3 通过STM32CubeProg升级固件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-通过MDK-ARM升级固件"><span class="nav-text">2.4 通过MDK-ARM升级固件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-升级提示"><span class="nav-text">2.5 升级提示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、驱动下载安装"><span class="nav-text">三、驱动下载安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-下载官方最新驱动"><span class="nav-text">3.1 下载官方最新驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-其他安装方式"><span class="nav-text">3.2 其他安装方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、说明"><span class="nav-text">四、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、最后"><span class="nav-text">五、最后</span></a></li></ol></div>
             
 
           </div>

@@ -89,10 +89,17 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面这篇写的是关于ST-Link的实际编程和调试应用的场景，以及概述一下ST-Link上面两种颜色LED亮灭，及闪烁的含义。 这篇文章贴近实际应用，初学者有必要掌握这些知识。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-20T06:06:47.097Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/1.STM32CubeProg%E5%90%AF%E5%8A%A8%E7%95%8C%E9%9D%A2.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/2.STM32CubeProg%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/3.ST-LINK%20Utility%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/4.ST-LINK%20Utility%E4%B8%8B%E8%BD%BD.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/5.STVP%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/6.MDK-ARM%E4%B8%8B%E8%BD%BD%E3%80%81%E8%B0%83%E8%AF%95.png?raw=true">
+<meta property="og:updated_time" content="2019-02-20T06:16:30.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ST-Link资料04_ST-Link编程应用，以及指示灯说明">
 <meta name="twitter:description" content="一、写在前面这篇写的是关于ST-Link的实际编程和调试应用的场景，以及概述一下ST-Link上面两种颜色LED亮灭，及闪烁的含义。 这篇文章贴近实际应用，初学者有必要掌握这些知识。">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/1.STM32CubeProg%E5%90%AF%E5%8A%A8%E7%95%8C%E9%9D%A2.png?raw=true">
 
 
 
@@ -421,21 +428,21 @@
 <a id="more"></a>
 <h1 id="二、ST-Link编程和调试应用"><a href="#二、ST-Link编程和调试应用" class="headerlink" title="二、ST-Link编程和调试应用"></a>二、ST-Link编程和调试应用</h1><p>下面罗列一些关于ST-Link<strong>常见的编程和调试应用</strong>，看看你知道哪些？</p>
 <h2 id="2-1-STM32CubeProg编程"><a href="#2-1-STM32CubeProg编程" class="headerlink" title="2.1 STM32CubeProg编程"></a>2.1 STM32CubeProg编程</h2><p>地址：<br><a href="https://www.st.com/en/development-tools/stm32cubeprog.html" target="_blank" rel="noopener">https://www.st.com/en/development-tools/stm32cubeprog.html</a></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/1.STM32CubeProg%E5%90%AF%E5%8A%A8%E7%95%8C%E9%9D%A2.png?raw=true"><br></table>
 
 <p>STM32CubeProg的<strong>主要功能就是编程（下载）</strong>，支持Windows、 Linux、 macOS操作系统。</p>
 <p>同时，需要安装JRE环境，安装地址：<br><a href="https://www.java.com/zh_CN/download" target="_blank" rel="noopener">https://www.java.com/zh_CN/download</a></p>
 <p>更多介绍可以参看我公众号的一篇文章：<a href="https://mp.weixin.qq.com/s/exJFtnjYgAB3OsHFIGg6Zw" target="_blank" rel="noopener">几点关于STM32CubeProgrammer的内容</a>。</p>
 <p><strong>STM32CubeProg编程</strong></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/2.STM32CubeProg%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8.png?raw=true"><br></table>
 
 <h2 id="2-2-STM32-ST-LINK-Utility编程"><a href="#2-2-STM32-ST-LINK-Utility编程" class="headerlink" title="2.2 STM32 ST-LINK Utility编程"></a>2.2 STM32 ST-LINK Utility编程</h2><p>地址：<br><a href="https://www.st.com/en/development-tools/stsw-link004.html" target="_blank" rel="noopener">https://www.st.com/en/development-tools/stsw-link004.html</a></p>
 <p>STM32 ST-LINK Utility的功能比STM32CubeProg要稍微简单一些，其主要功能也是<strong>编程（下载）</strong>。</p>
 <p>打开需要下载的可执行文件（hex或bin）,或者直接将文件拖到其中，如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/3.ST-LINK%20Utility%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6.png?raw=true"><br></table>
 
 <p>菜单Target -&gt; Program，或点击编程按钮（如下图），点击Start开始下载，直到完成。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/4.ST-LINK%20Utility%E4%B8%8B%E8%BD%BD.png?raw=true"><br></table>
 
 <p><strong>提示：</strong>如果是bin文件，这里起始地址可以修改。</p>
 <h2 id="2-3-STVP编程"><a href="#2-3-STVP编程" class="headerlink" title="2.3 STVP编程"></a>2.3 STVP编程</h2><p>地址：<br><a href="https://www.st.com/en/development-tools/stvp-stm8.html" target="_blank" rel="noopener">https://www.st.com/en/development-tools/stvp-stm8.html</a></p>
@@ -444,15 +451,13 @@
 <p><strong>STVP：ST Visual Programmer，</strong>可视化编程，和上面STM32CubeProg类似；</p>
 <p>这里主要讲下STVP编程工具，这个编程工具与上面STM32CubeProg、ST-LINK Utility有共同特点：<strong>主要用于编程</strong>。</p>
 <p>但区别在于这个工具可以对STM8，以及较老的ST7编程，同样也是使用ST-Link编程器。</p>
-<p><strong>STVP下载配置</strong></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>STVP下载配置</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/5.STVP%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE.png?raw=true"><br></table>
 
 <p>这款工具主要是集成之前ST7，再到这后面STM8，32。如果你是对STM32量产编程，不建议使用该工具（建议使用STM32CubeProg）。</p>
-<p><strong>说明：</strong><br>这个工具就是STM8和32同时都可以编程的工具，上面两个只针对于STM32.</p>
+<p><strong>说明：</strong><br>这个工具就是STM8和32同时都可以编程的工具，<strong>上面STM32CubeProg和STM32 ST-LINK Utility只针对于STM32</strong>。</p>
 <h2 id="2-4-编程和调试"><a href="#2-4-编程和调试" class="headerlink" title="2.4 编程和调试"></a>2.4 编程和调试</h2><p>这里说下ST-Link的调试应用，一般调试都是基于如STVD、Keil、 IAR等这种集成开发环境（IDE）。</p>
 <p>同样，这类集成开发环境具有编程（下载）的功能，编译好代码之后，可直接下载。</p>
-<p><strong>如DMK-ARM的下载和调试：</strong></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><strong>如DMK-ARM的下载和调试：</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/ST-Link/ST-Link%E8%B5%84%E6%96%9904_ST-Link%E7%BC%96%E7%A8%8B%E5%BA%94%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%8C%87%E7%A4%BA%E7%81%AF%E8%AF%B4%E6%98%8E/6.MDK-ARM%E4%B8%8B%E8%BD%BD%E3%80%81%E8%B0%83%E8%AF%95.png?raw=true"><br></table>
 
 <p>这里推荐阅读我的Keil和IAR系列教程：<br><a href="https://mp.weixin.qq.com/s/o1XLOrLGJ_Xj76zaIn6uXA" target="_blank" rel="noopener">1.【专栏】 Keil系列教程</a></p>
 <p><a href="https://mp.weixin.qq.com/s/L3bhSE-qL-mReNLe4Po-Vg" target="_blank" rel="noopener">2.【专栏】 IAR系列教程</a></p>

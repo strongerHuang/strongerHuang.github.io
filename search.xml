@@ -3,7 +3,22 @@
   <entry>
     <title><![CDATA[ST-Link资料]]></title>
     <url>%2FST-Link%2FST-Link%E8%B5%84%E6%96%99.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【ST-Link资料】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看。 二、教程列表ST-Link资料01_ST-Link介绍，认识各版本硬件及特征ST-Link资料02_ST-Link固件介绍，及固件命名规则ST-Link资料03_ST-Link固件升级、驱动下载安装方法ST-Link资料04_ST-Link编程应用，以及指示灯说明 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【ST-Link资料】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看。 二、教程列表ST-Link资料01_ST-Link介绍，认识各版本硬件及特征ST-Link资料02_ST-Link固件介绍，及固件命名规则ST-Link资料03_ST-Link固件升级、驱动下载安装方法ST-Link资料04_ST-Link编程应用，以及指示灯说明ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件） 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>ST-Link资料</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>ST-Link</tag>
+        <tag>调试器</tag>
+        <tag>编程器</tag>
+        <tag>下载器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）]]></title>
+    <url>%2FST-Link%2FST-Link%E8%B5%84%E6%96%9905_%E8%87%AA%E5%88%B6ST-Link%EF%BC%88%E6%8F%90%E4%BE%9B%E5%8E%9F%E7%90%86%E5%9B%BE%E5%8F%8Ahex%E5%92%8Cbin%E5%9B%BA%E4%BB%B6%EF%BC%89.html</url>
+    <content type="text"><![CDATA[一、写在前面ST-Link的PCB和固件，官方是没有公开的。固件只能通过升级工具进行升级。 关于自制ST-Link的教程在网上比较多，国内外很多电子爱好者都手动自制成功过ST-Link。 某宝上买的山寨ST-Link就是电子爱好者做出来的，大多山寨ST-Link是集成SWD和SWIM这两类接口。SWD：用于STM32编程和调试；SWIM：用于STM8编程和调试； 这篇文章也算是完善该教程，总结了网上各爱好者的经验。自制ST-Link方法大概分如下几步：·获取ST-Link固件·设计ST-Link原理图和PCB（并制作、焊接元器件）·下载并更新ST-Link固件·插上电脑验证，并连接目标板测试 二、获取固件由于官方没有将ST-Link里面源码公开，同时也没有直接给出ST-Link固件（读保护），只能通过“非法”手段获取：方法一：下载网上流传的V2.J16.S4版本固件（可以找找其他版本）。方法二：某宝上找人破解芯片，获取ST官方ST-Link固件。 方法一简单省事，但只能获取固定的V2.J16.S4类型的版本（文末也提供这一版本的hex和bin文件下载）。 方法二可以获取不同类型的ST-Link固件，但这个破解费相对较贵，一般对于个人爱好者不建议。 综合，我们选择获取网上流传的V2.J16.S4版本固件来自制ST-Link。（文末提供下载）。 三、设计原理图和PCB基于V2.J16.S4版本固件（标准V2版本，支持SWD和SWIM接口），我们要怎样设计ST-Link原理图呢？ 可以网上下载现成原理图（文末提供下载），也可以仿照Nucleo、 Discovery、 Eval这类开发板原理图（官方提供下载）。 具体如何设计原理图和PCB对于硬件工程师来说So Easy，我这里也大概说一下仿照官方开发板设计原理图的方法。 3.1 获取现成原理图这个方法相信大家都会，这里需要注意的是：网上很多内容不一定正确，需要你自己排查。我也随机在网上查找了一些，文末提供下载。 所以，在网上找一个现成的原理图，自己参考官网原理图进行对比检查。 3.2 参考官网原理图官方Nucleo、 Discovery、 Eval这类开发板上自带的ST-Link都不对应V2.J16.S4版本固件。 所以，V2.J16.S4版本固件，需要支持SWD和SWIM的两种接口的原理图进行综合一下。比如选择STM8S-DISCO + STM32F429I-DISC1。 综合推荐：先网上找一个现成的原理图，再结合官方开发板进行对比检查。 最后，设计好PCB，制作并焊接元器件。 四、下载并更新ST-Link固件首先，通过一个现有的ST-Link下载V2.J16.S4固件到自制的ST-Link中。 下载方法我前面文章中有讲述，STM32CubeProg、 STM32 ST-LINK Utility、 STVP这类工具都行。 更新固件：推荐下载官方最新固件升级工具包：https://www.st.com/en/development-tools/stsw-link007.html 具体请阅读：ST-Link资料03_ST-Link固件升级、驱动下载安装方法中【固件升级】章节内容。 五、验证1.插上电脑验证，看电脑设备管理器，是否枚举成功（前提已安装USB驱动）； 2.找一块STM32目标板，将自制ST-Link连接目标板，通过STM32CubeProg、 STM32 ST-LINK Utility工具是否能读写操作； 提示：如果都失败，请检查硬件设计是否有问题。 六、下载我这里提供ST-Link原理图，及V2.J16.S4版本的hex和bin固件。 百度网盘：https://pan.baidu.com/s/1P5OeFRJZHM8VRW7YEIIylw提取码：qrg2 提示：网盘链接后期可能会失效，可以关注我微信公众号获取更新链接。 七、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看全系列教程。 八、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
       <categories>
         <category>ST-Link资料</category>
       </categories>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="STM32,ST-Link,调试器,编程器,下载器," />
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="更多内容，尽在微信公众号！">
-<meta name="keywords" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="EmbeddedDevelop">
-<meta property="og:url" content="http://www.strongerhuang.com/archives/2018/07/index.html">
+<meta name="description" content="一、写在前面ST-Link的PCB和固件，官方是没有公开的。固件只能通过升级工具进行升级。 关于自制ST-Link的教程在网上比较多，国内外很多电子爱好者都手动自制成功过ST-Link。 某宝上买的山寨ST-Link就是电子爱好者做出来的，大多山寨ST-Link是集成SWD和SWIM这两类接口。SWD：用于STM32编程和调试；SWIM：用于STM8编程和调试； 这篇文章也算是完善该教程，总结了网">
+<meta name="keywords" content="STM32,ST-Link,调试器,编程器,下载器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）">
+<meta property="og:url" content="http://www.strongerhuang.com/ST-Link/ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）.html">
 <meta property="og:site_name" content="EmbeddedDevelop">
-<meta property="og:description" content="更多内容，尽在微信公众号！">
+<meta property="og:description" content="一、写在前面ST-Link的PCB和固件，官方是没有公开的。固件只能通过升级工具进行升级。 关于自制ST-Link的教程在网上比较多，国内外很多电子爱好者都手动自制成功过ST-Link。 某宝上买的山寨ST-Link就是电子爱好者做出来的，大多山寨ST-Link是集成SWD和SWIM这两类接口。SWD：用于STM32编程和调试；SWIM：用于STM8编程和调试； 这篇文章也算是完善该教程，总结了网">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-21T03:44:52.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="EmbeddedDevelop">
-<meta name="twitter:description" content="更多内容，尽在微信公众号！">
+<meta name="twitter:title" content="ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）">
+<meta name="twitter:description" content="一、写在前面ST-Link的PCB和固件，官方是没有公开的。固件只能通过升级工具进行升级。 关于自制ST-Link的教程在网上比较多，国内外很多电子爱好者都手动自制成功过ST-Link。 某宝上买的山寨ST-Link就是电子爱好者做出来的，大多山寨ST-Link是集成SWD和SWIM这两类接口。SWD：用于STM32编程和调试；SWIM：用于STM8编程和调试； 这篇文章也算是完善该教程，总结了网">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://www.strongerhuang.com/archives/2018/07/"/>
+  <link rel="canonical" href="http://www.strongerhuang.com/ST-Link/ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）.html"/>
 
 
 
 
 
-  <title>归档 | EmbeddedDevelop</title>
+  <title>ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件） | EmbeddedDevelop</title>
   
 
 
@@ -146,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -284,221 +285,284 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.strongerhuang.com/ST-Link/ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="strongerHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EmbeddedDevelop">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h1 class="post-title" itemprop="name headline">ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）</h1>
+        
+
+        <div class="post-meta">
+        
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-21T11:30:00+08:00">
+                2019-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        好! 目前共计 58 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ST-Link资料/" itemprop="url" rel="index">
+                    <span itemprop="name">ST-Link资料</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <footer class="post-footer">
+    <div>
+    
+      <ul class="post-copyright">
+         <li class="post-copyright-link">
+          <strong>本文作者：</strong>
+          <a href="/" title="欢迎访问 strongerHuang 的个人博客">strongerHuang</a>
+        </li>
+
+        <li class="post-copyright-link">
+          <strong>本文链接：</strong>
+          <a href="http://www.strongerhuang.com/ST-Link/ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）.html" title="ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）">http://www.strongerhuang.com/ST-Link/ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）.html</a>
+        </li>
+
+        <li class="post-copyright-license">
+          <strong>版权声明： </strong>
+          本文遵循 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">署名-非商业性使用-禁止演绎 4.0 国际</a> 协议。禁止用于商业用途，转载请微信公众号联系作者授权！
+        </li>
+      </ul>
+    
+    </div>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
-        
-        
-        
+      
+        <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>ST-Link的PCB和固件，官方是没有公开的。固件只能通过升级工具进行升级。</p>
+<p>关于自制ST-Link的教程在网上比较多，国内外很多电子爱好者都手动自制成功过ST-Link。</p>
+<p>某宝上买的山寨ST-Link就是电子爱好者做出来的，大多山寨ST-Link是集成SWD和SWIM这两类接口。<br><strong>SWD：</strong>用于STM32编程和调试；<br><strong>SWIM：</strong>用于STM8编程和调试；</p>
+<p>这篇文章也算是完善该教程，总结了网上各爱好者的经验。自制ST-Link方法大概分如下几步：<br><strong>·获取ST-Link固件</strong><br><strong>·设计ST-Link原理图和PCB</strong>（并制作、焊接元器件）<br><strong>·下载并更新ST-Link固件</strong><br><strong>·插上电脑验证，并连接目标板测试</strong></p>
+<a id="more"></a>
+<h1 id="二、获取固件"><a href="#二、获取固件" class="headerlink" title="二、获取固件"></a>二、获取固件</h1><p>由于官方没有将ST-Link里面源码公开，同时也没有直接给出ST-Link固件（读保护），只能通过“非法”手段获取：<br><strong>方法一：</strong>下载网上流传的V2.J16.S4版本固件（可以找找其他版本）。<br><strong>方法二：</strong>某宝上找人破解芯片，获取ST官方ST-Link固件。</p>
+<p><strong>方法一简单省事</strong>，但只能获取固定的V2.J16.S4类型的版本（文末也提供这一版本的hex和bin文件下载）。</p>
+<p><strong>方法二可以获取不同类型的ST-Link固件</strong>，但这个破解费相对较贵，一般对于个人爱好者不建议。</p>
+<p>综合，我们选择获取<strong>网上流传的V2.J16.S4版本固件</strong>来自制ST-Link。（文末提供下载）。</p>
+<h1 id="三、设计原理图和PCB"><a href="#三、设计原理图和PCB" class="headerlink" title="三、设计原理图和PCB"></a>三、设计原理图和PCB</h1><p>基于V2.J16.S4版本固件（标准V2版本，支持SWD和SWIM接口），我们要<strong>怎样设计ST-Link原理图呢？</strong></p>
+<p>可以网上<strong>下载现成原理图</strong>（文末提供下载），也可以<strong>仿照Nucleo、 Discovery、 Eval这类开发板原理图</strong>（官方提供下载）。</p>
+<p>具体如何设计原理图和PCB对于硬件工程师来说So Easy，我这里也大概说一下仿照官方开发板设计原理图的方法。</p>
+<h2 id="3-1-获取现成原理图"><a href="#3-1-获取现成原理图" class="headerlink" title="3.1 获取现成原理图"></a>3.1 获取现成原理图</h2><p>这个方法相信大家都会，这里需要注意的是：网上很多内容不一定正确，需要你自己排查。我也随机在网上查找了一些，文末提供下载。</p>
+<p>所以，在网上找一个现成的原理图，自己参考官网原理图进行对比检查。</p>
+<h2 id="3-2-参考官网原理图"><a href="#3-2-参考官网原理图" class="headerlink" title="3.2 参考官网原理图"></a>3.2 参考官网原理图</h2><p>官方Nucleo、 Discovery、 Eval这类开发板上自带的ST-Link都不对应V2.J16.S4版本固件。</p>
+<p>所以，V2.J16.S4版本固件，<strong>需要支持SWD和SWIM的两种接口的原理图进行综合一下</strong>。比如选择STM8S-DISCO + STM32F429I-DISC1。</p>
+<p><strong>综合推荐：</strong><br>先网上找一个现成的原理图，再结合官方开发板进行对比检查。</p>
+<p>最后，设计好PCB，制作并焊接元器件。</p>
+<h1 id="四、下载并更新ST-Link固件"><a href="#四、下载并更新ST-Link固件" class="headerlink" title="四、下载并更新ST-Link固件"></a>四、下载并更新ST-Link固件</h1><p>首先，通过一个现有的ST-Link<strong>下载V2.J16.S4固件到自制的ST-Link中</strong>。</p>
+<p>下载方法我前面文章中有讲述，<strong>STM32CubeProg、 STM32 ST-LINK Utility、 STVP</strong>这类工具都行。</p>
+<p><strong>更新固件：</strong><br>推荐下载官方最新固件升级工具包：<br><a href="https://www.st.com/en/development-tools/stsw-link007.html" target="_blank" rel="noopener">https://www.st.com/en/development-tools/stsw-link007.html</a></p>
+<p>具体请阅读：<br><a href="https://www.strongerhuang.com/ST-Link/ST-Link资料03_ST-Link固件升级、驱动下载安装方法.html">ST-Link资料03_ST-Link固件升级、驱动下载安装方法</a>中【固件升级】章节内容。</p>
+<h1 id="五、验证"><a href="#五、验证" class="headerlink" title="五、验证"></a>五、验证</h1><p><strong>1.</strong>插上电脑验证，看电脑设备管理器，是否枚举成功（前提已安装USB驱动）；</p>
+<p><strong>2.</strong>找一块STM32目标板，将自制ST-Link连接目标板，通过STM32CubeProg、 STM32 ST-LINK Utility工具是否能读写操作；</p>
+<p><strong>提示：</strong><br>如果都失败，请检查硬件设计是否有问题。</p>
+<h1 id="六、下载"><a href="#六、下载" class="headerlink" title="六、下载"></a>六、下载</h1><p>我这里提供ST-Link原理图，及V2.J16.S4版本的hex和bin固件。</p>
+<p>百度网盘：<br><a href="https://pan.baidu.com/s/1P5OeFRJZHM8VRW7YEIIylw" target="_blank" rel="noopener">https://pan.baidu.com/s/1P5OeFRJZHM8VRW7YEIIylw</a><br>提取码：qrg2</p>
+<p><strong>提示：</strong><br>网盘链接后期可能会失效，可以关注我微信公众号获取更新链接。</p>
+<h1 id="七、说明"><a href="#七、说明" class="headerlink" title="七、说明"></a>七、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>
+<p>2.本文由我一个人编辑并整理，难免存在一些错误。</p>
+<p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看全系列教程。  </p>
+<h1 id="八、最后"><a href="#八、最后" class="headerlink" title="八、最后"></a>八、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p>
+<p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>
 
-        
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/strongerHuang.jpg" alt="strongerHuang wechat" style="width: 200px; max-width: 100%;"/>
+    <div>关注微信公众号，查看更多精彩内容!</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>本文对你有帮助吗？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="strongerHuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="strongerHuang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+            <a href="/tags/STM32/" rel="tag"># STM32</a>
+          
+            <a href="/tags/ST-Link/" rel="tag"># ST-Link</a>
+          
+            <a href="/tags/调试器/" rel="tag"># 调试器</a>
+          
+            <a href="/tags/编程器/" rel="tag"># 编程器</a>
+          
+            <a href="/tags/下载器/" rel="tag"># 下载器</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/ST-Link/ST-Link资料04_ST-Link编程应用，以及指示灯说明.html" rel="next" title="ST-Link资料04_ST-Link编程应用，以及指示灯说明">
+                <i class="fa fa-chevron-left"></i> ST-Link资料04_ST-Link编程应用，以及指示灯说明
+              </a>
+            
           </div>
-        
-        
 
-        
+          <span class="post-nav-divider"></span>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程05_菜单概述（二）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程05_菜单概述（二）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-24T18:00:00+08:00"
-              content="2018-07-24" >
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ST-Link/ST-Link资料.html" rel="prev" title="ST-Link资料">
+                ST-Link资料 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程04_菜单概述（一）.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程04_菜单概述（一）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-21T18:00:00+08:00"
-              content="2018-07-21" >
-          07-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程03_主窗口、工具栏的概述.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程03_主窗口、工具栏的概述</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-11T12:00:00+08:00"
-              content="2018-07-11" >
-          07-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+    </footer>
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程02_新建基础软件工程.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程02_新建基础软件工程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-05T22:00:00+08:00"
-              content="2018-07-05" >
-          07-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+    <div>
       
-
         
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/IAR/EWSTM8/EWSTM8系列教程01_IAR介绍、下载、安装和注册.html" itemprop="url">
-              
-                <span itemprop="name">EWSTM8系列教程01_EWSTM8介绍、下载、安装和注册</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-03T20:00:00+08:00"
-              content="2018-07-03" >
-          07-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
     </div>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -506,6 +570,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -526,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -648,6 +725,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、写在前面"><span class="nav-text">一、写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、获取固件"><span class="nav-text">二、获取固件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、设计原理图和PCB"><span class="nav-text">三、设计原理图和PCB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-获取现成原理图"><span class="nav-text">3.1 获取现成原理图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-参考官网原理图"><span class="nav-text">3.2 参考官网原理图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、下载并更新ST-Link固件"><span class="nav-text">四、下载并更新ST-Link固件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、验证"><span class="nav-text">五、验证</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、下载"><span class="nav-text">六、下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、说明"><span class="nav-text">七、说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、最后"><span class="nav-text">八、最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -796,6 +889,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[STM32CubeMX系列教程]]></title>
+    <url>%2FSTM32Cube%2FSTM32CubeMX%2FSTM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
+    <content type="text"><![CDATA[一、写在前面 本文对【STM32CubeMX系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【STM32CubeMX系列教程】即可查看。 二、教程列表STM32CubeMX系列教程01_STM32Cube产品介绍STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 四、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>STM32CubeMX系列教程</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>STM32CubeMX</tag>
+        <tag>LL库</tag>
+        <tag>HAL库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明]]></title>
+    <url>%2FSTM32Cube%2FSTM32CubeMX%2FSTM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E.html</url>
+    <content type="text"><![CDATA[一、写在前面上一篇文章是对STM32CubeMX做了一个简单介绍，可能初学者看了之后也不是很理解。那么本文开始动手实践，实践也是快速掌握知识的一种办法。 本文针对初学者，内容比较基础，主要是给大家起引导作用。 包含：下载JRE、STM32CubeMX和HAL库三部分内容。HAL库的几种安装方式。 二、下载本节主要下载内容：JRE、STM32CubeMX和HAL库。 2.1 下载JRE由于 STM32CubeMX 软件是基于 JAVA 环境运行的，所以需要安装 JRE （Java Runtime Environment）才能使用， 建议到官网下载最新版本JRE。 地址：https://www.java.com/en/download/manual.jsp 根据自己操作系统选择下载，我是64位Win10。 JRE百度网盘下载：https://pan.baidu.com/s/1LQ4AF_P4-7B8JlYpTUz0bQ提取码：3h32 2.2 下载STM32CubeMX和HAL库官方地址：www.st.com/stm32cubemx 目前（2019年03月）最新STM32CubeMX版本为V5.1.0，各MCU HAL库最新版本也可以到官网下载。 到官网下载需注册账号，如觉得麻烦，可以到我百度网盘下载，我定期更新。 百度网盘地址：http://pan.baidu.com/s/1dFMFwHF 提示：网盘链接后期可能会失效。 三、安装上面下载JRE、STM32CubeMX和HAL库三样内容是准备工作，本节就是实践安装工作（以Win10为例）。 3.1 安装JRE1.双击（或以管理员方式运行）离线包，点击安装。 2.提示信息，点击确认 3.一路按照提示下去，直到安装成功。 3.2 安装STM32CubeMX现在（2019年03月）最新版本为V5.1.0， 支持安装的系统如下：Windows：7、 8、 10 （32 64位）Linux：RedHat, Ubuntu and Fedora（32 64位）macOS：OS X El Capitan and Sierra 安装STM32CubeMX比较简单，基本一路Next下去就行。 解压下载的STM32CubeMX-5.1.0.zip，若基于Windows，双击SetupSTM32CubeMX-5.1.0.exe即可进入安装就绪。 勾选相应的选项即可 遇到提示点“Yes” 到最后安装完成 3.3 安装HAL库HAL库，也可理解为软件包，有在线安装、离线安装两种方式。 3.3.1 在线安装打开安装好的 STM32CubeMX 软件， 进入库管理界面（Help -&gt; Manage embedded…），会有一个列表， 勾选上你要安装的HAL库， 点击“Install Now” 直到安装成功。 如下图： 这种方式比较简单，需要联网在线下载，可能需要等待一段时间。如果刷新之后，可以看到最新版本，以及一些老版本HAL库。 3.3.2 离线安装离线安装的前提是需要下载好离线包，方法有两种：1.从库管理界面直接导入离线包。2.直接解压离线包到指定路径下。 1.导入离线包 2.直接解压Help -&gt; Updater Settings得到HAL库路径 直接解压HAL库离线包，注意路径、文件夹名需一致： 四、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 五、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>STM32CubeMX系列教程</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>STM32CubeMX</tag>
+        <tag>LL库</tag>
+        <tag>HAL库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[STM32CubeMX系列教程01_STM32Cube产品介绍]]></title>
+    <url>%2FSTM32Cube%2FSTM32CubeMX%2FSTM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_STM32Cube%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D.html</url>
+    <content type="text"><![CDATA[一、写在前面之前开发STM32，大家常见的就是使用寄存器、或者标准外设库进行开发。 但是，从15、16年开始，ST逐渐停止了对标准外设库的更新和维护，转向了HAL和LL库。 ·SPL：Standard Peripheral Library标准外设库·HAL：Hardware Abstraction Layer硬件抽象层库·LL：Low-layer底层库 我写STM32CubeMX系列教程有两个原因： 1.停止标准库更新，使用STM32CubeMX配置HAL/LL库是主流； 2.网上关于STM32CubeMX的教程相对凌乱，没有系统的进行讲解。 该系列教程会从基础开始写起，以及结合实例代码详细讲述。后面实例我计划另开分支，比如针对F1系列就开一个关于F1分支的教程。 二、关于STM32CubeMXSTM32CubeMX是一个图形化的软件配置工具，使用图形向导可以生成STM32初始化代码工程。 STM32CubeMX这个工具是ST目前重点打造的工具，目的就是为了方便开发者，节约时间，提高开发效率 官方地址：https://www.st.com/stm32cubemx STM32CubeMX特性： 1.直观的选择 STM32 微控制器（MCU）和微处理器（MPU）。 2.丰富易用的图形化界面:-自动解决配置冲突-具有参数约束动态验证的外设和中间件功能模式-时钟树与配置的动态验证-功耗预测 3.生成初始化代码工程，包含：EWARM、 MDK-ARM、 TureSTUDIO、 SW4STM32等。 4.针对部分MPU生成Linux设备树。 5.可独立运行在Windows、Linux和macOS上使用，或作为 Eclipse 插件使用。 当然，以上特性来自官网，初学者需要自己安装使用之后才会逐渐了解它，下面给一段关于STM32CubeMX V5的视频介绍： 三、STM32Cube子集介绍上面介绍了STM32CubeMX，其实STM32CubeMX是STM32Cube的一个子集，因为STM32Cube包含多项内容。 一张图了解STM32Cube： 3.1 软件开发工具一套用户友好的软件开发工具，涵盖从概念到实现的项目开发的所有阶段。STM32CubeMX：一个图形化的软件配置工具，可以自动生成C使用图形向导初始化代码（也是该教程的重要工具）。 STM32CubeProgrammer(STM32CubeProg)：图形化和命令行版本的编程工具。 STM32CubeMonitor-Power(STM32CubeMonPwr)：一种用于测量和帮助的监控工具优化单片机的功耗。 3.2 STM32Cube™ 软件包STM32Cube HAL：一套针对特定系列MCU的硬件抽象层（HAL），如STM32Cube_FW_G0。确保整个STM32组合的可移植性。 STM32Cube LL：一套针对MCU底层的库，确保最佳的性能。 中间件组件：如RTOS, USB, TCP/IP。 例程：所有嵌入式软件实用程序与全套外设应用的例程。 更多相关内容可参看我微信公众号『strongerHuang』分享的一篇文章：STM32Cube到底包含哪些工具？ 本文就介绍到这里，更多重要信息请进入官网查看：https://www.st.com/stm32cubemx 四、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 五、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>STM32CubeMX系列教程</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>STM32CubeMX</tag>
+        <tag>LL库</tag>
+        <tag>HAL库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ST-Link资料]]></title>
     <url>%2FST-Link%2FST-Link%E8%B5%84%E6%96%99.html</url>
     <content type="text"><![CDATA[一、写在前面 本文对【ST-Link资料】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该系列教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看。 二、教程列表ST-Link资料01_ST-Link介绍，认识各版本硬件及特征ST-Link资料02_ST-Link固件介绍，及固件命名规则ST-Link资料03_ST-Link固件升级、驱动下载安装方法ST-Link资料04_ST-Link编程应用，以及指示灯说明ST-Link资料05_自制ST-Link（提供原理图及hex和bin固件）ST-Link资料06_与ST-Link相关的STSW-LINK004、007、008、009各是什么？ 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【ST-Link资料】即可查看全系列教程。 四、最后我的博客：http://www.strongerhuang.com我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>

@@ -89,10 +89,25 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面上一篇文章是对STM32CubeMX做了一个简单介绍，可能初学者看了之后也不是很理解。那么本文开始动手实践，实践也是快速掌握知识的一种办法。 本文针对初学者，内容比较基础，主要是给大家起引导作用。 包含：下载JRE、STM32CubeMX和HAL库三部分内容。HAL库的几种安装方式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-15T03:17:16.001Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/1.JRE%E4%B8%8B%E8%BD%BD.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/2.%E4%B8%8B%E8%BD%BDSTM32CubeMX%E5%92%8CHAL%E5%BA%93.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/3.JRE%E5%AE%89%E8%A3%85.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/4.%E6%8F%90%E7%A4%BA.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/5.%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/6.%E5%AE%89%E8%A3%85STM32CubeMX.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/7.%E5%90%8C%E6%84%8F%E5%8D%8F%E8%AE%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/8.YES.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/9.%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/10.%E8%BF%9B%E5%85%A5%E5%BA%93%E7%AE%A1%E7%90%86.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/11.%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/12.%E5%AF%BC%E5%85%A5%E7%A6%BB%E7%BA%BF%E5%8C%85.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/13.%E8%B7%AF%E5%BE%84.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/14.%E8%A7%A3%E5%8E%8B%E4%BD%8D%E7%BD%AE.png?raw=true">
+<meta property="og:updated_time" content="2019-03-15T03:30:26.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明">
 <meta name="twitter:description" content="一、写在前面上一篇文章是对STM32CubeMX做了一个简单介绍，可能初学者看了之后也不是很理解。那么本文开始动手实践，实践也是快速掌握知识的一种办法。 本文针对初学者，内容比较基础，主要是给大家起引导作用。 包含：下载JRE、STM32CubeMX和HAL库三部分内容。HAL库的几种安装方式。">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/1.JRE%E4%B8%8B%E8%BD%BD.png?raw=true">
 
 
 
@@ -436,11 +451,11 @@
 <h2 id="2-1-下载JRE"><a href="#2-1-下载JRE" class="headerlink" title="2.1 下载JRE"></a>2.1 下载JRE</h2><p>由于 STM32CubeMX 软件是基于 JAVA 环境运行的，所以需要安装 JRE （Java Runtime Environment）才能使用， <strong>建议到官网下载最新版本JRE</strong>。</p>
 <p>地址：<a href="https://www.java.com/en/download/manual.jsp" target="_blank" rel="noopener">https://www.java.com/en/download/manual.jsp</a></p>
 <p>根据自己操作系统选择下载，我是64位Win10。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/1.JRE%E4%B8%8B%E8%BD%BD.png?raw=true"><br></table>
 
 <p>JRE百度网盘下载：<br><a href="https://pan.baidu.com/s/1LQ4AF_P4-7B8JlYpTUz0bQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1LQ4AF_P4-7B8JlYpTUz0bQ</a><br>提取码：3h32</p>
 <h2 id="2-2-下载STM32CubeMX和HAL库"><a href="#2-2-下载STM32CubeMX和HAL库" class="headerlink" title="2.2 下载STM32CubeMX和HAL库"></a>2.2 下载STM32CubeMX和HAL库</h2><p>官方地址：<a href="http://www.st.com/stm32cubemx" target="_blank" rel="noopener">www.st.com/stm32cubemx</a></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/2.%E4%B8%8B%E8%BD%BDSTM32CubeMX%E5%92%8CHAL%E5%BA%93.png?raw=true"><br></table>
 
 <p>目前（2019年03月）最新STM32CubeMX版本为V5.1.0，各MCU HAL库最新版本也可以到官网下载。</p>
 <p>到官网下载需注册账号，如觉得麻烦，可以到我百度网盘下载，我定期更新。</p>
@@ -448,45 +463,45 @@
 <p><strong>提示：</strong>网盘链接后期可能会失效。</p>
 <h1 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h1><p>上面下载<strong>JRE、STM32CubeMX和HAL库</strong>三样内容是准备工作，本节就是实践安装工作（以Win10为例）。</p>
 <h2 id="3-1-安装JRE"><a href="#3-1-安装JRE" class="headerlink" title="3.1 安装JRE"></a>3.1 安装JRE</h2><p>1.双击（或以管理员方式运行）离线包，点击安装。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/3.JRE%E5%AE%89%E8%A3%85.png?raw=true"><br></table>
 
 <p>2.提示信息，点击确认</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/4.%E6%8F%90%E7%A4%BA.png?raw=true"><br></table>
 
 <p>3.一路按照提示下去，直到安装成功。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/5.%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png?raw=true"><br></table>
 
 <h2 id="3-2-安装STM32CubeMX"><a href="#3-2-安装STM32CubeMX" class="headerlink" title="3.2 安装STM32CubeMX"></a>3.2 安装STM32CubeMX</h2><p>现在（2019年03月）最新版本为V5.1.0， 支持安装的系统如下：<br><strong>Windows：</strong>7、 8、 10 （32 64位）<br><strong>Linux：</strong>RedHat, Ubuntu and Fedora（32 64位）<br><strong>macOS：</strong>OS X El Capitan and Sierra</p>
 <p>安装STM32CubeMX比较简单，<strong>基本一路Next下去就行</strong>。</p>
 <p>解压下载的STM32CubeMX-5.1.0.zip，若基于Windows，双击SetupSTM32CubeMX-5.1.0.exe即可进入安装就绪。</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/6.%E5%AE%89%E8%A3%85STM32CubeMX.png?raw=true"><br></table>
 
 <p>勾选相应的选项即可</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/7.%E5%90%8C%E6%84%8F%E5%8D%8F%E8%AE%AE.png?raw=true"><br></table>
 
 <p>遇到提示点“Yes”</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/8.YES.png?raw=true"><br></table>
 
 <p>到最后安装完成</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/9.%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90.png?raw=true"><br></table>
 
 <h3 id="3-3-安装HAL库"><a href="#3-3-安装HAL库" class="headerlink" title="3.3 安装HAL库"></a>3.3 安装HAL库</h3><p>HAL库，也可理解为软件包，有<strong>在线安装、离线安装</strong>两种方式。</p>
 <h2 id="3-3-1-在线安装"><a href="#3-3-1-在线安装" class="headerlink" title="3.3.1 在线安装"></a>3.3.1 在线安装</h2><p>打开安装好的 STM32CubeMX 软件， 进入库管理界面（Help -&gt; Manage embedded…），会有一个列表， 勾选上你要安装的HAL库， 点击“Install Now” 直到安装成功。 如下图：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/10.%E8%BF%9B%E5%85%A5%E5%BA%93%E7%AE%A1%E7%90%86.png?raw=true"><br></table>
 
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/11.%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85.png?raw=true"><br></table>
 
 <p>这种方式比较简单，需要联网在线下载，可能需要等待一段时间。如果刷新之后，可以看到最新版本，以及一些老版本HAL库。</p>
 <h3 id="3-3-2-离线安装"><a href="#3-3-2-离线安装" class="headerlink" title="3.3.2 离线安装"></a>3.3.2 离线安装</h3><p>离线安装的前提是需要下载好离线包，方法有两种：1.从库管理界面直接导入离线包。2.直接解压离线包到指定路径下。</p>
 <p><strong>1.导入离线包</strong></p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/12.%E5%AF%BC%E5%85%A5%E7%A6%BB%E7%BA%BF%E5%8C%85.png?raw=true"><br></table>
 
 
 <p><strong>2.直接解压</strong><br>Help -&gt; Updater Settings得到HAL库路径</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/13.%E8%B7%AF%E5%BE%84.png?raw=true"><br></table>
 
 <p>直接解压HAL库离线包，注意路径、文件夹名需一致：</p>
-<table><br><img align="left" width="600" src=""><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_STM32CubeMX%E5%B7%A5%E5%85%B7%E3%80%81HAL%E5%BA%93%E4%B8%8B%E8%BD%BD%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/14.%E8%A7%A3%E5%8E%8B%E4%BD%8D%E7%BD%AE.png?raw=true"><br></table>
 
 
 <h1 id="四、说明"><a href="#四、说明" class="headerlink" title="四、说明"></a>四、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p>

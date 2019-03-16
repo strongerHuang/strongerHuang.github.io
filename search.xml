@@ -3,7 +3,21 @@
   <entry>
     <title><![CDATA[STM32CubeMX系列教程]]></title>
     <url>%2FSTM32Cube%2FSTM32CubeMX%2FSTM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【STM32CubeMX系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【STM32CubeMX系列教程】即可查看。 二、教程列表STM32CubeMX系列教程01_STM32Cube产品介绍STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 四、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【STM32CubeMX系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【STM32CubeMX系列教程】即可查看。 二、教程列表STM32CubeMX系列教程01_STM32Cube产品介绍STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明STM32CubeMX系列教程03_创建并生成代码工程 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 四、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>STM32CubeMX系列教程</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>STM32CubeMX</tag>
+        <tag>LL库</tag>
+        <tag>HAL库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[STM32CubeMX系列教程03_创建并生成代码工程]]></title>
+    <url>%2FSTM32Cube%2FSTM32CubeMX%2FSTM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%B7%A5%E7%A8%8B.html</url>
+    <content type="text"><![CDATA[一、写在前面本文面向初学者，使用STM32CubeMX一步一步配置一个可直接编译下载，并成功运行的代码。 实践操作成功之后有了成就感，大家才会更加有信心继续学习下去。 本文只提供LED闪烁的简单实例讲解，重点是引导初学者入门。 更多实例（如UART、TIM、CAN…）我会单独整理一系列教程，并提供源码分析和下载。 二、准备工作学习STM32CubeMX进行开发，需要有几样准备工作。 2.1 下载安装STM32CubeMX及HAL库请参看文章《STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明》 提示：下载安装MCU对应的HAL库就行。比如：你开发板MCU是STM32F1系列，对应的STM32Cube_FW_F1就行。 2.2 下载安装IDE推荐使用大众化的MDK-ARM这款集成开发环境（IDE）。当然，还支持EWARM、 TureSTUDIO、 SW4STM32等集成开发环境。 请参看文章：Keil系列教程 2.3 准备硬件学习STM32CubeMX，建议大家买一块开发板。某宝上面很多，根据自己经济能力，贵一点，便宜一点都行。以及准备一个ST-Link下载器。 推荐阅读：ST-Link资料 三、创建工程接下来从选择自己型号MCU，到生成代码并成功运行的创建过程。 1.打开STM32CubeMX，进入MCU选择器 进入选择器时会联网更新数据库，可能需要等待一下。 2.选择对应型号MCU 3.时钟源选择如果选择使用外部高速时钟（HSE），则需要在System Core中配置RCC（如下图）。如果使用默认内部时钟（HSI），这一步可以略过。 4.选择GPIO（LED）引脚我们这里使用一个GPIO引脚（PF8）控制LED亮灭。 5.配置时钟ClockSTM32CubeMX配置时钟的界面非常方便，有很多提示（比如最大时钟），很多地方直接点击选择就行了。 默认高速时钟是使用内部（HSI），而且CPU时钟配置的比较低。以我选择的STM32F103，外部8M晶振为例（如下图）。 6.工程管理工程管理器的内容比较多，大部分都默认即可，这里讲述几个要点（如下图），更多选项后期详细讲述。 IDE有几种，如果你不用MDK-ARM，也可选择其他IDE。 7.生成代码以上操作就基本配置完成了一个简单的Demo工程，只需要点击“生成代码”即可。 8.添加代码当然，以上生成的代码还不够完善，需要添加自己的应用代码。 添加如上图这样一段代码，你开发板上LED就会间隔500ms变化一次（呈现闪烁状态）。 添加应用代码：12HAL_Delay(500);HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_8); 提示：1.延时500ms时间需要你时钟配置正确。 2.LED对应引脚需要与你开发实际一致（本文以PF8为例）。 3.生成的MDK-ARM工程，编译下载之后，默认是不会运行代码，需要重新复位一次才能运行，或你自己配置一下（如下图）。 好啦，本文就讲到这里，是不是很简单？请根据自己开发板MCU型号，自己动手实践一下。 四、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 五、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
       <categories>
         <category>STM32CubeMX系列教程</category>
       </categories>

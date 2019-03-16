@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.strongerhuang.com/"/>
-  <updated>2019-03-15T03:18:54.847Z</updated>
+  <updated>2019-03-16T07:47:04.749Z</updated>
   <id>http://www.strongerhuang.com/</id>
   
   <author>
@@ -20,15 +20,46 @@
     <title>STM32CubeMX系列教程</title>
     <link href="http://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html"/>
     <id>http://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX系列教程.html</id>
-    <published>2019-03-15T03:30:00.000Z</published>
-    <updated>2019-03-15T03:18:54.847Z</updated>
+    <published>2019-03-16T08:00:00.000Z</published>
+    <updated>2019-03-16T07:47:04.749Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　本文对【STM32CubeMX系列教程】做了整理并汇总，会随着该系列教程的更新而更新。</p><p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【嵌入式专栏】</a>，关注微信公众号回复【STM32CubeMX系列教程】即可查看。</p><a id="more"></a><h1 id="二、教程列表"><a href="#二、教程列表" class="headerlink" title="二、教程列表"></a>二、教程列表</h1><p><a href="https://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX系列教程01_STM32Cube产品介绍.html">STM32CubeMX系列教程01_STM32Cube产品介绍</a><br><a href="https://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明.html">STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明</a></p><p>正在努力更新中，可关注我微信公众号查看最新消息……</p><h1 id="三、说明"><a href="#三、说明" class="headerlink" title="三、说明"></a>三、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p><p>2.本文由我一个人编辑并整理，难免存在一些错误。</p><p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『<strong>嵌入式专栏</strong>』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。  </p><h1 id="四、最后"><a href="#四、最后" class="headerlink" title="四、最后"></a>四、最后</h1><p>我的知乎：<a href="https://www.zhihu.com/people/strongerHuang.com" target="_blank" rel="noopener">strongerHuang</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p><p>我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>　　本文对【STM32CubeMX系列教程】做了整理并汇总，会随着该系列教程的更新而更新。</p><p>　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于<a href="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true" target="_blank" rel="noopener">微信公众号【嵌入式专栏】</a>，关注微信公众号回复【STM32CubeMX系列教程】即可查看。</p><a id="more"></a><h1 id="二、教程列表"><a href="#二、教程列表" class="headerlink" title="二、教程列表"></a>二、教程列表</h1><p><a href="https://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX系列教程01_STM32Cube产品介绍.html">STM32CubeMX系列教程01_STM32Cube产品介绍</a><br><a href="https://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明.html">STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明</a><br><a href="https://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX系列教程03_创建并生成代码工程.html">STM32CubeMX系列教程03_创建并生成代码工程</a></p><p>正在努力更新中，可关注我微信公众号查看最新消息……</p><h1 id="三、说明"><a href="#三、说明" class="headerlink" title="三、说明"></a>三、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p><p>2.本文由我一个人编辑并整理，难免存在一些错误。</p><p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『<strong>嵌入式专栏</strong>』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。  </p><h1 id="四、最后"><a href="#四、最后" class="headerlink" title="四、最后"></a>四、最后</h1><p>我的知乎：<a href="https://www.zhihu.com/people/strongerHuang.com" target="_blank" rel="noopener">strongerHuang</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p><p>我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>]]></content>
     
     <summary type="html">
     
       &lt;h1 id=&quot;一、写在前面&quot;&gt;&lt;a href=&quot;#一、写在前面&quot; class=&quot;headerlink&quot; title=&quot;一、写在前面&quot;&gt;&lt;/a&gt;一、写在前面&lt;/h1&gt;&lt;p&gt;　　本文对【STM32CubeMX系列教程】做了整理并汇总，会随着该系列教程的更新而更新。&lt;/p&gt;
 &lt;p&gt;　　为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于&lt;a href=&quot;https://github.com/strongerHuang/strongerHuang.github.io/blob/master/images/EmbeddedDevelop.jpg?raw=true&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;微信公众号【嵌入式专栏】&lt;/a&gt;，关注微信公众号回复【STM32CubeMX系列教程】即可查看。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="STM32CubeMX系列教程" scheme="http://www.strongerhuang.com/categories/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="STM32" scheme="http://www.strongerhuang.com/tags/STM32/"/>
+    
+      <category term="STM32CubeMX" scheme="http://www.strongerhuang.com/tags/STM32CubeMX/"/>
+    
+      <category term="LL库" scheme="http://www.strongerhuang.com/tags/LL%E5%BA%93/"/>
+    
+      <category term="HAL库" scheme="http://www.strongerhuang.com/tags/HAL%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32CubeMX系列教程03_创建并生成代码工程</title>
+    <link href="http://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_%E5%88%9B%E5%BB%BA%E5%B9%B6%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%B7%A5%E7%A8%8B.html"/>
+    <id>http://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX系列教程03_创建并生成代码工程.html</id>
+    <published>2019-03-16T07:30:00.000Z</published>
+    <updated>2019-03-16T07:47:54.228Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>本文面向初学者，使用STM32CubeMX一步一步配置一个可直接编译下载，并成功运行的代码。</p><p>实践操作成功之后有了成就感，大家才会更加有信心继续学习下去。</p><p>本文只提供LED闪烁的简单实例讲解，<strong>重点是引导初学者入门</strong>。</p><p>更多实例（如UART、TIM、CAN…）我会单独整理一系列教程，并提供源码分析和下载。</p><a id="more"></a><h1 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h1><p>学习STM32CubeMX进行开发，需要有几样准备工作。</p><h2 id="2-1-下载安装STM32CubeMX及HAL库"><a href="#2-1-下载安装STM32CubeMX及HAL库" class="headerlink" title="2.1 下载安装STM32CubeMX及HAL库"></a>2.1 下载安装STM32CubeMX及HAL库</h2><p>请参看文章<a href="https://www.strongerhuang.com/STM32Cube/STM32CubeMX/STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明.html">《STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明》</a></p><p><strong>提示：</strong>下载安装MCU对应的HAL库就行。<br>比如：你开发板MCU是STM32F1系列，对应的STM32Cube_FW_F1就行。</p><h2 id="2-2-下载安装IDE"><a href="#2-2-下载安装IDE" class="headerlink" title="2.2 下载安装IDE"></a>2.2 下载安装IDE</h2><p>推荐使用大众化的MDK-ARM这款集成开发环境（IDE）。当然，还支持EWARM、 TureSTUDIO、 SW4STM32等集成开发环境。</p><p>请参看文章：<a href="https://www.strongerhuang.com/Keil/Keil系列教程.html">Keil系列教程</a></p><h2 id="2-3-准备硬件"><a href="#2-3-准备硬件" class="headerlink" title="2.3 准备硬件"></a>2.3 准备硬件</h2><p>学习STM32CubeMX，建议大家买一块开发板。某宝上面很多，根据自己经济能力，贵一点，便宜一点都行。以及准备一个ST-Link下载器。</p><p>推荐阅读：<a href="https://www.strongerhuang.com/ST-Link/ST-Link资料.html">ST-Link资料</a></p><h1 id="三、创建工程"><a href="#三、创建工程" class="headerlink" title="三、创建工程"></a>三、创建工程</h1><p>接下来从选择自己型号MCU，到生成代码并成功运行的创建过程。</p><p><strong>1.打开STM32CubeMX，进入MCU选择器</strong></p><table><br><img align="left" width="600" src=""><br></table><p>进入选择器时会联网更新数据库，可能需要等待一下。</p><p><strong>2.选择对应型号MCU</strong></p><table><br><img align="left" width="600" src=""><br></table><p><strong>3.时钟源选择</strong><br>如果选择使用外部高速时钟（HSE），则需要在System Core中配置RCC（如下图）。如果使用默认内部时钟（HSI），这一步可以略过。</p><table><br><img align="left" width="600" src=""><br></table><p><strong>4.选择GPIO（LED）引脚</strong><br>我们这里使用一个GPIO引脚（PF8）控制LED亮灭。</p><table><br><img align="left" width="600" src=""><br></table><p><strong>5.配置时钟Clock</strong><br>STM32CubeMX配置时钟的界面非常方便，有很多提示（比如最大时钟），很多地方直接点击选择就行了。</p><p>默认高速时钟是使用内部（HSI），而且CPU时钟配置的比较低。以我选择的STM32F103，外部8M晶振为例（如下图）。</p><table><br><img align="left" width="600" src=""><br></table><p><strong>6.工程管理</strong><br>工程管理器的内容比较多，大部分都默认即可，这里讲述几个要点（如下图），更多选项后期详细讲述。</p><table><br><img align="left" width="600" src=""><br></table><p>IDE有几种，如果你不用MDK-ARM，也可选择其他IDE。</p><p><strong>7.生成代码</strong><br>以上操作就基本配置完成了一个简单的Demo工程，只需要点击“生成代码”即可。</p><table><br><img align="left" width="600" src=""><br></table><p><strong>8.添加代码</strong><br>当然，以上生成的代码还不够完善，需要<strong>添加自己的应用代码</strong>。</p><table><br><img align="left" width="600" src=""><br></table><p>添加如上图这样一段代码，你开发板上LED就会间隔500ms变化一次（呈现闪烁状态）。</p><p>添加应用代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HAL_Delay(500);</span><br><span class="line">HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_8);</span><br></pre></td></tr></table></figure></p><p><strong>提示：</strong><br><strong>1.</strong>延时500ms时间需要你时钟配置正确。</p><p><strong>2.</strong>LED对应引脚需要与你开发实际一致（本文以PF8为例）。</p><p><strong>3.</strong>生成的MDK-ARM工程，编译下载之后，默认是不会运行代码，需要重新复位一次才能运行，或你自己配置一下（如下图）。</p><table><br><img align="left" width="600" src=""><br></table><p>好啦，本文就讲到这里，是不是很简单？请根据自己开发板MCU型号，自己动手实践一下。</p><h1 id="四、说明"><a href="#四、说明" class="headerlink" title="四、说明"></a>四、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p><p>2.本文由我一个人编辑并整理，难免存在一些错误。</p><p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『<strong>嵌入式专栏</strong>』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。  </p><h1 id="五、最后"><a href="#五、最后" class="headerlink" title="五、最后"></a>五、最后</h1><p>我的知乎：<a href="https://www.zhihu.com/people/strongerHuang.com" target="_blank" rel="noopener">strongerHuang</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p><p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、写在前面&quot;&gt;&lt;a href=&quot;#一、写在前面&quot; class=&quot;headerlink&quot; title=&quot;一、写在前面&quot;&gt;&lt;/a&gt;一、写在前面&lt;/h1&gt;&lt;p&gt;本文面向初学者，使用STM32CubeMX一步一步配置一个可直接编译下载，并成功运行的代码。&lt;/p&gt;
+&lt;p&gt;实践操作成功之后有了成就感，大家才会更加有信心继续学习下去。&lt;/p&gt;
+&lt;p&gt;本文只提供LED闪烁的简单实例讲解，&lt;strong&gt;重点是引导初学者入门&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;更多实例（如UART、TIM、CAN…）我会单独整理一系列教程，并提供源码分析和下载。&lt;/p&gt;
     
     </summary>
     
@@ -571,32 +602,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;一、写在前面&quot;&gt;&lt;a href=&quot;#一、写在前面&quot; class=&quot;headerlink&quot; title=&quot;一、写在前面&quot;&gt;&lt;/a&gt;一、写在前面&lt;/h1&gt;&lt;p&gt;很多朋友看到如下工程窗口的图标（如：带有&lt;strong&gt;“叹号”、“星号”、“钥匙”、“禁止驶入”&lt;/strong&gt;标志），就会产生疑问：这些图标到底是啥意思呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Keil系列教程" scheme="http://www.strongerhuang.com/categories/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Keil" scheme="http://www.strongerhuang.com/tags/Keil/"/>
-    
-      <category term="MDK-ARM" scheme="http://www.strongerhuang.com/tags/MDK-ARM/"/>
-    
-      <category term="µVision" scheme="http://www.strongerhuang.com/tags/%C2%B5Vision/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Keil系列教程10_文件类型及相关描述</title>
-    <link href="http://www.strongerhuang.com/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0.html"/>
-    <id>http://www.strongerhuang.com/Keil/Keil系列教程10_文件类型及相关描述.html</id>
-    <published>2018-11-29T08:00:00.000Z</published>
-    <updated>2018-11-29T09:04:36.360Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>1.你在提交项目、打包保存项目时，你会<strong>删掉不必要的文件</strong>吗？<br>2.你知道这些<strong>uvoptx、uvprojx、map、dep……</strong>是什么文件吗？</p><a id="more"></a><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/1.Keil%E7%BC%96%E8%AF%91%E4%B8%AD%E9%97%B4%E6%96%87%E4%BB%B6.png?raw=true"><br></table><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">现象or疑问：</span><br><span class="line">1.购买一块开发板，厂家提供的源代码例程没有几个，但文件却有几百兆。</span><br><span class="line">2.百度网盘下载一个别人提供的代码压缩包，几十兆。</span><br><span class="line">3.打开别人下载的源代码工程，各种类型文件混杂在一起。</span><br><span class="line">4.有些人提供的源代码没有dep文件，这个文件可以删除吗？ 删除了会有什么影响？</span><br></pre></td></tr></table></figure><p>其实有许多文件都是<strong>编译产生的中间文件</strong>，我习惯放一个双击删除“编译产生文件”.bat”来管理工程。即每次需要保存，或提交工程，会双击该文件，删除不需要的中间文件。</p><p>当你看完本文，理解这些文件类型的含义，你就不会有上面这些烦恼了。（本文内容可参考Keil帮助文档“File Types”文件类型章节）</p><h1 id="二、Keil文件类型概述"><a href="#二、Keil文件类型概述" class="headerlink" title="二、Keil文件类型概述"></a>二、Keil文件类型概述</h1><p>Keil中用到的文件类型很多，大概有五、六十种。下面会重点讲述常用的文件类型，一些不重要的，或者不常见的只简单概述。</p><p><strong>Keil文件可以分为7类：</strong><br>1、Project Files工程类型文件；<br>2、Source Files源代码类型文件；<br>3、Listing Files链接类型文件；<br>4、Object and HEX Files目标和Hex类型文件；<br>5、Build Files编译类型文件；<br>6、Debugger Files调试类型文件；<br>7、Other Files其他类型文件；</p><h1 id="三、Project-Files工程类型文件"><a href="#三、Project-Files工程类型文件" class="headerlink" title="三、Project Files工程类型文件"></a>三、Project Files工程类型文件</h1><p>工程类型文件是比较重要的，特别是<strong>工作空间、 工程文件、工程选项配置</strong>这三种文件不能删除。项目界面布局文件可以删除。</p><h2 id="3-1-工作空间文件"><a href="#3-1-工作空间文件" class="headerlink" title="3.1 工作空间文件"></a>3.1 工作空间文件</h2><p>（这类文件不能删除）<br><strong>*.uvmpw：</strong>µVision Project file for Multiple Projects多工程文件，也就是我们说的工作空间文件。</p><h2 id="3-2-工程文件"><a href="#3-2-工程文件" class="headerlink" title="3.2 工程文件"></a>3.2 工程文件</h2><p>（这类文件不能删除）<br><strong>*.uvprojx：</strong>µVision5工程文件</p><p><strong>*.uvproj：</strong>µVision4工程文件</p><p><strong>*.uv2：</strong>µVision3工程文件</p><h2 id="3-3-工程选项配置文件"><a href="#3-3-工程选项配置文件" class="headerlink" title="3.3 工程选项配置文件"></a>3.3 工程选项配置文件</h2><p>（这类文件不能删除）<br><strong>*.uvoptx：</strong>µVision5工程选项配置文件</p><p><strong>*.uvopt：</strong>µVision4工程选项配置文件</p><h2 id="3-4-项目界面布局文件"><a href="#3-4-项目界面布局文件" class="headerlink" title="3.4 项目界面布局文件"></a>3.4 项目界面布局文件</h2><p>（这类文件可以删除）<br><strong>*.uvguix[.user-name]：</strong>µVision5项目界面布局文件。删除之后，重新打开工程，界面布局会恢复到默认布局。如Demo.uvguix.Administrator。</p><p><strong>*.uvguix[.user-name]：</strong>µVision4项目界面布局文件。</p><h1 id="四、Source-Files源代码类型文件"><a href="#四、Source-Files源代码类型文件" class="headerlink" title="四、Source Files源代码类型文件"></a>四、Source Files源代码类型文件</h1><p>这一类文件相信大家都熟悉，简述一下。</p><p><strong>*.c：</strong>C源文件</p><p><strong>*.h：</strong>C头文件</p><p><strong>*.cpp：</strong>C++源文件</p><p><strong>*.s：</strong>汇编源文件</p><p><strong>*.a51：</strong>汇编源文件</p><p><strong>*.a66：</strong>汇编源文件</p><p><strong>*.inc：</strong>汇编头文件</p><p><strong>*.src：</strong>C编译器生成的其他源文件</p><h1 id="五、Listing-Files链接类型文件"><a href="#五、Listing-Files链接类型文件" class="headerlink" title="五、Listing Files链接类型文件"></a>五、Listing Files链接类型文件</h1><p>这一类文件属于中间文件，一般在编译过程中产生。可以在工程目标选项中配置对应的链接文件。Project -&gt; Options for Target -&gt; Listing，如下图：</p><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/2.Listing%20Files%E9%93%BE%E6%8E%A5%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6.png?raw=true"><br></table><p><strong>*.map：</strong>存储镜像文件<br>这个文件比较重要，我会在后面专门讲述一篇map相关文章。</p><p><strong>*.i：</strong>C预处理器输出文件</p><p><strong>*.scr：</strong>链接器分散加载器文件</p><p><strong>*.lst：</strong>C编译器或汇编器生成的文件</p><p><strong>*.m51：</strong>同样也是map文件</p><p><strong>*.m66：</strong>同样也是map文件</p><p><strong>*.htm：</strong>链接器的列表文件</p><h1 id="六、Object-and-HEX-Files目标和Hex类型文件"><a href="#六、Object-and-HEX-Files目标和Hex类型文件" class="headerlink" title="六、Object and HEX Files目标和Hex类型文件"></a>六、Object and HEX Files目标和Hex类型文件</h1><p>这一类文件同样属于中间文件，一般在编译过程中产生。但这类文件比较重要，<strong>调试信息、预览信息、可执行文件</strong>等都在这里面。</p><p>Project -&gt; Options for Target -&gt; Output，如图：</p><table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/Keil/Keil%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B10_%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8F%8F%E8%BF%B0/3.Listing%20Files%E9%93%BE%E6%8E%A5%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6.png?raw=true"><br></table><p><strong>*.hex：</strong>可执行文件</p><p><strong>*.axf：</strong>包含调试信息的程序文件<br>有时候我们调试出错，可能是axf没有文件。</p><p><strong>*.d：</strong>编译生成的依赖文件<br>一般一个.c文件对应一个.d文件。</p><p><strong>*.o：</strong>也是目标的依赖文件<br>重定位定址的依赖文件。</p><p><strong>*.lib：</strong>库文件<br>生成的库就在这里。</p><p><strong>*.elf：</strong>ELF/DWARF链接的文件</p><p><strong>*.crf：</strong>浏览信息文件<br>使用Go to Definition Of 功能，就需要有这类文件。</p><h1 id="七、Build-Debugger编译调试文件"><a href="#七、Build-Debugger编译调试文件" class="headerlink" title="七、Build Debugger编译调试文件"></a>七、Build Debugger编译调试文件</h1><p>编译和调试，其实是两类不同文件，由于比较少，综合在一起写。</p><p><strong>*.bat：</strong>批处理文件</p><p><strong><em>._IA, </em>.__I, <em>._II, </em>.SCR：</strong>工具调用文件</p><p><strong>*.ini：</strong>于初始化源码文件</p><h1 id="八、Other-Files其他类型文件"><a href="#八、Other-Files其他类型文件" class="headerlink" title="八、Other Files其他类型文件"></a>八、Other Files其他类型文件</h1><p>这类文件比较多，但使用较少，简单列几个吧。</p><p><strong>*.pack：</strong>软件（支持）包文件</p><p><strong>*.sct：</strong>链接控制文件</p><p><strong>*.lnp：</strong>连接器传递命令文件</p><p><strong>*.dep：</strong>目标编译依赖文件</p><p><strong>*.cdb：</strong>µVision设备数据库文件</p><h1 id="九、说明"><a href="#九、说明" class="headerlink" title="九、说明"></a>九、说明</h1><p>1.该文档仅供个人学习使用，版权所有，禁止商用。</p><p>2.本文由我一个人编辑并整理，难免存在一些错误。</p><p>3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号【EmbeddedDevelop】，关注微信公众号回复【Keil系列教程】即可查看全系列教程。  </p><h1 id="十、最后"><a href="#十、最后" class="headerlink" title="十、最后"></a>十、最后</h1><p>我的博客：<a href="http://www.strongerhuang.com">http://www.strongerhuang.com</a><br>我的GitHub：<a href="https://github.com/EmbeddedDevelop" target="_blank" rel="noopener">https://github.com/EmbeddedDevelop</a></p><p>　　我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一、写在前面&quot;&gt;&lt;a href=&quot;#一、写在前面&quot; class=&quot;headerlink&quot; title=&quot;一、写在前面&quot;&gt;&lt;/a&gt;一、写在前面&lt;/h1&gt;&lt;p&gt;1.你在提交项目、打包保存项目时，你会&lt;strong&gt;删掉不必要的文件&lt;/strong&gt;吗？&lt;br&gt;2.你知道这些&lt;strong&gt;uvoptx、uvprojx、map、dep……&lt;/strong&gt;是什么文件吗？&lt;/p&gt;
     
     </summary>
     

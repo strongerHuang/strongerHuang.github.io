@@ -3,7 +3,35 @@
   <entry>
     <title><![CDATA[STM32CubeMX系列教程]]></title>
     <url>%2FSTM32Cube%2FSTM32CubeMX%2FSTM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【STM32CubeMX系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【STM32CubeMX系列教程】即可查看。 二、教程列表STM32CubeMX系列教程01_STM32Cube产品介绍STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明STM32CubeMX系列教程03_创建并生成代码工程 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 四、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【STM32CubeMX系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【STM32CubeMX系列教程】即可查看。 二、教程列表STM32CubeMX系列教程01_STM32Cube产品介绍STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明STM32CubeMX系列教程03_创建并生成代码工程STM32CubeMX系列教程04_STM32CubeMX各窗口界面描述STM32CubeMX系列教程05_File、Window、Help菜单说明 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 四、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>STM32CubeMX系列教程</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>STM32CubeMX</tag>
+        <tag>LL库</tag>
+        <tag>HAL库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[STM32CubeMX系列教程05_File、Window、Help菜单说明]]></title>
+    <url>%2FSTM32Cube%2FSTM32CubeMX%2FSTM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_File%E3%80%81Window%E3%80%81Help%E8%8F%9C%E5%8D%95%E8%AF%B4%E6%98%8E.html</url>
+    <content type="text"><![CDATA[一、写在前面STM32CubeMX主界面菜单包含：File文件、Window窗口、Help帮助这三个菜单。 STM32CubeMX V5和V4版本菜单有差异，V4版本有5个菜单：File文件、Project工程、Pinout引脚输出、Window窗口、Help帮助。 大家可以看一下我16年在公众号写过的一篇讲解关于STM32CubeMX V4版本菜单的文章：STM32CubeMX使用方法及功能介绍 相信使用过V4版本的朋友都知道，V5版本将Project工程、Pinout引脚输出这两个菜单做在工程内部去了。 本文针对V5版本，详细讲述File、Window、Help这三个菜单。 二、File文件 New Project：新建工程（Ctrl + N）Load Project：导入工程（Ctrl + L）Import Project：引入项目（Ctrl + I）Save Project：保存工程（Ctrl + S）Save Project As：另存工程（Ctrl + A）Close Project：关闭工程（Ctrl + C）Generate Report：生成报告（Ctrl + R）Recent Projects：最近工程Exit：退出软件（Ctrl + X） 这里File文件菜单有部分和主界面的Existing Projects已存在工程、New Project新建工程一样（上一篇文章有讲述）。 三、Window窗口 STM32CubeMX的Window窗口菜单只有两项内容：Outputs输出信息、Font size字体大小。 1.Outputs输出信息这项子菜单的功能会输出一些相关信息，如选中MCU型号、配置工程的一些输出信息等。 Outputs输出信息动画效果： 2.Font size字体大小字体大小主要有三种：Smaller：小号Mdeium：中号Larger：大号 提示：需要重新启动STM32CubeMX才生效。 四、Help帮助 Help：帮助（F1）About：关于（Alt + A）Docs &amp; Resources：文档和资源（Alt + D）Refresh Data：更新数据（Alt + R）User Preferences：用户设定Check for Updates：检测更新（Alt + C）Manage embedded…：软件包管理（Alt + U）Updater Settings：更新设置（Alt + S） 进一步说明：Help帮助子菜单指向的就是STM32CubeMX的用户手册（PDF文档）。 About关于指的是当前STM32CubeMX的版本信息。 Refresh Data更新数据主要就是更新STM32CubeMX使用到的一些数据，如MCU/BOARD型号，文档，HAL库版本信息等。 点击子菜单“Check for Updates检测更新”会弹出需要更新的软件包。 Manage embedded…软件包管理在前面文章都有讲述，包含安装、移除、更新软件包等。 Updater Settings更新设置：这个子菜单包含多项内容。进入之后如下图： 包含Updater Settings更新设置和Connection Parameters链接参数。这里主要讲一下更新设置。 1.固件资源Repository Folder资源文件夹，也就是我们更新HAL库的地址。 2.检查和更新设置Manual Check：手动检查Automatic Check：自动检查Interval between two Check（days）：间隔x天检查 3.数据自动更新No Auto-Refresh at Application start：启动应用程序时不自动刷新。Auto-Refresh Data-Only at Application start：只在启动应用程序时自动刷新数据。Auto-Refresh Data and Docs at Application start：在启动应用程序时自动刷新数据和文档。Interval between two data-refreshs（days）：间隔x天检查。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 六、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+      <categories>
+        <category>STM32CubeMX系列教程</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+        <tag>STM32CubeMX</tag>
+        <tag>LL库</tag>
+        <tag>HAL库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[STM32CubeMX系列教程04_STM32CubeMX各窗口界面描述]]></title>
+    <url>%2FSTM32Cube%2FSTM32CubeMX%2FSTM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_STM32CubeMX%E5%90%84%E7%AA%97%E5%8F%A3%E7%95%8C%E9%9D%A2%E6%8F%8F%E8%BF%B0.html</url>
+    <content type="text"><![CDATA[一、写在前面上一篇文章让你入门STM32CubeMX，你可能还是会觉得心里摸不到底。本文就从另外一个角度带你了解STM32CubeMX。 本文讲述STM32CubeMX各主要界面内容，让你对STM32CubeMX这个工具有一个比较直观的认识。 二、主界面打开STM32CubeMX，呈现的界面大致如下图，界面比较简洁。我把它划分为六大板块。 1.菜单STM32CubexMX V4版本（前面老版本）有很多功能做在菜单里面，但V5版本优化（删减）菜单，把一些常用功能做在相应界面里面了。 菜单内容后面会单独详细讲述。 2.社交链接facebook（脸书）、youtube、twitter（推特）以及ST社区、官网信息等。 相信大家都能理解，就像国内微信、微博、QQ等与ST相关的一些社交链接。 3.面包屑导航这个名词可能很多人没听过，英文名叫Bread crumbs，中文名叫面包屑导航。当然，可以理解为导航栏。 进入配置界面，如下图： 4.已存在工程·Recent Opened Projects：最近打开的项目·Other Projects：打开其他已存在工程 5.新建工程·Start My project from MCU：从MCU开始我的项目·Start My project from STBoard：从ST开发板开始我的项目这里是进入MCU/BOARD选择器，选择MCU型号和ST开发板型号（其中界面下面详细描述）。 6.软件管理·CHECK FOR UPDATE：检查更新·INSTALL/REMOVE：安装/移除软件 这里其实就是安装的软件进行管理，包含HAL库。安装的过程可以参看文章：STM32CubeMX系列教程02_STM32CubeMX工具、HAL库下载、安装说明 三、MCU/BOARD选择器界面MCU和BOARD选择器的界面类似，从上面主界面第5点新建工程进入。 选择器主要功能是：通过输入MCU/BOARD型号，或者按照特定条件（如MCU系列、FLASH大小、外设控制器数量等）来筛选符合自己条件的MCU/BOARD。 这里的选择器可以当做STM32的选型工具。 1.MCU和BOARD选择器切换在这两种选择器之间进行切换，两种选择器界面包含类似。 2.选择器“筛选”筛选的方式有两种：A.通过输入型号B.通过条件筛选 3.描述·Features：选中型号MCU/板卡特征·Block Diagram：框图·Doc&amp;Resources：文档和资源·Datasheet：数据手册下载（下载PDF文档）·Buy：购买（跳入官网） 4.MCU/BOARD列表通过输入型号，或条件筛选之后，符合条件的MCU/BOARD列表。 选择器界面动画效果： 四、Pinout引脚输出配置这里翻译为引脚输出配置其实有点不正确，因为这里包含系统、外设资源、以及中间件等一些独立模块的配置。 这一板块的信息量比较大，使用STM32CubeMX的重点和难点大部分在这一界面。 我主要把它划分为三块：资源、配置和引脚/系统预览。可能不同系列、不同型号的MCU这里的配置信息都不同。 这里不详细讲述，后期我会针对具体MCU实例的进行详细讲述。 五、时钟配置STM32各个系列的时钟都比较强大（请看时钟树），同时，各系列，各型号的时钟树也可能有差异。 STM32CubeMX的时钟配置具有强大的一个功能，重点是图形化界面，让人一看就明白。 同时，时钟配置里面有各种提示信息：比如可选择的分频倍频、最大时钟频率、警告错误提示等（如下图）。 六、工程管理这一章节内容对工程相关的配置比较重要，大部分可以默认。主要有三部分内容：工程管理、代码生成、高级设置。 这里内容我后面单独写一篇文章详细讲述。 七、工具目前工具这里包含两部分内容：PCC（Power Consumption Calculator）功耗计算、DDR Test Suite。 PCC这个功能应该用的比较多，开发低功耗相关产品这个功能可以用上这个工具。 DDR Test Suite是一个目前（19年3月）只针对于STM32MP1系列，其他MCU没有这个功能。 工具这项功能后期详细讲述。 八、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【STM32CubeMX系列教程】即可查看全系列教程。 九、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
       <categories>
         <category>STM32CubeMX系列教程</category>
       </categories>

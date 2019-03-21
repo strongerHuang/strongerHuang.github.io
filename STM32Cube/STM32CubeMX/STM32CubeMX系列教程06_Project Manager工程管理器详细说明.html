@@ -89,10 +89,14 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面STM32CubeMX的Project Manager工程管理器包含：Project工程管理、 Code Generator代码生成、 Advanced Settings高级设置三部分内容。 这三部分内容决定了工程的一些属性，相关的配置信息比较重要，也容易理解。初学者有必要掌握其中内容。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T04:33:23.244Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_Project%20Manager%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/1.%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_Project%20Manager%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/2.%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_Project%20Manager%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/3.%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE.png?raw=true">
+<meta property="og:updated_time" content="2019-03-21T04:36:20.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STM32CubeMX系列教程06_Project Manager工程管理器详细说明">
 <meta name="twitter:description" content="一、写在前面STM32CubeMX的Project Manager工程管理器包含：Project工程管理、 Code Generator代码生成、 Advanced Settings高级设置三部分内容。 这三部分内容决定了工程的一些属性，相关的配置信息比较重要，也容易理解。初学者有必要掌握其中内容。">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_Project%20Manager%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/1.%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86.png?raw=true">
 
 
 
@@ -431,7 +435,7 @@
         <h1 id="一、写在前面"><a href="#一、写在前面" class="headerlink" title="一、写在前面"></a>一、写在前面</h1><p>STM32CubeMX的Project Manager工程管理器包含：<strong>Project工程管理、 Code Generator代码生成、 Advanced Settings高级设置</strong>三部分内容。</p>
 <p>这三部分内容决定了工程的一些属性，相关的配置信息比较重要，也容易理解。初学者有必要掌握其中内容。</p>
 <a id="more"></a>
-<h1 id="二、Project工程管理"><a href="#二、Project工程管理" class="headerlink" title="二、Project工程管理"></a>二、Project工程管理</h1><table><br><img align="left" width="600" src=""><br></table>
+<h1 id="二、Project工程管理"><a href="#二、Project工程管理" class="headerlink" title="二、Project工程管理"></a>二、Project工程管理</h1><table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_Project%20Manager%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/1.%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86.png?raw=true"><br></table>
 
 <p><strong>Project工程管理</strong>包含三部分内容：<strong>Projcet Settings工程设置、 Linker Settings堆栈设置、 Mcu and Firmware Package MCU和固件包信息</strong>。</p>
 <h2 id="2-1-Projcet-Settings工程设置"><a href="#2-1-Projcet-Settings工程设置" class="headerlink" title="2.1 Projcet Settings工程设置"></a>2.1 Projcet Settings工程设置</h2><p><strong>A.Project Name：工程名称</strong><br>比如：Demo.uvprojx，以及对应工程里面目标名称。</p>
@@ -447,7 +451,7 @@
 <p><strong>B.Firmware Package Name and Version：固件包名称和版本信息</strong><br>这个容易理解，如：STM32Cube_FW_F1_V1.7.0</p>
 <p><strong>C.Use Default Firmware Location：使用默认固件包</strong><br>这里勾选上就会根据系统进行默认匹配固件包，一般建议默认。</p>
 <p>当然，不勾选，可以自己选择指定固件包。</p>
-<h1 id="三、Code-Generator代码生成"><a href="#三、Code-Generator代码生成" class="headerlink" title="三、Code Generator代码生成"></a>三、Code Generator代码生成</h1><table><br><img align="left" width="600" src=""><br></table>
+<h1 id="三、Code-Generator代码生成"><a href="#三、Code-Generator代码生成" class="headerlink" title="三、Code Generator代码生成"></a>三、Code Generator代码生成</h1><table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_Project%20Manager%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/2.%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90.png?raw=true"><br></table>
 
 <p>如上图，主要包含四项内容：<strong>固件包拷贝、生成文件、HAL设置、模板设置</strong>。</p>
 <h2 id="3-1-STM32Cube-Firmware-Library-Package固件包拷贝"><a href="#3-1-STM32Cube-Firmware-Library-Package固件包拷贝" class="headerlink" title="3.1 STM32Cube Firmware Library Package固件包拷贝"></a>3.1 STM32Cube Firmware Library Package固件包拷贝</h2><p><strong>1.Copy all used libraries into the project folder</strong><br><strong>将所有使用过的库复制到项目文件夹中。</strong><br>不管你用，还是没有用到，都拷贝到你工程目录下。这样一来，你工程下文件就比较多。</p>
@@ -462,7 +466,7 @@
 <h2 id="3-3-HAL-SettingsHAL库设置"><a href="#3-3-HAL-SettingsHAL库设置" class="headerlink" title="3.3 HAL SettingsHAL库设置"></a>3.3 HAL SettingsHAL库设置</h2><p><strong>1.Set all free pins as analog (to optimize the power consumption) </strong><br><strong>将所有空闲引脚设置为模拟(以优化功耗)</strong><br>这个做低功耗产品时这个选项有必要勾选。</p>
 <p><strong>2.Enable Full Assert</strong><br><strong>使能所有断言</strong><br>也就是参数检查。</p>
 <h2 id="3-4-Template-Settings模板设置"><a href="#3-4-Template-Settings模板设置" class="headerlink" title="3.4 Template Settings模板设置"></a>3.4 Template Settings模板设置</h2><p><strong>1.Select a template to generate customized code</strong><br><strong>选择一个模板来生成自定义代码</strong><br>代码自定义生成模板可以参看最新（V28版）用户手册6.3节 Custom code generation内容。</p>
-<h1 id="四、Advanced-Settings高级设置"><a href="#四、Advanced-Settings高级设置" class="headerlink" title="四、Advanced Settings高级设置"></a>四、Advanced Settings高级设置</h1><table><br><img align="left" width="600" src=""><br></table>
+<h1 id="四、Advanced-Settings高级设置"><a href="#四、Advanced-Settings高级设置" class="headerlink" title="四、Advanced Settings高级设置"></a>四、Advanced Settings高级设置</h1><table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/STM32Cube/STM32CubeMX/STM32CubeMX%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_Project%20Manager%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/3.%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE.png?raw=true"><br></table>
 
 <p>目前主要两个选项：<strong>驱动选择和调用函数</strong>设置。</p>
 <h2 id="4-1-驱动选择"><a href="#4-1-驱动选择" class="headerlink" title="4.1 驱动选择"></a>4.1 驱动选择</h2><p>目前主要就是针对工程中使用到的外设，选择HAL还是LL驱动（参看上图）。<br><strong>提示：</strong>目前有些型号MCU的部分外设没有LL驱动。</p>

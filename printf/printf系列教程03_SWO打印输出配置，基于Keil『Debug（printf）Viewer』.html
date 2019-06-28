@@ -89,19 +89,19 @@
 <meta property="og:site_name" content="EmbeddedDevelop">
 <meta property="og:description" content="一、写在前面SWD：Serial Wire Debug，串行线调试SWO：Serial Wire Output，串行线输出SWV：Serial Wire Viewer，串行线查看器ITM：Instrumentation Trace Macrocell，指令跟踪宏单元 SWO串行线输出是单引脚、异步串行通信，可在Cortex-M3/M4/M7上使用，并由主调试器探测支持。 它是利用Cortex内核中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/1.%E5%BC%95%E8%84%9A%E7%9B%B8%E8%BF%9E.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/2.%E8%B0%83%E8%AF%95%E7%BB%84%E4%BB%B6.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/3.SWO%E5%BC%95%E8%84%9A%E9%85%8D%E7%BD%AE.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/4.SWO%20Keil%20ST-Link.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/5.SWO%20Keil%20J-Link.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/6.ITM_SendChar%E5%87%BD%E6%95%B0.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/7.%E4%BF%AE%E6%94%B9ITM%E7%AB%AF%E5%8F%A3.png?raw=true">
-<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/8.SWO%E8%BE%93%E5%87%BA%E6%95%88%E6%9E%9C.png?raw=true">
-<meta property="og:updated_time" content="2019-06-28T06:16:32.524Z">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/1.%E5%BC%95%E8%84%9A%E7%9B%B8%E8%BF%9E.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/2.%E8%B0%83%E8%AF%95%E7%BB%84%E4%BB%B6.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/3.SWO%E5%BC%95%E8%84%9A%E9%85%8D%E7%BD%AE.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/4.SWO%20Keil%20ST-Link.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/5.SWO%20Keil%20J-Link.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/6.ITM_SendChar%E5%87%BD%E6%95%B0.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/7.%E4%BF%AE%E6%94%B9ITM%E7%AB%AF%E5%8F%A3.png?raw=true">
+<meta property="og:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/8.SWO%E8%BE%93%E5%87%BA%E6%95%88%E6%9E%9C.png?raw=true">
+<meta property="og:updated_time" content="2019-06-28T06:45:01.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="printf系列教程03_SWO打印输出配置，基于Keil『Debug(printf)Viewer』">
 <meta name="twitter:description" content="一、写在前面SWD：Serial Wire Debug，串行线调试SWO：Serial Wire Output，串行线输出SWV：Serial Wire Viewer，串行线查看器ITM：Instrumentation Trace Macrocell，指令跟踪宏单元 SWO串行线输出是单引脚、异步串行通信，可在Cortex-M3/M4/M7上使用，并由主调试器探测支持。 它是利用Cortex内核中">
-<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/1.%E5%BC%95%E8%84%9A%E7%9B%B8%E8%BF%9E.png?raw=true">
+<meta name="twitter:image" content="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/1.%E5%BC%95%E8%84%9A%E7%9B%B8%E8%BF%9E.png?raw=true">
 
 
 
@@ -442,7 +442,7 @@
 <p>它是利用Cortex内核中ITM模块来实现此功能。</p>
 <a id="more"></a>
 <p>连接引脚：</p>
-<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/1.%E5%BC%95%E8%84%9A%E7%9B%B8%E8%BF%9E.png?raw=true"><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/1.%E5%BC%95%E8%84%9A%E7%9B%B8%E8%BF%9E.png?raw=true"><br></table>
 
 <p>SWO输出，需要一根SWO（引脚）线，同时需要借助SWV（查看器）查看数据，我打算整理4种查看方法：<br><strong>·基于Keil的『Debug(printf)Viewer』</strong><br><strong>·</strong>基于IAR的『Terminal IO』<br><strong>·</strong>基于ST-LINK Utility的『Serial Wire Viewer』<br><strong>·</strong>基于J-Link的『SWO Viewer』</p>
 <p>本文主要是<strong>第一种基于Keil的『Debug(printf)Viewer』</strong>，会结合STM32，ST-link和J-link工具讲述相关配置。</p>
@@ -450,7 +450,7 @@
 <p><strong>ITM 的一个主要用途，就是支持调试消息的输出（如printf 格式的输出）。</strong></p>
 <p>ITM 包含 32 个刺激(Stimulus)端口，允许不同的软件把数据输出到不同的端口，从而让调试主机可以把它们的消息分离开。<br>与基于 UART 的文字输出不同，使用 ITM 输出不会对应用程序造成很大的延迟，在 ITM 内部有一个 FIFO，它使写入的输出消息得到缓冲。</p>
 <h2 id="2-1-Cortex跟踪组件"><a href="#2-1-Cortex跟踪组件" class="headerlink" title="2.1 Cortex跟踪组件"></a>2.1 Cortex跟踪组件</h2><p>为了让更多人理解ITM模块，怎样输出调试信息，这里再深入说明一下。</p>
-<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/2.%E8%B0%83%E8%AF%95%E7%BB%84%E4%BB%B6.png?raw=true"><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/2.%E8%B0%83%E8%AF%95%E7%BB%84%E4%BB%B6.png?raw=true"><br></table>
 
 <p><strong>TPIU：</strong>Trace Port Interface Unit，跟踪端口接口单元</p>
 <p>ITM模块属于Cortex-M内核调试组件中的一部分内容，ITM输出的消息被送往 TPIU（跟踪端口接口单元）。</p>
@@ -461,25 +461,25 @@
 <p>对于STM32而言，只要是Cortex-M3/M4/M7内核的MCU都有SWO引脚。</p>
 <p>而Cortex-M0则没有此项功能，包含STM32F0、STM32L0和STM32G0等。</p>
 <p>在STM32CubeMX工具中，Debug选项进行如下配置即可。</p>
-<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/3.SWO%E5%BC%95%E8%84%9A%E9%85%8D%E7%BD%AE.png?raw=true"><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/3.SWO%E5%BC%95%E8%84%9A%E9%85%8D%E7%BD%AE.png?raw=true"><br></table>
 
 
 <h1 id="四、Keil-SWO输出配置"><a href="#四、Keil-SWO输出配置" class="headerlink" title="四、Keil SWO输出配置"></a>四、Keil SWO输出配置</h1><p>要想在Keil MDK-ARM的Debug(printf)Viewer中输出信息，需要如下几项配置。</p>
 <h2 id="4-1-Keil选项配置"><a href="#4-1-Keil选项配置" class="headerlink" title="4.1 Keil选项配置"></a>4.1 Keil选项配置</h2><p>主要就是使能跟踪Trace，配置CPU时钟，以及ITM端口。</p>
-<table><br><strong>基于ST-Link</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/4.SWO%20Keil%20ST-Link.png?raw=true"><br></table>
+<table><br><strong>基于ST-Link</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/4.SWO%20Keil%20ST-Link.png?raw=true"><br></table>
 
-<table><br><strong>基于J-Link</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/5.SWO%20Keil%20J-Link.png?raw=true"><br></table>
+<table><br><strong>基于J-Link</strong><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/5.SWO%20Keil%20J-Link.png?raw=true"><br></table>
 
 <p><strong>提示：</strong>ITM端口默认使用port0，也可修改软件，实现0~31任意端口，下面讲述。</p>
 <h2 id="4-2-ITM发送源码"><a href="#4-2-ITM发送源码" class="headerlink" title="4.2 ITM发送源码"></a>4.2 ITM发送源码</h2><p>和前面UART实现printf打印输出区别就是：将重定义代码中UART发送字符，改为ITM发送字符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int fputc(int ch, FILE *f)</span><br><span class="line">&#123;</span><br><span class="line">  ITM_SendChar(ch);</span><br><span class="line">  return ch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>ITM_SendChar说明<br>这个函数位于core_cm3.h（或cm4 cm7）中，直接调用即可。</p>
-<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/6.ITM_SendChar%E5%87%BD%E6%95%B0.png?raw=true"><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/6.ITM_SendChar%E5%87%BD%E6%95%B0.png?raw=true"><br></table>
 
 <p><strong>修改ITM端口</strong><br>比如：修改成使用ITM端口1，修改该函数对应值即可：</p>
-<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/7.%E4%BF%AE%E6%94%B9ITM%E7%AB%AF%E5%8F%A3.png?raw=true"><br></table>
+<table><br><img align="left" width="600" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/7.%E4%BF%AE%E6%94%B9ITM%E7%AB%AF%E5%8F%A3.png?raw=true"><br></table>
 
 <p><strong>提示：</strong>若软件修改了ITM端口，需要使能对应ITM刺激(Stimulus)端口才能正常打印输出。</p>
-<h2 id="4-3-输出效果"><a href="#4-3-输出效果" class="headerlink" title="4.3 输出效果"></a>4.3 输出效果</h2><table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F/8.SWO%E8%BE%93%E5%87%BA%E6%95%88%E6%9E%9C.png?raw=true"><br></table>
+<h2 id="4-3-输出效果"><a href="#4-3-输出效果" class="headerlink" title="4.3 输出效果"></a>4.3 输出效果</h2><table><br><img align="left" width="800" src="https://github.com/strongerHuang/strongerHuang.github.io/blob/master/printf/printf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug%EF%BC%88printf%EF%BC%89Viewer%E3%80%8F/8.SWO%E8%BE%93%E5%87%BA%E6%95%88%E6%9E%9C.png?raw=true"><br></table>
 
 
 <h1 id="五、下载"><a href="#五、下载" class="headerlink" title="五、下载"></a>五、下载</h1><p>为方便大家理解，提供源码工程下载，参考代码：<br><strong>·</strong>STM32F103（HAL）_SWO<br><strong>·</strong>STM32F411（HAL）_SWO</p>

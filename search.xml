@@ -3,7 +3,91 @@
   <entry>
     <title><![CDATA[printf系列教程]]></title>
     <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B.html</url>
-    <content type="text"><![CDATA[一、写在前面 本文对【printf系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【printf系列教程】即可查看。 二、教程列表printf系列教程00_概述printf各种打印输出方法和相关内容printf系列教程01_UART打印输出配置，基于STM32（Keil、IAR）printf系列教程02_仿真打印输出配置，基于STM32（Keil、IAR）printf系列教程03_SWO打印输出配置，基于Keil『Debug(printf)Viewer』Viewer』.html)printf系列教程04_SWO打印输出配置，基于IAR『Terminal IO』printf系列教程05_SWO打印输出配置，基于ST-LINK Utility『Serial Wire Viewer』printf系列教程06_SWO打印输出配置，基于J-Link『SWO Viewer』printf系列教程07_JLink-RTT打印输出配置，基于J-Link『RTT Viewer』 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 四、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面 本文对【printf系列教程】做了整理并汇总，会随着该系列教程的更新而更新。 为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程也同步更新于微信公众号【嵌入式专栏】，关注微信公众号回复【printf系列教程】即可查看。 二、教程列表printf系列教程00_概述printf各种打印输出方法和相关内容printf系列教程01_UART打印输出配置，基于STM32（Keil、IAR）printf系列教程02_仿真打印输出配置，基于STM32（Keil、IAR）printf系列教程03_SWO打印输出配置，基于Keil『Debug(printf)Viewer』Viewer』.html)printf系列教程04_SWO打印输出配置，基于IAR『Terminal IO』printf系列教程05_SWO打印输出配置，基于ST-LINK Utility『Serial Wire Viewer』printf系列教程06_SWO打印输出配置，基于J-Link『SWO Viewer』printf系列教程07_JLink-RTT打印输出配置，基于J-Link『RTT Viewer』 正在努力更新中，可关注我微信公众号查看最新消息…… 三、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 四、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
+      <categories>
+        <category>printf系列教程</category>
+      </categories>
+      <tags>
+        <tag>ST-Link</tag>
+        <tag>printf</tag>
+        <tag>SWD</tag>
+        <tag>SWO</tag>
+        <tag>SWV</tag>
+        <tag>ITM</tag>
+        <tag>JLink-RTT</tag>
+        <tag>J-Link</tag>
+        <tag>仿真</tag>
+        <tag>重定义</tag>
+        <tag>串口映射</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[printf系列教程07_JLink-RTT打印输出配置，基于J-Link『RTT Viewer』]]></title>
+    <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B07_JLink-RTT%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EJ-Link%E3%80%8ERTT%20Viewer%E3%80%8F.html</url>
+    <content type="text"><![CDATA[一、写在前面SWO：Serial Wire Output，串行线输出RTT：Real Time Transfer，实时传输 SWO：Serial Wire Output，串行线输出RTT：Real Time Transfer，实时传输 前面SWO文章，实现原理是通过MCU的SWO引脚输出信息（到显示终端SWV）。 而本文讲述的RTT不需要通过额外SWO引脚，即可实现printf输出，而且性能（耗时）远高于SWO。 二、五、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（HAL）_SWO·STM32F411（HAL）_SWO 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 六、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 七、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
+      <categories>
+        <category>printf系列教程</category>
+      </categories>
+      <tags>
+        <tag>ST-Link</tag>
+        <tag>printf</tag>
+        <tag>SWD</tag>
+        <tag>SWO</tag>
+        <tag>SWV</tag>
+        <tag>ITM</tag>
+        <tag>JLink-RTT</tag>
+        <tag>J-Link</tag>
+        <tag>仿真</tag>
+        <tag>重定义</tag>
+        <tag>串口映射</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[printf系列教程06_SWO打印输出配置，基于J-Link『SWO Viewer』]]></title>
+    <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B06_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EJ-Link%E3%80%8ESWO%20Viewer%E3%80%8F.html</url>
+    <content type="text"><![CDATA[一、写在前面SWD：Serial Wire Debug，串行线调试SWO：Serial Wire Output，串行线输出SWV：Serial Wire Viewer，串行线查看器ITM：Instrumentation Trace Macrocell，指令跟踪宏单元 SWO串行线输出是单引脚、异步串行通信，可在Cortex-M3/M4/M7上使用，并由主调试器探测支持。 它是利用Cortex内核中ITM模块来实现此功能。 连接引脚： SWO输出，需要一根SWO（引脚）线，同时需要借助SWV（查看器）查看数据，我打算整理4种查看方法：·基于Keil的『Debug(printf)Viewer』·基于IAR的『Terminal IO』·基于ST-LINK Utility的『Serial Wire Viewer』·基于J-Link的『SWO Viewer』 本文主要是第四种基于J-Link的『SWO Viewer』，会结合STM32，ST-link和J-link工具讲述相关配置。 想更加了解ITM，请参看《printf系列教程03》中第二章节&lt;关于ITM&gt;。 二、五、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（HAL）_SWO·STM32F411（HAL）_SWO 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 六、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 七、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
+      <categories>
+        <category>printf系列教程</category>
+      </categories>
+      <tags>
+        <tag>ST-Link</tag>
+        <tag>printf</tag>
+        <tag>SWD</tag>
+        <tag>SWO</tag>
+        <tag>SWV</tag>
+        <tag>ITM</tag>
+        <tag>JLink-RTT</tag>
+        <tag>J-Link</tag>
+        <tag>仿真</tag>
+        <tag>重定义</tag>
+        <tag>串口映射</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[printf系列教程05_SWO打印输出配置，基于ST-LINK Utility『Serial Wire Viewer』]]></title>
+    <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B05_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EST-LINK%20Utility%E3%80%8ESerial%20Wire%20Viewer%E3%80%8F.html</url>
+    <content type="text"><![CDATA[一、写在前面SWD：Serial Wire Debug，串行线调试SWO：Serial Wire Output，串行线输出SWV：Serial Wire Viewer，串行线查看器ITM：Instrumentation Trace Macrocell，指令跟踪宏单元 SWO串行线输出是单引脚、异步串行通信，可在Cortex-M3/M4/M7上使用，并由主调试器探测支持。 它是利用Cortex内核中ITM模块来实现此功能。 连接引脚： SWO输出，需要一根SWO（引脚）线，同时需要借助SWV（查看器）查看数据，我打算整理4种查看方法：·基于Keil的『Debug(printf)Viewer』·基于IAR的『Terminal IO』·基于ST-LINK Utility的『Serial Wire Viewer』·基于J-Link的『SWO Viewer』 本文主要是第三种基于ST-LINK Utility的『Serial Wire Viewer』，会结合STM32，ST-link和J-link工具讲述相关配置。 想更加了解ITM，请参看《printf系列教程03》中第二章节&lt;关于ITM&gt;。 二、五、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（HAL）_SWO·STM32F411（HAL）_SWO 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 六、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 七、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
+      <categories>
+        <category>printf系列教程</category>
+      </categories>
+      <tags>
+        <tag>ST-Link</tag>
+        <tag>printf</tag>
+        <tag>SWD</tag>
+        <tag>SWO</tag>
+        <tag>SWV</tag>
+        <tag>ITM</tag>
+        <tag>JLink-RTT</tag>
+        <tag>J-Link</tag>
+        <tag>仿真</tag>
+        <tag>重定义</tag>
+        <tag>串口映射</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[printf系列教程04_SWO打印输出配置，基于IAR『Terminal IO』]]></title>
+    <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B04_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EIAR%E3%80%8ETerminal%20IO%E3%80%8F.html</url>
+    <content type="text"><![CDATA[一、写在前面SWD：Serial Wire Debug，串行线调试SWO：Serial Wire Output，串行线输出SWV：Serial Wire Viewer，串行线查看器ITM：Instrumentation Trace Macrocell，指令跟踪宏单元 SWO串行线输出是单引脚、异步串行通信，可在Cortex-M3/M4/M7上使用，并由主调试器探测支持。 它是利用Cortex内核中ITM模块来实现此功能。 连接引脚： SWO输出，需要一根SWO（引脚）线，同时需要借助SWV（查看器）查看数据，我打算整理4种查看方法：·基于Keil的『Debug(printf)Viewer』·基于IAR的『Terminal IO』·基于ST-LINK Utility的『Serial Wire Viewer』·基于J-Link的『SWO Viewer』 本文主要是第二种基于IAR的『Terminal IO』，会结合STM32，ST-link和J-link工具讲述相关配置。 想更加了解ITM，请参看《printf系列教程03》中第二章节&lt;关于ITM&gt;。 二、五、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（HAL）_SWO·STM32F411（HAL）_SWO 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 六、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 七、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
       <categories>
         <category>printf系列教程</category>
       </categories>
@@ -24,7 +108,7 @@
   <entry>
     <title><![CDATA[printf系列教程03_SWO打印输出配置，基于Keil『Debug(printf)Viewer』]]></title>
     <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B03_SWO%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8EKeil%E3%80%8EDebug(printf)Viewer%E3%80%8F.html</url>
-    <content type="text"><![CDATA[一、写在前面SWD：Serial Wire Debug，串行线调试SWO：Serial Wire Output，串行线输出SWV：Serial Wire Viewer，串行线查看器ITM：Instrumentation Trace Macrocell，指令跟踪宏单元 SWO串行线输出是单引脚、异步串行通信，可在Cortex-M3/M4/M7上使用，并由主调试器探测支持。 它是利用Cortex内核中ITM模块来实现此功能。 连接引脚： SWO输出，需要一根SWO（引脚）线，同时需要借助SWV（查看器）查看数据，我打算整理4种查看方法：·基于Keil的『Debug(printf)Viewer』·基于IAR的『Terminal IO』·基于ST-LINK Utility的『Serial Wire Viewer』·基于J-Link的『SWO Viewer』 本文主要是第一种基于Keil的『Debug(printf)Viewer』，会结合STM32，ST-link和J-link工具讲述相关配置。 二、关于ITMITM：Instrumentation Trace Macrocell，指令跟踪宏单元 ITM 的一个主要用途，就是支持调试消息的输出（如printf 格式的输出）。 ITM 包含 32 个刺激(Stimulus)端口，允许不同的软件把数据输出到不同的端口，从而让调试主机可以把它们的消息分离开。与基于 UART 的文字输出不同，使用 ITM 输出不会对应用程序造成很大的延迟，在 ITM 内部有一个 FIFO，它使写入的输出消息得到缓冲。 2.1 Cortex跟踪组件为了让更多人理解ITM模块，怎样输出调试信息，这里再深入说明一下。 TPIU：Trace Port Interface Unit，跟踪端口接口单元 ITM模块属于Cortex-M内核调试组件中的一部分内容，ITM输出的消息被送往 TPIU（跟踪端口接口单元）。 这里的TPIU，对应SWO串行线输出。 提示：1.这里TPIU要和上面说的【ITM 包含 32 个刺激(Stimulus)端口】区分开来。 2.ITM的32个刺激(Stimulus)端口并不是要对应32个SWO引脚。32个刺激端口调试信息可通过一个SWO引脚输出，下面详细讲述。 三、SWO引脚配置SWO引脚可以理解为UART的Tx引脚，如果不连接此引脚，则（SWV）终端不会接收打印信息。 对于STM32而言，只要是Cortex-M3/M4/M7内核的MCU都有SWO引脚。 而Cortex-M0则没有此项功能，包含STM32F0、STM32L0和STM32G0等。 在STM32CubeMX工具中，Debug选项进行如下配置即可。 四、Keil SWO输出配置要想在Keil MDK-ARM的Debug(printf)Viewer中输出信息，需要如下几项配置。 4.1 Keil选项配置主要就是使能跟踪Trace，配置CPU时钟，以及ITM端口。 基于ST-Link 基于J-Link 提示：ITM端口默认使用port0，也可修改软件，实现0~31任意端口，下面讲述。 4.2 ITM发送源码和前面UART实现printf打印输出区别就是：将重定义代码中UART发送字符，改为ITM发送字符。12345int fputc(int ch, FILE *f)&#123; ITM_SendChar(ch); return ch;&#125; ITM_SendChar说明这个函数位于core_cm3.h（或cm4 cm7）中，直接调用即可。 修改ITM端口比如：修改成使用ITM端口1，修改该函数对应值即可： 提示：若软件修改了ITM端口，需要使能对应ITM刺激(Stimulus)端口才能正常打印输出。 4.3 输出效果 五、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（HAL）_SWO·STM32F411（HAL）_SWO 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 六、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 七、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面SWD：Serial Wire Debug，串行线调试SWO：Serial Wire Output，串行线输出SWV：Serial Wire Viewer，串行线查看器ITM：Instrumentation Trace Macrocell，指令跟踪宏单元 SWO串行线输出是单引脚、异步串行通信，可在Cortex-M3/M4/M7上使用，并由主调试器探测支持。 它是利用Cortex内核中ITM模块来实现此功能。 连接引脚： SWO输出，需要一根SWO（引脚）线，同时需要借助SWV（查看器）查看数据，我打算整理4种查看方法：·基于Keil的『Debug(printf)Viewer』·基于IAR的『Terminal IO』·基于ST-LINK Utility的『Serial Wire Viewer』·基于J-Link的『SWO Viewer』 本文主要是第一种基于Keil的『Debug(printf)Viewer』，会结合STM32，ST-link和J-link工具讲述相关配置。 二、关于ITMITM：Instrumentation Trace Macrocell，指令跟踪宏单元 ITM 的一个主要用途，就是支持调试消息的输出（如printf 格式的输出）。 ITM 包含 32 个刺激(Stimulus)端口，允许不同的软件把数据输出到不同的端口，从而让调试主机可以把它们的消息分离开。与基于 UART 的文字输出不同，使用 ITM 输出不会对应用程序造成很大的延迟，在 ITM 内部有一个 FIFO，它使写入的输出消息得到缓冲。 2.1 Cortex跟踪组件为了让更多人理解ITM模块，怎样输出调试信息，这里再深入说明一下。 TPIU：Trace Port Interface Unit，跟踪端口接口单元 ITM模块属于Cortex-M内核调试组件中的一部分内容，ITM输出的消息被送往 TPIU（跟踪端口接口单元）。 这里的TPIU，对应SWO串行线输出。 提示：1.这里TPIU要和上面说的【ITM 包含 32 个刺激(Stimulus)端口】区分开来。 2.ITM的32个刺激(Stimulus)端口并不是要对应32个SWO引脚。32个刺激端口调试信息可通过一个SWO引脚输出，下面详细讲述。 三、SWO引脚配置SWO引脚可以理解为UART的Tx引脚，如果不连接此引脚，则（SWV）终端不会接收打印信息。 对于STM32而言，只要是Cortex-M3/M4/M7内核的MCU都有SWO引脚。 而Cortex-M0则没有此项功能，包含STM32F0、STM32L0和STM32G0等。 在STM32CubeMX工具中，Debug选项进行如下配置即可。 四、Keil SWO输出配置要想在Keil MDK-ARM的Debug(printf)Viewer中输出信息，需要如下几项配置。 4.1 Keil选项配置主要就是使能跟踪Trace，配置CPU时钟，以及ITM端口。 基于ST-Link 基于J-Link 提示：ITM端口默认使用port0，也可修改软件，实现0~31任意端口，下面讲述。 4.2 ITM发送源码和前面UART实现printf打印输出区别就是：将重定义代码中UART发送字符，改为ITM发送字符。12345int fputc(int ch, FILE *f)&#123; ITM_SendChar(ch); return ch;&#125; ITM_SendChar说明这个函数位于core_cm3.h（或cm4 cm7）中，直接调用即可。 修改ITM端口比如：修改成使用ITM端口1，修改该函数对应值即可： 提示：若软件修改了ITM端口，需要使能对应ITM刺激(Stimulus)端口才能正常打印输出。 4.3 输出效果 五、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（HAL）_SWO·STM32F411（HAL）_SWO 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 六、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 七、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
       <categories>
         <category>printf系列教程</category>
       </categories>
@@ -44,8 +128,8 @@
   </entry>
   <entry>
     <title><![CDATA[printf系列教程02_仿真打印输出配置，基于STM32（Keil、IAR）]]></title>
-    <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E4%BB%BF%E7%9C%9F%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8ESTM32%EF%BC%88Keil%E3%80%81IAR%EF%BC%89%20-%20%E5%89%AF%E6%9C%AC.html</url>
-    <content type="text"><![CDATA[一、写在前面很多初学者习惯使用软件仿真，比如Proteus，应该是很多人都知道的一款仿真软件。 以前开发板相对较贵，且快递不方便，使用仿真软件可以理解。现在便宜的STM32开发板就十几块，还用仿真软件，我不是很理解。 有经验的人都知道，仿真和实际运行情况很多时候都不一样，相信不用我说，大家都明白。 因此，我个人不是很推荐大家仿真，本文内容可能存在纰漏，仅限个人学习。 下面讲述基于Keil MDK-ARM 和 IAR EWARM进行仿真打印的配置。 二、Keil仿真打印配置1.仿真参数配置Keil MDK-ARM默认配置不能仿真，原因出在仿真参数出现了问题： 修改这两处参数为：DARMSTM.DLL -pSTM32F103ZE 基于前面使用STM32CubeMX生成工程，修改此处仿真相关配置即可。 2.串口重定义上一篇文章《printf系列教程01》的“串口映射”章节讲述相关内容。 这里用UART1举例：12345int fputc(int ch, FILE *f)&#123; HAL_UART_Transmit(&amp;huart1, (uint8_t *)&amp;ch, 1, 0xFFFF); return ch;&#125; 3.Keil仿真输出效果下面提供下载的工程，直接编译，再点击调试按钮，打开UART 1#，全速运行，就能看到printf打印效果： 三、IAR仿真打印配置IAR下的仿真打印，我没有研究透彻，只是经过测试验证，可以运行，写出来仅供参考。 1.仿真参数配置调试驱动选择仿真 这里仿真打印，我使用SWO方式： 2.串口重定义重定义代码和上面类似，只是这里使用ITM方式输出信息：12345int fputc(int ch, FILE *f)&#123; ITM_SendChar(ch); return ch;&#125; 提示：关于ITM后面文章会详细讲述。 3.IAR仿真输出效果 当然，有些配置我没有研究明白，比如滴答中断计数，为什么仿真没有正常执行。所以，我自定义延时函数。 四、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（HAL）_仿真 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 六、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B02_%E4%BB%BF%E7%9C%9F%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8ESTM32%EF%BC%88Keil%E3%80%81IAR%EF%BC%89.html</url>
+    <content type="text"><![CDATA[一、写在前面很多初学者习惯使用软件仿真，比如Proteus，应该是很多人都知道的一款仿真软件。 以前开发板相对较贵，且快递不方便，使用仿真软件可以理解。现在便宜的STM32开发板就十几块，还用仿真软件，我不是很理解。 有经验的人都知道，仿真和实际运行情况很多时候都不一样，相信不用我说，大家都明白。 因此，我个人不是很推荐大家仿真，本文内容可能存在纰漏，仅限个人学习。 下面讲述基于Keil MDK-ARM 和 IAR EWARM进行仿真打印的配置。 二、Keil仿真打印配置1.仿真参数配置Keil MDK-ARM默认配置不能仿真，原因出在仿真参数出现了问题： 修改这两处参数为：DARMSTM.DLL -pSTM32F103ZE 基于前面使用STM32CubeMX生成工程，修改此处仿真相关配置即可。 2.串口重定义上一篇文章《printf系列教程01》的“串口映射”章节讲述相关内容。 这里用UART1举例：12345int fputc(int ch, FILE *f)&#123; HAL_UART_Transmit(&amp;huart1, (uint8_t *)&amp;ch, 1, 0xFFFF); return ch;&#125; 3.Keil仿真输出效果下面提供下载的工程，直接编译，再点击调试按钮，打开UART 1#，全速运行，就能看到printf打印效果： 三、IAR仿真打印配置IAR下的仿真打印，我没有研究透彻，只是经过测试验证，可以运行，写出来仅供参考。 1.仿真参数配置调试驱动选择仿真 这里仿真打印，我使用SWO方式： 2.串口重定义重定义代码和上面类似，只是这里使用ITM方式输出信息：12345int fputc(int ch, FILE *f)&#123; ITM_SendChar(ch); return ch;&#125; 提示：关于ITM后面文章会详细讲述。 3.IAR仿真输出效果 当然，有些配置我没有研究明白，比如滴答中断计数，为什么仿真没有正常执行。所以，我自定义延时函数。 四、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（HAL）_仿真 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 六、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
       <categories>
         <category>printf系列教程</category>
       </categories>
@@ -66,7 +150,7 @@
   <entry>
     <title><![CDATA[printf系列教程01_UART打印输出配置，基于STM32（Keil、IAR）]]></title>
     <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B01_UART%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE%EF%BC%8C%E5%9F%BA%E4%BA%8ESTM32%EF%BC%88Keil%E3%80%81IAR%EF%BC%89.html</url>
-    <content type="text"><![CDATA[一、写在前面在学习MCU时，使用UART串口输出，算是最基础的知识。 因此，通过串口映射实现printf也是最常见的方法。 本文针对初学者，讲述基于STM32在Keil、 IAR中实现printf输出的配置。 推荐阅读：【专栏】Keil系列教程【专栏】IAR系列教程 在已有UART收发工程的基础上，只需要两步就可实现printf打印输出：·使用微库·串口映射 二、使用微库自己新建的Keil、 IAR工程，需要自己“勾选”微库。使用STM32CubeMX工具生成的工程，默认“勾选”微库。 2.1 Keil MDK-ARM使用微库Project -&gt; Options for Target -&gt; Target 勾选上“Use Micro LIB”，如下图： 2.2 IAR EWARM使用微库Project -&gt; Options -&gt; General Options -&gt; Library Configuration 选中“Full”,如下图： 三、串口映射这个原理很简单，你要使用printf输出到UART串口，就需要进行一次映射。也就是大家说的重定义函数fputc。 这里主要就是将UART输出字符实现即可（提供标准库和HAL库例程）。 针对Keil和IAR的编译器，fputc函数（HAL库）：12345int fputc(int ch, FILE *f)&#123; HAL_UART_Transmit(&amp;huart1, (uint8_t *)&amp;ch, 1, 0xFFFF); return ch;&#125; 其它编译器，如GCC，则：1int __io_putchar(int ch) 提示：这只是针对printf输出，最简单的一种方式。如果想要输入，重定义fgetc函数即可。 四、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（SPL）_UART·STM32F103（HAL）_UART 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 六、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面在学习MCU时，使用UART串口输出，算是最基础的知识。 因此，通过串口映射实现printf也是最常见的方法。 本文针对初学者，讲述基于STM32在Keil、 IAR中实现printf输出的配置。 推荐阅读：【专栏】Keil系列教程【专栏】IAR系列教程 在已有UART收发工程的基础上，只需要两步就可实现printf打印输出：·使用微库·串口映射 二、使用微库自己新建的Keil、 IAR工程，需要自己“勾选”微库。使用STM32CubeMX工具生成的工程，默认“勾选”微库。 2.1 Keil MDK-ARM使用微库Project -&gt; Options for Target -&gt; Target 勾选上“Use Micro LIB”，如下图： 2.2 IAR EWARM使用微库Project -&gt; Options -&gt; General Options -&gt; Library Configuration 选中“Full”,如下图： 三、串口映射这个原理很简单，你要使用printf输出到UART串口，就需要进行一次映射。也就是大家说的重定义函数fputc。 这里主要就是将UART输出字符实现即可（提供标准库和HAL库例程）。 针对Keil和IAR的编译器，fputc函数（HAL库）：12345int fputc(int ch, FILE *f)&#123; HAL_UART_Transmit(&amp;huart1, (uint8_t *)&amp;ch, 1, 0xFFFF); return ch;&#125; 其它编译器，如GCC，则：1int __io_putchar(int ch) 提示：这只是针对printf输出，最简单的一种方式。如果想要输入，重定义fgetc函数即可。 四、下载为方便大家理解，提供源码工程下载，参考代码：·STM32F103（SPL）_UART·STM32F103（HAL）_UART 百度网盘：https://pan.baidu.com/s/1aYBuHtOgtLqLvj6SsMYlQA 提取码：nbd3 提示：1.若链接失效，请关注公众号获取最新链接。2.源码仅供学习参考，不一定适用于实际项目。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 六、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
       <categories>
         <category>printf系列教程</category>
       </categories>
@@ -87,7 +171,7 @@
   <entry>
     <title><![CDATA[printf系列教程00_概述printf各种打印输出方法和相关内容]]></title>
     <url>%2Fprintf%2Fprintf%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B00_%E6%A6%82%E8%BF%B0printf%E5%90%84%E7%A7%8D%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA%E6%96%B9%E6%B3%95%E5%92%8C%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9.html</url>
-    <content type="text"><![CDATA[一、写在前面在MCU项目中，printf主要用于打印输出一些调试信息。比如：程序执行出错，输出相关错误提示信息。 前面在我公众号『strongerHuang』分享文章《基于STM32的多种printf用法》之后，大家反响还不错。 不过那篇文章只是简单写了一下，很多人觉得可以，索性就整理成更加详细的专栏文章。 目前整理了几篇文章：printf系列教程01_UART打印输出配置，基于STM32（Keil、IAR）printf系列教程02_仿真打印输出配置，基于STM32（Keil、IAR）printf系列教程03_SWO打印输出配置，基于Keil『Debug(printf)Viewer』，STM32（ST-Link、J-Link）printf系列教程04_SWO打印输出配置，基于IAR『Terminal IO』，STM32（ST-Link、J-Link）printf系列教程05_SWO打印输出配置，基于ST-LINK Utility『Serial Wire Viewer』，STM32（ST-Link）printf系列教程06_SWO打印输出配置，基于J-Link『SWO Viewer』，STM32（J-Link）printf系列教程07_JLink-RTT打印输出配置，基于J-Link『RTT Viewer』，STM32（Keil、IAR） 二、printf输出方式本系列教程主要是针对MCU的printf打印输出，常见的方式：1.UART打印输出2.仿真打印输出3.SWO打印输出4.JLink-RTT打印输出 除仿真之外，其它三种都是基于MCU硬件打印输出。 从打印效率来说：UART &lt; SWO &lt; JLink-RTT。 每一种printf打印输出方式应用场景不同，也各有各的特点。 三、实验现象先让大家从实验现象了解一下printf的内容，后面文章讲述具体的配置。 3.1 UART打印输出 这种printf是最常见的使用UART串口输出方式，需要占用一个硬件UART串口。 3.2 仿真打印输出 只在集成开发环境中模拟printf仿真输出，不需要连接开发板（硬件MCU）即可实现。 3.3 SWO打印输出SWO：Serial Wire Output，串行线输出SWD：Serial Wire Debug，串行线调试SWV：Serial Wire Viewer，串行线查看器 SWO输出，需要多一根SWO（引脚）线，同时需要借助SWV（查看器）查看数据，我打算整理4种查看方法：·基于Keil的『Debug(printf)Viewer』·基于IAR的『Terminal IO』·基于ST-LINK Utility的『Serial Wire Viewer』·基于J-Link的『SWO Viewer』 1.基于Keil的『Debug(printf)Viewer』 2.基于IAR的『Terminal IO』 3.基于ST-LINK Utility的『Serial Wire Viewer』 4.基于J-Link的『SWO Viewer』 说明：前面2种可以分别基于ST-Link和J-link工具查看，第三种基于ST-Link查看，第四种基于J-link查看。 3.4 JLink-RTT打印输出 这种方式不需要使用UART串口，也不需要额外SWO引脚，但需要在代码中添加相关代码。 四、软、硬件工具及其它说明该教程使用的软件及工具有点多，默认大家已经安装并掌握使用方法。 4.1 软件工具1.STM32CubeMX请参看：【专栏】STM32CubeMX系列教程 2.Keil MDK-ARM请参看：【专栏】Keil MDK-ARM系列教程 3.IAR EWARM请参看：【专栏】IAR系列教程 4.STM32 ST-LINK Utility请参看：【专栏】ST-Link资料 5.J-Link / J-Trace下载地址：https://www.segger.com/downloads/jlink 4.2 硬件1.MCU开发板原则上Cortex-M3，M4都行，本教程基于STM32F0、F1、F4系列进行讲述。 2.下载调试器ST-LinkJ-Link 3.PC电脑当然推荐Windows电脑，因为MDK-ARM只支持WIndows系统。 4.3 其它说明1.源代码工程下载为方便大家学习，本系列教程将提供对应源代码工程，供大家下载。 2.关于仿真输出现在开发板很便宜（相比以前），而且仿真和实际可能存在差异，故我不推荐大家软件仿真。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 六、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 我的微信公众号（ID：strongerHuang）还在分享STM8、STM32、Keil、IAR、FreeRTOS、UCOS、RT-Thread、CANOpen、Modbus…等更多精彩内容，如果想查看更多内容，可以关注我的微信公众号。]]></content>
+    <content type="text"><![CDATA[一、写在前面在MCU项目中，printf主要用于打印输出一些调试信息。比如：程序执行出错，输出相关错误提示信息。 前面在我公众号『strongerHuang』分享文章《基于STM32的多种printf用法》之后，大家反响还不错。 不过那篇文章只是简单写了一下，很多人觉得可以，索性就整理成更加详细的专栏文章。 目前整理了几篇文章：printf系列教程01_UART打印输出配置，基于STM32（Keil、IAR）printf系列教程02_仿真打印输出配置，基于STM32（Keil、IAR）printf系列教程03_SWO打印输出配置，基于Keil『Debug(printf)Viewer』，STM32（ST-Link、J-Link）printf系列教程04_SWO打印输出配置，基于IAR『Terminal IO』，STM32（ST-Link、J-Link）printf系列教程05_SWO打印输出配置，基于ST-LINK Utility『Serial Wire Viewer』，STM32（ST-Link）printf系列教程06_SWO打印输出配置，基于J-Link『SWO Viewer』，STM32（J-Link）printf系列教程07_JLink-RTT打印输出配置，基于J-Link『RTT Viewer』，STM32（Keil、IAR） 二、printf输出方式本系列教程主要是针对MCU的printf打印输出，常见的方式：1.UART打印输出2.仿真打印输出3.SWO打印输出4.JLink-RTT打印输出 除仿真之外，其它三种都是基于MCU硬件打印输出。 从打印效率来说：UART &lt; SWO &lt; JLink-RTT。 每一种printf打印输出方式应用场景不同，也各有各的特点。 三、实验现象先让大家从实验现象了解一下printf的内容，后面文章讲述具体的配置。 3.1 UART打印输出 这种printf是最常见的使用UART串口输出方式，需要占用一个硬件UART串口。 3.2 仿真打印输出 只在集成开发环境中模拟printf仿真输出，不需要连接开发板（硬件MCU）即可实现。 3.3 SWO打印输出SWO：Serial Wire Output，串行线输出SWD：Serial Wire Debug，串行线调试SWV：Serial Wire Viewer，串行线查看器 SWO输出，需要多一根SWO（引脚）线，同时需要借助SWV（查看器）查看数据，我打算整理4种查看方法：·基于Keil的『Debug(printf)Viewer』·基于IAR的『Terminal IO』·基于ST-LINK Utility的『Serial Wire Viewer』·基于J-Link的『SWO Viewer』 1.基于Keil的『Debug(printf)Viewer』 2.基于IAR的『Terminal IO』 3.基于ST-LINK Utility的『Serial Wire Viewer』 4.基于J-Link的『SWO Viewer』 说明：前面2种可以分别基于ST-Link和J-link工具查看，第三种基于ST-Link查看，第四种基于J-link查看。 3.4 JLink-RTT打印输出 这种方式不需要使用UART串口，也不需要额外SWO引脚，但需要在代码中添加相关代码。 四、软、硬件工具及其它说明该教程使用的软件及工具有点多，默认大家已经安装并掌握使用方法。 4.1 软件工具1.STM32CubeMX请参看：【专栏】STM32CubeMX系列教程 2.Keil MDK-ARM请参看：【专栏】Keil MDK-ARM系列教程 3.IAR EWARM请参看：【专栏】IAR系列教程 4.STM32 ST-LINK Utility请参看：【专栏】ST-Link资料 5.J-Link / J-Trace下载地址：https://www.segger.com/downloads/jlink 4.2 硬件1.MCU开发板原则上Cortex-M3，M4都行，本教程基于STM32F0、F1、F4系列进行讲述。 2.下载调试器ST-LinkJ-Link 3.PC电脑当然推荐Windows电脑，因为MDK-ARM只支持WIndows系统。 4.3 其它说明1.源代码工程下载为方便大家学习，本系列教程将提供对应源代码工程，供大家下载。 2.关于仿真输出现在开发板很便宜（相比以前），而且仿真和实际可能存在差异，故我不推荐大家软件仿真。 五、说明1.该文档仅供个人学习使用，版权所有，禁止商用。 2.本文由我一个人编辑并整理，难免存在一些错误。 3.为了方便大家平时公交、地铁、外出办事也能用手机随时随地查看该教程，该教程同步更新于微信公众号『嵌入式专栏』，关注微信公众号回复【printf系列教程】即可查看全系列教程。 六、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
       <categories>
         <category>printf系列教程</category>
       </categories>
@@ -1003,7 +1087,7 @@
   <entry>
     <title><![CDATA[公告]]></title>
     <url>%2F%E8%AF%B4%E6%98%8E%E6%96%87%E7%AB%A0%2F%E5%85%AC%E5%91%8A.html</url>
-    <content type="text"><![CDATA[一、博客搬家了 由于我原来的【CSDN博客】文章比较杂乱，也没有整理归类，不方便查找，文章中提供的代码工程下载地址都失效了。还有个主要原因，在别人地盘写文章总觉得不爽。所以，决定自己搭建博客，在自己的地盘写出属于自己的博客文章。 欢迎您来到我个人的新博客网站：www.strongerhuang.com 在这里，我会以专栏形式分享。当然，更多精彩内容我会在我的个人公众号『strongerHuang』分享。 1.1 找到我 除了在我微信公众号『strongerHuang』中能找到我，还可以添加我的个人微信：Embedd_Huang，二维码如下： 当然，也欢迎大家关注我的知乎：strongerHuang 二、后续计划 我的博客文章正在努力更新中。。。关注我微信公众号：strongerhuang，随时获取最新资讯。]]></content>
+    <content type="text"><![CDATA[一、博客搬家了由于我原来的【CSDN博客】文章比较杂乱，也没有整理归类，不方便查找，文章中提供的代码工程下载地址都失效了。还有个主要原因，在别人地盘写文章总觉得不爽。所以，决定自己搭建博客，在自己的地盘写出属于自己的博客文章。 欢迎您来到我个人的新博客网站：www.strongerhuang.com 在这里，我会以专栏形式分享。当然，更多精彩内容我会在我的微信公众号『strongerHuang』分享。 1.1 找到我除了在我微信公众号『strongerHuang』中能找到我，还可以添加我的个人微信：Embedd_Huang（下图二维码），请备注『公众号读者』： 当然，也欢迎大家关注我的知乎：strongerHuang 二、后续计划本博客会持续更新，因为写系列教程特别费时间，中间肯定有间隔。 我平时主要在微信公众号『strongerHuang』更新内容。同时，我也会在知乎『strongerHuang』更新内容。 三、最后我的知乎：strongerHuang我的GitHub：https://github.com/EmbeddedDevelop 关注公众号『strongerHuang』，在底部菜单中查看更多精彩内容!]]></content>
       <categories>
         <category>说明文章</category>
       </categories>
